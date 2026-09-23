@@ -2,7 +2,9 @@
 
 ## 0. 준비
 ```bash
-cd ~/development/zero-hr && cd site && python3 -m http.server 8080 &
+cd ~/development/zero-hr
+cp reports/monthly-report-2026-10.* reports/org-forecast-2026-09.csv reports/monthly-report-dispatch.json site/reports/
+cd site && python3 -m http.server 8080 &
 python3 ../api/server.py --root .. --port 8787 &
 ```
 

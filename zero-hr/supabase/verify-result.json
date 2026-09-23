@@ -1,0 +1,113 @@
+{
+  "status": "ok",
+  "asOfDate": "2026-09-23",
+  "checks": [
+    {
+      "check": "employees 행 수",
+      "expected": 427,
+      "actual": 427,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "check": "to_plan 행 수",
+      "expected": 11,
+      "actual": 11,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "check": "planned_joiners 행 수",
+      "expected": 27,
+      "actual": 27,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "check": "planned_leavers 행 수",
+      "expected": 19,
+      "actual": 19,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "check": "departments 행 수",
+      "expected": 11,
+      "actual": 11,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "check": "employees status=재직",
+      "expected": 406,
+      "actual": 406,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "check": "employees status=휴직",
+      "expected": 21,
+      "actual": 21,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "check": "to_plan 정원 합",
+      "expected": 422,
+      "actual": 422,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "check": "report_snapshots 제품 수",
+      "expected": [
+        "app",
+        "comparison",
+        "decision",
+        "insight",
+        "onboard",
+        "payroll"
+      ],
+      "actual": [
+        "app",
+        "comparison",
+        "decision",
+        "insight",
+        "onboard",
+        "payroll"
+      ],
+      "passed": true,
+      "note": "로컬 스냅샷과 같은 집합"
+    },
+    {
+      "check": "최신 insight 스냅샷 월말 예측",
+      "expected": 411,
+      "actual": 411,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "check": "최신 insight 스냅샷 월말 gap",
+      "expected": -11,
+      "actual": -11,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "check": "anon 은 employees 를 볼 수 없다",
+      "expected": true,
+      "actual": true,
+      "passed": true,
+      "note": ""
+    },
+    {
+      "check": "anon 은 report_snapshots 를 읽을 수 있다",
+      "expected": true,
+      "actual": true,
+      "passed": true,
+      "note": ""
+    }
+  ],
+  "failed": 0,
+  "total": 13
+}
