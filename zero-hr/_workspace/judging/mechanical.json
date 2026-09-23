@@ -1,0 +1,1249 @@
+{
+  "asOfDate": "2026-09-23",
+  "products": {
+    "insight": {
+      "persona": "head-of-hr",
+      "criteriaMet": [
+        {
+          "id": "H-F1",
+          "weight": 5,
+          "met": true,
+          "evidence": "site/insight/index.html data-section=kpi data-fit=H-F1 · insight.json forecast.byDepartment[].toGapAsOf[11] | site/insight/index.html data-section=kpi data-fit=H-F1 · insight.json forecast.byDepartment[].toGapMonthEnd[11] | site/insight/index.html data-section=kpi data-fit=H-F1 · insight.json forecast.byOrgGroup[].toGapMonthEnd[4]"
+        },
+        {
+          "id": "H-F2",
+          "weight": 5,
+          "met": true,
+          "evidence": "섹션 views,kpi | 섹션 views,kpi | 섹션 views,kpi | 섹션 views,kpi | site/data/insight.json.forecast.totals={'toHeadcount': 422, 'activeHeadcount': 406, 'plannedIn': 19, 'plannedOut': 14, 'forecastMonthEnd': 411, 'toGapAsOf': -16, 'toGapMonthEnd': -11, 'toFillRate': 0.9739, 'nextMonth': {'plannedIn': 8, 'plannedOut': 4, 'forecastNextMonthEnd': 415, 'toGapNextMonthEnd': -7}} vs month-end-forecast.totals={'t"
+        },
+        {
+          "id": "H-F3",
+          "weight": 5,
+          "met": true,
+          "evidence": "PII 부정 검사 3건 전부 통과 | 섹션 views,planned-moves | 섹션 views,planned-moves"
+        },
+        {
+          "id": "H-F4",
+          "weight": 4,
+          "met": true,
+          "evidence": "site/insight/index.html data-section=department-gap data-fit=H-F4 · insight.json forecast.byDepartment[].forecastMonthEnd[11] | site/insight/index.html data-section=department-gap data-fit=H-F4 · insight.json forecast.byDepartment[].recommendation[11] | site/insight/index.html data-section=department-gap data-fit=H-F4 · insight.json forecast.insights[][3] | site/insight/index.html data-section=dep"
+        },
+        {
+          "id": "H-F5",
+          "weight": 4,
+          "met": true,
+          "evidence": "site/insight/index.html data-section=risk-summary data-fit=H-F5 · insight.json attrition.summary[4] | site/insight/index.html data-section=risk-summary data-fit=H-F5 · insight.json attrition.byDepartment[11] | 섹션 risk-summary | PII 부정 검사 3건 전부 통과"
+        },
+        {
+          "id": "H-F6",
+          "weight": 4,
+          "met": true,
+          "evidence": "site/insight/index.html data-section=risk-people data-fit=H-F6 · insight.json attrition.byEmployee[].riskBand[406] | site/insight/index.html data-section=risk-people data-fit=H-F6 · insight.json attrition.byEmployee[].topFactors[979] | site/insight/index.html data-section=risk-people data-fit=H-F6 · insight.json hrDirectory[427] | 섹션 risk-people,directory"
+        },
+        {
+          "id": "H-F7",
+          "weight": 3,
+          "met": true,
+          "evidence": "site/insight/index.html data-section=data-quality data-fit=H-F7 · insight.json cleansingSummary.unresolvedItems[12] | site/insight/index.html data-section=data-quality data-fit=H-F7 · insight.json cleansingSummary.unresolvedCount | site/insight/index.html data-section=data-quality data-fit=H-F7 · insight.json stats.dataQuality.briefDiscrepancies[1]"
+        },
+        {
+          "id": "H-F8",
+          "weight": 3,
+          "met": true,
+          "evidence": "reports/monthly-report-dispatch.json + 페이지 링크 | PII 부정 검사 3건 전부 통과"
+        },
+        {
+          "id": "H-F9",
+          "weight": 2,
+          "met": true,
+          "evidence": "site/insight/index.html data-section=automation-effect data-fit=H-F9 · insight.json automationEffect.savingRate | site/insight/index.html data-section=automation-effect data-fit=H-F9 · insight.json automationEffect.manualBaseline[3] | site/insight/index.html data-section=automation-effect data-fit=H-F9 · insight.json automationEffect.note[61]"
+        },
+        {
+          "id": "H-F10",
+          "weight": 3,
+          "met": true,
+          "evidence": "site/insight/index.html data-section=attributes data-fit=H-F10 · insight.json stats.byAttribute.level[8] | site/insight/index.html data-section=attributes data-fit=H-F10 · insight.json stats.byAttribute.tenureBand[4] | site/insight/index.html data-section=attributes data-fit=H-F10 · insight.json stats.byAttribute.stage[4] | site/insight/index.html data-section=attributes data-fit=H-F10 · insight.j"
+        },
+        {
+          "id": "H-F11",
+          "weight": 3,
+          "met": true,
+          "evidence": "site/insight/index.html data-section=separations data-fit=H-F11 · insight.json stats.plannedSeparations.bySeparationReason[5] | site/insight/index.html data-section=separations data-fit=H-F11 · insight.json stats.plannedSeparations.bySeparationType[2] | site/insight/index.html data-section=separations data-fit=H-F11 · insight.json stats.plannedSeparations.byDepartment[9]"
+        },
+        {
+          "id": "H-F12",
+          "weight": 3,
+          "met": true,
+          "evidence": "site/insight/index.html data-section=next-month data-fit=H-F12 · insight.json forecast.byDepartment[].nextMonth[11] | site/insight/index.html data-section=next-month data-fit=H-F12 · insight.json forecast.byDepartment[].riskAdjusted[11] | site/insight/index.html data-section=next-month data-fit=H-F12 · insight.json forecast.scenario[2] | 섹션 next-month,scenario"
+        },
+        {
+          "id": "H-F13",
+          "weight": 4,
+          "met": true,
+          "evidence": "섹션 org-lead | site/insight/index.html data-section=org-lead data-fit=H-F13 · insight.json forecast.byDepartment[11] | PII 부정 검사 3건 전부 통과"
+        },
+        {
+          "id": "H-F14",
+          "weight": 2,
+          "met": true,
+          "evidence": "섹션 header | site/insight/index.html data-section=header data-fit=H-F14 · insight.json stats.asOfDate[10]"
+        },
+        {
+          "id": "H-F15",
+          "weight": 5,
+          "met": true,
+          "evidence": "api/tools.json: insight.get_executive_snapshot, insight.get_department_forecast, insight.get_insights, insight.get_attribute_stats",
+          "reason": null
+        }
+      ],
+      "coverage": 1.0,
+      "weightedCoverage": 1.0,
+      "verifiable": 15,
+      "met": 15,
+      "sections": [
+        {
+          "dataSection": "header",
+          "dataFit": [
+            "H-F14"
+          ],
+          "dataEvidence": [
+            "stats.asOfDate",
+            "stats.client"
+          ],
+          "dataViews": [
+            "executive",
+            "hr",
+            "planning",
+            "orgLead"
+          ]
+        },
+        {
+          "dataSection": "views",
+          "dataFit": [
+            "H-F2",
+            "H-F3"
+          ],
+          "dataEvidence": [
+            "forecast.totals",
+            "stats.totals"
+          ],
+          "dataViews": [
+            "executive",
+            "hr",
+            "planning",
+            "orgLead"
+          ]
+        },
+        {
+          "dataSection": "kpi",
+          "dataFit": [
+            "H-F1",
+            "H-F2"
+          ],
+          "dataEvidence": [
+            "stats.totals.activeHeadcount",
+            "stats.totals.onLeave",
+            "stats.totals.headcount",
+            "forecast.totals.toHeadcount",
+            "forecast.totals.toGapAsOf",
+            "forecast.totals.forecastMonthEnd",
+            "forecast.totals.toGapMonthEnd",
+            "forecast.totals.toFillRate",
+            "forecast.totals.plannedIn",
+            "forecast.totals.plannedOut",
+            "forecast.totals.nextMonth.forecastNextMonthEnd",
+            "attrition.summary.높음",
+            "cleansingSummary.unresolvedCount",
+            "automationEffect.savingRate"
+          ],
+          "dataViews": [
+            "executive",
+            "hr",
+            "planning",
+            "orgLead"
+          ]
+        },
+        {
+          "dataSection": "org-group-gap",
+          "dataFit": [
+            "H-F1"
+          ],
+          "dataEvidence": [
+            "forecast.byOrgGroup[].toGapAsOf",
+            "forecast.byOrgGroup[].toGapMonthEnd",
+            "forecast.byOrgGroup[].forecastMonthEnd",
+            "forecast.byOrgGroup[].activeHeadcount",
+            "stats.byOrgGroup[].onLeave"
+          ],
+          "dataViews": [
+            "executive",
+            "hr",
+            "planning"
+          ]
+        },
+        {
+          "dataSection": "department-gap",
+          "dataFit": [
+            "H-F1",
+            "H-F4"
+          ],
+          "dataEvidence": [
+            "forecast.byDepartment[].toGapAsOf",
+            "forecast.byDepartment[].toGapMonthEnd",
+            "forecast.byDepartment[].forecastMonthEnd",
+            "forecast.byDepartment[].recommendation",
+            "forecast.byDepartment[].plannedIn",
+            "forecast.byDepartment[].plannedOut",
+            "stats.byDepartment[].onLeave"
+          ],
+          "dataViews": [
+            "executive",
+            "hr",
+            "planning"
+          ]
+        },
+        {
+          "dataSection": "insights",
+          "dataFit": [
+            "H-F4"
+          ],
+          "dataEvidence": [
+            "forecast.insights[]",
+            "forecast.immediateActions",
+            "forecast.byDepartment[].recommendation",
+            "forecast.provenance.gate"
+          ],
+          "dataViews": [
+            "executive",
+            "hr",
+            "planning"
+          ]
+        },
+        {
+          "dataSection": "risk-summary",
+          "dataFit": [
+            "H-F5"
+          ],
+          "dataEvidence": [
+            "attrition.summary",
+            "attrition.byDepartment[]",
+            "attrition.byOrgGroup[]",
+            "attrition.model.expectedProbability"
+          ],
+          "dataViews": [
+            "executive",
+            "hr",
+            "planning"
+          ]
+        },
+        {
+          "dataSection": "separations",
+          "dataFit": [
+            "H-F11"
+          ],
+          "dataEvidence": [
+            "stats.plannedSeparations.total",
+            "stats.plannedSeparations.bySeparationReason",
+            "stats.plannedSeparations.bySeparationType",
+            "stats.plannedSeparations.byDepartment",
+            "stats.plannedSeparations.byTenureBand",
+            "stats.plannedSeparations.byMonth"
+          ],
+          "dataViews": [
+            "executive",
+            "hr",
+            "planning"
+          ]
+        },
+        {
+          "dataSection": "next-month",
+          "dataFit": [
+            "H-F12"
+          ],
+          "dataEvidence": [
+            "forecast.totals.nextMonth",
+            "forecast.byDepartment[].nextMonth",
+            "forecast.byDepartment[].riskAdjusted",
+            "forecast.byOrgGroup[].nextMonth",
+            "forecast.assumptions"
+          ],
+          "dataViews": [
+            "hr",
+            "planning"
+          ]
+        },
+        {
+          "dataSection": "scenario",
+          "dataFit": [
+            "H-F12"
+          ],
+          "dataEvidence": [
+            "forecast.scenario",
+            "forecast.totals",
+            "forecast.byDepartment[].plannedIn",
+            "forecast.byDepartment[].plannedOut",
+            "forecast.byDepartment[].nextMonth"
+          ],
+          "dataViews": [
+            "planning"
+          ]
+        },
+        {
+          "dataSection": "planned-moves",
+          "dataFit": [
+            "H-F11",
+            "H-F3"
+          ],
+          "dataEvidence": [
+            "forecast.plannedJoiners[]",
+            "forecast.plannedLeavers[]",
+            "forecast.monthEnd",
+            "hrDirectory[]"
+          ],
+          "dataViews": [
+            "hr",
+            "planning"
+          ]
+        },
+        {
+          "dataSection": "automation-effect",
+          "dataFit": [
+            "H-F9"
+          ],
+          "dataEvidence": [
+            "automationEffect.savingRate",
+            "automationEffect.manualBaseline",
+            "automationEffect.automated",
+            "automationEffect.note"
+          ],
+          "dataViews": [
+            "executive",
+            "hr"
+          ]
+        },
+        {
+          "dataSection": "report",
+          "dataFit": [
+            "H-F8"
+          ],
+          "dataEvidence": [
+            "reports/monthly-report-dispatch.json",
+            "reports/monthly-report-2026-10.html"
+          ],
+          "dataViews": [
+            "executive",
+            "hr",
+            "planning",
+            "orgLead"
+          ]
+        },
+        {
+          "dataSection": "attributes",
+          "dataFit": [
+            "H-F10"
+          ],
+          "dataEvidence": [
+            "stats.byAttribute.employmentType",
+            "stats.byAttribute.gender",
+            "stats.byAttribute.ageBand",
+            "stats.byAttribute.jobFamily",
+            "stats.byAttribute.level",
+            "stats.byAttribute.tenureBand",
+            "stats.byAttribute.totalExperienceBand",
+            "stats.byAttribute.stage",
+            "stats.byAttributeAll.leaveType",
+            "stats.crossTabs.departmentByLevel",
+            "stats.crossTabs.departmentByEmploymentType",
+            "stats.crossTabs.departmentByGender",
+            "stats.crossTabs.departmentByAgeBand",
+            "stats.crossTabs.jobFamilyByLevel",
+            "stats.crossTabs.jobFamilyByStage",
+            "stats.crossTabs.orgGroupByTenureBand"
+          ],
+          "dataViews": [
+            "hr"
+          ]
+        },
+        {
+          "dataSection": "experience",
+          "dataFit": [
+            "H-F10"
+          ],
+          "dataEvidence": [
+            "stats.experience.avgTenureYears",
+            "stats.experience.medianTenureYears",
+            "stats.experience.avgTotalExperienceYears",
+            "stats.experience.medianTotalExperienceYears",
+            "stats.experience.byDepartment[]"
+          ],
+          "dataViews": [
+            "hr"
+          ]
+        },
+        {
+          "dataSection": "risk-people",
+          "dataFit": [
+            "H-F6"
+          ],
+          "dataEvidence": [
+            "attrition.byEmployee[].riskBand",
+            "attrition.byEmployee[].topFactors",
+            "attrition.model.factors",
+            "hrDirectory[].name"
+          ],
+          "dataViews": [
+            "hr"
+          ]
+        },
+        {
+          "dataSection": "data-quality",
+          "dataFit": [
+            "H-F7"
+          ],
+          "dataEvidence": [
+            "cleansingSummary.unresolvedCount",
+            "cleansingSummary.unresolvedItems",
+            "cleansingSummary.correctionsByRule",
+            "cleansingSummary.correctionsBySource",
+            "cleansingSummary.rowsIn",
+            "cleansingSummary.rowsOut",
+            "cleansingSummary.duplicatesRemoved",
+            "stats.dataQuality.unresolvedByFlag",
+            "stats.dataQuality.briefDiscrepancies"
+          ],
+          "dataViews": [
+            "hr",
+            "planning"
+          ]
+        },
+        {
+          "dataSection": "directory",
+          "dataFit": [
+            "H-F6"
+          ],
+          "dataEvidence": [
+            "hrDirectory[]"
+          ],
+          "dataViews": [
+            "hr"
+          ]
+        },
+        {
+          "dataSection": "org-lead",
+          "dataFit": [
+            "H-F13"
+          ],
+          "dataEvidence": [
+            "forecast.byDepartment[]",
+            "stats.byDepartment[]",
+            "attrition.byDepartment[]",
+            "stats.plannedSeparations.byDepartment",
+            "stats.experience.byDepartment[]"
+          ],
+          "dataViews": [
+            "orgLead"
+          ]
+        },
+        {
+          "dataSection": "claims",
+          "dataFit": [],
+          "dataEvidence": [],
+          "dataViews": []
+        }
+      ],
+      "piiChecks": [
+        {
+          "check": "스냅샷에 birthDate 없음",
+          "passed": true,
+          "detail": "site/data/insight.json"
+        },
+        {
+          "check": "HTML에 riskScore 표시 없음",
+          "passed": true,
+          "detail": "site/insight/index.html (내장 JSON 제외)"
+        },
+        {
+          "check": "경영진·경영기획·조직장 섹션에 성명 조인 없음",
+          "passed": true,
+          "detail": "0건"
+        }
+      ]
+    },
+    "payroll": {
+      "persona": "payroll",
+      "criteriaMet": [
+        {
+          "id": "P-F1",
+          "weight": 5,
+          "met": true,
+          "evidence": "payroll-close.payrollHeadcount.monthEndActive=411 vs month-end-forecast.totals.forecastMonthEnd=411 | site/payroll/index.html data-section=kpi data-fit=P-F1 · payroll.json payrollClose.payrollHeadcount.monthEndTotal"
+        },
+        {
+          "id": "P-F2",
+          "weight": 5,
+          "met": true,
+          "evidence": "site/payroll/index.html data-section=prorations-actual data-fit=P-F2 · payroll.json payrollClose.prorations.joinersInPeriod[5]"
+        },
+        {
+          "id": "P-F3",
+          "weight": 4,
+          "met": true,
+          "evidence": "site/payroll/index.html data-section=prorations-planned data-fit=P-F3 · payroll.json payrollClose.prorations.plannedJoinersByMonthEnd[19] | site/payroll/index.html data-section=prorations-planned data-fit=P-F3 · payroll.json payrollClose.prorations.plannedLeaversByMonthEnd[14]"
+        },
+        {
+          "id": "P-F4",
+          "weight": 4,
+          "met": true,
+          "evidence": "site/payroll/index.html data-section=leaves data-fit=P-F4 · payroll.json payrollClose.leaves.onLeave[21] | site/payroll/index.html data-section=leaves data-fit=P-F4 · payroll.json payrollClose.leaves.byTreatment[3]"
+        },
+        {
+          "id": "P-F5",
+          "weight": 4,
+          "met": true,
+          "evidence": "site/payroll/index.html data-section=contracts data-fit=P-F5 · payroll.json payrollClose.contracts.expiringWithin90Days[24] | site/payroll/index.html data-section=contracts data-fit=P-F5 · payroll.json payrollClose.contracts.byMonth[4]"
+        },
+        {
+          "id": "P-F6",
+          "weight": 5,
+          "met": true,
+          "evidence": "site/payroll/index.html data-section=risks data-fit=P-F6 · payroll.json payrollClose.risks[].unresolvedFlag[14] | site/payroll/index.html data-section=risks data-fit=P-F6 · payroll.json payrollClose.risks[].impact[14]"
+        },
+        {
+          "id": "P-F7",
+          "weight": 3,
+          "met": true,
+          "evidence": "site/payroll/index.html data-section=headcount data-fit=P-F7 · payroll.json payrollClose.payrollHeadcount.byEmploymentType[4] | site/payroll/index.html data-section=headcount data-fit=P-F7 · payroll.json payrollClose.payrollHeadcount.byDepartment[11]"
+        },
+        {
+          "id": "P-F8",
+          "weight": 3,
+          "met": true,
+          "evidence": "site/payroll/index.html data-section=kpi data-fit=P-F8 · payroll.json payrollClose.checklist[7]"
+        },
+        {
+          "id": "P-F9",
+          "weight": 4,
+          "met": true,
+          "evidence": "PII 부정 검사 3건 전부 통과 | site/payroll/index.html data-section=claims data-fit=P-F9 · payroll.json payrollClose.payrollHeadcount[7] | 섹션 claims"
+        },
+        {
+          "id": "P-F10",
+          "weight": 2,
+          "met": true,
+          "evidence": "site/payroll/index.html data-section=header data-fit=P-F10 · payroll.json payrollClose.payPeriod[7] | site/payroll/index.html data-section=header data-fit=P-F10 · payroll.json payrollClose.periodStart[10] | site/payroll/index.html data-section=header data-fit=P-F10 · payroll.json payrollClose.periodEnd[10] | 섹션 header"
+        },
+        {
+          "id": "P-F11",
+          "weight": 2,
+          "met": true,
+          "evidence": "site/data/payroll.json.cleansingSummary.unresolvedCount=12 vs cleansing-summary.unresolvedCount=12",
+          "reason": null
+        },
+        {
+          "id": "P-F12",
+          "weight": 3,
+          "met": true,
+          "evidence": "site/payroll/index.html data-section=prorations-planned data-fit=P-F12 · payroll.json payrollClose.prorations.plannedLeaversByMonthEnd[].separationType[14]"
+        },
+        {
+          "id": "P-F13",
+          "weight": 3,
+          "met": true,
+          "evidence": "payroll-close.payrollHeadcount.asOfTotal=427 vs headcount-stats.totals.headcount=427",
+          "reason": null
+        },
+        {
+          "id": "P-F14",
+          "weight": 5,
+          "met": true,
+          "evidence": "api/tools.json: payroll.get_close_summary, payroll.list_prorations, payroll.list_leave_treatments, payroll.list_contract_expirations",
+          "reason": null
+        }
+      ],
+      "coverage": 1.0,
+      "weightedCoverage": 1.0,
+      "verifiable": 14,
+      "met": 14,
+      "sections": [
+        {
+          "dataSection": "header",
+          "dataFit": [
+            "P-F10"
+          ],
+          "dataEvidence": [
+            "payrollClose.payPeriod",
+            "payrollClose.periodStart",
+            "payrollClose.periodEnd",
+            "payrollClose.asOfDate",
+            "statsSubset.client"
+          ],
+          "dataViews": []
+        },
+        {
+          "dataSection": "kpi",
+          "dataFit": [
+            "P-F1",
+            "P-F13",
+            "P-F8"
+          ],
+          "dataEvidence": [
+            "payrollClose.payrollHeadcount.asOfTotal",
+            "payrollClose.payrollHeadcount.asOfActive",
+            "payrollClose.payrollHeadcount.asOfOnLeave",
+            "payrollClose.payrollHeadcount.monthEndActive",
+            "payrollClose.payrollHeadcount.monthEndTotal",
+            "payrollClose.provenance.reconciliation.matched",
+            "payrollClose.provenance.reconciliation.forecastMonthEnd",
+            "statsSubset.totals.headcount",
+            "statsSubset.totals.plannedIn",
+            "statsSubset.totals.plannedOut",
+            "payrollClose.prorations.joinersInPeriod",
+            "payrollClose.leaves.byTreatment",
+            "payrollClose.contracts.expiringWithin90Days",
+            "payrollClose.risks",
+            "payrollClose.checklist",
+            "reconciliation:payroll-close.payrollHeadcount.monthEndActive=month-end-forecast.totals.forecastMonthEnd",
+            "reconciliation:payroll-close.payrollHeadcount.asOfTotal=headcount-stats.totals.headcount"
+          ],
+          "dataViews": []
+        },
+        {
+          "dataSection": "checklist",
+          "dataFit": [
+            "P-F8"
+          ],
+          "dataEvidence": [
+            "payrollClose.checklist[].item",
+            "payrollClose.checklist[].count",
+            "payrollClose.checklist[].status"
+          ],
+          "dataViews": []
+        },
+        {
+          "dataSection": "headcount",
+          "dataFit": [
+            "P-F7",
+            "P-F13"
+          ],
+          "dataEvidence": [
+            "payrollClose.payrollHeadcount.byEmploymentType",
+            "payrollClose.payrollHeadcount.byDepartment[]",
+            "payrollClose.payrollHeadcount.asOfTotal",
+            "payrollClose.payrollHeadcount.monthEndActive",
+            "payrollClose.payrollHeadcount.monthEndTotal",
+            "statsSubset.totals",
+            "statsSubset.byDepartment[].orgGroup"
+          ],
+          "dataViews": []
+        },
+        {
+          "dataSection": "prorations-actual",
+          "dataFit": [
+            "P-F2"
+          ],
+          "dataEvidence": [
+            "payrollClose.prorations.joinersInPeriod[].empId",
+            "payrollClose.prorations.joinersInPeriod[].name",
+            "payrollClose.prorations.joinersInPeriod[].deptCode",
+            "payrollClose.prorations.joinersInPeriod[].hireDate",
+            "payrollClose.prorations.joinersInPeriod[].employmentType",
+            "payrollClose.prorations.joinersInPeriod[].workedDays",
+            "payrollClose.prorations.joinersInPeriod[].proratedRatio",
+            "payrollClose.provenance.rules.proratedRatio"
+          ],
+          "dataViews": []
+        },
+        {
+          "dataSection": "prorations-planned",
+          "dataFit": [
+            "P-F3",
+            "P-F12"
+          ],
+          "dataEvidence": [
+            "payrollClose.prorations.plannedJoinersByMonthEnd[].joinerId",
+            "payrollClose.prorations.plannedJoinersByMonthEnd[].name",
+            "payrollClose.prorations.plannedJoinersByMonthEnd[].deptCode",
+            "payrollClose.prorations.plannedJoinersByMonthEnd[].plannedHireDate",
+            "payrollClose.prorations.plannedJoinersByMonthEnd[].workedDays",
+            "payrollClose.prorations.plannedJoinersByMonthEnd[].proratedRatio",
+            "payrollClose.prorations.plannedLeaversByMonthEnd[].empId",
+            "payrollClose.prorations.plannedLeaversByMonthEnd[].name",
+            "payrollClose.prorations.plannedLeaversByMonthEnd[].deptCode",
+            "payrollClose.prorations.plannedLeaversByMonthEnd[].plannedTerminationDate",
+            "payrollClose.prorations.plannedLeaversByMonthEnd[].separationType",
+            "payrollClose.prorations.plannedLeaversByMonthEnd[].workedDays",
+            "payrollClose.prorations.plannedLeaversByMonthEnd[].proratedRatio"
+          ],
+          "dataViews": []
+        },
+        {
+          "dataSection": "leaves",
+          "dataFit": [
+            "P-F4"
+          ],
+          "dataEvidence": [
+            "payrollClose.leaves.byTreatment",
+            "payrollClose.leaves.onLeave[].empId",
+            "payrollClose.leaves.onLeave[].name",
+            "payrollClose.leaves.onLeave[].deptCode",
+            "payrollClose.leaves.onLeave[].leaveType",
+            "payrollClose.leaves.onLeave[].leaveStart",
+            "payrollClose.leaves.onLeave[].payrollTreatment",
+            "payrollClose.provenance.rules.leaveTreatment"
+          ],
+          "dataViews": []
+        },
+        {
+          "dataSection": "contracts",
+          "dataFit": [
+            "P-F5"
+          ],
+          "dataEvidence": [
+            "payrollClose.contracts.byMonth",
+            "payrollClose.contracts.expiringWithin90Days[].empId",
+            "payrollClose.contracts.expiringWithin90Days[].name",
+            "payrollClose.contracts.expiringWithin90Days[].deptCode",
+            "payrollClose.contracts.expiringWithin90Days[].employmentType",
+            "payrollClose.contracts.expiringWithin90Days[].contractEndDate",
+            "payrollClose.provenance.rules.contractWindowDays"
+          ],
+          "dataViews": []
+        },
+        {
+          "dataSection": "risks",
+          "dataFit": [
+            "P-F6"
+          ],
+          "dataEvidence": [
+            "payrollClose.risks[].empId",
+            "payrollClose.risks[].issue",
+            "payrollClose.risks[].impact",
+            "payrollClose.risks[].unresolvedFlag",
+            "payrollClose.provenance.rules.derivedFlags"
+          ],
+          "dataViews": []
+        },
+        {
+          "dataSection": "data-quality",
+          "dataFit": [
+            "P-F11"
+          ],
+          "dataEvidence": [
+            "cleansingSummary.unresolvedCount",
+            "cleansingSummary.unresolvedItems[].source",
+            "cleansingSummary.unresolvedItems[].rowRef",
+            "cleansingSummary.unresolvedItems[].field",
+            "cleansingSummary.unresolvedItems[].rawValue",
+            "cleansingSummary.unresolvedItems[].flag",
+            "cleansingSummary.unresolvedItems[].question",
+            "cleansingSummary.asOfDate",
+            "statsSubset.totals.unresolvedCount",
+            "reconciliation:site/data/payroll.json.cleansingSummary.unresolvedCount=cleansing-summary.unresolvedCount"
+          ],
+          "dataViews": []
+        },
+        {
+          "dataSection": "claims",
+          "dataFit": [
+            "P-F9"
+          ],
+          "dataEvidence": [
+            "policy:pii-minimization-policy",
+            "payrollClose.provenance.rules.pii",
+            "payrollClose.payrollHeadcount",
+            "site/payroll/index.html"
+          ],
+          "dataViews": []
+        }
+      ],
+      "piiChecks": [
+        {
+          "check": "스냅샷에 birthDate 없음",
+          "passed": true,
+          "detail": "site/data/payroll.json"
+        },
+        {
+          "check": "HTML에 riskScore 표시 없음",
+          "passed": true,
+          "detail": "site/payroll/index.html (내장 JSON 제외)"
+        },
+        {
+          "check": "금액·계좌 필드 없음",
+          "passed": true,
+          "detail": "0건"
+        }
+      ]
+    },
+    "onboard": {
+      "persona": "onboarding",
+      "criteriaMet": [
+        {
+          "id": "O-F1",
+          "weight": 5,
+          "met": true,
+          "evidence": "site/onboard/index.html data-section=timeline data-fit=O-F1 · onboard.json onboardingPlan.timeline[].weekStart[5] | site/onboard/index.html data-section=timeline data-fit=O-F1 · onboard.json onboardingPlan.timeline[].joiners[27] | 섹션 timeline"
+        },
+        {
+          "id": "O-F2",
+          "weight": 5,
+          "met": true,
+          "evidence": "site/onboard/index.html data-section=departments data-fit=O-F2 · onboard.json onboardingPlan.byDepartment[].joiners[9] | site/onboard/index.html data-section=departments data-fit=O-F2 · onboard.json onboardingPlan.byDepartment[].joinersByMonthEnd[9] | site/onboard/index.html data-section=departments data-fit=O-F2 · onboard.json onboardingPlan.byDepartment[].deptLeadEmpId[9]"
+        },
+        {
+          "id": "O-F3",
+          "weight": 5,
+          "met": true,
+          "evidence": "site/onboard/index.html data-section=checklist data-fit=O-F3 · onboard.json onboardingPlan.checklist.items[6] | site/onboard/index.html data-section=checklist data-fit=O-F3 · onboard.json onboardingPlan.checklist.status[27]"
+        },
+        {
+          "id": "O-F4",
+          "weight": 4,
+          "met": true,
+          "evidence": "site/onboard/index.html data-section=departments data-fit=O-F4 · onboard.json onboardingPlan.byDepartment[].buddyCandidates[27]"
+        },
+        {
+          "id": "O-F5",
+          "weight": 4,
+          "met": true,
+          "evidence": "site/onboard/index.html data-section=cohort data-fit=O-F5 · onboard.json onboardingPlan.earlyTenureCohort.members[12] | site/onboard/index.html data-section=cohort data-fit=O-F5 · onboard.json onboardingPlan.earlyTenureCohort.count | site/onboard/index.html data-section=cohort data-fit=O-F5 · onboard.json onboardingPlan.earlyTenureCohort.highRiskCount"
+        },
+        {
+          "id": "O-F6",
+          "weight": 3,
+          "met": true,
+          "evidence": "site/onboard/index.html data-section=early-attrition data-fit=O-F6 · onboard.json onboardingPlan.earlyAttrition.rate | site/onboard/index.html data-section=early-attrition data-fit=O-F6 · onboard.json onboardingPlan.earlyAttrition.under1YearLeavers | site/onboard/index.html data-section=early-attrition data-fit=O-F6 · onboard.json onboardingPlan.earlyAttrition.byDepartment[9]"
+        },
+        {
+          "id": "O-F7",
+          "weight": 3,
+          "met": true,
+          "evidence": "site/onboard/index.html data-section=timeline data-fit=O-F7 · onboard.json plannedJoiners[27] | site/onboard/index.html data-section=timeline data-fit=O-F7 · onboard.json onboardingPlan.timeline[].joiners[27]"
+        },
+        {
+          "id": "O-F8",
+          "weight": 3,
+          "met": true,
+          "evidence": "onboarding-plan.timeline[].joiners=27 vs planned-joiners.clean=27 | onboarding-plan.byDepartment[].joinersByMonthEnd=19 vs month-end-forecast.totals.plannedIn=19"
+        },
+        {
+          "id": "O-F9",
+          "weight": 4,
+          "met": true,
+          "evidence": "PII 부정 검사 3건 전부 통과 | site/onboard/index.html data-section=cohort data-fit=O-F9 · onboard.json onboardingPlan.earlyTenureCohort.members[].riskBand[12] | 섹션 cohort,claims"
+        },
+        {
+          "id": "O-F10",
+          "weight": 2,
+          "met": true,
+          "evidence": "site/onboard/index.html data-section=timeline data-fit=O-F10 · onboard.json onboardingPlan.timeline[].joiners[].plannedHireDate[27] | site/onboard/index.html data-section=timeline data-fit=O-F10 · onboard.json onboardingPlan.asOfDate[10]"
+        },
+        {
+          "id": "O-F11",
+          "weight": 3,
+          "met": true,
+          "evidence": "site/onboard/index.html data-section=next-month data-fit=O-F11 · onboard.json onboardingPlan.byDepartment[].joiners[9]"
+        },
+        {
+          "id": "O-F12",
+          "weight": 2,
+          "met": true,
+          "evidence": "섹션 header | site/onboard/index.html data-section=header data-fit=O-F12 · onboard.json onboardingPlan.horizonEnd[10]"
+        },
+        {
+          "id": "O-F13",
+          "weight": 5,
+          "met": true,
+          "evidence": "api/tools.json: onboarding.get_timeline, onboarding.get_department_plan, onboarding.get_checklist, onboarding.get_early_tenure_cohort",
+          "reason": null
+        }
+      ],
+      "coverage": 1.0,
+      "weightedCoverage": 1.0,
+      "verifiable": 13,
+      "met": 13,
+      "sections": [
+        {
+          "dataSection": "header",
+          "dataFit": [
+            "O-F12",
+            "O-F13"
+          ],
+          "dataEvidence": [
+            "onboardingPlan.asOfDate",
+            "onboardingPlan.horizonEnd",
+            "api/tools.json"
+          ],
+          "dataViews": []
+        },
+        {
+          "dataSection": "kpi",
+          "dataFit": [
+            "O-F8"
+          ],
+          "dataEvidence": [
+            "onboardingPlan.provenance.reconciliation.timelineJoiners",
+            "onboardingPlan.provenance.reconciliation.monthEndJoiners",
+            "onboardingPlan.timeline[].joiners",
+            "onboardingPlan.earlyTenureCohort.count",
+            "onboardingPlan.earlyTenureCohort.highRiskCount",
+            "onboardingPlan.earlyAttrition.rate"
+          ],
+          "dataViews": []
+        },
+        {
+          "dataSection": "timeline",
+          "dataFit": [
+            "O-F1",
+            "O-F7",
+            "O-F10"
+          ],
+          "dataEvidence": [
+            "onboardingPlan.timeline[].week",
+            "onboardingPlan.timeline[].weekStart",
+            "onboardingPlan.timeline[].joiners[]",
+            "onboardingPlan.timeline[].joiners[].plannedHireDate",
+            "onboardingPlan.asOfDate",
+            "plannedJoiners[].unresolvedFlags"
+          ],
+          "dataViews": []
+        },
+        {
+          "dataSection": "departments",
+          "dataFit": [
+            "O-F2",
+            "O-F4"
+          ],
+          "dataEvidence": [
+            "onboardingPlan.byDepartment[].joiners",
+            "onboardingPlan.byDepartment[].joinersByMonthEnd",
+            "onboardingPlan.byDepartment[].deptLeadEmpId",
+            "onboardingPlan.byDepartment[].buddyCandidates[]",
+            "hrDirectorySubset[]"
+          ],
+          "dataViews": []
+        },
+        {
+          "dataSection": "checklist",
+          "dataFit": [
+            "O-F3"
+          ],
+          "dataEvidence": [
+            "onboardingPlan.checklist.items",
+            "onboardingPlan.checklist.status[]",
+            "onboardingPlan.provenance.checklistNote"
+          ],
+          "dataViews": []
+        },
+        {
+          "dataSection": "next-month",
+          "dataFit": [
+            "O-F11"
+          ],
+          "dataEvidence": [
+            "onboardingPlan.byDepartment[].joiners",
+            "onboardingPlan.byDepartment[].joinersByMonthEnd",
+            "onboardingPlan.timeline[].joiners[]"
+          ],
+          "dataViews": []
+        },
+        {
+          "dataSection": "cohort",
+          "dataFit": [
+            "O-F5",
+            "O-F9"
+          ],
+          "dataEvidence": [
+            "onboardingPlan.earlyTenureCohort.members[]",
+            "onboardingPlan.earlyTenureCohort.count",
+            "onboardingPlan.earlyTenureCohort.highRiskCount",
+            "onboardingPlan.earlyTenureCohort.members[].riskBand"
+          ],
+          "dataViews": []
+        },
+        {
+          "dataSection": "early-attrition",
+          "dataFit": [
+            "O-F6"
+          ],
+          "dataEvidence": [
+            "onboardingPlan.earlyAttrition.rate",
+            "onboardingPlan.earlyAttrition.under1YearLeavers",
+            "onboardingPlan.earlyAttrition.totalLeavers",
+            "onboardingPlan.earlyAttrition.byDepartment"
+          ],
+          "dataViews": []
+        },
+        {
+          "dataSection": "reconciliation",
+          "dataFit": [
+            "O-F8"
+          ],
+          "dataEvidence": [
+            "onboardingPlan.provenance.reconciliation.timelineJoiners",
+            "onboardingPlan.provenance.reconciliation.plannedJoinersValidRows",
+            "onboardingPlan.provenance.reconciliation.monthEndJoiners",
+            "onboardingPlan.provenance.reconciliation.forecastPlannedIn",
+            "onboardingPlan.provenance.reconciliation.match",
+            "onboardingPlan.provenance.reconciliation.monthEndMatch"
+          ],
+          "dataViews": []
+        },
+        {
+          "dataSection": "claims",
+          "dataFit": [
+            "O-F9"
+          ],
+          "dataEvidence": [
+            "policy:pii-minimization-policy",
+            "policy:claims-boundary-policy"
+          ],
+          "dataViews": []
+        }
+      ],
+      "piiChecks": [
+        {
+          "check": "스냅샷에 birthDate 없음",
+          "passed": true,
+          "detail": "site/data/onboard.json"
+        },
+        {
+          "check": "HTML에 riskScore 표시 없음",
+          "passed": true,
+          "detail": "site/onboard/index.html (내장 JSON 제외)"
+        },
+        {
+          "check": "90일 코호트에 성명 없음",
+          "passed": true,
+          "detail": "data-section=cohort"
+        }
+      ]
+    }
+  },
+  "advocate": {
+    "head-of-hr": {
+      "insight": {
+        "coverage": 1.0,
+        "weightedCoverage": 1.0,
+        "verifiable": 15,
+        "met": [
+          "H-F1",
+          "H-F2",
+          "H-F3",
+          "H-F4",
+          "H-F5",
+          "H-F6",
+          "H-F7",
+          "H-F8",
+          "H-F9",
+          "H-F10",
+          "H-F11",
+          "H-F12",
+          "H-F13",
+          "H-F14",
+          "H-F15"
+        ],
+        "unmet": []
+      },
+      "payroll": {
+        "coverage": 0.3571,
+        "weightedCoverage": 0.434,
+        "verifiable": 14,
+        "met": [
+          "H-F2",
+          "H-F3",
+          "H-F5",
+          "H-F6",
+          "H-F15"
+        ],
+        "unmet": [
+          {
+            "id": "H-F1",
+            "reason": "data-fit 에 H-F1 를 단 섹션 없음 (스냅샷 경로도 비어 있음); data-fit 에 H-F1 를 단 섹션 없음 (스냅샷 경로도 비어 있음); data-fit 에 H-F1 를 단 섹션 없음 (스냅샷 경로도 비어 있음)"
+          },
+          {
+            "id": "H-F4",
+            "reason": "data-fit 에 H-F4 를 단 섹션 없음 (스냅샷 경로도 비어 있음); data-fit 에 H-F4 를 단 섹션 없음 (스냅샷 경로도 비어 있음); data-fit 에 H-F4 를 단 섹션 없음 (스냅샷 경로도 비어 있음); data-fit 에 H-F4 를 단 섹션 없음 (스냅샷 경로도 비어 있음)"
+          },
+          {
+            "id": "H-F7",
+            "reason": "data-fit 에 H-F7 를 단 섹션 없음; data-fit 에 H-F7 를 단 섹션 없음; data-fit 에 H-F7 를 단 섹션 없음 (스냅샷 경로도 비어 있음)"
+          },
+          {
+            "id": "H-F8",
+            "reason": "리포트 산출물 또는 링크 없음"
+          },
+          {
+            "id": "H-F10",
+            "reason": "data-fit 에 H-F10 를 단 섹션 없음 (스냅샷 경로도 비어 있음); data-fit 에 H-F10 를 단 섹션 없음 (스냅샷 경로도 비어 있음); data-fit 에 H-F10 를 단 섹션 없음 (스냅샷 경로도 비어 있음); data-fit 에 H-F10 를 단 섹션 없음 (스냅샷 경로도 비어 있음)"
+          },
+          {
+            "id": "H-F11",
+            "reason": "data-fit 에 H-F11 를 단 섹션 없음 (스냅샷 경로도 비어 있음); data-fit 에 H-F11 를 단 섹션 없음 (스냅샷 경로도 비어 있음); data-fit 에 H-F11 를 단 섹션 없음 (스냅샷 경로도 비어 있음)"
+          },
+          {
+            "id": "H-F12",
+            "reason": "data-fit 에 H-F12 를 단 섹션 없음 (스냅샷 경로도 비어 있음); data-fit 에 H-F12 를 단 섹션 없음 (스냅샷 경로도 비어 있음); data-fit 에 H-F12 를 단 섹션 없음 (스냅샷 경로도 비어 있음)"
+          },
+          {
+            "id": "H-F13",
+            "reason": "data-fit 에 H-F13 를 단 섹션 없음"
+          },
+          {
+            "id": "H-F14",
+            "reason": "data-fit 에 H-F14 를 단 섹션 없음"
+          }
+        ]
+      },
+      "onboard": {
+        "coverage": 0.6667,
+        "weightedCoverage": 0.6857,
+        "verifiable": 9,
+        "met": [
+          "H-F2",
+          "H-F3",
+          "H-F12",
+          "H-F13",
+          "H-F14",
+          "H-F15"
+        ],
+        "unmet": [
+          {
+            "id": "H-F5",
+            "reason": "data-fit 에 H-F5 를 단 섹션 없음 (스냅샷 경로도 비어 있음); data-fit 에 H-F5 를 단 섹션 없음"
+          },
+          {
+            "id": "H-F6",
+            "reason": "data-fit 에 H-F6 를 단 섹션 없음 (스냅샷 경로도 비어 있음); data-fit 에 H-F6 를 단 섹션 없음 (스냅샷 경로도 비어 있음); data-fit 에 H-F6 를 단 섹션 없음"
+          },
+          {
+            "id": "H-F8",
+            "reason": "리포트 산출물 또는 링크 없음"
+          }
+        ]
+      }
+    },
+    "payroll": {
+      "insight": {
+        "coverage": 0.8571,
+        "weightedCoverage": 0.8077,
+        "verifiable": 7,
+        "met": [
+          "P-F1",
+          "P-F9",
+          "P-F10",
+          "P-F11",
+          "P-F13",
+          "P-F14"
+        ],
+        "unmet": [
+          {
+            "id": "P-F6",
+            "reason": "data-fit 에 P-F6 를 단 섹션 없음"
+          }
+        ]
+      },
+      "payroll": {
+        "coverage": 1.0,
+        "weightedCoverage": 1.0,
+        "verifiable": 14,
+        "met": [
+          "P-F1",
+          "P-F2",
+          "P-F3",
+          "P-F4",
+          "P-F5",
+          "P-F6",
+          "P-F7",
+          "P-F8",
+          "P-F9",
+          "P-F10",
+          "P-F11",
+          "P-F12",
+          "P-F13",
+          "P-F14"
+        ],
+        "unmet": []
+      },
+      "onboard": {
+        "coverage": 0.8571,
+        "weightedCoverage": 0.8077,
+        "verifiable": 7,
+        "met": [
+          "P-F1",
+          "P-F9",
+          "P-F10",
+          "P-F11",
+          "P-F13",
+          "P-F14"
+        ],
+        "unmet": [
+          {
+            "id": "P-F6",
+            "reason": "data-fit 에 P-F6 를 단 섹션 없음"
+          }
+        ]
+      }
+    },
+    "onboarding": {
+      "insight": {
+        "coverage": 0.8333,
+        "weightedCoverage": 0.8636,
+        "verifiable": 6,
+        "met": [
+          "O-F1",
+          "O-F8",
+          "O-F9",
+          "O-F12",
+          "O-F13"
+        ],
+        "unmet": [
+          {
+            "id": "O-F11",
+            "reason": "data-fit 에 O-F11 를 단 섹션 없음"
+          }
+        ]
+      },
+      "payroll": {
+        "coverage": 0.8333,
+        "weightedCoverage": 0.8636,
+        "verifiable": 6,
+        "met": [
+          "O-F1",
+          "O-F8",
+          "O-F9",
+          "O-F12",
+          "O-F13"
+        ],
+        "unmet": [
+          {
+            "id": "O-F11",
+            "reason": "data-fit 에 O-F11 를 단 섹션 없음 (스냅샷 경로도 비어 있음)"
+          }
+        ]
+      },
+      "onboard": {
+        "coverage": 1.0,
+        "weightedCoverage": 1.0,
+        "verifiable": 13,
+        "met": [
+          "O-F1",
+          "O-F2",
+          "O-F3",
+          "O-F4",
+          "O-F5",
+          "O-F6",
+          "O-F7",
+          "O-F8",
+          "O-F9",
+          "O-F10",
+          "O-F11",
+          "O-F12",
+          "O-F13"
+        ],
+        "unmet": []
+      }
+    }
+  },
+  "warnings": [],
+  "script": ".claude/skills/product-judge/scripts/mechanical_scoring.py"
+}

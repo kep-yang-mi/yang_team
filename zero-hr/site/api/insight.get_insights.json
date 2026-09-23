@@ -1,0 +1,72 @@
+{
+  "status": "ok",
+  "asOfDate": "2026-09-23",
+  "role": "executive",
+  "tool": "insight.get_insights",
+  "data": {
+    "asOfDate": "2026-09-23",
+    "monthEnd": "2026-09-30",
+    "insights": [
+      {
+        "type": "채용 가속 필요",
+        "scope": "department",
+        "codes": [
+          "D03",
+          "D06"
+        ],
+        "label": "Engineering, Sales",
+        "detail": "Engineering −7, Sales −4",
+        "action": "채용 pipeline 점검"
+      },
+      {
+        "type": "TO 재검토 필요",
+        "scope": "department",
+        "codes": [
+          "D05"
+        ],
+        "label": "Data & AI",
+        "detail": "+7 초과 예상",
+        "action": "TO 재배분 또는 내부 이동배치"
+      },
+      {
+        "type": "퇴사 영향 점검",
+        "scope": "department",
+        "codes": [
+          "D11"
+        ],
+        "label": "Legal & Compliance",
+        "detail": "재직 11명 조직에서 1명 퇴사 예정, 월말 −2",
+        "action": "업무 공백·인수인계 점검"
+      }
+    ],
+    "immediateActions": [
+      "Engineering/Sales 채용 pipeline 점검",
+      "Data & AI TO 재검토",
+      "Legal & Compliance 퇴사 영향 점검"
+    ],
+    "assumptions": [
+      "입사 예정자는 예정일에 전원 입사",
+      "퇴사 예정자는 예정일에 전원 퇴사(예정일이 지난 stale 건 포함)",
+      "TO 비교는 재직 인원 기준(휴직 제외)",
+      "마스터에 없는 사번의 퇴사 예정은 제외",
+      "휴직자의 퇴사 예정은 재직 기준 예측에서 제외(급여 마감 총원에는 별도 반영)",
+      "다음 달 TO는 기준월 TO를 그대로 적용(다음 달 TO 계획 미수령)",
+      "리스크 반영 시나리오는 attrition-risk.json 의 조직별 3개월 기대 이탈의 1/3을 다음 달 말에 반영(기본 예측을 대체하지 않는 시나리오, 퇴사 예정자와 일부 중복 가능)"
+    ],
+    "gate": "approval-gate: 권고(채용 가속·TO 재검토/이동배치·퇴사 영향 점검)와 즉시 액션은 제안이며 채용/TO 결정은 사람이 승인한다",
+    "recommendationRule": "gapME ≤ −4 → 채용 가속 / gapME ≥ +5 → TO 재검토/이동배치 / 그 외 정상 관리"
+  },
+  "provenance": {
+    "source": "data/stats/month-end-forecast.json",
+    "script": ".claude/skills/month-end-forecast/scripts/forecast.py"
+  },
+  "claims": {
+    "implemented": [
+      "insights·immediateActions 는 month-end-forecast.json 값 그대로"
+    ],
+    "mockup": [],
+    "approvalPending": [
+      "권고(채용 가속·TO 재검토/이동배치·퇴사 영향 점검)의 채택은 사람의 승인 gate — 이 응답은 제안이다"
+    ]
+  }
+}

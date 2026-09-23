@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Payroll Close — ㈜온다테크</title>
+<meta name="description" content="Zero Company HR · Everyday People Agent — 급여 담당용 월말 급여 마감 화면(대상 인원·일할·휴직·계약 만료·오류 위험). 금액은 다루지 않음.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+KR:wght@400;600&family=Noto+Sans+KR:wght@400;500;700&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+<style>
+/* 디자인 시스템: references/design-system.md (Anthropic, 2026-09-23) — 토큰만 쓴다. 그림자·그라데이션 없음 */
+:root {
+  color-scheme: light;
+  --bg: #f0eee6; --surface: #faf9f5; --surface-2: #e3dacc; --surface-hero: #f5e3c7;
+  --ink: #141413; --ink-2: #3d3d3a; --ink-muted: #87867f; --ink-faint: #b0aea5;
+  --line: #cccbc8; --line-strong: #87867f;
+  --accent: #d97757; --accent-deep: #c6613f; --on-accent: #ffffff;
+  --good: #6f8f6a; --warning: #b8965e; --critical: #c6613f; --neutral: #87867f;
+  --series-1: #d97757; --series-2: #3d3d3a; --series-3: #b8965e; --series-4: #7f8b74;
+  --series-5: #8c5a6b; --series-6: #a17c4a; --series-7: #5f6f7a; --series-8: #b0aea5;
+  --diverge-neg: #c6613f; --diverge-pos: #7f8b74; --diverge-mid: #cccbc8;
+  --font-serif: "Source Serif 4", "Noto Serif KR", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font: var(--font-sans);
+  --radius: 24px; --radius-btn: 12px; --radius-cta: 8px; --radius-badge: 0px;
+  --shadow: none; --max-w: 1280px; --gutter: 16px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #141413; --surface: #1f1f1e; --surface-2: #2a2a28; --surface-hero: #2f2a22;
+    --ink: #faf9f5; --ink-2: #e3dacc; --ink-muted: #b0aea5; --ink-faint: #87867f;
+    --line: #3d3d3a; --line-strong: #87867f;
+    --series-2: #cccbc8; --diverge-mid: #3d3d3a;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #141413; --surface: #1f1f1e; --surface-2: #2a2a28; --surface-hero: #2f2a22;
+  --ink: #faf9f5; --ink-2: #e3dacc; --ink-muted: #b0aea5; --ink-faint: #87867f;
+  --line: #3d3d3a; --line-strong: #87867f;
+  --series-2: #cccbc8; --diverge-mid: #3d3d3a;
+}
+html { background: var(--bg); }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-sans); font-size: 16px; letter-spacing: -0.08px; line-height: 1.5; -webkit-text-size-adjust: 100%; }
+main { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter) 48px; }
+section { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; margin: 16px 0; box-shadow: none; }
+@media (max-width: 600px) { section { padding: 18px; } }
+h1, h2, h3 { font-family: var(--font-serif); font-weight: 600; color: var(--ink); }
+h1 { font-size: 32px; line-height: 1.1; letter-spacing: -0.12px; margin: 0; }
+h2 { font-size: 24px; line-height: 1.3; letter-spacing: -0.05px; margin: 0 0 12px; }
+h3 { font-size: 19px; line-height: 1.3; margin: 20px 0 8px; }
+@media (max-width: 600px) { h1 { font-size: 26px; } h2 { font-size: 21px; } }
+p { margin: 8px 0; }
+a { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; } a:hover { color: var(--accent-deep); }
+.muted { color: var(--ink-2); } .faint { color: var(--ink-muted); } .num { font-variant-numeric: tabular-nums; }
+.small { font-size: 12px; letter-spacing: -0.24px; }
+code { font-family: var(--font-mono); font-size: 0.85em; background: var(--surface-2); padding: 1px 4px; border-radius: 0; color: var(--ink); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+.skip { position: absolute; left: -999px; top: 8px; background: var(--surface); padding: 6px 10px; border: 1px solid var(--line); z-index: 10; }
+.skip:focus { left: 8px; }
+
+/* header */
+.app-header { max-width: var(--max-w); margin: 0 auto; padding: 20px var(--gutter) 14px; display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: flex-start; border-bottom: 1px solid var(--line); }
+.brand { flex: 1 1 260px; }
+.brand-os { display: block; font-family: var(--font-serif); font-size: 15px; color: var(--ink-2); }
+.brand h1 { font-family: var(--font-sans); font-weight: 600; font-size: 22px; letter-spacing: -0.12px; }
+@media (max-width: 600px) { .brand h1 { font-size: 20px; } }
+dl.meta { display: flex; flex-wrap: wrap; gap: 6px 20px; margin: 0; }
+dl.meta > div { display: flex; flex-direction: column; min-width: 96px; }
+dl.meta dt { font-size: 12px; letter-spacing: -0.24px; font-weight: 500; color: var(--ink-muted); }
+dl.meta dd { margin: 0; font-size: 15px; }
+.app-header nav { display: flex; gap: 8px; align-items: center; margin-left: auto; }
+.app-header nav a, .app-header nav button { font: inherit; font-size: 14px; color: var(--ink); background: transparent; border: 1px solid var(--line-strong); border-radius: var(--radius-btn); padding: 6px 14px; text-decoration: none; cursor: pointer; }
+.app-header nav a:hover, .app-header nav button:hover { border-color: var(--accent-deep); color: var(--accent-deep); }
+
+/* badges — 각, 테두리·점만 상태색, 글자는 잉크 */
+.badge { display: inline-block; font-size: 12px; letter-spacing: -0.24px; font-weight: 500; line-height: 1.4; padding: 2px 8px; border-radius: var(--radius-badge); border: 1px solid var(--line-strong); background: transparent; color: var(--ink); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.badge[data-source="live"] { border-color: var(--good); }
+.badge-good { border-color: var(--good); }
+.badge-warning { border-color: var(--warning); }
+.badge-serious { border-color: var(--accent); }
+.badge-critical { border-color: var(--critical); }
+.badge-plain { border-color: var(--line); color: var(--ink-2); }
+.badge code { background: transparent; padding: 0; font-size: 0.95em; }
+
+/* tiles */
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+.tiles.hero { background: var(--surface-hero); border: 1px solid var(--line); border-radius: 16px; padding: 12px; margin-bottom: 10px; }
+.tile { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.hero .tile { background: transparent; border-color: color-mix(in srgb, var(--line) 60%, transparent); }
+.tile-label { font-size: 12px; letter-spacing: -0.24px; font-weight: 500; color: var(--ink-2); }
+.tile-value { font-family: var(--font-serif); font-weight: 600; font-size: 40px; line-height: 1; color: var(--ink); }
+@media (max-width: 600px) { .tile-value { font-size: 32px; } }
+.tile-sub { font-size: 12px; letter-spacing: -0.24px; color: var(--ink-2); }
+.tile-sub .badge { margin-top: 3px; }
+.tile.tile-primary .tile-value { color: var(--accent-deep); }
+.tile.tile-alert { border-color: var(--critical); }
+
+/* tables */
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 15px; min-width: 480px; }
+caption { text-align: left; font-size: 12px; letter-spacing: -0.24px; font-weight: 500; color: var(--ink-muted); padding: 10px 12px 6px; caption-side: top; }
+th, td { padding: 8px 12px; border-top: 1px solid var(--line); text-align: left; vertical-align: top; }
+thead th { border-top: 0; border-bottom: 1px solid var(--line); font-weight: 500; font-size: 12px; letter-spacing: -0.24px; color: var(--ink-muted); white-space: nowrap; background: transparent; }
+th.num, td.num { text-align: right; }
+tfoot td, tfoot th { font-weight: 600; border-top: 1px solid var(--line-strong); }
+tr.is-pending td:first-child, tr.is-derived td:first-child { box-shadow: none; }
+tr.is-derived td { color: var(--ink); }
+.nowrap { white-space: nowrap; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; margin: 8px 0 10px; }
+.toolbar input[type="search"] { font: inherit; font-size: 14px; padding: 6px 10px; border: 1px solid var(--line-strong); border-radius: var(--radius-btn); background: var(--surface); color: var(--ink); min-width: 0; width: 220px; max-width: 100%; }
+.pills { display: flex; gap: 0; overflow-x: auto; white-space: nowrap; padding-bottom: 2px; border-bottom: 1px solid var(--line); }
+.pill { font: inherit; font-size: 14px; padding: 6px 12px; border: 0; border-bottom: 2px solid transparent; background: transparent; color: var(--ink-2); cursor: pointer; margin-bottom: -1px; }
+.pill:hover { color: var(--ink); }
+.pill[aria-pressed="true"] { color: var(--ink); border-bottom-color: var(--accent); font-weight: 600; }
+.foot { font-size: 12px; letter-spacing: -0.24px; color: var(--ink-muted); margin: 10px 0 0; }
+.empty { padding: 12px; border: 1px dashed var(--line-strong); color: var(--ink-2); font-size: 15px; }
+.sec-head { display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: baseline; justify-content: space-between; }
+.sec-head h2 { margin-bottom: 4px; }
+.sec-head .lead { margin: 0 0 10px; font-size: 15px; color: var(--ink-2); flex-basis: 100%; }
+.two-col { display: grid; grid-template-columns: 1fr; gap: 16px; }
+@media (min-width: 860px) { .two-col { grid-template-columns: 1fr 1fr; } }
+
+/* charts */
+.chart { position: relative; height: 280px; margin: 8px 0; }
+@media (max-width: 600px) { .chart { height: 220px; } }
+canvas { max-width: 100%; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12px; letter-spacing: -0.24px; color: var(--ink); margin: 4px 0; }
+.legend span::before { content: ""; display: inline-block; width: 10px; height: 10px; margin-right: 5px; background: var(--sw, var(--series-1)); vertical-align: -1px; opacity: var(--op, 1); }
+.swatch { display: inline-block; width: 10px; height: 10px; margin-right: 6px; vertical-align: -1px; }
+
+/* footer */
+.app-footer { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter) 40px; font-size: 14px; color: var(--ink-2); }
+.app-footer section { margin: 0 0 12px; background: var(--surface-2); }
+.app-footer .table-wrap { background: transparent; }
+.app-footer table { min-width: 0; font-size: 14px; }
+.app-footer th, .app-footer td { padding: 6px 10px; }
+.kv { display: grid; grid-template-columns: max-content 1fr; gap: 4px 12px; font-size: 14px; margin-top: 12px; }
+.kv dt { color: var(--ink-muted); } .kv dd { margin: 0; }
+@media (max-width: 600px) { .kv { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="app-header" data-section="header" data-fit="P-F10" data-evidence="payrollClose.payPeriod payrollClose.periodStart payrollClose.periodEnd payrollClose.asOfDate statsSubset.client">
+  <div class="brand">
+    <span class="brand-os">Zero Company HR · Everyday People Agent</span>
+    <h1 id="product-name">Payroll Close <span class="muted">— 급여 담당</span></h1>
+  </div>
+  <dl class="meta">
+    <div><dt>고객사</dt><dd id="meta-client">㈜온다테크</dd></div>
+    <div><dt>기준일</dt><dd id="meta-as-of" class="num">—</dd></div>
+    <div><dt>급여 기간</dt><dd class="num"><span id="meta-pay-period">—</span> <span id="meta-period-range" class="faint small"></span></dd></div>
+    <div><dt>데이터 출처</dt><dd><span id="source-badge" class="badge" aria-live="polite" data-source="embedded">내장</span></dd></div>
+  </dl>
+  <nav aria-label="제품 이동">
+    <button type="button" id="theme-toggle" aria-label="테마 전환">테마: 자동</button>
+    <a href="../">← 허브</a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <section data-section="kpi" data-fit="P-F1 P-F13 P-F8" data-evidence="payrollClose.payrollHeadcount.asOfTotal payrollClose.payrollHeadcount.asOfActive payrollClose.payrollHeadcount.asOfOnLeave payrollClose.payrollHeadcount.monthEndActive payrollClose.payrollHeadcount.monthEndTotal payrollClose.provenance.reconciliation.matched payrollClose.provenance.reconciliation.forecastMonthEnd statsSubset.totals.headcount statsSubset.totals.plannedIn statsSubset.totals.plannedOut payrollClose.prorations.joinersInPeriod payrollClose.leaves.byTreatment payrollClose.contracts.expiringWithin90Days payrollClose.risks payrollClose.checklist reconciliation:payroll-close.payrollHeadcount.monthEndActive=month-end-forecast.totals.forecastMonthEnd reconciliation:payroll-close.payrollHeadcount.asOfTotal=headcount-stats.totals.headcount">
+    <div class="sec-head">
+      <h2>이번 달 급여 대상 — 한눈에</h2>
+      <p class="lead">급여 대상 = 재직 + 휴직(총원). TO 비교와 월말 예측 대사는 재직만 쓴다. 금액은 이 화면에서 다루지 않는다.</p>
+    </div>
+    <div class="tiles hero" id="kpi-tiles-hero" aria-label="급여 대상 인원 — 핵심 지표"></div>
+    <div class="tiles" id="kpi-tiles"></div>
+    <p class="foot" id="kpi-foot"></p>
+  </section>
+
+  <section data-section="checklist" data-fit="P-F8" data-evidence="payrollClose.checklist[].item payrollClose.checklist[].count payrollClose.checklist[].status">
+    <div class="sec-head">
+      <h2>마감 체크리스트</h2>
+      <span id="checklist-summary" class="badge"></span>
+      <p class="lead">아직 안 끝난 항목(pending)이 먼저. 각 항목의 건수는 아래 섹션의 목록 행 수와 같다.</p>
+    </div>
+    <div id="checklist"></div>
+    <p class="foot">완료율은 done ÷ 전체(표시용, 대사 대상 아님). 상태는 급여 마감 분석 산출물의 값이며 화면에서 바꿀 수 없다.</p>
+  </section>
+
+  <section data-section="headcount" data-fit="P-F7 P-F13" data-evidence="payrollClose.payrollHeadcount.byEmploymentType payrollClose.payrollHeadcount.byDepartment[] payrollClose.payrollHeadcount.asOfTotal payrollClose.payrollHeadcount.monthEndActive payrollClose.payrollHeadcount.monthEndTotal statsSubset.totals statsSubset.byDepartment[].orgGroup">
+    <div class="sec-head">
+      <h2>급여 대상 집계 — 고용유형·조직 (Finance 전달용)</h2>
+      <p class="lead">기준일 총원과 월말 총원을 나란히. 고용유형 색은 정규직·계약직·인턴·파견 순으로 고정.</p>
+    </div>
+    <h3>고용유형별 급여 대상</h3>
+    <div class="legend" id="emp-legend"></div>
+    <div class="chart" id="emp-chart-wrap"><canvas id="emp-chart" role="img" aria-label="고용유형별 급여 대상 인원 — 기준일과 월말 비교"></canvas></div>
+    <div class="table-wrap" id="emp-table"></div>
+    <h3>조직별 급여 대상</h3>
+    <div class="table-wrap" id="dept-table"></div>
+    <p class="foot">합계 행은 <code>payrollHeadcount</code>와 <code>statsSubset.totals</code>의 값 — statsSubset.totals와 같은 값(기준일 총원 <span id="dept-foot-stats" class="num"></span>). 변동 열은 월말 − 기준일(표시용, 대사 대상 아님).</p>
+  </section>
+
+  <section data-section="prorations-actual" data-fit="P-F2" data-evidence="payrollClose.prorations.joinersInPeriod[].empId payrollClose.prorations.joinersInPeriod[].name payrollClose.prorations.joinersInPeriod[].deptCode payrollClose.prorations.joinersInPeriod[].hireDate payrollClose.prorations.joinersInPeriod[].employmentType payrollClose.prorations.joinersInPeriod[].workedDays payrollClose.prorations.joinersInPeriod[].proratedRatio payrollClose.provenance.rules.proratedRatio">
+    <div class="sec-head">
+      <h2>당월 확정 입사자 — 일할 계산 대상</h2>
+      <span id="joiners-count" class="badge"></span>
+      <p class="lead">기준일까지 실제 입사한 사람. 일할 비율 산식: <span id="prorate-rule" class="faint"></span></p>
+    </div>
+    <div class="table-wrap" id="joiners-table"></div>
+  </section>
+
+  <section data-section="prorations-planned" data-fit="P-F3 P-F12" data-evidence="payrollClose.prorations.plannedJoinersByMonthEnd[].joinerId payrollClose.prorations.plannedJoinersByMonthEnd[].name payrollClose.prorations.plannedJoinersByMonthEnd[].deptCode payrollClose.prorations.plannedJoinersByMonthEnd[].plannedHireDate payrollClose.prorations.plannedJoinersByMonthEnd[].workedDays payrollClose.prorations.plannedJoinersByMonthEnd[].proratedRatio payrollClose.prorations.plannedLeaversByMonthEnd[].empId payrollClose.prorations.plannedLeaversByMonthEnd[].name payrollClose.prorations.plannedLeaversByMonthEnd[].deptCode payrollClose.prorations.plannedLeaversByMonthEnd[].plannedTerminationDate payrollClose.prorations.plannedLeaversByMonthEnd[].separationType payrollClose.prorations.plannedLeaversByMonthEnd[].workedDays payrollClose.prorations.plannedLeaversByMonthEnd[].proratedRatio">
+    <div class="sec-head">
+      <h2>월말까지 예정 입·퇴사 — 확정과 구분</h2>
+      <p class="lead">아직 일어나지 않은 이벤트. "예정" 배지가 붙은 행은 확정 입사자와 별도로 급여 등록·최종 정산을 준비한다. 퇴사 예정은 퇴직 구분(자발/비자발)으로 정산 일정을 나눈다.</p>
+    </div>
+    <div class="two-col">
+      <div>
+        <h3>입사 예정 <span id="planned-joiners-count" class="badge"></span></h3>
+        <div class="table-wrap" id="planned-joiners-table"></div>
+      </div>
+      <div>
+        <h3>퇴사 예정 <span id="planned-leavers-count" class="badge"></span> <span id="sep-type-badges"></span></h3>
+        <div class="table-wrap" id="planned-leavers-table"></div>
+        <p class="foot">퇴직 사유(계약만료·조직개편 등)는 이 스냅샷에 없음 — 정제 퇴사 예정자 파일 <code>separationReason</code> 참조(인계점).</p>
+      </div>
+    </div>
+  </section>
+
+  <section data-section="leaves" data-fit="P-F4" data-evidence="payrollClose.leaves.byTreatment payrollClose.leaves.onLeave[].empId payrollClose.leaves.onLeave[].name payrollClose.leaves.onLeave[].deptCode payrollClose.leaves.onLeave[].leaveType payrollClose.leaves.onLeave[].leaveStart payrollClose.leaves.onLeave[].payrollTreatment payrollClose.provenance.rules.leaveTreatment">
+    <div class="sec-head">
+      <h2>휴직자 — 급여 처리 구분</h2>
+      <span id="leaves-count" class="badge"></span>
+      <p class="lead">처리 규칙: <span id="leave-rule" class="faint"></span> (회사 규정 가정, 계약 §10)</p>
+    </div>
+    <div class="tiles" id="leave-tiles"></div>
+    <div class="toolbar">
+      <div class="pills" id="leave-pills" role="group" aria-label="처리 구분 필터"></div>
+      <input type="search" id="leave-search" aria-label="휴직자 검색(성명·사번·조직)" placeholder="성명·사번·조직 검색">
+    </div>
+    <div class="table-wrap" id="leave-table"></div>
+  </section>
+
+  <section data-section="contracts" data-fit="P-F5" data-evidence="payrollClose.contracts.byMonth payrollClose.contracts.expiringWithin90Days[].empId payrollClose.contracts.expiringWithin90Days[].name payrollClose.contracts.expiringWithin90Days[].deptCode payrollClose.contracts.expiringWithin90Days[].employmentType payrollClose.contracts.expiringWithin90Days[].contractEndDate payrollClose.provenance.rules.contractWindowDays">
+    <div class="sec-head">
+      <h2>90일 내 계약 만료 예정</h2>
+      <span id="contracts-count" class="badge"></span>
+      <p class="lead">계약직·인턴·파견 중 계약종료일이 기준일 + <span id="contract-window"></span>일 이내. 조직장·인사 총괄에 연장/종료를 확인한다.</p>
+    </div>
+    <h3>월별 만료 건수</h3>
+    <div class="chart" id="contract-chart-wrap"><canvas id="contract-chart" role="img" aria-label="월별 계약 만료 건수"></canvas></div>
+    <div class="table-wrap" id="contract-month-table"></div>
+    <h3>만료 예정자 목록</h3>
+    <div class="toolbar">
+      <div class="pills" id="contract-pills" role="group" aria-label="고용유형 필터"></div>
+      <input type="search" id="contract-search" aria-label="계약 만료자 검색(성명·사번·조직)" placeholder="성명·사번·조직 검색">
+    </div>
+    <div class="table-wrap" id="contract-table"></div>
+    <p class="foot">D-day는 기준일 대비 남은 일수(표시용). 계약종료일이 없는 계약직·인턴·파견은 아래 "급여 오류 위험"에 <code>missing-required</code>로 나타난다.</p>
+  </section>
+
+  <section data-section="risks" data-fit="P-F6" data-evidence="payrollClose.risks[].empId payrollClose.risks[].issue payrollClose.risks[].impact payrollClose.risks[].unresolvedFlag payrollClose.provenance.rules.derivedFlags">
+    <div class="sec-head">
+      <h2>급여 오류 위험 — 확정 전 확인 대상</h2>
+      <span id="risks-count" class="badge badge-serious"></span>
+      <p class="lead">과지급·미지급으로 이어질 수 있는 항목. 플래그 어휘는 클린저 것 그대로. <strong>급여 담당 즉시 확인</strong>(급여 마감 규칙이 파생한 플래그)이 먼저, <strong>고객사 HR 확인 대기</strong>(클린징 미해결 플래그)가 다음.</p>
+    </div>
+    <div class="tiles" id="risk-tiles"></div>
+    <div class="table-wrap" id="risk-table"></div>
+    <p class="foot" id="risk-foot"></p>
+  </section>
+
+  <section data-section="data-quality" data-fit="P-F11" data-evidence="cleansingSummary.unresolvedCount cleansingSummary.unresolvedItems[].source cleansingSummary.unresolvedItems[].rowRef cleansingSummary.unresolvedItems[].field cleansingSummary.unresolvedItems[].rawValue cleansingSummary.unresolvedItems[].flag cleansingSummary.unresolvedItems[].question cleansingSummary.asOfDate statsSubset.totals.unresolvedCount reconciliation:site/data/payroll.json.cleansingSummary.unresolvedCount=cleansing-summary.unresolvedCount">
+    <div class="sec-head">
+      <h2>데이터 품질 — 미해결 항목</h2>
+      <span id="dq-count" class="badge"></span>
+      <p class="lead">클린징에서 보정하지 못해 고객사 HR에 질문으로 남긴 항목. Insight의 클린징 요약과 같은 파일(<code>cleansing-summary.json</code>)이므로 같은 수치다.</p>
+    </div>
+    <div class="table-wrap" id="dq-table"></div>
+    <p class="foot" id="dq-foot"></p>
+  </section>
+
+</main>
+
+<footer class="app-footer">
+  <section data-section="claims" data-fit="P-F9" data-evidence="policy:pii-minimization-policy payrollClose.provenance.rules.pii payrollClose.payrollHeadcount site/payroll/index.html">
+    <h2>이 화면의 범위</h2>
+    <div class="table-wrap">
+      <table>
+        <caption>구현됨 / 목업(준비 완료) / 승인 대기 — claims-boundary-policy</caption>
+        <thead><tr><th scope="col">상태</th><th scope="col">해당하는 것</th></tr></thead>
+        <tbody>
+          <tr><td><span class="badge badge-good">구현됨</span></td><td>스냅샷 내장 렌더(<code>site/data/payroll.json</code>), 체크리스트·목록·집계 표시, 표 검색·필터(클라이언트 표시 필터), 라이트/다크, 대사 배지(급여 마감 산출물의 <code>provenance.reconciliation</code> 값 표시)</td></tr>
+          <tr><td><span class="badge badge-warning">목업 / 준비 완료</span></td><td>Supabase 덮어쓰기(<code>config.js</code>가 있을 때만 <code>report_snapshots</code> 최신 행으로 갱신 — 없으면 내장 스냅샷 기준), 체크리스트 상태(급여 마감 스크립트가 정한 값)</td></tr>
+          <tr><td><span class="badge badge-plain">승인 대기</span></td><td>급여 대상 인원 확정 · 일할 대상 확정 · 휴직 처리 구분 확정 · 계약 만료 연장 여부 · 오류 위험 항목 보류/확인 요청 — 모두 급여 담당의 결정이며 이 화면은 검토용 초안이다</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <dl class="kv">
+      <dt>개인정보</dt><dd>성명은 급여 업무상 표시. 생년월일·연령대·이직 리스크 없음. <strong>금액·보상·세금·수당·납입 정보는 다루지 않음</strong>(스키마에 해당 필드 없음). <span id="pii-rule" class="faint"></span></dd>
+      <dt>데이터 정본</dt><dd><code>site/data/payroll.json</code> = {payrollClose, statsSubset, cleansingSummary} · 생성 <code>build_snapshots.py</code> · 상류 <code id="prov-script"></code></dd>
+      <dt>재계산 없음</dt><dd>페이지는 값을 다시 계산하지 않는다. 완료율·변동·D-day는 표시용이며 대사 대상이 아니다.</dd>
+    </dl>
+  </section>
+</footer>
+
+<script id="report-data" type="application/json">
+{"payrollClose":{"asOfDate":"2026-09-23","payPeriod":"2026-09","periodStart":"2026-09-01","periodEnd":"2026-09-30","payrollHeadcount":{"asOfActive":406,"asOfOnLeave":21,"asOfTotal":427,"monthEndActive":411,"monthEndTotal":432,"byEmploymentType":{"정규직":{"asOfTotal":354,"monthEndTotal":361},"계약직":{"asOfTotal":31,"monthEndTotal":29},"인턴":{"asOfTotal":19,"monthEndTotal":19},"파견":{"asOfTotal":23,"monthEndTotal":23}},"byDepartment":[{"deptCode":"D01","department":"CEO Office","asOfActive":10,"asOfOnLeave":0,"asOfTotal":10,"plannedIn":0,"plannedOut":0,"monthEndActive":10,"monthEndTotal":10},{"deptCode":"D02","department":"Product","asOfActive":51,"asOfOnLeave":3,"asOfTotal":54,"plannedIn":3,"plannedOut":1,"monthEndActive":53,"monthEndTotal":56},{"deptCode":"D03","department":"Engineering","asOfActive":104,"asOfOnLeave":6,"asOfTotal":110,"plannedIn":5,"plannedOut":4,"monthEndActive":105,"monthEndTotal":111},{"deptCode":"D04","department":"Design","asOfActive":25,"asOfOnLeave":1,"asOfTotal":26,"plannedIn":1,"plannedOut":1,"monthEndActive":25,"monthEndTotal":26},{"deptCode":"D05","department":"Data & AI","asOfActive":40,"asOfOnLeave":2,"asOfTotal":42,"plannedIn":2,"plannedOut":1,"monthEndActive":41,"monthEndTotal":43},{"deptCode":"D06","department":"Sales","asOfActive":58,"asOfOnLeave":3,"asOfTotal":61,"plannedIn":3,"plannedOut":3,"monthEndActive":58,"monthEndTotal":61},{"deptCode":"D07","department":"Marketing","asOfActive":30,"asOfOnLeave":1,"asOfTotal":31,"plannedIn":1,"plannedOut":1,"monthEndActive":30,"monthEndTotal":31},{"deptCode":"D08","department":"Customer Success","asOfActive":40,"asOfOnLeave":3,"asOfTotal":43,"plannedIn":2,"plannedOut":1,"monthEndActive":41,"monthEndTotal":44},{"deptCode":"D09","department":"People","asOfActive":18,"asOfOnLeave":1,"asOfTotal":19,"plannedIn":1,"plannedOut":0,"monthEndActive":19,"monthEndTotal":20},{"deptCode":"D10","department":"Finance","asOfActive":19,"asOfOnLeave":1,"asOfTotal":20,"plannedIn":1,"plannedOut":1,"monthEndActive":19,"monthEndTotal":20},{"deptCode":"D11","department":"Legal & Compliance","asOfActive":11,"asOfOnLeave":0,"asOfTotal":11,"plannedIn":0,"plannedOut":1,"monthEndActive":10,"monthEndTotal":10}]},"prorations":{"joinersInPeriod":[{"empId":"E0419","name":"방경리","deptCode":"D02","hireDate":"2026-09-05","employmentType":"정규직","workedDays":26,"proratedRatio":0.867},{"empId":"E0420","name":"백재영","deptCode":"D05","hireDate":"2026-09-08","employmentType":"정규직","workedDays":23,"proratedRatio":0.767},{"empId":"E0422","name":"심준호","deptCode":"D07","hireDate":"2026-09-10","employmentType":"정규직","workedDays":21,"proratedRatio":0.7},{"empId":"E0424","name":"신영미","deptCode":"D06","hireDate":"2026-09-10","employmentType":"정규직","workedDays":21,"proratedRatio":0.7},{"empId":"E0425","name":"오찬찬","deptCode":"D02","hireDate":"2026-09-20","employmentType":"정규직","workedDays":11,"proratedRatio":0.367}],"plannedJoinersByMonthEnd":[{"joinerId":"J014","name":"한아석","deptCode":"D05","plannedHireDate":"2026-09-24","workedDays":7,"proratedRatio":0.233},{"joinerId":"J020","name":"장건라","deptCode":"D03","plannedHireDate":"2026-09-24","workedDays":7,"proratedRatio":0.233},{"joinerId":"J021","name":"신원경","deptCode":"D08","plannedHireDate":"2026-09-24","workedDays":7,"proratedRatio":0.233},{"joinerId":"J003","name":"권재호","deptCode":"D09","plannedHireDate":"2026-09-25","workedDays":6,"proratedRatio":0.2},{"joinerId":"J015","name":"송유도","deptCode":"D02","plannedHireDate":"2026-09-25","workedDays":6,"proratedRatio":0.2},{"joinerId":"J016","name":"장민기","deptCode":"D06","plannedHireDate":"2026-09-25","workedDays":6,"proratedRatio":0.2},{"joinerId":"J022","name":"노우소","deptCode":"D07","plannedHireDate":"2026-09-25","workedDays":6,"proratedRatio":0.2},{"joinerId":"J023","name":"오주도","deptCode":"D06","plannedHireDate":"2026-09-25","workedDays":6,"proratedRatio":0.2},{"joinerId":"J007","name":"장소미","deptCode":"D03","plannedHireDate":"2026-09-26","workedDays":5,"proratedRatio":0.167},{"joinerId":"J013","name":"류라정","deptCode":"D06","plannedHireDate":"2026-09-26","workedDays":5,"proratedRatio":0.167},{"joinerId":"J025","name":"임희수","deptCode":"D08","plannedHireDate":"2026-09-26","workedDays":5,"proratedRatio":0.167},{"joinerId":"J002","name":"곽아주","deptCode":"D02","plannedHireDate":"2026-09-27","workedDays":4,"proratedRatio":0.133},{"joinerId":"J012","name":"심서찬","deptCode":"D03","plannedHireDate":"2026-09-27","workedDays":4,"proratedRatio":0.133},{"joinerId":"J024","name":"주은도","deptCode":"D03","plannedHireDate":"2026-09-28","workedDays":3,"proratedRatio":0.1},{"joinerId":"J026","name":"우소빈","deptCode":"D10","plannedHireDate":"2026-09-28","workedDays":3,"proratedRatio":0.1},{"joinerId":"J027","name":"유희윤","deptCode":"D02","plannedHireDate":"2026-09-28","workedDays":3,"proratedRatio":0.1},{"joinerId":"J008","name":"곽철연","deptCode":"D05","plannedHireDate":"2026-09-29","workedDays":2,"proratedRatio":0.067},{"joinerId":"J005","name":"공채건","deptCode":"D03","plannedHireDate":"2026-09-30","workedDays":1,"proratedRatio":0.033},{"joinerId":"J011","name":"최동주","deptCode":"D04","plannedHireDate":"2026-09-30","workedDays":1,"proratedRatio":0.033}],"plannedLeaversByMonthEnd":[{"empId":"E0251","name":"이우율","deptCode":"D11","plannedTerminationDate":"2026-09-15","separationType":"비자발적","workedDays":15,"proratedRatio":0.5},{"empId":"E0361","name":"민상다","deptCode":"D03","plannedTerminationDate":"2026-09-25","separationType":"비자발적","workedDays":25,"proratedRatio":0.833},{"empId":"E0028","name":"구석선","deptCode":"D08","plannedTerminationDate":"2026-09-27","separationType":"자발적","workedDays":27,"proratedRatio":0.9},{"empId":"E0107","name":"지호혜","deptCode":"D07","plannedTerminationDate":"2026-09-28","separationType":"자발적","workedDays":28,"proratedRatio":0.933},{"empId":"E0112","name":"현규빈","deptCode":"D03","plannedTerminationDate":"2026-09-28","separationType":"비자발적","workedDays":28,"proratedRatio":0.933},{"empId":"E0015","name":"류훈원","deptCode":"D05","plannedTerminationDate":"2026-09-30","separationType":"비자발적","workedDays":30,"proratedRatio":1.0},{"empId":"E0064","name":"허은선","deptCode":"D10","plannedTerminationDate":"2026-09-30","separationType":"자발적","workedDays":30,"proratedRatio":1.0},{"empId":"E0077","name":"성훈희","deptCode":"D06","plannedTerminationDate":"2026-09-30","separationType":"자발적","workedDays":30,"proratedRatio":1.0},{"empId":"E0118","name":"원준재","deptCode":"D04","plannedTerminationDate":"2026-09-30","separationType":"자발적","workedDays":30,"proratedRatio":1.0},{"empId":"E0128","name":"손수아","deptCode":"D03","plannedTerminationDate":"2026-09-30","separationType":"자발적","workedDays":30,"proratedRatio":1.0},{"empId":"E0352","name":"안찬아","deptCode":"D03","plannedTerminationDate":"2026-09-30","separationType":"비자발적","workedDays":30,"proratedRatio":1.0},{"empId":"E0363","name":"서예채","deptCode":"D06","plannedTerminationDate":"2026-09-30","separationType":"자발적","workedDays":30,"proratedRatio":1.0},{"empId":"E0366","name":"남지미","deptCode":"D02","plannedTerminationDate":"2026-09-30","separationType":"비자발적","workedDays":30,"proratedRatio":1.0},{"empId":"E0395","name":"황윤상","deptCode":"D06","plannedTerminationDate":"2026-09-30","separationType":"비자발적","workedDays":30,"proratedRatio":1.0}]},"leaves":{"onLeave":[{"empId":"E0169","name":"류예준","deptCode":"D09","leaveType":"질병휴직","leaveStart":"2025-09-27","payrollTreatment":"유급"},{"empId":"E0216","name":"지소동","deptCode":"D03","leaveType":"육아휴직","leaveStart":"2025-09-29","payrollTreatment":"무급(정부 급여)"},{"empId":"E0273","name":"차준석","deptCode":"D07","leaveType":"기타","leaveStart":"2025-10-24","payrollTreatment":"무급"},{"empId":"E0321","name":"강철라","deptCode":"D02","leaveType":"육아휴직","leaveStart":"2025-11-28","payrollTreatment":"무급(정부 급여)"},{"empId":"E0091","name":"홍훈승","deptCode":"D03","leaveType":"질병휴직","leaveStart":"2025-12-08","payrollTreatment":"유급"},{"empId":"E0199","name":"최동동","deptCode":"D06","leaveType":"질병휴직","leaveStart":"2025-12-09","payrollTreatment":"유급"},{"empId":"E0103","name":"주정혜","deptCode":"D10","leaveType":"질병휴직","leaveStart":"2025-12-14","payrollTreatment":"유급"},{"empId":"E0302","name":"장율우","deptCode":"D08","leaveType":"육아휴직","leaveStart":"2026-01-12","payrollTreatment":"무급(정부 급여)"},{"empId":"E0202","name":"최연철","deptCode":"D03","leaveType":"육아휴직","leaveStart":"2026-01-27","payrollTreatment":"무급(정부 급여)"},{"empId":"E0111","name":"차철연","deptCode":"D05","leaveType":"육아휴직","leaveStart":"2026-02-04","payrollTreatment":"무급(정부 급여)"},{"empId":"E0121","name":"류민리","deptCode":"D06","leaveType":"육아휴직","leaveStart":"2026-03-19","payrollTreatment":"무급(정부 급여)"},{"empId":"E0307","name":"우혜다","deptCode":"D05","leaveType":"육아휴직","leaveStart":"2026-04-25","payrollTreatment":"무급(정부 급여)"},{"empId":"E0359","name":"한리혜","deptCode":"D03","leaveType":"육아휴직","leaveStart":"2026-05-19","payrollTreatment":"무급(정부 급여)"},{"empId":"E0299","name":"민선민","deptCode":"D08","leaveType":"육아휴직","leaveStart":"2026-05-21","payrollTreatment":"무급(정부 급여)"},{"empId":"E0189","name":"성빈율","deptCode":"D02","leaveType":"육아휴직","leaveStart":"2026-05-25","payrollTreatment":"무급(정부 급여)"},{"empId":"E0085","name":"정호현","deptCode":"D02","leaveType":"기타","leaveStart":"2026-07-02","payrollTreatment":"무급"},{"empId":"E0161","name":"남동소","deptCode":"D03","leaveType":"육아휴직","leaveStart":"2026-07-23","payrollTreatment":"무급(정부 급여)"},{"empId":"E0305","name":"우영라","deptCode":"D04","leaveType":"육아휴직","leaveStart":"2026-07-27","payrollTreatment":"무급(정부 급여)"},{"empId":"E0031","name":"문민석","deptCode":"D06","leaveType":"기타","leaveStart":"2026-08-05","payrollTreatment":"무급"},{"empId":"E0043","name":"홍서철","deptCode":"D03","leaveType":"질병휴직","leaveStart":"2026-08-06","payrollTreatment":"유급"},{"empId":"E0049","name":"서태건","deptCode":"D08","leaveType":"기타","leaveStart":"2026-08-28","payrollTreatment":"무급"}],"byTreatment":{"무급(정부 급여)":12,"유급":5,"무급":4}},"contracts":{"expiringWithin90Days":[{"empId":"E0015","name":"류훈원","deptCode":"D05","employmentType":"계약직","contractEndDate":"2026-09-30"},{"empId":"E0352","name":"안찬아","deptCode":"D03","employmentType":"인턴","contractEndDate":"2026-09-30"},{"empId":"E0395","name":"황윤상","deptCode":"D06","employmentType":"인턴","contractEndDate":"2026-09-30"},{"empId":"E0417","name":"구준주","deptCode":"D03","employmentType":"인턴","contractEndDate":"2026-10-03"},{"empId":"E0327","name":"홍주아","deptCode":"D02","employmentType":"계약직","contractEndDate":"2026-10-05"},{"empId":"E0227","name":"서경빈","deptCode":"D03","employmentType":"파견","contractEndDate":"2026-10-06"},{"empId":"E0333","name":"전서상","deptCode":"D03","employmentType":"인턴","contractEndDate":"2026-10-10"},{"empId":"E0372","name":"심라현","deptCode":"D10","employmentType":"인턴","contractEndDate":"2026-10-11"},{"empId":"E0407","name":"현도아","deptCode":"D03","employmentType":"인턴","contractEndDate":"2026-10-22"},{"empId":"E0236","name":"오정진","deptCode":"D06","employmentType":"인턴","contractEndDate":"2026-11-01"},{"empId":"E0269","name":"강승다","deptCode":"D04","employmentType":"계약직","contractEndDate":"2026-11-06"},{"empId":"E0143","name":"주혜상","deptCode":"D04","employmentType":"파견","contractEndDate":"2026-11-07"},{"empId":"E0346","name":"송연찬","deptCode":"D03","employmentType":"인턴","contractEndDate":"2026-11-07"},{"empId":"E0390","name":"홍태윤","deptCode":"D06","employmentType":"인턴","contractEndDate":"2026-11-07"},{"empId":"E0079","name":"류아예","deptCode":"D08","employmentType":"파견","contractEndDate":"2026-11-09"},{"empId":"E0090","name":"허경석","deptCode":"D03","employmentType":"계약직","contractEndDate":"2026-11-14"},{"empId":"E0156","name":"엄은민","deptCode":"D03","employmentType":"파견","contractEndDate":"2026-11-14"},{"empId":"E0392","name":"차라준","deptCode":"D03","employmentType":"계약직","contractEndDate":"2026-11-17"},{"empId":"E0313","name":"지훈예","deptCode":"D03","employmentType":"인턴","contractEndDate":"2026-12-05"},{"empId":"E0127","name":"채주채","deptCode":"D05","employmentType":"파견","contractEndDate":"2026-12-10"},{"empId":"E0374","name":"강훈다","deptCode":"D07","employmentType":"인턴","contractEndDate":"2026-12-11"},{"empId":"E0217","name":"최환우","deptCode":"D05","employmentType":"인턴","contractEndDate":"2026-12-13"},{"empId":"E0388","name":"백상예","deptCode":"D06","employmentType":"계약직","contractEndDate":"2026-12-14"},{"empId":"E0345","name":"민석태","deptCode":"D06","employmentType":"인턴","contractEndDate":"2026-12-19"}],"byMonth":{"2026-09":3,"2026-10":6,"2026-11":9,"2026-12":6}},"risks":[{"empId":"E0251","issue":"퇴사 예정일이 이미 지남 → 월말 예측에서는 퇴사로 반영","impact":"퇴직 처리 누락 시 급여 과지급 위험","unresolvedFlag":"stale-planned-leaver"},{"empId":"E9999","issue":"퇴사 예정자 사번이 마스터에 없음 → 예측 제외","impact":"퇴직 정산 대상 오류 위험","unresolvedFlag":"unknown-emp"},{"empId":"E0426","issue":"입사일이 기준일 이후인데 재직/휴직","impact":"입사 전 급여 발생 위험","unresolvedFlag":"hire-after-as-of"},{"empId":"E0427","issue":"입사일이 기준일 이후인데 재직/휴직","impact":"입사 전 급여 발생 위험","unresolvedFlag":"hire-after-as-of"},{"empId":"E0046","issue":"계약직/인턴/파견인데 계약종료일 없음","impact":"계약 만료 급여 종료 시점 미확정 위험","unresolvedFlag":"missing-required"},{"empId":"E0281","issue":"소속이 조직 체계에 없어 직군 기준 임시 배정","impact":"조직별 급여 대상 집계·비용 배부 오류 위험","unresolvedFlag":"org-unknown"},{"empId":"E0306","issue":"소속이 조직 체계에 없어 직군 기준 임시 배정","impact":"조직별 급여 대상 집계·비용 배부 오류 위험","unresolvedFlag":"org-unknown"},{"empId":"E0350","issue":"계약직/인턴/파견인데 계약종료일 없음","impact":"계약 만료 급여 종료 시점 미확정 위험","unresolvedFlag":"missing-required"},{"empId":"E0370","issue":"계약직/인턴/파견인데 계약종료일 없음","impact":"계약 만료 급여 종료 시점 미확정 위험","unresolvedFlag":"missing-required"},{"empId":"E0426","issue":"재직인데 입사일이 기준일 이후(플래그, 재직기간 0)","impact":"입사 전 급여 발생·일할 계산 오류 위험","unresolvedFlag":"date-logic"},{"empId":"E0427","issue":"재직인데 입사일이 기준일 이후(플래그, 재직기간 0)","impact":"입사 전 급여 발생·일할 계산 오류 위험","unresolvedFlag":"date-logic"},{"empId":"E0031","issue":"휴직인데 휴직유형 없음 → 기타로 보정(미확인)","impact":"휴직 급여 처리 구분 오류 위험","unresolvedFlag":"status-inconsistency"},{"empId":"E0049","issue":"휴직인데 휴직유형 없음 → 기타로 보정(미확인)","impact":"휴직 급여 처리 구분 오류 위험","unresolvedFlag":"status-inconsistency"},{"empId":"E0273","issue":"휴직인데 휴직유형 없음 → 기타로 보정(미확인)","impact":"휴직 급여 처리 구분 오류 위험","unresolvedFlag":"status-inconsistency"}],"checklist":[{"item":"당월 입사자 일할 계산 확인","count":5,"status":"pending"},{"item":"월말까지 입사 예정자 급여 등록 준비","count":19,"status":"pending"},{"item":"월말까지 퇴사 예정자 최종 정산 준비","count":14,"status":"pending"},{"item":"휴직자 급여 처리 구분 확인","count":21,"status":"pending"},{"item":"90일 내 계약 만료자 갱신·종료 확인","count":24,"status":"pending"},{"item":"급여 오류 위험(미해결 항목) 확인","count":14,"status":"pending"},{"item":"급여 대상 인원 월말 예측 대사(forecastMonthEnd == monthEndActive)","count":0,"status":"done"}],"provenance":{"sources":["data/clean/headcount-master.clean.csv","data/clean/planned-joiners.clean.csv","data/clean/planned-leavers.clean.csv","data/stats/month-end-forecast.json","data/reference/org-chart.csv","personas/persona-needs.json"],"script":".claude/skills/payroll-close/scripts/payroll_close.py","asOfDate":"2026-09-23","rules":{"payrollHeadcount":"급여 대상 = 재직 + 휴직(총원). monthEndActive = 재직 + plannedIn − plannedOut(재직자만), monthEndTotal = 총원 + plannedIn − plannedOut(휴직자 포함)","plannedIn":"정제 입사 예정자 중 예정일 ≤ 월말","plannedOut":"정제 퇴사 예정자 중 예정일 ≤ 월말, 마스터에 없는 사번(unknown-emp) 제외, stale 포함","proratedRatio":"당월 근무일수 / 30, 소수 3자리","leaveTreatment":{"육아휴직":"무급(정부 급여)","질병휴직":"유급","기타":"무급"},"contractWindowDays":90,"derivedFlags":["contract-expired-active","hire-after-as-of","leaver-not-active"],"pii":"성명 포함(급여 업무), 생년월일·연령대·급여액 없음"},"reconciliation":{"recomputedMonthEndActive":411,"forecastMonthEnd":411,"matched":true,"byDepartmentMismatches":[],"statsActiveHeadcount":406,"statsOnLeave":21,"statsMatched":true,"internal":{"byDepartmentAsOfTotal":true,"byDepartmentMonthEndActive":true,"byDepartmentMonthEndTotal":true,"byEmploymentTypeAsOfTotal":true,"byEmploymentTypeMonthEndTotal":true,"byTreatmentSum":true,"contractsByMonthSum":true}},"personaNeeds":{"applied":true,"missingFields":[],"missingCriteria":[],"unverifiable":[]},"warnings":[]}},"statsSubset":{"asOfDate":"2026-09-23","client":"㈜온다테크","totals":{"headcount":427,"activeHeadcount":406,"onLeave":21,"toHeadcount":422,"toGapAsOf":-16,"plannedIn":19,"plannedOut":14,"unresolvedCount":10},"byOrgGroup":[{"orgGroupCode":"G0","orgGroup":"Executive","activeHeadcount":10,"onLeave":0,"headcount":10,"toHeadcount":10,"toGapAsOf":0},{"orgGroupCode":"G1","orgGroup":"Build","activeHeadcount":220,"onLeave":12,"headcount":232,"toHeadcount":226,"toGapAsOf":-6},{"orgGroupCode":"G2","orgGroup":"Go-To-Market","activeHeadcount":128,"onLeave":7,"headcount":135,"toHeadcount":136,"toGapAsOf":-8},{"orgGroupCode":"G3","orgGroup":"Operations","activeHeadcount":48,"onLeave":2,"headcount":50,"toHeadcount":50,"toGapAsOf":-2}],"byDepartment":[{"deptCode":"D01","department":"CEO Office","orgGroupCode":"G0","orgGroup":"Executive","activeHeadcount":10,"onLeave":0,"headcount":10,"toHeadcount":10,"toGapAsOf":0},{"deptCode":"D02","department":"Product","orgGroupCode":"G1","orgGroup":"Build","activeHeadcount":51,"onLeave":3,"headcount":54,"toHeadcount":54,"toGapAsOf":-3},{"deptCode":"D03","department":"Engineering","orgGroupCode":"G1","orgGroup":"Build","activeHeadcount":104,"onLeave":6,"headcount":110,"toHeadcount":112,"toGapAsOf":-8},{"deptCode":"D04","department":"Design","orgGroupCode":"G1","orgGroup":"Build","activeHeadcount":25,"onLeave":1,"headcount":26,"toHeadcount":26,"toGapAsOf":-1},{"deptCode":"D05","department":"Data & AI","orgGroupCode":"G1","orgGroup":"Build","activeHeadcount":40,"onLeave":2,"headcount":42,"toHeadcount":34,"toGapAsOf":6},{"deptCode":"D06","department":"Sales","orgGroupCode":"G2","orgGroup":"Go-To-Market","activeHeadcount":58,"onLeave":3,"headcount":61,"toHeadcount":62,"toGapAsOf":-4},{"deptCode":"D07","department":"Marketing","orgGroupCode":"G2","orgGroup":"Go-To-Market","activeHeadcount":30,"onLeave":1,"headcount":31,"toHeadcount":32,"toGapAsOf":-2},{"deptCode":"D08","department":"Customer Success","orgGroupCode":"G2","orgGroup":"Go-To-Market","activeHeadcount":40,"onLeave":3,"headcount":43,"toHeadcount":42,"toGapAsOf":-2},{"deptCode":"D09","department":"People","orgGroupCode":"G3","orgGroup":"Operations","activeHeadcount":18,"onLeave":1,"headcount":19,"toHeadcount":18,"toGapAsOf":0},{"deptCode":"D10","department":"Finance","orgGroupCode":"G3","orgGroup":"Operations","activeHeadcount":19,"onLeave":1,"headcount":20,"toHeadcount":20,"toGapAsOf":-1},{"deptCode":"D11","department":"Legal & Compliance","orgGroupCode":"G3","orgGroup":"Operations","activeHeadcount":11,"onLeave":0,"headcount":11,"toHeadcount":12,"toGapAsOf":-1}],"byAttributeAll":{"employmentType":{"정규직":354,"계약직":31,"인턴":19,"파견":23},"status":{"재직":406,"휴직":21},"leaveType":{"육아휴직":12,"질병휴직":5,"기타":4}},"byAttribute":{"employmentType":{"정규직":335,"계약직":29,"인턴":19,"파견":23}},"crossTabs":{"departmentByEmploymentType":{"CEO Office":{"정규직":10,"계약직":0,"인턴":0,"파견":0},"Product":{"정규직":45,"계약직":2,"인턴":1,"파견":3},"Engineering":{"정규직":83,"계약직":8,"인턴":7,"파견":6},"Design":{"정규직":23,"계약직":1,"인턴":0,"파견":1},"Data & AI":{"정규직":33,"계약직":4,"인턴":1,"파견":2},"Sales":{"정규직":42,"계약직":7,"인턴":4,"파견":5},"Marketing":{"정규직":27,"계약직":0,"인턴":2,"파견":1},"Customer Success":{"정규직":34,"계약직":3,"인턴":0,"파견":3},"People":{"정규직":17,"계약직":1,"인턴":0,"파견":0},"Finance":{"정규직":14,"계약직":2,"인턴":1,"파견":2},"Legal & Compliance":{"정규직":7,"계약직":1,"인턴":3,"파견":0}}},"provenance":{"source":"data/clean/headcount-master.clean.csv","script":".claude/skills/headcount-stats/scripts/compute_stats.py"}},"cleansingSummary":{"asOfDate":"2026-09-23","rowsIn":{"headcount-master":435,"to-plan":11,"planned-joiners":27,"planned-leavers":19},"rowsOut":{"headcount-master":427,"to-plan":11,"planned-joiners":27,"planned-leavers":19},"duplicatesRemoved":8,"correctionsByRule":{"duplicate":8,"org-old-name":6,"code-variant":33,"hire-date-format":31,"status-inconsistency":3,"missing-required":3,"org-typo":3,"org-whitespace":4,"org-variant":9,"date-format":15,"org-unknown":2,"date-logic":2,"reason-freetext":6,"stale-planned-leaver":1,"unknown-emp":1},"correctionsBySource":{"headcount-master":{"duplicate":8,"org-old-name":6,"code-variant":32,"hire-date-format":31,"status-inconsistency":3,"missing-required":3,"org-typo":3,"org-whitespace":4,"org-variant":4,"date-format":6,"org-unknown":2,"date-logic":2},"to-plan":{"date-format":4,"org-variant":3},"planned-joiners":{"org-variant":2,"date-format":3,"code-variant":1},"planned-leavers":{"reason-freetext":6,"stale-planned-leaver":1,"date-format":2,"unknown-emp":1}},"orgNameCorrections":17,"orgUnknown":2,"hireDateCorrections":31,"orgGroupMapping":{"D01":"Executive","D02":"Build","D03":"Build","D04":"Build","D05":"Build","D06":"Go-To-Market","D07":"Go-To-Market","D08":"Go-To-Market","D09":"Operations","D10":"Operations","D11":"Operations"},"derivedFields":["ageBand","tenureYears","tenureYear","tenureBand","totalExperienceYears","totalExperienceBand","stage","orgGroupCode","orgGroup"],"unresolvedCount":12,"unresolvedItems":[{"source":"headcount-master","rowRef":{"사번":"E0031","rowIndex":30},"field":"휴직유형","rawValue":"","flag":"status-inconsistency","question":"휴직 상태인데 휴직유형이 없습니다. 유형을 확인해 주세요 (기타로 임시 배정)"},{"source":"headcount-master","rowRef":{"사번":"E0046","rowIndex":45},"field":"계약종료일","rawValue":"","flag":"missing-required","question":"계약직인데 계약종료일이 없습니다. 계약종료일을 확인해 주세요"},{"source":"headcount-master","rowRef":{"사번":"E0049","rowIndex":48},"field":"휴직유형","rawValue":"","flag":"status-inconsistency","question":"휴직 상태인데 휴직유형이 없습니다. 유형을 확인해 주세요 (기타로 임시 배정)"},{"source":"headcount-master","rowRef":{"사번":"E0273","rowIndex":278},"field":"휴직유형","rawValue":"","flag":"status-inconsistency","question":"휴직 상태인데 휴직유형이 없습니다. 유형을 확인해 주세요 (기타로 임시 배정)"},{"source":"headcount-master","rowRef":{"사번":"E0281","rowIndex":286},"field":"소속","rawValue":"Platform","flag":"org-unknown","question":"어느 조직 소속입니까? (직군 Engineering 기준 Engineering으로 임시 배정)"},{"source":"headcount-master","rowRef":{"사번":"E0306","rowIndex":311},"field":"소속","rawValue":"Growth Lab","flag":"org-unknown","question":"어느 조직 소속입니까? (직군 Marketing 기준 Marketing으로 임시 배정)"},{"source":"headcount-master","rowRef":{"사번":"E0350","rowIndex":357},"field":"계약종료일","rawValue":"","flag":"missing-required","question":"인턴인데 계약종료일이 없습니다. 계약종료일을 확인해 주세요"},{"source":"headcount-master","rowRef":{"사번":"E0370","rowIndex":377},"field":"계약종료일","rawValue":"","flag":"missing-required","question":"인턴인데 계약종료일이 없습니다. 계약종료일을 확인해 주세요"},{"source":"headcount-master","rowRef":{"사번":"E0426","rowIndex":433},"field":"입사일","rawValue":"2026-10-10","flag":"date-logic","question":"재직 상태인데 입사일(2026-10-10)이 기준일 이후입니다. 입사일을 확인해 주세요 (재직기간 0으로 집계)"},{"source":"headcount-master","rowRef":{"사번":"E0427","rowIndex":434},"field":"입사일","rawValue":"2026-10-21","flag":"date-logic","question":"재직 상태인데 입사일(2026-10-21)이 기준일 이후입니다. 입사일을 확인해 주세요 (재직기간 0으로 집계)"},{"source":"planned-leavers","rowRef":{"사번":"E0251","rowIndex":11},"field":"퇴사예정일","rawValue":"2026-09-15","flag":"stale-planned-leaver","question":"퇴사 예정일(2026-09-15)이 기준일 이전인데 마스터에는 재직 상태입니다. 실제 퇴사 여부를 확인해 주세요"},{"source":"planned-leavers","rowRef":{"사번":"E9999","rowIndex":17},"field":"사번","rawValue":"E9999","flag":"unknown-emp","question":"마스터에 없는 사번입니다. 사번을 확인해 주세요 (예측에서 제외)"}],"warnings":[],"provenance":{"rawSources":{"headcount-master":"data/raw/headcount-master.csv","to-plan":"data/raw/to-plan.csv","planned-joiners":"data/raw/planned-joiners.csv","planned-leavers":"data/raw/planned-leavers.csv"},"orgChart":"data/reference/org-chart.csv","stages":"data/reference/company-stages.json","script":".claude/skills/people-data-cleansing/scripts/cleanse.py"}}}
+</script>
+<script src="../config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.js" crossorigin="anonymous"></script>
+<script>
+(function () {
+  'use strict';
+  var PRODUCT = 'payroll';
+  var DATA = null;
+  var CHARTS = {};
+  var EMP_ORDER = ['정규직', '계약직', '인턴', '파견'];
+  var EMP_COLOR = { '정규직': '--series-1', '계약직': '--series-2', '인턴': '--series-3', '파견': '--series-4' };
+  var TREAT_ORDER = ['무급(정부 급여)', '유급', '무급'];
+  var FILTER = { leaveTreatment: 'all', leaveQuery: '', contractType: 'all', contractQuery: '' };
+
+  /* ---------- utilities (display only) ---------- */
+  function $(id) { return document.getElementById(id); }
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function n(v) { return (v == null || v === '') ? '—' : Number(v).toLocaleString('ko-KR'); }
+  function r3(v) { return (v == null || v === '') ? '—' : Number(v).toFixed(3); }
+  function pct1(num, den) { if (!den) return '—'; return (num / den * 100).toFixed(1) + '%'; }
+  function token(name) { return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
+  function alpha(hex, a) {
+    var h = hex.replace('#', ''); if (h.length === 3) h = h.split('').map(function (c) { return c + c; }).join('');
+    var r = parseInt(h.slice(0, 2), 16), g = parseInt(h.slice(2, 4), 16), b = parseInt(h.slice(4, 6), 16);
+    return 'rgba(' + r + ',' + g + ',' + b + ',' + a + ')';
+  }
+  function dayDiff(iso, base) {
+    if (!iso || !base) return null;
+    var a = new Date(iso + 'T00:00:00Z'), b = new Date(base + 'T00:00:00Z');
+    if (isNaN(a) || isNaN(b)) return null;
+    return Math.round((a - b) / 86400000);
+  }
+  function dday(iso, base) {
+    var d = dayDiff(iso, base); if (d == null) return '—';
+    if (d === 0) return 'D-day'; return d > 0 ? 'D-' + d : 'D+' + Math.abs(d);
+  }
+  function badge(text, kind) { return '<span class="badge' + (kind ? ' badge-' + kind : '') + '">' + esc(text) + '</span>'; }
+  function flagBadge(flag) { return '<span class="badge badge-plain"><code>' + esc(flag) + '</code></span>'; }
+  function empty(path) { return '<div class="empty">데이터 없음 — <code>' + esc(path) + '</code> 미생성</div>'; }
+  function get(o, path) { return path.split('.').reduce(function (a, k) { return (a == null) ? undefined : a[k]; }, o); }
+  function deptMap(d) {
+    var m = {};
+    (get(d, 'payrollClose.payrollHeadcount.byDepartment') || []).forEach(function (r) { m[r.deptCode] = r.department; });
+    (get(d, 'statsSubset.byDepartment') || []).forEach(function (r) { if (!m[r.deptCode]) m[r.deptCode] = r.department; });
+    return m;
+  }
+  function orgGroupMap(d) {
+    var m = {}; (get(d, 'statsSubset.byDepartment') || []).forEach(function (r) { m[r.deptCode] = r.orgGroup; }); return m;
+  }
+  var DEPT = {}, ORG = {};
+  function dept(code) { return DEPT[code] ? esc(DEPT[code]) + ' <span class="faint small">' + esc(code) + '</span>' : esc(code || '—'); }
+  function table(caption, head, rows, foot) {
+    var h = '<table><caption>' + caption + '</caption><thead><tr>' + head.map(function (c) {
+      return '<th scope="col"' + (c.num ? ' class="num"' : '') + '>' + c.label + '</th>';
+    }).join('') + '</tr></thead><tbody>';
+    if (!rows.length) h += '<tr><td colspan="' + head.length + '" class="faint">해당 행 없음</td></tr>';
+    rows.forEach(function (r) { h += '<tr' + (r.cls ? ' class="' + r.cls + '"' : '') + '>' + r.cells.map(function (c, i) {
+      return '<td' + (head[i].num ? ' class="num"' : '') + '>' + c + '</td>'; }).join('') + '</tr>'; });
+    h += '</tbody>';
+    if (foot) h += '<tfoot><tr>' + foot.map(function (c, i) { return '<td' + (head[i].num ? ' class="num"' : '') + '>' + c + '</td>'; }).join('') + '</tr></tfoot>';
+    return h + '</table>';
+  }
+  function tile(label, value, sub, cls) {
+    return '<div class="tile' + (cls ? ' ' + cls : '') + '"><span class="tile-label">' + label + '</span><strong class="tile-value num">' + value + '</strong>' + (sub ? '<span class="tile-sub">' + sub + '</span>' : '') + '</div>';
+  }
+  function asOfOf(d) { return (d && ((d.payrollClose && d.payrollClose.asOfDate) || (d.statsSubset && d.statsSubset.asOfDate) || d.asOfDate)) || '—'; }
+
+  /* ---------- header ---------- */
+  function renderHeader(d) {
+    var pc = d.payrollClose || {};
+    $('meta-as-of').textContent = asOfOf(d);
+    $('meta-pay-period').textContent = pc.payPeriod || '—';
+    $('meta-period-range').textContent = (pc.periodStart && pc.periodEnd) ? '(' + pc.periodStart + ' ~ ' + pc.periodEnd + ')' : '';
+    var client = get(d, 'statsSubset.client'); if (client) $('meta-client').textContent = client;
+    $('prov-script').textContent = get(pc, 'provenance.script') || 'data/stats/payroll-close.json';
+    $('pii-rule').textContent = get(pc, 'provenance.rules.pii') ? '상류 규칙: ' + get(pc, 'provenance.rules.pii') : '';
+  }
+
+  /* ---------- KPI ---------- */
+  function renderKpi(d) {
+    var pc = d.payrollClose, el = $('kpi-tiles'), hero = $('kpi-tiles-hero');
+    if (!pc) { hero.innerHTML = ''; el.innerHTML = empty('data/stats/payroll-close.json'); return; }
+    var hc = pc.payrollHeadcount || {}, rec = get(pc, 'provenance.reconciliation') || {};
+    var statsHead = get(d, 'statsSubset.totals.headcount');
+    var statsIn = get(d, 'statsSubset.totals.plannedIn'), statsOut = get(d, 'statsSubset.totals.plannedOut');
+    var joiners = get(pc, 'prorations.joinersInPeriod') || [];
+    var pj = get(pc, 'prorations.plannedJoinersByMonthEnd') || [], pl = get(pc, 'prorations.plannedLeaversByMonthEnd') || [];
+    var bt = get(pc, 'leaves.byTreatment') || {};
+    var contracts = get(pc, 'contracts.expiringWithin90Days') || [];
+    var risks = pc.risks || [], cl = pc.checklist || [];
+    var pending = cl.filter(function (c) { return c.status !== 'done'; }).length;
+    var done = cl.filter(function (c) { return c.status === 'done'; }).length;
+
+    var matchBadge = rec.matched === true
+      ? badge('예측과 일치 ✓ (월말 예측 ' + n(rec.forecastMonthEnd) + ')', 'good')
+      : rec.matched === false ? badge('예측 불일치 ! (예측 ' + n(rec.forecastMonthEnd) + ')', 'critical') : badge('대사 미확인 ·', 'warning');
+    var statsBadge = (statsHead == null) ? badge('인원 통계 미내장 ·', 'warning')
+      : (statsHead === hc.asOfTotal ? badge('인원 통계 총원 ' + n(statsHead) + ' 일치 ✓', 'good') : badge('인원 통계 총원 ' + n(statsHead) + ' 불일치 !', 'critical'));
+
+    var hh = '';
+    hh += tile('기준일 급여 대상(총원)', n(hc.asOfTotal), '재직 ' + n(hc.asOfActive) + ' + 휴직 ' + n(hc.asOfOnLeave) + '<br>' + statsBadge, 'tile-primary');
+    hh += tile('월말 급여 대상(재직)', n(hc.monthEndActive), '재직 기준 — 인사 총괄 월말 예측과 대사<br>' + matchBadge, 'tile-primary');
+    hh += tile('월말 급여 대상 총원', n(hc.monthEndTotal), '월말 재직 ' + n(hc.monthEndActive) + ' + 휴직 ' + n(hc.asOfOnLeave) + ' (휴직자 포함)', 'tile-primary');
+    hero.innerHTML = hh;
+    var h = '';
+    h += tile('당월 확정 입사(일할)', n(joiners.length), '기준일까지 입사 · 일할 계산 대상');
+    h += tile('월말까지 입사 예정', n(pj.length), statsIn != null ? '예측 plannedIn ' + n(statsIn) + (statsIn === pj.length ? ' ✓' : ' !') : '예정 목록 행 수');
+    h += tile('월말까지 퇴사 예정', n(pl.length), statsOut != null ? '예측 plannedOut ' + n(statsOut) + (statsOut === pl.length ? ' ✓' : ' !') : '예정 목록 행 수');
+    h += tile('휴직', n(hc.asOfOnLeave), TREAT_ORDER.map(function (k) { return esc(k) + ' ' + n(bt[k] || 0); }).join(' · '));
+    h += tile('90일 내 계약 만료', n(contracts.length), Object.keys(get(pc, 'contracts.byMonth') || {}).map(function (m) { return esc(m.slice(5)) + '월 ' + n(pc.contracts.byMonth[m]); }).join(' · '));
+    h += tile('급여 오류 위험', n(risks.length), '확정 전 확인 대상 ' + (risks.length ? '!' : '✓'), risks.length ? 'tile-alert' : '');
+    h += tile('체크리스트 pending', n(pending), '완료 ' + n(done) + ' / ' + n(cl.length) + ' 항목', pending ? 'tile-alert' : '');
+    el.innerHTML = h;
+    $('kpi-foot').innerHTML = '규칙: ' + esc(get(pc, 'provenance.rules.payrollHeadcount') || '') + ' · 대사 값은 <code>payrollClose.provenance.reconciliation</code>(급여 마감 스크립트가 정제 데이터에서 재계산해 예측과 대조) — 페이지는 비교 결과만 표시한다.';
+  }
+
+  /* ---------- checklist ---------- */
+  function renderChecklist(d) {
+    var cl = get(d, 'payrollClose.checklist'), el = $('checklist');
+    if (!cl) { el.innerHTML = empty('data/stats/payroll-close.json#checklist'); $('checklist-summary').textContent = ''; return; }
+    var rows = cl.slice().map(function (c, i) { return { c: c, i: i }; }).sort(function (a, b) {
+      var pa = a.c.status === 'done' ? 1 : 0, pb = b.c.status === 'done' ? 1 : 0; return pa - pb || a.i - b.i; });
+    var done = cl.filter(function (c) { return c.status === 'done'; }).length;
+    $('checklist-summary').textContent = '완료 ' + done + ' / ' + cl.length + ' · 완료율 ' + pct1(done, cl.length);
+    $('checklist-summary').className = 'badge ' + (done === cl.length ? 'badge-good' : 'badge-warning');
+    el.innerHTML = table('마감 체크리스트 — pending 먼저, 원래 순서 유지', [
+      { label: '상태' }, { label: '항목' }, { label: '건수', num: true }
+    ], rows.map(function (x) {
+      var c = x.c, isDone = c.status === 'done';
+      return { cls: isDone ? '' : 'is-pending', cells: [
+        isDone ? badge('✓ done', 'good') : badge('· pending', 'warning'),
+        esc(c.item), n(c.count)] };
+    }));
+  }
+
+  /* ---------- headcount ---------- */
+  function renderHeadcount(d) {
+    var hc = get(d, 'payrollClose.payrollHeadcount');
+    var empEl = $('emp-table'), deptEl = $('dept-table');
+    if (!hc) { empEl.innerHTML = empty('data/stats/payroll-close.json#payrollHeadcount'); deptEl.innerHTML = ''; $('emp-chart-wrap').hidden = true; return; }
+    var bet = hc.byEmploymentType || {};
+    var types = EMP_ORDER.filter(function (t) { return bet[t]; }).concat(Object.keys(bet).filter(function (t) { return EMP_ORDER.indexOf(t) < 0; }));
+    $('emp-legend').innerHTML = types.map(function (t) {
+      return '<span style="--sw:' + token(EMP_COLOR[t] || '--series-5') + '">' + esc(t) + '</span>';
+    }).join('') + '<span style="--sw:' + token('--ink-muted') + ';--op:.45">옅은 막대 = 기준일</span><span style="--sw:' + token('--ink-muted') + '">진한 막대 = 월말</span>';
+    var asOfVals = types.map(function (t) { return bet[t].asOfTotal; }), meVals = types.map(function (t) { return bet[t].monthEndTotal; });
+    var colors = types.map(function (t) { return token(EMP_COLOR[t] || '--series-5'); });
+    drawGroupedBar('emp-chart', 'emp-chart-wrap', types, [
+      { label: '기준일 총원', data: asOfVals, backgroundColor: colors.map(function (c) { return alpha(c, 0.45); }) },
+      { label: '월말 총원', data: meVals, backgroundColor: colors }
+    ], true);
+    empEl.innerHTML = table('고용유형별 급여 대상(총원 = 재직 + 휴직) — 기준일 vs 월말', [
+      { label: '고용유형' }, { label: '기준일 총원', num: true }, { label: '월말 총원', num: true }, { label: '변동(표시용)', num: true }
+    ], types.map(function (t) {
+      var a = bet[t].asOfTotal, m = bet[t].monthEndTotal, dlt = (a != null && m != null) ? m - a : null;
+      return { cells: ['<span class="swatch" style="background:' + token(EMP_COLOR[t] || '--series-5') + '"></span>' + esc(t), n(a), n(m),
+        dlt == null ? '—' : (dlt > 0 ? '+' : dlt < 0 ? '−' : '') + n(Math.abs(dlt))] };
+    }), ['합계', n(hc.asOfTotal), n(hc.monthEndTotal), (hc.monthEndTotal != null && hc.asOfTotal != null) ? ((hc.monthEndTotal - hc.asOfTotal > 0 ? '+' : hc.monthEndTotal - hc.asOfTotal < 0 ? '−' : '') + n(Math.abs(hc.monthEndTotal - hc.asOfTotal))) : '—']);
+
+    var rows = hc.byDepartment || [];
+    var st = get(d, 'statsSubset.totals') || {};
+    $('dept-foot-stats').textContent = st.headcount != null ? n(st.headcount) : '미내장';
+    deptEl.innerHTML = table('조직별 급여 대상 — 기준일 재직/휴직/총원, 월말까지 입사·퇴사, 월말 재직/총원', [
+      { label: '조직' }, { label: '조직 그룹' }, { label: '기준일 재직', num: true }, { label: '휴직', num: true }, { label: '기준일 총원', num: true },
+      { label: '입사 예정', num: true }, { label: '퇴사 예정', num: true }, { label: '월말 재직', num: true }, { label: '월말 총원', num: true }
+    ], rows.map(function (r) {
+      return { cells: [dept(r.deptCode), esc(ORG[r.deptCode] || '—'), n(r.asOfActive), n(r.asOfOnLeave), n(r.asOfTotal), n(r.plannedIn), n(r.plannedOut), n(r.monthEndActive), n(r.monthEndTotal)] };
+    }), ['합계', '', n(hc.asOfActive), n(hc.asOfOnLeave), n(hc.asOfTotal), n(st.plannedIn), n(st.plannedOut), n(hc.monthEndActive), n(hc.monthEndTotal)]);
+  }
+
+  /* ---------- prorations ---------- */
+  function renderJoiners(d) {
+    var rows = get(d, 'payrollClose.prorations.joinersInPeriod'), el = $('joiners-table');
+    $('prorate-rule').textContent = get(d, 'payrollClose.provenance.rules.proratedRatio') || '—';
+    if (!rows) { el.innerHTML = empty('data/stats/payroll-close.json#prorations.joinersInPeriod'); $('joiners-count').textContent = ''; return; }
+    $('joiners-count').textContent = rows.length + '명';
+    el.innerHTML = table('당월 확정 입사자 — 성명·조직·입사일·고용유형·근무일수·일할 비율', [
+      { label: '사번' }, { label: '성명' }, { label: '조직' }, { label: '입사일' }, { label: '고용유형' }, { label: '근무일수', num: true }, { label: '일할 비율', num: true }
+    ], rows.map(function (r) {
+      return { cells: [esc(r.empId), esc(r.name), dept(r.deptCode), '<span class="nowrap">' + esc(r.hireDate) + '</span>',
+        r.employmentType ? '<span class="swatch" style="background:' + token(EMP_COLOR[r.employmentType] || '--series-5') + '"></span>' + esc(r.employmentType) : '—',
+        n(r.workedDays), r3(r.proratedRatio)] };
+    }));
+  }
+  function renderPlanned(d) {
+    var pj = get(d, 'payrollClose.prorations.plannedJoinersByMonthEnd'), pl = get(d, 'payrollClose.prorations.plannedLeaversByMonthEnd');
+    var jEl = $('planned-joiners-table'), lEl = $('planned-leavers-table');
+    if (!pj) { jEl.innerHTML = empty('data/stats/payroll-close.json#prorations.plannedJoinersByMonthEnd'); $('planned-joiners-count').textContent = ''; }
+    else {
+      $('planned-joiners-count').textContent = pj.length + '명';
+      jEl.innerHTML = table('월말까지 입사 예정 — 입사 예정일·근무일수·일할 비율(예정)', [
+        { label: '구분' }, { label: 'ID' }, { label: '성명' }, { label: '조직' }, { label: '입사 예정일' }, { label: '근무일수', num: true }, { label: '일할 비율', num: true }
+      ], pj.map(function (r) {
+        return { cls: 'is-planned', cells: [badge('예정', 'plain'), esc(r.joinerId), esc(r.name), dept(r.deptCode), '<span class="nowrap">' + esc(r.plannedHireDate) + '</span>', n(r.workedDays), r3(r.proratedRatio)] };
+      }));
+    }
+    if (!pl) { lEl.innerHTML = empty('data/stats/payroll-close.json#prorations.plannedLeaversByMonthEnd'); $('planned-leavers-count').textContent = ''; $('sep-type-badges').innerHTML = ''; }
+    else {
+      $('planned-leavers-count').textContent = pl.length + '명';
+      var byType = {}; pl.forEach(function (r) { var k = r.separationType || '미분류'; byType[k] = (byType[k] || 0) + 1; });
+      $('sep-type-badges').innerHTML = Object.keys(byType).map(function (k) { return badge(k + ' ' + byType[k], k === '비자발적' ? 'serious' : 'plain'); }).join(' ');
+      lEl.innerHTML = table('월말까지 퇴사 예정 — 퇴직 구분·퇴사 예정일·근무일수·일할 비율(예정, 정산 준비)', [
+        { label: '구분' }, { label: '사번' }, { label: '성명' }, { label: '조직' }, { label: '퇴사 예정일' }, { label: '퇴직 구분' }, { label: '근무일수', num: true }, { label: '일할 비율', num: true }
+      ], pl.map(function (r) {
+        return { cls: 'is-planned', cells: [badge('예정', 'plain'), esc(r.empId), esc(r.name), dept(r.deptCode), '<span class="nowrap">' + esc(r.plannedTerminationDate) + '</span>',
+          r.separationType ? badge(r.separationType, r.separationType === '비자발적' ? 'serious' : 'plain') : '—', n(r.workedDays), r3(r.proratedRatio)] };
+      }));
+    }
+  }
+
+  /* ---------- leaves ---------- */
+  function renderLeaves(d) {
+    var lv = get(d, 'payrollClose.leaves'), tEl = $('leave-tiles'), el = $('leave-table');
+    var rule = get(d, 'payrollClose.provenance.rules.leaveTreatment');
+    $('leave-rule').textContent = rule ? Object.keys(rule).map(function (k) { return k + ' → ' + rule[k]; }).join(' / ') : '—';
+    if (!lv) { tEl.innerHTML = ''; el.innerHTML = empty('data/stats/payroll-close.json#leaves'); $('leaves-count').textContent = ''; $('leave-pills').innerHTML = ''; return; }
+    var bt = lv.byTreatment || {}, rows = lv.onLeave || [];
+    $('leaves-count').textContent = rows.length + '명';
+    var keys = TREAT_ORDER.filter(function (k) { return k in bt; }).concat(Object.keys(bt).filter(function (k) { return TREAT_ORDER.indexOf(k) < 0; }));
+    tEl.innerHTML = keys.map(function (k) { return tile('처리 구분 · ' + esc(k), n(bt[k]), k === '유급' ? '급여 지급 대상' : k === '무급(정부 급여)' ? '회사 급여 없음 · 정부 급여' : '회사 급여 없음'); }).join('');
+    $('leave-pills').innerHTML = ['all'].concat(keys).map(function (k) {
+      return '<button type="button" class="pill" data-k="' + esc(k) + '" aria-pressed="' + (FILTER.leaveTreatment === k) + '">' + (k === 'all' ? '전체 ' + n(rows.length) : esc(k) + ' ' + n(bt[k])) + '</button>';
+    }).join('');
+    Array.prototype.forEach.call($('leave-pills').querySelectorAll('.pill'), function (b) {
+      b.addEventListener('click', function () { FILTER.leaveTreatment = b.getAttribute('data-k'); renderLeaves(DATA); });
+    });
+    var q = FILTER.leaveQuery.trim().toLowerCase();
+    var shown = rows.filter(function (r) {
+      if (FILTER.leaveTreatment !== 'all' && r.payrollTreatment !== FILTER.leaveTreatment) return false;
+      if (!q) return true;
+      return [r.name, r.empId, r.deptCode, DEPT[r.deptCode], r.leaveType].join(' ').toLowerCase().indexOf(q) >= 0;
+    });
+    el.innerHTML = table('휴직자 ' + n(shown.length) + ' / ' + n(rows.length) + ' — 성명·조직·휴직유형·시작일·급여 처리 구분', [
+      { label: '사번' }, { label: '성명' }, { label: '조직' }, { label: '휴직유형' }, { label: '휴직 시작일' }, { label: '처리 구분' }
+    ], shown.map(function (r) {
+      var kind = r.payrollTreatment === '유급' ? 'good' : r.payrollTreatment === '무급(정부 급여)' ? 'plain' : 'warning';
+      return { cells: [esc(r.empId), esc(r.name), dept(r.deptCode), esc(r.leaveType || '—'), '<span class="nowrap">' + esc(r.leaveStart || '—') + '</span>', r.payrollTreatment ? badge(r.payrollTreatment, kind) : '—'] };
+    }));
+  }
+
+  /* ---------- contracts ---------- */
+  function renderContracts(d) {
+    var ct = get(d, 'payrollClose.contracts'), asOf = asOfOf(d);
+    $('contract-window').textContent = n(get(d, 'payrollClose.provenance.rules.contractWindowDays') || 90);
+    var mEl = $('contract-month-table'), el = $('contract-table');
+    if (!ct) { mEl.innerHTML = empty('data/stats/payroll-close.json#contracts'); el.innerHTML = ''; $('contract-chart-wrap').hidden = true; $('contracts-count').textContent = ''; $('contract-pills').innerHTML = ''; return; }
+    var bm = ct.byMonth || {}, months = Object.keys(bm).sort(), rows = ct.expiringWithin90Days || [];
+    $('contracts-count').textContent = rows.length + '명';
+    drawGroupedBar('contract-chart', 'contract-chart-wrap', months, [{ label: '만료 건수', data: months.map(function (m) { return bm[m]; }), backgroundColor: months.map(function () { return token('--series-1'); }) }], false);
+    mEl.innerHTML = table('월별 계약 만료 건수(0 포함)', [{ label: '월' }, { label: '건수', num: true }],
+      months.map(function (m) { return { cells: [esc(m), n(bm[m])] }; }), ['합계', n(rows.length)]);
+    var types = EMP_ORDER.filter(function (t) { return rows.some(function (r) { return r.employmentType === t; }); });
+    $('contract-pills').innerHTML = ['all'].concat(types).map(function (k) {
+      return '<button type="button" class="pill" data-k="' + esc(k) + '" aria-pressed="' + (FILTER.contractType === k) + '">' + (k === 'all' ? '전체' : esc(k)) + '</button>';
+    }).join('');
+    Array.prototype.forEach.call($('contract-pills').querySelectorAll('.pill'), function (b) {
+      b.addEventListener('click', function () { FILTER.contractType = b.getAttribute('data-k'); renderContracts(DATA); });
+    });
+    var q = FILTER.contractQuery.trim().toLowerCase();
+    var shown = rows.filter(function (r) {
+      if (FILTER.contractType !== 'all' && r.employmentType !== FILTER.contractType) return false;
+      if (!q) return true;
+      return [r.name, r.empId, r.deptCode, DEPT[r.deptCode]].join(' ').toLowerCase().indexOf(q) >= 0;
+    });
+    el.innerHTML = table('90일 내 계약 만료 예정자 ' + n(shown.length) + ' / ' + n(rows.length) + ' — 성명·조직·고용유형·계약종료일·D-day', [
+      { label: '사번' }, { label: '성명' }, { label: '조직' }, { label: '고용유형' }, { label: '계약종료일' }, { label: 'D-day', num: true }
+    ], shown.map(function (r) {
+      var dd = dayDiff(r.contractEndDate, asOf);
+      var kind = dd == null ? '' : dd <= 7 ? 'critical' : dd <= 30 ? 'serious' : dd <= 60 ? 'warning' : 'plain';
+      return { cells: [esc(r.empId), esc(r.name), dept(r.deptCode),
+        '<span class="swatch" style="background:' + token(EMP_COLOR[r.employmentType] || '--series-5') + '"></span>' + esc(r.employmentType || '—'),
+        '<span class="nowrap">' + esc(r.contractEndDate || '—') + '</span>', badge(dday(r.contractEndDate, asOf), kind)] };
+    }));
+  }
+
+  /* ---------- risks ---------- */
+  function renderRisks(d) {
+    var risks = get(d, 'payrollClose.risks'), tEl = $('risk-tiles'), el = $('risk-table');
+    var derived = get(d, 'payrollClose.provenance.rules.derivedFlags') || [];
+    if (!risks) { tEl.innerHTML = ''; el.innerHTML = empty('data/stats/payroll-close.json#risks'); $('risks-count').textContent = ''; return; }
+    $('risks-count').textContent = risks.length + '건';
+    var isDerived = function (r) { return derived.indexOf(r.unresolvedFlag) >= 0; };
+    var dCount = risks.filter(isDerived).length, cCount = risks.length - dCount;
+    var byFlag = {}; risks.forEach(function (r) { byFlag[r.unresolvedFlag] = (byFlag[r.unresolvedFlag] || 0) + 1; });
+    tEl.innerHTML = tile('급여 담당 즉시 확인', n(dCount), '급여 마감 규칙 파생 플래그: ' + (derived.length ? derived.map(function (f) { return '<code>' + esc(f) + '</code>'; }).join(' ') : '—'), dCount ? 'tile-alert' : '')
+      + tile('고객사 HR 확인 대기', n(cCount), '클린징 미해결 플래그(원천 질문)')
+      + tile('플래그 종류', n(Object.keys(byFlag).length), Object.keys(byFlag).map(function (f) { return '<code>' + esc(f) + '</code> ' + n(byFlag[f]); }).join(' · '));
+    var sorted = risks.map(function (r, i) { return { r: r, i: i }; }).sort(function (a, b) { return (isDerived(b.r) ? 1 : 0) - (isDerived(a.r) ? 1 : 0) || a.i - b.i; });
+    el.innerHTML = table('급여 오류 위험 — 사번·이슈·영향·미해결 플래그·처리 구분(급여 담당 즉시 확인 먼저)', [
+      { label: '처리 구분' }, { label: '사번' }, { label: '이슈' }, { label: '급여 영향' }, { label: '플래그' }
+    ], sorted.map(function (x) {
+      var r = x.r, dv = isDerived(r);
+      return { cls: dv ? 'is-derived' : '', cells: [dv ? badge('급여 담당 즉시 확인 !', 'serious') : badge('고객사 HR 확인 대기 ·', 'warning'), esc(r.empId), esc(r.issue), esc(r.impact), flagBadge(r.unresolvedFlag)] };
+    }));
+    $('risk-foot').innerHTML = '사번 기준 — 같은 사번이 두 플래그로 나올 수 있다(예: <code>hire-after-as-of</code> + <code>date-logic</code>). 플래그 어휘는 번역하지 않음(감사자가 grep). 클린저 플래그의 질문 원문은 아래 "데이터 품질"에 있다.';
+  }
+
+  /* ---------- data quality ---------- */
+  function renderDataQuality(d) {
+    var cs = d.cleansingSummary, el = $('dq-table');
+    if (!cs) { el.innerHTML = empty('data/clean/cleansing-summary.json'); $('dq-count').textContent = ''; $('dq-foot').textContent = ''; return; }
+    var items = cs.unresolvedItems || [];
+    $('dq-count').textContent = '미해결 ' + n(cs.unresolvedCount) + '건';
+    $('dq-count').className = 'badge ' + (cs.unresolvedCount ? 'badge-warning' : 'badge-good');
+    el.innerHTML = table('클린징 미해결 항목 — 출처·행·필드·원값·플래그·질문', [
+      { label: '출처' }, { label: '행(사번)' }, { label: '필드' }, { label: '원값' }, { label: '플래그' }, { label: '고객사 HR에 남긴 질문' }
+    ], items.map(function (it) {
+      var ref = it.rowRef || {}; var refTxt = (ref['사번'] || ref.empId || ref.joinerId || '') + (ref.rowIndex != null ? ' <span class="faint small">#' + esc(ref.rowIndex) + '</span>' : '');
+      return { cells: [esc(it.source), refTxt || '—', esc(it.field), it.rawValue === '' || it.rawValue == null ? '<span class="faint">(빈 값)</span>' : esc(it.rawValue), flagBadge(it.flag), esc(it.question)] };
+    }));
+    var statsUnres = get(d, 'statsSubset.totals.unresolvedCount');
+    $('dq-foot').innerHTML = '<code>cleansingSummary.unresolvedCount</code> = ' + n(cs.unresolvedCount) + ' (기준일 ' + esc(cs.asOfDate || '—') + ') — Insight 데이터 품질 섹션과 같은 파일·같은 값.'
+      + (statsUnres != null ? ' 인원 통계의 <code>statsSubset.totals.unresolvedCount</code> = ' + n(statsUnres) + '는 마스터 행만 센 값(퇴사 예정자 파일 항목 제외)이라 정의가 다르다.' : '');
+  }
+
+  /* ---------- charts ---------- */
+  function drawGroupedBar(id, wrapId, labels, datasets, showLegend) {
+    var wrap = $(wrapId);
+    if (!window.Chart) { wrap.hidden = true; return; }
+    wrap.hidden = false;
+    if (CHARTS[id]) { CHARTS[id].destroy(); delete CHARTS[id]; }
+    var ctx = $(id);
+    CHARTS[id] = new Chart(ctx, {
+      type: 'bar',
+      data: { labels: labels, datasets: datasets.map(function (ds) { return Object.assign({ borderRadius: 4, maxBarThickness: 36 }, ds); }) },
+      options: {
+        animation: false, responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false }, tooltip: { enabled: true } },
+        scales: {
+          x: { grid: { display: false }, ticks: { color: token('--ink-muted') }, border: { color: token('--axis') } },
+          y: { beginAtZero: true, grid: { color: token('--line') }, ticks: { color: token('--ink-muted'), precision: 0 }, border: { display: false } }
+        }
+      }
+    });
+  }
+
+  /* ---------- render ---------- */
+  function render(d) {
+    DATA = d; DEPT = deptMap(d); ORG = orgGroupMap(d);
+    renderHeader(d); renderKpi(d); renderChecklist(d); renderHeadcount(d); renderJoiners(d); renderPlanned(d);
+    renderLeaves(d); renderContracts(d); renderRisks(d); renderDataQuality(d);
+  }
+
+  /* ---------- data loading: embedded → Supabase overlay ---------- */
+  function readEmbedded() {
+    var el = $('report-data');
+    try { var t = el.textContent.trim(); if (!t || t === '{}') return null; return JSON.parse(t); }
+    catch (e) { console.error('embedded JSON parse failed', e); return null; }
+  }
+  function setSource(kind, label) { var b = $('source-badge'); if (!b) return; b.dataset.source = kind; b.textContent = label; }
+  async function overlayFromSupabase() {
+    var cfg = window.ZEROHR_CONFIG;
+    if (!cfg || !cfg.supabaseUrl || !cfg.supabaseAnonKey) return;
+    var url = cfg.supabaseUrl.replace(/\/+$/, '') + '/rest/v1/report_snapshots?product=eq.' + encodeURIComponent(PRODUCT) +
+      '&select=as_of_date,created_at,payload&order=created_at.desc&limit=1';
+    try {
+      var res = await fetch(url, { headers: { apikey: cfg.supabaseAnonKey, Authorization: 'Bearer ' + cfg.supabaseAnonKey, Accept: 'application/json' } });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      var rows = await res.json();
+      if (!rows.length || !rows[0].payload) throw new Error('no snapshot row');
+      render(rows[0].payload);
+      setSource('live', 'Supabase · ' + (rows[0].as_of_date || asOfOf(rows[0].payload)));
+    } catch (e) {
+      console.warn('report_snapshots fetch failed; keeping embedded data', e);
+      setSource('embedded', '내장 (Supabase 조회 실패)');
+    }
+  }
+
+  /* ---------- theme toggle ---------- */
+  var THEME_LABEL = { auto: '테마: 자동', light: '테마: 라이트', dark: '테마: 다크' };
+  function applyTheme(t) {
+    if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+    else document.documentElement.removeAttribute('data-theme');
+    $('theme-toggle').textContent = THEME_LABEL[t] || THEME_LABEL.auto;
+    try { localStorage.setItem('zerohr-theme', t); } catch (e) { /* storage unavailable */ }
+    if (DATA) render(DATA);
+  }
+  (function initTheme() {
+    var t = 'auto'; try { t = localStorage.getItem('zerohr-theme') || 'auto'; } catch (e) { /* ignore */ }
+    if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+    $('theme-toggle').textContent = THEME_LABEL[t] || THEME_LABEL.auto;
+    $('theme-toggle').addEventListener('click', function () {
+      var cur = document.documentElement.getAttribute('data-theme') || 'auto';
+      applyTheme(cur === 'auto' ? 'light' : cur === 'light' ? 'dark' : 'auto');
+    });
+  })();
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function () { if (DATA) render(DATA); });
+
+  /* ---------- search inputs ---------- */
+  $('leave-search').addEventListener('input', function (e) { FILTER.leaveQuery = e.target.value; if (DATA) renderLeaves(DATA); });
+  $('contract-search').addEventListener('input', function (e) { FILTER.contractQuery = e.target.value; if (DATA) renderContracts(DATA); });
+
+  /* ---------- boot ---------- */
+  var embedded = readEmbedded();
+  if (embedded) { render(embedded); setSource('embedded', '내장'); }
+  else {
+    setSource('embedded', '내장 데이터 없음');
+    render({});
+  }
+  overlayFromSupabase();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,880 @@
+{
+  "asOfDate": "2026-09-23",
+  "client": "㈜온다테크",
+  "totals": {
+    "headcount": 427,
+    "activeHeadcount": 406,
+    "onLeave": 21,
+    "toHeadcount": 422,
+    "toGapAsOf": -16,
+    "plannedIn": 19,
+    "plannedOut": 14,
+    "unresolvedCount": 10
+  },
+  "byOrgGroup": [
+    {
+      "orgGroupCode": "G0",
+      "orgGroup": "Executive",
+      "activeHeadcount": 10,
+      "onLeave": 0,
+      "headcount": 10,
+      "toHeadcount": 10,
+      "toGapAsOf": 0
+    },
+    {
+      "orgGroupCode": "G1",
+      "orgGroup": "Build",
+      "activeHeadcount": 220,
+      "onLeave": 12,
+      "headcount": 232,
+      "toHeadcount": 226,
+      "toGapAsOf": -6
+    },
+    {
+      "orgGroupCode": "G2",
+      "orgGroup": "Go-To-Market",
+      "activeHeadcount": 128,
+      "onLeave": 7,
+      "headcount": 135,
+      "toHeadcount": 136,
+      "toGapAsOf": -8
+    },
+    {
+      "orgGroupCode": "G3",
+      "orgGroup": "Operations",
+      "activeHeadcount": 48,
+      "onLeave": 2,
+      "headcount": 50,
+      "toHeadcount": 50,
+      "toGapAsOf": -2
+    }
+  ],
+  "byDepartment": [
+    {
+      "deptCode": "D01",
+      "department": "CEO Office",
+      "orgGroupCode": "G0",
+      "orgGroup": "Executive",
+      "activeHeadcount": 10,
+      "onLeave": 0,
+      "headcount": 10,
+      "toHeadcount": 10,
+      "toGapAsOf": 0
+    },
+    {
+      "deptCode": "D02",
+      "department": "Product",
+      "orgGroupCode": "G1",
+      "orgGroup": "Build",
+      "activeHeadcount": 51,
+      "onLeave": 3,
+      "headcount": 54,
+      "toHeadcount": 54,
+      "toGapAsOf": -3
+    },
+    {
+      "deptCode": "D03",
+      "department": "Engineering",
+      "orgGroupCode": "G1",
+      "orgGroup": "Build",
+      "activeHeadcount": 104,
+      "onLeave": 6,
+      "headcount": 110,
+      "toHeadcount": 112,
+      "toGapAsOf": -8
+    },
+    {
+      "deptCode": "D04",
+      "department": "Design",
+      "orgGroupCode": "G1",
+      "orgGroup": "Build",
+      "activeHeadcount": 25,
+      "onLeave": 1,
+      "headcount": 26,
+      "toHeadcount": 26,
+      "toGapAsOf": -1
+    },
+    {
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "orgGroupCode": "G1",
+      "orgGroup": "Build",
+      "activeHeadcount": 40,
+      "onLeave": 2,
+      "headcount": 42,
+      "toHeadcount": 34,
+      "toGapAsOf": 6
+    },
+    {
+      "deptCode": "D06",
+      "department": "Sales",
+      "orgGroupCode": "G2",
+      "orgGroup": "Go-To-Market",
+      "activeHeadcount": 58,
+      "onLeave": 3,
+      "headcount": 61,
+      "toHeadcount": 62,
+      "toGapAsOf": -4
+    },
+    {
+      "deptCode": "D07",
+      "department": "Marketing",
+      "orgGroupCode": "G2",
+      "orgGroup": "Go-To-Market",
+      "activeHeadcount": 30,
+      "onLeave": 1,
+      "headcount": 31,
+      "toHeadcount": 32,
+      "toGapAsOf": -2
+    },
+    {
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "orgGroupCode": "G2",
+      "orgGroup": "Go-To-Market",
+      "activeHeadcount": 40,
+      "onLeave": 3,
+      "headcount": 43,
+      "toHeadcount": 42,
+      "toGapAsOf": -2
+    },
+    {
+      "deptCode": "D09",
+      "department": "People",
+      "orgGroupCode": "G3",
+      "orgGroup": "Operations",
+      "activeHeadcount": 18,
+      "onLeave": 1,
+      "headcount": 19,
+      "toHeadcount": 18,
+      "toGapAsOf": 0
+    },
+    {
+      "deptCode": "D10",
+      "department": "Finance",
+      "orgGroupCode": "G3",
+      "orgGroup": "Operations",
+      "activeHeadcount": 19,
+      "onLeave": 1,
+      "headcount": 20,
+      "toHeadcount": 20,
+      "toGapAsOf": -1
+    },
+    {
+      "deptCode": "D11",
+      "department": "Legal & Compliance",
+      "orgGroupCode": "G3",
+      "orgGroup": "Operations",
+      "activeHeadcount": 11,
+      "onLeave": 0,
+      "headcount": 11,
+      "toHeadcount": 12,
+      "toGapAsOf": -1
+    }
+  ],
+  "byAttribute": {
+    "employmentType": {
+      "정규직": 335,
+      "계약직": 29,
+      "인턴": 19,
+      "파견": 23
+    },
+    "gender": {
+      "여성": 188,
+      "남성": 195,
+      "미응답": 23
+    },
+    "ageBand": {
+      "20대": 82,
+      "30대": 221,
+      "40대": 83,
+      "50대+": 20
+    },
+    "jobFamily": {
+      "Engineering": 116,
+      "Product": 55,
+      "Design": 25,
+      "Sales": 58,
+      "Marketing": 30,
+      "Customer Success": 40,
+      "People": 18,
+      "Finance": 19,
+      "Legal": 11,
+      "Data/AI": 24,
+      "Executive": 10
+    },
+    "level": {
+      "IC1": 33,
+      "IC2": 65,
+      "IC3": 82,
+      "Senior": 89,
+      "Lead": 55,
+      "Manager": 44,
+      "Director": 25,
+      "VP": 13
+    },
+    "tenureBand": {
+      "1년 미만": 54,
+      "1~3년": 151,
+      "3~5년": 103,
+      "5년+": 98
+    },
+    "totalExperienceBand": {
+      "0~3년": 56,
+      "3~7년": 137,
+      "7~12년": 142,
+      "12년+": 71
+    },
+    "stage": {
+      "Seed": 49,
+      "Series A": 151,
+      "Scale-up": 140,
+      "Enterprise": 66
+    }
+  },
+  "byAttributeAll": {
+    "employmentType": {
+      "정규직": 354,
+      "계약직": 31,
+      "인턴": 19,
+      "파견": 23
+    },
+    "status": {
+      "재직": 406,
+      "휴직": 21
+    },
+    "leaveType": {
+      "육아휴직": 12,
+      "질병휴직": 5,
+      "기타": 4
+    }
+  },
+  "crossTabs": {
+    "departmentByEmploymentType": {
+      "CEO Office": {
+        "정규직": 10,
+        "계약직": 0,
+        "인턴": 0,
+        "파견": 0
+      },
+      "Product": {
+        "정규직": 45,
+        "계약직": 2,
+        "인턴": 1,
+        "파견": 3
+      },
+      "Engineering": {
+        "정규직": 83,
+        "계약직": 8,
+        "인턴": 7,
+        "파견": 6
+      },
+      "Design": {
+        "정규직": 23,
+        "계약직": 1,
+        "인턴": 0,
+        "파견": 1
+      },
+      "Data & AI": {
+        "정규직": 33,
+        "계약직": 4,
+        "인턴": 1,
+        "파견": 2
+      },
+      "Sales": {
+        "정규직": 42,
+        "계약직": 7,
+        "인턴": 4,
+        "파견": 5
+      },
+      "Marketing": {
+        "정규직": 27,
+        "계약직": 0,
+        "인턴": 2,
+        "파견": 1
+      },
+      "Customer Success": {
+        "정규직": 34,
+        "계약직": 3,
+        "인턴": 0,
+        "파견": 3
+      },
+      "People": {
+        "정규직": 17,
+        "계약직": 1,
+        "인턴": 0,
+        "파견": 0
+      },
+      "Finance": {
+        "정규직": 14,
+        "계약직": 2,
+        "인턴": 1,
+        "파견": 2
+      },
+      "Legal & Compliance": {
+        "정규직": 7,
+        "계약직": 1,
+        "인턴": 3,
+        "파견": 0
+      }
+    },
+    "departmentByGender": {
+      "CEO Office": {
+        "여성": 3,
+        "남성": 6,
+        "미응답": 1
+      },
+      "Product": {
+        "여성": 22,
+        "남성": 27,
+        "미응답": 2
+      },
+      "Engineering": {
+        "여성": 47,
+        "남성": 48,
+        "미응답": 9
+      },
+      "Design": {
+        "여성": 14,
+        "남성": 10,
+        "미응답": 1
+      },
+      "Data & AI": {
+        "여성": 26,
+        "남성": 13,
+        "미응답": 1
+      },
+      "Sales": {
+        "여성": 27,
+        "남성": 28,
+        "미응답": 3
+      },
+      "Marketing": {
+        "여성": 14,
+        "남성": 15,
+        "미응답": 1
+      },
+      "Customer Success": {
+        "여성": 19,
+        "남성": 19,
+        "미응답": 2
+      },
+      "People": {
+        "여성": 5,
+        "남성": 12,
+        "미응답": 1
+      },
+      "Finance": {
+        "여성": 9,
+        "남성": 9,
+        "미응답": 1
+      },
+      "Legal & Compliance": {
+        "여성": 2,
+        "남성": 8,
+        "미응답": 1
+      }
+    },
+    "departmentByAgeBand": {
+      "CEO Office": {
+        "20대": 4,
+        "30대": 5,
+        "40대": 1,
+        "50대+": 0
+      },
+      "Product": {
+        "20대": 11,
+        "30대": 27,
+        "40대": 11,
+        "50대+": 2
+      },
+      "Engineering": {
+        "20대": 23,
+        "30대": 56,
+        "40대": 18,
+        "50대+": 7
+      },
+      "Design": {
+        "20대": 5,
+        "30대": 15,
+        "40대": 4,
+        "50대+": 1
+      },
+      "Data & AI": {
+        "20대": 6,
+        "30대": 20,
+        "40대": 10,
+        "50대+": 4
+      },
+      "Sales": {
+        "20대": 10,
+        "30대": 34,
+        "40대": 11,
+        "50대+": 3
+      },
+      "Marketing": {
+        "20대": 8,
+        "30대": 16,
+        "40대": 6,
+        "50대+": 0
+      },
+      "Customer Success": {
+        "20대": 7,
+        "30대": 22,
+        "40대": 9,
+        "50대+": 2
+      },
+      "People": {
+        "20대": 4,
+        "30대": 10,
+        "40대": 4,
+        "50대+": 0
+      },
+      "Finance": {
+        "20대": 2,
+        "30대": 10,
+        "40대": 6,
+        "50대+": 1
+      },
+      "Legal & Compliance": {
+        "20대": 2,
+        "30대": 6,
+        "40대": 3,
+        "50대+": 0
+      }
+    },
+    "departmentByLevel": {
+      "CEO Office": {
+        "IC1": 1,
+        "IC2": 1,
+        "IC3": 3,
+        "Senior": 2,
+        "Lead": 0,
+        "Manager": 0,
+        "Director": 0,
+        "VP": 3
+      },
+      "Product": {
+        "IC1": 4,
+        "IC2": 6,
+        "IC3": 11,
+        "Senior": 10,
+        "Lead": 8,
+        "Manager": 6,
+        "Director": 5,
+        "VP": 1
+      },
+      "Engineering": {
+        "IC1": 9,
+        "IC2": 18,
+        "IC3": 16,
+        "Senior": 22,
+        "Lead": 15,
+        "Manager": 12,
+        "Director": 11,
+        "VP": 1
+      },
+      "Design": {
+        "IC1": 1,
+        "IC2": 3,
+        "IC3": 7,
+        "Senior": 7,
+        "Lead": 4,
+        "Manager": 1,
+        "Director": 1,
+        "VP": 1
+      },
+      "Data & AI": {
+        "IC1": 4,
+        "IC2": 4,
+        "IC3": 8,
+        "Senior": 4,
+        "Lead": 10,
+        "Manager": 7,
+        "Director": 2,
+        "VP": 1
+      },
+      "Sales": {
+        "IC1": 3,
+        "IC2": 13,
+        "IC3": 14,
+        "Senior": 8,
+        "Lead": 8,
+        "Manager": 10,
+        "Director": 1,
+        "VP": 1
+      },
+      "Marketing": {
+        "IC1": 2,
+        "IC2": 3,
+        "IC3": 8,
+        "Senior": 9,
+        "Lead": 3,
+        "Manager": 3,
+        "Director": 1,
+        "VP": 1
+      },
+      "Customer Success": {
+        "IC1": 5,
+        "IC2": 7,
+        "IC3": 6,
+        "Senior": 14,
+        "Lead": 3,
+        "Manager": 3,
+        "Director": 1,
+        "VP": 1
+      },
+      "People": {
+        "IC1": 1,
+        "IC2": 4,
+        "IC3": 7,
+        "Senior": 3,
+        "Lead": 1,
+        "Manager": 0,
+        "Director": 1,
+        "VP": 1
+      },
+      "Finance": {
+        "IC1": 1,
+        "IC2": 3,
+        "IC3": 0,
+        "Senior": 8,
+        "Lead": 3,
+        "Manager": 1,
+        "Director": 2,
+        "VP": 1
+      },
+      "Legal & Compliance": {
+        "IC1": 2,
+        "IC2": 3,
+        "IC3": 2,
+        "Senior": 2,
+        "Lead": 0,
+        "Manager": 1,
+        "Director": 0,
+        "VP": 1
+      }
+    },
+    "jobFamilyByLevel": {
+      "Engineering": {
+        "IC1": 9,
+        "IC2": 20,
+        "IC3": 18,
+        "Senior": 24,
+        "Lead": 17,
+        "Manager": 16,
+        "Director": 11,
+        "VP": 1
+      },
+      "Product": {
+        "IC1": 4,
+        "IC2": 6,
+        "IC3": 11,
+        "Senior": 11,
+        "Lead": 9,
+        "Manager": 7,
+        "Director": 6,
+        "VP": 1
+      },
+      "Design": {
+        "IC1": 1,
+        "IC2": 3,
+        "IC3": 7,
+        "Senior": 7,
+        "Lead": 4,
+        "Manager": 1,
+        "Director": 1,
+        "VP": 1
+      },
+      "Sales": {
+        "IC1": 3,
+        "IC2": 13,
+        "IC3": 14,
+        "Senior": 8,
+        "Lead": 8,
+        "Manager": 10,
+        "Director": 1,
+        "VP": 1
+      },
+      "Marketing": {
+        "IC1": 2,
+        "IC2": 3,
+        "IC3": 8,
+        "Senior": 9,
+        "Lead": 3,
+        "Manager": 3,
+        "Director": 1,
+        "VP": 1
+      },
+      "Customer Success": {
+        "IC1": 5,
+        "IC2": 7,
+        "IC3": 6,
+        "Senior": 14,
+        "Lead": 3,
+        "Manager": 3,
+        "Director": 1,
+        "VP": 1
+      },
+      "People": {
+        "IC1": 1,
+        "IC2": 4,
+        "IC3": 7,
+        "Senior": 3,
+        "Lead": 1,
+        "Manager": 0,
+        "Director": 1,
+        "VP": 1
+      },
+      "Finance": {
+        "IC1": 1,
+        "IC2": 3,
+        "IC3": 0,
+        "Senior": 8,
+        "Lead": 3,
+        "Manager": 1,
+        "Director": 2,
+        "VP": 1
+      },
+      "Legal": {
+        "IC1": 2,
+        "IC2": 3,
+        "IC3": 2,
+        "Senior": 2,
+        "Lead": 0,
+        "Manager": 1,
+        "Director": 0,
+        "VP": 1
+      },
+      "Data/AI": {
+        "IC1": 4,
+        "IC2": 2,
+        "IC3": 6,
+        "Senior": 1,
+        "Lead": 7,
+        "Manager": 2,
+        "Director": 1,
+        "VP": 1
+      },
+      "Executive": {
+        "IC1": 1,
+        "IC2": 1,
+        "IC3": 3,
+        "Senior": 2,
+        "Lead": 0,
+        "Manager": 0,
+        "Director": 0,
+        "VP": 3
+      }
+    },
+    "jobFamilyByStage": {
+      "Engineering": {
+        "Seed": 15,
+        "Series A": 40,
+        "Scale-up": 44,
+        "Enterprise": 17
+      },
+      "Product": {
+        "Seed": 7,
+        "Series A": 20,
+        "Scale-up": 16,
+        "Enterprise": 12
+      },
+      "Design": {
+        "Seed": 5,
+        "Series A": 11,
+        "Scale-up": 6,
+        "Enterprise": 3
+      },
+      "Sales": {
+        "Seed": 7,
+        "Series A": 21,
+        "Scale-up": 20,
+        "Enterprise": 10
+      },
+      "Marketing": {
+        "Seed": 1,
+        "Series A": 9,
+        "Scale-up": 16,
+        "Enterprise": 4
+      },
+      "Customer Success": {
+        "Seed": 3,
+        "Series A": 17,
+        "Scale-up": 13,
+        "Enterprise": 7
+      },
+      "People": {
+        "Seed": 1,
+        "Series A": 7,
+        "Scale-up": 8,
+        "Enterprise": 2
+      },
+      "Finance": {
+        "Seed": 3,
+        "Series A": 10,
+        "Scale-up": 1,
+        "Enterprise": 5
+      },
+      "Legal": {
+        "Seed": 1,
+        "Series A": 4,
+        "Scale-up": 5,
+        "Enterprise": 1
+      },
+      "Data/AI": {
+        "Seed": 3,
+        "Series A": 11,
+        "Scale-up": 7,
+        "Enterprise": 3
+      },
+      "Executive": {
+        "Seed": 3,
+        "Series A": 1,
+        "Scale-up": 4,
+        "Enterprise": 2
+      }
+    },
+    "orgGroupByTenureBand": {
+      "Executive": {
+        "1년 미만": 2,
+        "1~3년": 4,
+        "3~5년": 0,
+        "5년+": 4
+      },
+      "Build": {
+        "1년 미만": 30,
+        "1~3년": 77,
+        "3~5년": 60,
+        "5년+": 53
+      },
+      "Go-To-Market": {
+        "1년 미만": 16,
+        "1~3년": 54,
+        "3~5년": 31,
+        "5년+": 27
+      },
+      "Operations": {
+        "1년 미만": 6,
+        "1~3년": 16,
+        "3~5년": 12,
+        "5년+": 14
+      }
+    }
+  },
+  "experience": {
+    "avgTenureYears": 3.37,
+    "medianTenureYears": 2.92,
+    "avgTotalExperienceYears": 8.55,
+    "medianTotalExperienceYears": 7.39,
+    "byDepartment": [
+      {
+        "deptCode": "D01",
+        "avgTenureYears": 3.79,
+        "avgTotalExperienceYears": 6.62
+      },
+      {
+        "deptCode": "D02",
+        "avgTenureYears": 3.23,
+        "avgTotalExperienceYears": 9.71
+      },
+      {
+        "deptCode": "D03",
+        "avgTenureYears": 3.35,
+        "avgTotalExperienceYears": 9.17
+      },
+      {
+        "deptCode": "D04",
+        "avgTenureYears": 3.81,
+        "avgTotalExperienceYears": 7.13
+      },
+      {
+        "deptCode": "D05",
+        "avgTenureYears": 3.62,
+        "avgTotalExperienceYears": 9.42
+      },
+      {
+        "deptCode": "D06",
+        "avgTenureYears": 3.26,
+        "avgTotalExperienceYears": 8.02
+      },
+      {
+        "deptCode": "D07",
+        "avgTenureYears": 2.84,
+        "avgTotalExperienceYears": 8.47
+      },
+      {
+        "deptCode": "D08",
+        "avgTenureYears": 3.36,
+        "avgTotalExperienceYears": 7.59
+      },
+      {
+        "deptCode": "D09",
+        "avgTenureYears": 3.07,
+        "avgTotalExperienceYears": 7.02
+      },
+      {
+        "deptCode": "D10",
+        "avgTenureYears": 4.04,
+        "avgTotalExperienceYears": 9.49
+      },
+      {
+        "deptCode": "D11",
+        "avgTenureYears": 3.4,
+        "avgTotalExperienceYears": 6.36
+      }
+    ]
+  },
+  "plannedSeparations": {
+    "total": 14,
+    "bySeparationReason": {
+      "자발퇴사": 5,
+      "개인사유": 2,
+      "계약만료": 3,
+      "조직개편": 2,
+      "성과/적합도": 2
+    },
+    "bySeparationType": {
+      "자발적": 7,
+      "비자발적": 7
+    },
+    "byDepartment": {
+      "Product": 1,
+      "Engineering": 4,
+      "Design": 1,
+      "Data & AI": 1,
+      "Sales": 3,
+      "Marketing": 1,
+      "Customer Success": 1,
+      "Finance": 1,
+      "Legal & Compliance": 1
+    },
+    "byTenureBand": {
+      "1년 미만": 1,
+      "1~3년": 5,
+      "3~5년": 4,
+      "5년+": 4
+    },
+    "byMonth": {
+      "2026-09": 14,
+      "2026-10": 4
+    }
+  },
+  "dataQuality": {
+    "unresolvedCount": 10,
+    "unresolvedByFlag": {
+      "date-logic": 2,
+      "missing-required": 3,
+      "org-unknown": 2,
+      "status-inconsistency": 3
+    },
+    "emptyValueBuckets": {},
+    "briefDiscrepancies": [
+      "브리프 §7 조직 그룹 합(215/119/62)은 조직표 합(220/128/48)과 불일치 — 조직표 기준 채택"
+    ]
+  },
+  "provenance": {
+    "source": "data/clean/headcount-master.clean.csv",
+    "script": ".claude/skills/headcount-stats/scripts/compute_stats.py"
+  }
+}

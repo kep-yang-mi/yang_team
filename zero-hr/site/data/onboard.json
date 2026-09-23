@@ -1,0 +1,4188 @@
+{
+  "onboardingPlan": {
+    "asOfDate": "2026-09-23",
+    "horizonEnd": "2026-10-31",
+    "timeline": [
+      {
+        "week": "2026-W39",
+        "weekStart": "2026-09-21",
+        "joiners": [
+          {
+            "joinerId": "J014",
+            "name": "한아석",
+            "deptCode": "D05",
+            "department": "Data & AI",
+            "plannedHireDate": "2026-09-24",
+            "employmentType": "정규직",
+            "level": "IC2"
+          },
+          {
+            "joinerId": "J020",
+            "name": "장건라",
+            "deptCode": "D03",
+            "department": "Engineering",
+            "plannedHireDate": "2026-09-24",
+            "employmentType": "정규직",
+            "level": "IC3"
+          },
+          {
+            "joinerId": "J021",
+            "name": "신원경",
+            "deptCode": "D08",
+            "department": "Customer Success",
+            "plannedHireDate": "2026-09-24",
+            "employmentType": "정규직",
+            "level": "IC3"
+          },
+          {
+            "joinerId": "J003",
+            "name": "권재호",
+            "deptCode": "D09",
+            "department": "People",
+            "plannedHireDate": "2026-09-25",
+            "employmentType": "정규직",
+            "level": "Senior"
+          },
+          {
+            "joinerId": "J015",
+            "name": "송유도",
+            "deptCode": "D02",
+            "department": "Product",
+            "plannedHireDate": "2026-09-25",
+            "employmentType": "정규직",
+            "level": "Senior"
+          },
+          {
+            "joinerId": "J016",
+            "name": "장민기",
+            "deptCode": "D06",
+            "department": "Sales",
+            "plannedHireDate": "2026-09-25",
+            "employmentType": "정규직",
+            "level": "Lead"
+          },
+          {
+            "joinerId": "J022",
+            "name": "노우소",
+            "deptCode": "D07",
+            "department": "Marketing",
+            "plannedHireDate": "2026-09-25",
+            "employmentType": "정규직",
+            "level": "IC2"
+          },
+          {
+            "joinerId": "J023",
+            "name": "오주도",
+            "deptCode": "D06",
+            "department": "Sales",
+            "plannedHireDate": "2026-09-25",
+            "employmentType": "정규직",
+            "level": "Lead"
+          },
+          {
+            "joinerId": "J007",
+            "name": "장소미",
+            "deptCode": "D03",
+            "department": "Engineering",
+            "plannedHireDate": "2026-09-26",
+            "employmentType": "정규직",
+            "level": "IC2"
+          },
+          {
+            "joinerId": "J013",
+            "name": "류라정",
+            "deptCode": "D06",
+            "department": "Sales",
+            "plannedHireDate": "2026-09-26",
+            "employmentType": "정규직",
+            "level": "IC1"
+          },
+          {
+            "joinerId": "J025",
+            "name": "임희수",
+            "deptCode": "D08",
+            "department": "Customer Success",
+            "plannedHireDate": "2026-09-26",
+            "employmentType": "인턴",
+            "level": "IC1"
+          },
+          {
+            "joinerId": "J002",
+            "name": "곽아주",
+            "deptCode": "D02",
+            "department": "Product",
+            "plannedHireDate": "2026-09-27",
+            "employmentType": "정규직",
+            "level": "IC3"
+          },
+          {
+            "joinerId": "J012",
+            "name": "심서찬",
+            "deptCode": "D03",
+            "department": "Engineering",
+            "plannedHireDate": "2026-09-27",
+            "employmentType": "정규직",
+            "level": "IC1"
+          }
+        ]
+      },
+      {
+        "week": "2026-W40",
+        "weekStart": "2026-09-28",
+        "joiners": [
+          {
+            "joinerId": "J024",
+            "name": "주은도",
+            "deptCode": "D03",
+            "department": "Engineering",
+            "plannedHireDate": "2026-09-28",
+            "employmentType": "인턴",
+            "level": "Lead"
+          },
+          {
+            "joinerId": "J026",
+            "name": "우소빈",
+            "deptCode": "D10",
+            "department": "Finance",
+            "plannedHireDate": "2026-09-28",
+            "employmentType": "계약직",
+            "level": "Senior"
+          },
+          {
+            "joinerId": "J027",
+            "name": "유희윤",
+            "deptCode": "D02",
+            "department": "Product",
+            "plannedHireDate": "2026-09-28",
+            "employmentType": "정규직",
+            "level": "Senior"
+          },
+          {
+            "joinerId": "J008",
+            "name": "곽철연",
+            "deptCode": "D05",
+            "department": "Data & AI",
+            "plannedHireDate": "2026-09-29",
+            "employmentType": "정규직",
+            "level": "IC2"
+          },
+          {
+            "joinerId": "J005",
+            "name": "공채건",
+            "deptCode": "D03",
+            "department": "Engineering",
+            "plannedHireDate": "2026-09-30",
+            "employmentType": "정규직",
+            "level": "IC2"
+          },
+          {
+            "joinerId": "J011",
+            "name": "최동주",
+            "deptCode": "D04",
+            "department": "Design",
+            "plannedHireDate": "2026-09-30",
+            "employmentType": "정규직",
+            "level": "Senior"
+          },
+          {
+            "joinerId": "J010",
+            "name": "고환하",
+            "deptCode": "D06",
+            "department": "Sales",
+            "plannedHireDate": "2026-10-01",
+            "employmentType": "정규직",
+            "level": "IC3"
+          },
+          {
+            "joinerId": "J017",
+            "name": "지나율",
+            "deptCode": "D03",
+            "department": "Engineering",
+            "plannedHireDate": "2026-10-03",
+            "employmentType": "정규직",
+            "level": "IC2"
+          }
+        ]
+      },
+      {
+        "week": "2026-W41",
+        "weekStart": "2026-10-05",
+        "joiners": [
+          {
+            "joinerId": "J019",
+            "name": "조은다",
+            "deptCode": "D06",
+            "department": "Sales",
+            "plannedHireDate": "2026-10-07",
+            "employmentType": "정규직",
+            "level": "Senior"
+          },
+          {
+            "joinerId": "J009",
+            "name": "백원호",
+            "deptCode": "D03",
+            "department": "Engineering",
+            "plannedHireDate": "2026-10-08",
+            "employmentType": "정규직",
+            "level": "Senior"
+          }
+        ]
+      },
+      {
+        "week": "2026-W42",
+        "weekStart": "2026-10-12",
+        "joiners": [
+          {
+            "joinerId": "J006",
+            "name": "임시인",
+            "deptCode": "D05",
+            "department": "Data & AI",
+            "plannedHireDate": "2026-10-17",
+            "employmentType": "정규직",
+            "level": "IC3"
+          },
+          {
+            "joinerId": "J018",
+            "name": "주우진",
+            "deptCode": "D02",
+            "department": "Product",
+            "plannedHireDate": "2026-10-18",
+            "employmentType": "계약직",
+            "level": "IC1"
+          }
+        ]
+      },
+      {
+        "week": "2026-W44",
+        "weekStart": "2026-10-26",
+        "joiners": [
+          {
+            "joinerId": "J001",
+            "name": "주훈원",
+            "deptCode": "D05",
+            "department": "Data & AI",
+            "plannedHireDate": "2026-10-28",
+            "employmentType": "정규직",
+            "level": "IC2"
+          },
+          {
+            "joinerId": "J004",
+            "name": "방성태",
+            "deptCode": "D03",
+            "department": "Engineering",
+            "plannedHireDate": "2026-10-30",
+            "employmentType": "정규직",
+            "level": "Senior"
+          }
+        ]
+      }
+    ],
+    "byDepartment": [
+      {
+        "deptCode": "D02",
+        "department": "Product",
+        "joiners": 4,
+        "joinersByMonthEnd": 3,
+        "buddyCandidates": [
+          {
+            "empId": "E0081",
+            "name": "현빈찬",
+            "tenureYears": 5.7,
+            "level": "Senior",
+            "riskBand": "낮음"
+          },
+          {
+            "empId": "E0086",
+            "name": "정선건",
+            "tenureYears": 5.59,
+            "level": "Lead",
+            "riskBand": "낮음"
+          },
+          {
+            "empId": "E0116",
+            "name": "배건찬",
+            "tenureYears": 4.71,
+            "level": "Lead",
+            "riskBand": "낮음"
+          }
+        ],
+        "deptLeadEmpId": "E0076"
+      },
+      {
+        "deptCode": "D03",
+        "department": "Engineering",
+        "joiners": 8,
+        "joinersByMonthEnd": 5,
+        "buddyCandidates": [
+          {
+            "empId": "E0078",
+            "name": "천동하",
+            "tenureYears": 5.79,
+            "level": "Senior",
+            "riskBand": "낮음"
+          },
+          {
+            "empId": "E0097",
+            "name": "주호지",
+            "tenureYears": 5.3,
+            "level": "Lead",
+            "riskBand": "낮음"
+          },
+          {
+            "empId": "E0094",
+            "name": "양동희",
+            "tenureYears": 5.23,
+            "level": "Lead",
+            "riskBand": "낮음"
+          }
+        ],
+        "deptLeadEmpId": "E0146"
+      },
+      {
+        "deptCode": "D04",
+        "department": "Design",
+        "joiners": 1,
+        "joinersByMonthEnd": 1,
+        "buddyCandidates": [
+          {
+            "empId": "E0080",
+            "name": "우기주",
+            "tenureYears": 5.67,
+            "level": "Senior",
+            "riskBand": "낮음"
+          },
+          {
+            "empId": "E0118",
+            "name": "원준재",
+            "tenureYears": 4.67,
+            "level": "Lead",
+            "riskBand": "낮음"
+          },
+          {
+            "empId": "E0125",
+            "name": "구정리",
+            "tenureYears": 4.65,
+            "level": "Senior",
+            "riskBand": "낮음"
+          }
+        ],
+        "deptLeadEmpId": "E0010"
+      },
+      {
+        "deptCode": "D05",
+        "department": "Data & AI",
+        "joiners": 4,
+        "joinersByMonthEnd": 2,
+        "buddyCandidates": [
+          {
+            "empId": "E0114",
+            "name": "윤나서",
+            "tenureYears": 4.86,
+            "level": "IC3",
+            "riskBand": "낮음"
+          },
+          {
+            "empId": "E0123",
+            "name": "장채라",
+            "tenureYears": 4.67,
+            "level": "Senior",
+            "riskBand": "낮음"
+          },
+          {
+            "empId": "E0133",
+            "name": "현경서",
+            "tenureYears": 4.46,
+            "level": "IC3",
+            "riskBand": "낮음"
+          }
+        ],
+        "deptLeadEmpId": "E0204"
+      },
+      {
+        "deptCode": "D06",
+        "department": "Sales",
+        "joiners": 5,
+        "joinersByMonthEnd": 3,
+        "buddyCandidates": [
+          {
+            "empId": "E0077",
+            "name": "성훈희",
+            "tenureYears": 5.76,
+            "level": "Senior",
+            "riskBand": "낮음"
+          },
+          {
+            "empId": "E0095",
+            "name": "천승율",
+            "tenureYears": 5.42,
+            "level": "Lead",
+            "riskBand": "낮음"
+          },
+          {
+            "empId": "E0099",
+            "name": "정경지",
+            "tenureYears": 5.16,
+            "level": "Senior",
+            "riskBand": "낮음"
+          }
+        ],
+        "deptLeadEmpId": "E0201"
+      },
+      {
+        "deptCode": "D07",
+        "department": "Marketing",
+        "joiners": 1,
+        "joinersByMonthEnd": 1,
+        "buddyCandidates": [
+          {
+            "empId": "E0092",
+            "name": "지성혜",
+            "tenureYears": 5.36,
+            "level": "Senior",
+            "riskBand": "낮음"
+          },
+          {
+            "empId": "E0131",
+            "name": "박도석",
+            "tenureYears": 4.56,
+            "level": "Lead",
+            "riskBand": "낮음"
+          },
+          {
+            "empId": "E0137",
+            "name": "양재연",
+            "tenureYears": 4.53,
+            "level": "Senior",
+            "riskBand": "낮음"
+          }
+        ],
+        "deptLeadEmpId": "E0150"
+      },
+      {
+        "deptCode": "D08",
+        "department": "Customer Success",
+        "joiners": 2,
+        "joinersByMonthEnd": 2,
+        "buddyCandidates": [
+          {
+            "empId": "E0067",
+            "name": "류나수",
+            "tenureYears": 5.96,
+            "level": "Senior",
+            "riskBand": "낮음"
+          },
+          {
+            "empId": "E0075",
+            "name": "정정성",
+            "tenureYears": 5.92,
+            "level": "Senior",
+            "riskBand": "낮음"
+          },
+          {
+            "empId": "E0102",
+            "name": "손기유",
+            "tenureYears": 5.21,
+            "level": "Lead",
+            "riskBand": "낮음"
+          }
+        ],
+        "deptLeadEmpId": "E0008"
+      },
+      {
+        "deptCode": "D09",
+        "department": "People",
+        "joiners": 1,
+        "joinersByMonthEnd": 1,
+        "buddyCandidates": [
+          {
+            "empId": "E0082",
+            "name": "정우시",
+            "tenureYears": 5.82,
+            "level": "Senior",
+            "riskBand": "낮음"
+          },
+          {
+            "empId": "E0108",
+            "name": "송철환",
+            "tenureYears": 4.95,
+            "level": "IC3",
+            "riskBand": "낮음"
+          },
+          {
+            "empId": "E0124",
+            "name": "한아성",
+            "tenureYears": 4.59,
+            "level": "Senior",
+            "riskBand": "낮음"
+          }
+        ],
+        "deptLeadEmpId": "E0023"
+      },
+      {
+        "deptCode": "D10",
+        "department": "Finance",
+        "joiners": 1,
+        "joinersByMonthEnd": 1,
+        "buddyCandidates": [
+          {
+            "empId": "E0072",
+            "name": "서연경",
+            "tenureYears": 5.82,
+            "level": "Senior",
+            "riskBand": "낮음"
+          },
+          {
+            "empId": "E0088",
+            "name": "주서우",
+            "tenureYears": 5.41,
+            "level": "Senior",
+            "riskBand": "낮음"
+          },
+          {
+            "empId": "E0144",
+            "name": "조윤기",
+            "tenureYears": 4.25,
+            "level": "Lead",
+            "riskBand": "낮음"
+          }
+        ],
+        "deptLeadEmpId": "E0064"
+      }
+    ],
+    "checklist": {
+      "items": [
+        "계정 발급",
+        "장비 지급",
+        "보안 교육",
+        "조직 소개",
+        "버디 배정",
+        "30일 면담"
+      ],
+      "status": [
+        {
+          "joinerId": "J001",
+          "계정 발급": "pending",
+          "장비 지급": "pending",
+          "보안 교육": "pending",
+          "조직 소개": "pending",
+          "버디 배정": "pending",
+          "30일 면담": "pending"
+        },
+        {
+          "joinerId": "J002",
+          "계정 발급": "done",
+          "장비 지급": "done",
+          "보안 교육": "pending",
+          "조직 소개": "pending",
+          "버디 배정": "done",
+          "30일 면담": "pending"
+        },
+        {
+          "joinerId": "J003",
+          "계정 발급": "done",
+          "장비 지급": "done",
+          "보안 교육": "done",
+          "조직 소개": "pending",
+          "버디 배정": "done",
+          "30일 면담": "pending"
+        },
+        {
+          "joinerId": "J004",
+          "계정 발급": "pending",
+          "장비 지급": "pending",
+          "보안 교육": "pending",
+          "조직 소개": "pending",
+          "버디 배정": "pending",
+          "30일 면담": "pending"
+        },
+        {
+          "joinerId": "J005",
+          "계정 발급": "done",
+          "장비 지급": "done",
+          "보안 교육": "pending",
+          "조직 소개": "pending",
+          "버디 배정": "done",
+          "30일 면담": "pending"
+        },
+        {
+          "joinerId": "J006",
+          "계정 발급": "pending",
+          "장비 지급": "pending",
+          "보안 교육": "pending",
+          "조직 소개": "pending",
+          "버디 배정": "done",
+          "30일 면담": "pending"
+        },
+        {
+          "joinerId": "J007",
+          "계정 발급": "done",
+          "장비 지급": "done",
+          "보안 교육": "done",
+          "조직 소개": "pending",
+          "버디 배정": "done",
+          "30일 면담": "pending"
+        },
+        {
+          "joinerId": "J008",
+          "계정 발급": "done",
+          "장비 지급": "done",
+          "보안 교육": "pending",
+          "조직 소개": "pending",
+          "버디 배정": "pending",
+          "30일 면담": "pending"
+        },
+        {
+          "joinerId": "J009",
+          "계정 발급": "pending",
+          "장비 지급": "done",
+          "보안 교육": "pending",
+          "조직 소개": "pending",
+          "버디 배정": "pending",
+          "30일 면담": "pending"
+        },
+        {
+          "joinerId": "J010",
+          "계정 발급": "done",
+          "장비 지급": "done",
+          "보안 교육": "pending",
+          "조직 소개": "pending",
+          "버디 배정": "done",
+          "30일 면담": "pending"
+        },
+        {
+          "joinerId": "J011",
+          "계정 발급": "pending",
+          "장비 지급": "done",
+          "보안 교육": "pending",
+          "조직 소개": "pending",
+          "버디 배정": "done",
+          "30일 면담": "pending"
+        },
+        {
+          "joinerId": "J012",
+          "계정 발급": "done",
+          "장비 지급": "done",
+          "보안 교육": "pending",
+          "조직 소개": "pending",
+          "버디 배정": "pending",
+          "30일 면담": "pending"
+        },
+        {
+          "joinerId": "J013",
+          "계정 발급": "done",
+          "장비 지급": "pending",
+          "보안 교육": "done",
+          "조직 소개": "pending",
+          "버디 배정": "done",
+          "30일 면담": "pending"
+        },
+        {
+          "joinerId": "J014",
+          "계정 발급": "done",
+          "장비 지급": "done",
+          "보안 교육": "done",
+          "조직 소개": "pending",
+          "버디 배정": "done",
+          "30일 면담": "pending"
+        },
+        {
+          "joinerId": "J015",
+          "계정 발급": "done",
+          "장비 지급": "done",
+          "보안 교육": "done",
+          "조직 소개": "pending",
+          "버디 배정": "done",
+          "30일 면담": "pending"
+        },
+        {
+          "joinerId": "J016",
+          "계정 발급": "done",
+          "장비 지급": "pending",
+          "보안 교육": "pending",
+          "조직 소개": "pending",
+          "버디 배정": "done",
+          "30일 면담": "pending"
+        },
+        {
+          "joinerId": "J017",
+          "계정 발급": "done",
+          "장비 지급": "done",
+          "보안 교육": "pending",
+          "조직 소개": "pending",
+          "버디 배정": "pending",
+          "30일 면담": "pending"
+        },
+        {
+          "joinerId": "J018",
+          "계정 발급": "pending",
+          "장비 지급": "pending",
+          "보안 교육": "pending",
+          "조직 소개": "pending",
+          "버디 배정": "pending",
+          "30일 면담": "pending"
+        },
+        {
+          "joinerId": "J019",
+          "계정 발급": "done",
+          "장비 지급": "pending",
+          "보안 교육": "done",
+          "조직 소개": "pending",
+          "버디 배정": "pending",
+          "30일 면담": "pending"
+        },
+        {
+          "joinerId": "J020",
+          "계정 발급": "pending",
+          "장비 지급": "done",
+          "보안 교육": "done",
+          "조직 소개": "pending",
+          "버디 배정": "done",
+          "30일 면담": "pending"
+        },
+        {
+          "joinerId": "J021",
+          "계정 발급": "done",
+          "장비 지급": "done",
+          "보안 교육": "done",
+          "조직 소개": "pending",
+          "버디 배정": "pending",
+          "30일 면담": "pending"
+        },
+        {
+          "joinerId": "J022",
+          "계정 발급": "done",
+          "장비 지급": "done",
+          "보안 교육": "done",
+          "조직 소개": "pending",
+          "버디 배정": "done",
+          "30일 면담": "pending"
+        },
+        {
+          "joinerId": "J023",
+          "계정 발급": "done",
+          "장비 지급": "done",
+          "보안 교육": "done",
+          "조직 소개": "pending",
+          "버디 배정": "done",
+          "30일 면담": "pending"
+        },
+        {
+          "joinerId": "J024",
+          "계정 발급": "done",
+          "장비 지급": "done",
+          "보안 교육": "pending",
+          "조직 소개": "pending",
+          "버디 배정": "done",
+          "30일 면담": "pending"
+        },
+        {
+          "joinerId": "J025",
+          "계정 발급": "done",
+          "장비 지급": "done",
+          "보안 교육": "pending",
+          "조직 소개": "pending",
+          "버디 배정": "done",
+          "30일 면담": "pending"
+        },
+        {
+          "joinerId": "J026",
+          "계정 발급": "pending",
+          "장비 지급": "done",
+          "보안 교육": "pending",
+          "조직 소개": "pending",
+          "버디 배정": "done",
+          "30일 면담": "pending"
+        },
+        {
+          "joinerId": "J027",
+          "계정 발급": "done",
+          "장비 지급": "pending",
+          "보안 교육": "pending",
+          "조직 소개": "pending",
+          "버디 배정": "done",
+          "30일 면담": "pending"
+        }
+      ]
+    },
+    "earlyTenureCohort": {
+      "definition": "기준일 기준 입사 90일 이내 재직자",
+      "members": [
+        {
+          "empId": "E0416",
+          "deptCode": "D03",
+          "hireDate": "2026-07-04",
+          "daysSinceHire": 81,
+          "riskBand": "낮음"
+        },
+        {
+          "empId": "E0414",
+          "deptCode": "D08",
+          "hireDate": "2026-07-05",
+          "daysSinceHire": 80,
+          "riskBand": "낮음"
+        },
+        {
+          "empId": "E0412",
+          "deptCode": "D03",
+          "hireDate": "2026-07-06",
+          "daysSinceHire": 79,
+          "riskBand": "낮음"
+        },
+        {
+          "empId": "E0421",
+          "deptCode": "D06",
+          "hireDate": "2026-07-14",
+          "daysSinceHire": 71,
+          "riskBand": "낮음"
+        },
+        {
+          "empId": "E0423",
+          "deptCode": "D02",
+          "hireDate": "2026-08-07",
+          "daysSinceHire": 47,
+          "riskBand": "낮음"
+        },
+        {
+          "empId": "E0417",
+          "deptCode": "D03",
+          "hireDate": "2026-08-13",
+          "daysSinceHire": 41,
+          "riskBand": "높음"
+        },
+        {
+          "empId": "E0415",
+          "deptCode": "D03",
+          "hireDate": "2026-08-30",
+          "daysSinceHire": 24,
+          "riskBand": "낮음"
+        },
+        {
+          "empId": "E0419",
+          "deptCode": "D02",
+          "hireDate": "2026-09-05",
+          "daysSinceHire": 18,
+          "riskBand": "낮음"
+        },
+        {
+          "empId": "E0420",
+          "deptCode": "D05",
+          "hireDate": "2026-09-08",
+          "daysSinceHire": 15,
+          "riskBand": "낮음"
+        },
+        {
+          "empId": "E0422",
+          "deptCode": "D07",
+          "hireDate": "2026-09-10",
+          "daysSinceHire": 13,
+          "riskBand": "낮음"
+        },
+        {
+          "empId": "E0424",
+          "deptCode": "D06",
+          "hireDate": "2026-09-10",
+          "daysSinceHire": 13,
+          "riskBand": "낮음"
+        },
+        {
+          "empId": "E0425",
+          "deptCode": "D02",
+          "hireDate": "2026-09-20",
+          "daysSinceHire": 3,
+          "riskBand": "낮음"
+        }
+      ],
+      "count": 12,
+      "highRiskCount": 1
+    },
+    "earlyAttrition": {
+      "definition": "퇴사 예정자(14) 중 재직기간 1년 미만 비율",
+      "under1YearLeavers": 1,
+      "totalLeavers": 14,
+      "rate": 0.0714,
+      "byDepartment": {
+        "D02": {
+          "department": "Product",
+          "under1YearLeavers": 0,
+          "totalLeavers": 1,
+          "rate": 0.0
+        },
+        "D03": {
+          "department": "Engineering",
+          "under1YearLeavers": 0,
+          "totalLeavers": 4,
+          "rate": 0.0
+        },
+        "D04": {
+          "department": "Design",
+          "under1YearLeavers": 0,
+          "totalLeavers": 1,
+          "rate": 0.0
+        },
+        "D05": {
+          "department": "Data & AI",
+          "under1YearLeavers": 0,
+          "totalLeavers": 1,
+          "rate": 0.0
+        },
+        "D06": {
+          "department": "Sales",
+          "under1YearLeavers": 1,
+          "totalLeavers": 3,
+          "rate": 0.3333
+        },
+        "D07": {
+          "department": "Marketing",
+          "under1YearLeavers": 0,
+          "totalLeavers": 1,
+          "rate": 0.0
+        },
+        "D08": {
+          "department": "Customer Success",
+          "under1YearLeavers": 0,
+          "totalLeavers": 1,
+          "rate": 0.0
+        },
+        "D10": {
+          "department": "Finance",
+          "under1YearLeavers": 0,
+          "totalLeavers": 1,
+          "rate": 0.0
+        },
+        "D11": {
+          "department": "Legal & Compliance",
+          "under1YearLeavers": 0,
+          "totalLeavers": 1,
+          "rate": 0.0
+        }
+      }
+    },
+    "provenance": {
+      "sources": [
+        "data/clean/planned-joiners.clean.csv",
+        "data/clean/headcount-master.clean.csv",
+        "data/clean/planned-leavers.clean.csv",
+        "data/reference/org-chart.csv",
+        "data/stats/attrition-risk.json",
+        "data/stats/month-end-forecast.json",
+        "personas/persona-needs.json"
+      ],
+      "script": ".claude/skills/onboarding-plan/scripts/onboarding_plan.py",
+      "reconciliation": {
+        "timelineJoiners": 27,
+        "plannedJoinersValidRows": 27,
+        "match": true,
+        "monthEndJoiners": 19,
+        "forecastPlannedIn": 19,
+        "monthEndMatch": true
+      },
+      "gaps": [],
+      "seed": 20260923,
+      "checklistNote": "체크리스트 상태는 가상 생성(random.seed(20260923), 입사일 근접 → done 확률 상승). 실제 진행 상태가 아니다",
+      "buddyRule": "같은 조직 재직자 중 재직 2~6년, 리스크 낮음, 레벨 IC3/Senior/Lead, 최대 3명",
+      "deptLeadRule": "재직 VP 중 최장 재직(동률: 사번 오름차순), 없으면 최고 레벨 + gap(dept-lead-fallback)",
+      "pii": "timeline·buddyCandidates 성명 허용(온보딩 업무), 생년월일 없음. earlyTenureCohort·earlyAttrition은 사번·집계만",
+      "fitCriteriaChecked": {
+        "fitCriteria": 12,
+        "requiredFields": 1
+      }
+    }
+  },
+  "plannedJoiners": [
+    {
+      "joinerId": "J001",
+      "name": "주훈원",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "jobFamily": "Data/AI",
+      "level": "IC2",
+      "employmentType": "정규직",
+      "gender": "여성",
+      "plannedHireDate": "2026-10-28",
+      "priorExperienceMonths": "41",
+      "unresolvedFlags": ""
+    },
+    {
+      "joinerId": "J002",
+      "name": "곽아주",
+      "deptCode": "D02",
+      "department": "Product",
+      "jobFamily": "Product",
+      "level": "IC3",
+      "employmentType": "정규직",
+      "gender": "여성",
+      "plannedHireDate": "2026-09-27",
+      "priorExperienceMonths": "54",
+      "unresolvedFlags": ""
+    },
+    {
+      "joinerId": "J003",
+      "name": "권재호",
+      "deptCode": "D09",
+      "department": "People",
+      "jobFamily": "People",
+      "level": "Senior",
+      "employmentType": "정규직",
+      "gender": "여성",
+      "plannedHireDate": "2026-09-25",
+      "priorExperienceMonths": "148",
+      "unresolvedFlags": ""
+    },
+    {
+      "joinerId": "J004",
+      "name": "방성태",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "jobFamily": "Engineering",
+      "level": "Senior",
+      "employmentType": "정규직",
+      "gender": "남성",
+      "plannedHireDate": "2026-10-30",
+      "priorExperienceMonths": "93",
+      "unresolvedFlags": ""
+    },
+    {
+      "joinerId": "J005",
+      "name": "공채건",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "jobFamily": "Engineering",
+      "level": "IC2",
+      "employmentType": "정규직",
+      "gender": "여성",
+      "plannedHireDate": "2026-09-30",
+      "priorExperienceMonths": "24",
+      "unresolvedFlags": ""
+    },
+    {
+      "joinerId": "J006",
+      "name": "임시인",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "jobFamily": "Engineering",
+      "level": "IC3",
+      "employmentType": "정규직",
+      "gender": "여성",
+      "plannedHireDate": "2026-10-17",
+      "priorExperienceMonths": "55",
+      "unresolvedFlags": ""
+    },
+    {
+      "joinerId": "J007",
+      "name": "장소미",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "jobFamily": "Engineering",
+      "level": "IC2",
+      "employmentType": "정규직",
+      "gender": "남성",
+      "plannedHireDate": "2026-09-26",
+      "priorExperienceMonths": "22",
+      "unresolvedFlags": ""
+    },
+    {
+      "joinerId": "J008",
+      "name": "곽철연",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "jobFamily": "Data/AI",
+      "level": "IC2",
+      "employmentType": "정규직",
+      "gender": "여성",
+      "plannedHireDate": "2026-09-29",
+      "priorExperienceMonths": "13",
+      "unresolvedFlags": ""
+    },
+    {
+      "joinerId": "J009",
+      "name": "백원호",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "jobFamily": "Engineering",
+      "level": "Senior",
+      "employmentType": "정규직",
+      "gender": "남성",
+      "plannedHireDate": "2026-10-08",
+      "priorExperienceMonths": "128",
+      "unresolvedFlags": ""
+    },
+    {
+      "joinerId": "J010",
+      "name": "고환하",
+      "deptCode": "D06",
+      "department": "Sales",
+      "jobFamily": "Sales",
+      "level": "IC3",
+      "employmentType": "정규직",
+      "gender": "여성",
+      "plannedHireDate": "2026-10-01",
+      "priorExperienceMonths": "74",
+      "unresolvedFlags": ""
+    },
+    {
+      "joinerId": "J011",
+      "name": "최동주",
+      "deptCode": "D04",
+      "department": "Design",
+      "jobFamily": "Design",
+      "level": "Senior",
+      "employmentType": "정규직",
+      "gender": "남성",
+      "plannedHireDate": "2026-09-30",
+      "priorExperienceMonths": "125",
+      "unresolvedFlags": ""
+    },
+    {
+      "joinerId": "J012",
+      "name": "심서찬",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "jobFamily": "Engineering",
+      "level": "IC1",
+      "employmentType": "정규직",
+      "gender": "남성",
+      "plannedHireDate": "2026-09-27",
+      "priorExperienceMonths": "18",
+      "unresolvedFlags": ""
+    },
+    {
+      "joinerId": "J013",
+      "name": "류라정",
+      "deptCode": "D06",
+      "department": "Sales",
+      "jobFamily": "Sales",
+      "level": "IC1",
+      "employmentType": "정규직",
+      "gender": "여성",
+      "plannedHireDate": "2026-09-26",
+      "priorExperienceMonths": "17",
+      "unresolvedFlags": ""
+    },
+    {
+      "joinerId": "J014",
+      "name": "한아석",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "jobFamily": "Data/AI",
+      "level": "IC2",
+      "employmentType": "정규직",
+      "gender": "남성",
+      "plannedHireDate": "2026-09-24",
+      "priorExperienceMonths": "40",
+      "unresolvedFlags": ""
+    },
+    {
+      "joinerId": "J015",
+      "name": "송유도",
+      "deptCode": "D02",
+      "department": "Product",
+      "jobFamily": "Product",
+      "level": "Senior",
+      "employmentType": "정규직",
+      "gender": "미응답",
+      "plannedHireDate": "2026-09-25",
+      "priorExperienceMonths": "139",
+      "unresolvedFlags": ""
+    },
+    {
+      "joinerId": "J016",
+      "name": "장민기",
+      "deptCode": "D06",
+      "department": "Sales",
+      "jobFamily": "Sales",
+      "level": "Lead",
+      "employmentType": "정규직",
+      "gender": "미응답",
+      "plannedHireDate": "2026-09-25",
+      "priorExperienceMonths": "138",
+      "unresolvedFlags": ""
+    },
+    {
+      "joinerId": "J017",
+      "name": "지나율",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "jobFamily": "Engineering",
+      "level": "IC2",
+      "employmentType": "정규직",
+      "gender": "남성",
+      "plannedHireDate": "2026-10-03",
+      "priorExperienceMonths": "18",
+      "unresolvedFlags": ""
+    },
+    {
+      "joinerId": "J018",
+      "name": "주우진",
+      "deptCode": "D02",
+      "department": "Product",
+      "jobFamily": "Product",
+      "level": "IC1",
+      "employmentType": "계약직",
+      "gender": "미응답",
+      "plannedHireDate": "2026-10-18",
+      "priorExperienceMonths": "0",
+      "unresolvedFlags": ""
+    },
+    {
+      "joinerId": "J019",
+      "name": "조은다",
+      "deptCode": "D06",
+      "department": "Sales",
+      "jobFamily": "Sales",
+      "level": "Senior",
+      "employmentType": "정규직",
+      "gender": "남성",
+      "plannedHireDate": "2026-10-07",
+      "priorExperienceMonths": "115",
+      "unresolvedFlags": ""
+    },
+    {
+      "joinerId": "J020",
+      "name": "장건라",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "jobFamily": "Engineering",
+      "level": "IC3",
+      "employmentType": "정규직",
+      "gender": "미응답",
+      "plannedHireDate": "2026-09-24",
+      "priorExperienceMonths": "59",
+      "unresolvedFlags": ""
+    },
+    {
+      "joinerId": "J021",
+      "name": "신원경",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "jobFamily": "Customer Success",
+      "level": "IC3",
+      "employmentType": "정규직",
+      "gender": "남성",
+      "plannedHireDate": "2026-09-24",
+      "priorExperienceMonths": "82",
+      "unresolvedFlags": ""
+    },
+    {
+      "joinerId": "J022",
+      "name": "노우소",
+      "deptCode": "D07",
+      "department": "Marketing",
+      "jobFamily": "Marketing",
+      "level": "IC2",
+      "employmentType": "정규직",
+      "gender": "미응답",
+      "plannedHireDate": "2026-09-25",
+      "priorExperienceMonths": "17",
+      "unresolvedFlags": ""
+    },
+    {
+      "joinerId": "J023",
+      "name": "오주도",
+      "deptCode": "D06",
+      "department": "Sales",
+      "jobFamily": "Sales",
+      "level": "Lead",
+      "employmentType": "정규직",
+      "gender": "미응답",
+      "plannedHireDate": "2026-09-25",
+      "priorExperienceMonths": "151",
+      "unresolvedFlags": ""
+    },
+    {
+      "joinerId": "J024",
+      "name": "주은도",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "jobFamily": "Engineering",
+      "level": "Lead",
+      "employmentType": "인턴",
+      "gender": "여성",
+      "plannedHireDate": "2026-09-28",
+      "priorExperienceMonths": "126",
+      "unresolvedFlags": ""
+    },
+    {
+      "joinerId": "J025",
+      "name": "임희수",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "jobFamily": "Customer Success",
+      "level": "IC1",
+      "employmentType": "인턴",
+      "gender": "미응답",
+      "plannedHireDate": "2026-09-26",
+      "priorExperienceMonths": "12",
+      "unresolvedFlags": ""
+    },
+    {
+      "joinerId": "J026",
+      "name": "우소빈",
+      "deptCode": "D10",
+      "department": "Finance",
+      "jobFamily": "Finance",
+      "level": "Senior",
+      "employmentType": "계약직",
+      "gender": "미응답",
+      "plannedHireDate": "2026-09-28",
+      "priorExperienceMonths": "75",
+      "unresolvedFlags": ""
+    },
+    {
+      "joinerId": "J027",
+      "name": "유희윤",
+      "deptCode": "D02",
+      "department": "Product",
+      "jobFamily": "Product",
+      "level": "Senior",
+      "employmentType": "정규직",
+      "gender": "여성",
+      "plannedHireDate": "2026-09-28",
+      "priorExperienceMonths": "111",
+      "unresolvedFlags": ""
+    }
+  ],
+  "hrDirectorySubset": [
+    {
+      "empId": "E0018",
+      "name": "백규연",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0019",
+      "name": "전예재",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0020",
+      "name": "김원재",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0026",
+      "name": "최나호",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0033",
+      "name": "심수도",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0045",
+      "name": "구희연",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0065",
+      "name": "하리미",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "Director"
+    },
+    {
+      "empId": "E0076",
+      "name": "김재우",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "VP"
+    },
+    {
+      "empId": "E0081",
+      "name": "현빈찬",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0085",
+      "name": "정호현",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0086",
+      "name": "정선건",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0093",
+      "name": "한다연",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "Director"
+    },
+    {
+      "empId": "E0098",
+      "name": "조나소",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0100",
+      "name": "채건주",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0110",
+      "name": "공인도",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "Director"
+    },
+    {
+      "empId": "E0116",
+      "name": "배건찬",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0129",
+      "name": "송수미",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "Director"
+    },
+    {
+      "empId": "E0130",
+      "name": "성영영",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "Director"
+    },
+    {
+      "empId": "E0149",
+      "name": "이성채",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0166",
+      "name": "서라나",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0171",
+      "name": "성빈연",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0175",
+      "name": "성상연",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0185",
+      "name": "허주우",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0189",
+      "name": "성빈율",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0192",
+      "name": "차민태",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0211",
+      "name": "배나시",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0222",
+      "name": "양건준",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0224",
+      "name": "엄유건",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0229",
+      "name": "백영성",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0241",
+      "name": "권환도",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0258",
+      "name": "이다혜",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0262",
+      "name": "진유원",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0275",
+      "name": "주경나",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0277",
+      "name": "민지예",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0282",
+      "name": "현윤환",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0287",
+      "name": "차수상",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0311",
+      "name": "배혜지",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0312",
+      "name": "양인은",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "IC1"
+    },
+    {
+      "empId": "E0320",
+      "name": "곽민윤",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0321",
+      "name": "강철라",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0327",
+      "name": "홍주아",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0362",
+      "name": "전민소",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0366",
+      "name": "남지미",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0368",
+      "name": "우하은",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0382",
+      "name": "류건채",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0389",
+      "name": "양승태",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "IC1"
+    },
+    {
+      "empId": "E0393",
+      "name": "박재은",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0396",
+      "name": "천호리",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0402",
+      "name": "정정라",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0413",
+      "name": "차빈율",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0419",
+      "name": "방경리",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "IC1"
+    },
+    {
+      "empId": "E0423",
+      "name": "서건유",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0425",
+      "name": "오찬찬",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "IC1"
+    },
+    {
+      "empId": "E0426",
+      "name": "류정태",
+      "deptCode": "D02",
+      "department": "Product",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0004",
+      "name": "엄환서",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Director"
+    },
+    {
+      "empId": "E0005",
+      "name": "정진시",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0009",
+      "name": "박은태",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0011",
+      "name": "심하선",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0012",
+      "name": "김아예",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0013",
+      "name": "원아리",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0014",
+      "name": "손민하",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0025",
+      "name": "심준재",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Director"
+    },
+    {
+      "empId": "E0029",
+      "name": "천유준",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Director"
+    },
+    {
+      "empId": "E0038",
+      "name": "손재규",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0039",
+      "name": "강아상",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0041",
+      "name": "정영원",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Director"
+    },
+    {
+      "empId": "E0043",
+      "name": "홍서철",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0044",
+      "name": "나원현",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0046",
+      "name": "류석주",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0047",
+      "name": "허서동",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0059",
+      "name": "고건나",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0069",
+      "name": "황유영",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0071",
+      "name": "윤상찬",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0073",
+      "name": "공승환",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0078",
+      "name": "천동하",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0090",
+      "name": "허경석",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0091",
+      "name": "홍훈승",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0094",
+      "name": "양동희",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0097",
+      "name": "주호지",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0104",
+      "name": "우주윤",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0112",
+      "name": "현규빈",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Director"
+    },
+    {
+      "empId": "E0113",
+      "name": "배훈기",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0115",
+      "name": "남현환",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0117",
+      "name": "유호영",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Director"
+    },
+    {
+      "empId": "E0119",
+      "name": "강기호",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0120",
+      "name": "백유율",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Director"
+    },
+    {
+      "empId": "E0122",
+      "name": "한석진",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0128",
+      "name": "손수아",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0132",
+      "name": "노수다",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0134",
+      "name": "배미은",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0140",
+      "name": "이라진",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Director"
+    },
+    {
+      "empId": "E0145",
+      "name": "이민현",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0146",
+      "name": "권건예",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "VP"
+    },
+    {
+      "empId": "E0147",
+      "name": "임빈주",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0156",
+      "name": "엄은민",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0160",
+      "name": "문경라",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0161",
+      "name": "남동소",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0165",
+      "name": "한미나",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0168",
+      "name": "이빈리",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0174",
+      "name": "홍라리",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0176",
+      "name": "임윤윤",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0178",
+      "name": "장수미",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0181",
+      "name": "하철성",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0197",
+      "name": "송준아",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0202",
+      "name": "최연철",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0203",
+      "name": "문승소",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0212",
+      "name": "심라영",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0214",
+      "name": "황태유",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0216",
+      "name": "지소동",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0218",
+      "name": "박현빈",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0227",
+      "name": "서경빈",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0231",
+      "name": "지라서",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Director"
+    },
+    {
+      "empId": "E0232",
+      "name": "민기나",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0234",
+      "name": "전연빈",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0248",
+      "name": "오원도",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0249",
+      "name": "황빈기",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0250",
+      "name": "고선환",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0252",
+      "name": "천아인",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0256",
+      "name": "안서다",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Director"
+    },
+    {
+      "empId": "E0260",
+      "name": "안연기",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC1"
+    },
+    {
+      "empId": "E0264",
+      "name": "구건라",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0270",
+      "name": "안라예",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0274",
+      "name": "노규윤",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0278",
+      "name": "홍지정",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0280",
+      "name": "허민연",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0281",
+      "name": "장소현",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0284",
+      "name": "박재수",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0286",
+      "name": "공재미",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0295",
+      "name": "최철혜",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0304",
+      "name": "남규서",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0309",
+      "name": "남상도",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0313",
+      "name": "지훈예",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0316",
+      "name": "백상미",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0318",
+      "name": "공도훈",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC1"
+    },
+    {
+      "empId": "E0324",
+      "name": "강경시",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0329",
+      "name": "임진석",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC1"
+    },
+    {
+      "empId": "E0330",
+      "name": "조소율",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC1"
+    },
+    {
+      "empId": "E0331",
+      "name": "심규동",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0332",
+      "name": "박찬환",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Director"
+    },
+    {
+      "empId": "E0333",
+      "name": "전서상",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC1"
+    },
+    {
+      "empId": "E0334",
+      "name": "고상정",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0336",
+      "name": "현윤경",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0337",
+      "name": "김하수",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0346",
+      "name": "송연찬",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0352",
+      "name": "안찬아",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0354",
+      "name": "배영혜",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC1"
+    },
+    {
+      "empId": "E0359",
+      "name": "한리혜",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0360",
+      "name": "허지예",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0361",
+      "name": "민상다",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0365",
+      "name": "권유수",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0367",
+      "name": "민연예",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0369",
+      "name": "우태율",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0373",
+      "name": "허희정",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0380",
+      "name": "박소아",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0383",
+      "name": "전소진",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC1"
+    },
+    {
+      "empId": "E0392",
+      "name": "차라준",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0407",
+      "name": "현도아",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC1"
+    },
+    {
+      "empId": "E0410",
+      "name": "황아원",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0412",
+      "name": "정진철",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0415",
+      "name": "박찬연",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC1"
+    },
+    {
+      "empId": "E0416",
+      "name": "백규현",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0417",
+      "name": "구준주",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0418",
+      "name": "차지선",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0427",
+      "name": "우규훈",
+      "deptCode": "D03",
+      "department": "Engineering",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0001",
+      "name": "한석기",
+      "deptCode": "D04",
+      "department": "Design",
+      "level": "Director"
+    },
+    {
+      "empId": "E0010",
+      "name": "심희율",
+      "deptCode": "D04",
+      "department": "Design",
+      "level": "VP"
+    },
+    {
+      "empId": "E0036",
+      "name": "윤채영",
+      "deptCode": "D04",
+      "department": "Design",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0040",
+      "name": "안환선",
+      "deptCode": "D04",
+      "department": "Design",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0053",
+      "name": "임승민",
+      "deptCode": "D04",
+      "department": "Design",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0080",
+      "name": "우기주",
+      "deptCode": "D04",
+      "department": "Design",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0118",
+      "name": "원준재",
+      "deptCode": "D04",
+      "department": "Design",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0125",
+      "name": "구정리",
+      "deptCode": "D04",
+      "department": "Design",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0143",
+      "name": "주혜상",
+      "deptCode": "D04",
+      "department": "Design",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0162",
+      "name": "강채정",
+      "deptCode": "D04",
+      "department": "Design",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0170",
+      "name": "하철진",
+      "deptCode": "D04",
+      "department": "Design",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0183",
+      "name": "양수수",
+      "deptCode": "D04",
+      "department": "Design",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0186",
+      "name": "백호준",
+      "deptCode": "D04",
+      "department": "Design",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0191",
+      "name": "공인서",
+      "deptCode": "D04",
+      "department": "Design",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0194",
+      "name": "양호시",
+      "deptCode": "D04",
+      "department": "Design",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0210",
+      "name": "손다희",
+      "deptCode": "D04",
+      "department": "Design",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0219",
+      "name": "남인원",
+      "deptCode": "D04",
+      "department": "Design",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0220",
+      "name": "성미경",
+      "deptCode": "D04",
+      "department": "Design",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0228",
+      "name": "전민민",
+      "deptCode": "D04",
+      "department": "Design",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0254",
+      "name": "김찬예",
+      "deptCode": "D04",
+      "department": "Design",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0269",
+      "name": "강승다",
+      "deptCode": "D04",
+      "department": "Design",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0305",
+      "name": "우영라",
+      "deptCode": "D04",
+      "department": "Design",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0344",
+      "name": "차석아",
+      "deptCode": "D04",
+      "department": "Design",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0385",
+      "name": "구미영",
+      "deptCode": "D04",
+      "department": "Design",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0391",
+      "name": "나경채",
+      "deptCode": "D04",
+      "department": "Design",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0399",
+      "name": "송혜은",
+      "deptCode": "D04",
+      "department": "Design",
+      "level": "IC1"
+    },
+    {
+      "empId": "E0015",
+      "name": "류훈원",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0017",
+      "name": "심환라",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0021",
+      "name": "장성영",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0042",
+      "name": "조영서",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0054",
+      "name": "신라인",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0055",
+      "name": "황철빈",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0056",
+      "name": "나하민",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0062",
+      "name": "곽상승",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0063",
+      "name": "하석소",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "Director"
+    },
+    {
+      "empId": "E0068",
+      "name": "조유은",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0109",
+      "name": "우인희",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "Director"
+    },
+    {
+      "empId": "E0111",
+      "name": "차철연",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0114",
+      "name": "윤나서",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0123",
+      "name": "장채라",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0127",
+      "name": "채주채",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0133",
+      "name": "현경서",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0155",
+      "name": "곽지라",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0163",
+      "name": "고경다",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0167",
+      "name": "손아준",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0172",
+      "name": "장수지",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0184",
+      "name": "김유훈",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0188",
+      "name": "원환찬",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0204",
+      "name": "천아나",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "VP"
+    },
+    {
+      "empId": "E0213",
+      "name": "천다소",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0217",
+      "name": "최환우",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0242",
+      "name": "강나시",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0247",
+      "name": "전승연",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0253",
+      "name": "양영재",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0283",
+      "name": "주지희",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0288",
+      "name": "성유인",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0307",
+      "name": "우혜다",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0308",
+      "name": "유기지",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "IC1"
+    },
+    {
+      "empId": "E0339",
+      "name": "강철철",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0341",
+      "name": "남유하",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "IC1"
+    },
+    {
+      "empId": "E0342",
+      "name": "노태성",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "IC1"
+    },
+    {
+      "empId": "E0355",
+      "name": "전지훈",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0357",
+      "name": "고인예",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0386",
+      "name": "권훈율",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0387",
+      "name": "허미기",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0400",
+      "name": "성주기",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "IC1"
+    },
+    {
+      "empId": "E0404",
+      "name": "황예윤",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0420",
+      "name": "백재영",
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0006",
+      "name": "서지훈",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0030",
+      "name": "주주다",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0031",
+      "name": "문민석",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0032",
+      "name": "심동서",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0034",
+      "name": "양승지",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0035",
+      "name": "김호태",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0050",
+      "name": "문현희",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0052",
+      "name": "채하인",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0058",
+      "name": "노채태",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0061",
+      "name": "채예라",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0077",
+      "name": "성훈희",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0095",
+      "name": "천승율",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0096",
+      "name": "남동유",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0099",
+      "name": "정경지",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0105",
+      "name": "심유영",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "Director"
+    },
+    {
+      "empId": "E0121",
+      "name": "류민리",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0126",
+      "name": "민다진",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0135",
+      "name": "손석아",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0136",
+      "name": "원석서",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0139",
+      "name": "구경원",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0142",
+      "name": "백윤상",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0148",
+      "name": "송상재",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0158",
+      "name": "한시철",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0187",
+      "name": "우윤호",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0193",
+      "name": "안수우",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0196",
+      "name": "성규선",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0198",
+      "name": "공리미",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0199",
+      "name": "최동동",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0200",
+      "name": "윤유다",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0201",
+      "name": "민원빈",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "VP"
+    },
+    {
+      "empId": "E0207",
+      "name": "채재경",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0225",
+      "name": "나원나",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0230",
+      "name": "구훈재",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0236",
+      "name": "오정진",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0237",
+      "name": "주수석",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0240",
+      "name": "하성희",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0243",
+      "name": "유석승",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0246",
+      "name": "양아윤",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "IC1"
+    },
+    {
+      "empId": "E0255",
+      "name": "백훈원",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0263",
+      "name": "구혜성",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0268",
+      "name": "방진윤",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0271",
+      "name": "양서경",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0298",
+      "name": "한서시",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0301",
+      "name": "방희수",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0303",
+      "name": "천재기",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0343",
+      "name": "공도환",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0345",
+      "name": "민석태",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0348",
+      "name": "심상인",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0349",
+      "name": "서주나",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0351",
+      "name": "정석미",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0353",
+      "name": "강시나",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0363",
+      "name": "서예채",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0375",
+      "name": "남태인",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0379",
+      "name": "성진서",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0388",
+      "name": "백상예",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0390",
+      "name": "홍태윤",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "IC1"
+    },
+    {
+      "empId": "E0395",
+      "name": "황윤상",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0397",
+      "name": "한율서",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0406",
+      "name": "허인현",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0421",
+      "name": "주석아",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0424",
+      "name": "신영미",
+      "deptCode": "D06",
+      "department": "Sales",
+      "level": "IC1"
+    },
+    {
+      "empId": "E0003",
+      "name": "윤라건",
+      "deptCode": "D07",
+      "department": "Marketing",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0066",
+      "name": "남연우",
+      "deptCode": "D07",
+      "department": "Marketing",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0092",
+      "name": "지성혜",
+      "deptCode": "D07",
+      "department": "Marketing",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0107",
+      "name": "지호혜",
+      "deptCode": "D07",
+      "department": "Marketing",
+      "level": "Director"
+    },
+    {
+      "empId": "E0131",
+      "name": "박도석",
+      "deptCode": "D07",
+      "department": "Marketing",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0137",
+      "name": "양재연",
+      "deptCode": "D07",
+      "department": "Marketing",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0150",
+      "name": "진규라",
+      "deptCode": "D07",
+      "department": "Marketing",
+      "level": "VP"
+    },
+    {
+      "empId": "E0154",
+      "name": "원서호",
+      "deptCode": "D07",
+      "department": "Marketing",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0159",
+      "name": "심찬지",
+      "deptCode": "D07",
+      "department": "Marketing",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0209",
+      "name": "안규율",
+      "deptCode": "D07",
+      "department": "Marketing",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0215",
+      "name": "나민재",
+      "deptCode": "D07",
+      "department": "Marketing",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0221",
+      "name": "허미규",
+      "deptCode": "D07",
+      "department": "Marketing",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0238",
+      "name": "서영시",
+      "deptCode": "D07",
+      "department": "Marketing",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0257",
+      "name": "지유지",
+      "deptCode": "D07",
+      "department": "Marketing",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0259",
+      "name": "한동재",
+      "deptCode": "D07",
+      "department": "Marketing",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0261",
+      "name": "주경민",
+      "deptCode": "D07",
+      "department": "Marketing",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0267",
+      "name": "문인수",
+      "deptCode": "D07",
+      "department": "Marketing",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0273",
+      "name": "차준석",
+      "deptCode": "D07",
+      "department": "Marketing",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0285",
+      "name": "차미시",
+      "deptCode": "D07",
+      "department": "Marketing",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0294",
+      "name": "윤재철",
+      "deptCode": "D07",
+      "department": "Marketing",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0296",
+      "name": "류미주",
+      "deptCode": "D07",
+      "department": "Marketing",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0300",
+      "name": "최규소",
+      "deptCode": "D07",
+      "department": "Marketing",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0306",
+      "name": "권라진",
+      "deptCode": "D07",
+      "department": "Marketing",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0314",
+      "name": "황지윤",
+      "deptCode": "D07",
+      "department": "Marketing",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0325",
+      "name": "주석경",
+      "deptCode": "D07",
+      "department": "Marketing",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0335",
+      "name": "문인채",
+      "deptCode": "D07",
+      "department": "Marketing",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0350",
+      "name": "현민예",
+      "deptCode": "D07",
+      "department": "Marketing",
+      "level": "IC1"
+    },
+    {
+      "empId": "E0356",
+      "name": "주도빈",
+      "deptCode": "D07",
+      "department": "Marketing",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0364",
+      "name": "최동시",
+      "deptCode": "D07",
+      "department": "Marketing",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0374",
+      "name": "강훈다",
+      "deptCode": "D07",
+      "department": "Marketing",
+      "level": "IC1"
+    },
+    {
+      "empId": "E0422",
+      "name": "심준호",
+      "deptCode": "D07",
+      "department": "Marketing",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0008",
+      "name": "나상호",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "VP"
+    },
+    {
+      "empId": "E0027",
+      "name": "손라은",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0028",
+      "name": "구석선",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0049",
+      "name": "서태건",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0057",
+      "name": "진미하",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "Director"
+    },
+    {
+      "empId": "E0067",
+      "name": "류나수",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0070",
+      "name": "정철라",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0074",
+      "name": "윤아라",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0075",
+      "name": "정정성",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0079",
+      "name": "류아예",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0101",
+      "name": "심채유",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0102",
+      "name": "손기유",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0106",
+      "name": "허원석",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0138",
+      "name": "유민철",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0151",
+      "name": "문예빈",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0152",
+      "name": "방서태",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0164",
+      "name": "윤동채",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0177",
+      "name": "심동원",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0179",
+      "name": "현선은",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0180",
+      "name": "유다영",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0205",
+      "name": "성승리",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0223",
+      "name": "허환혜",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0226",
+      "name": "방미재",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0235",
+      "name": "전혜주",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0239",
+      "name": "방하철",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0245",
+      "name": "차예서",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0289",
+      "name": "오성미",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0299",
+      "name": "민선민",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0302",
+      "name": "장율우",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0310",
+      "name": "주우동",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0315",
+      "name": "홍미선",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0317",
+      "name": "현경하",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0319",
+      "name": "엄민아",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0326",
+      "name": "천예아",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0347",
+      "name": "홍찬영",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "IC1"
+    },
+    {
+      "empId": "E0358",
+      "name": "임도주",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0376",
+      "name": "허은윤",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "IC1"
+    },
+    {
+      "empId": "E0377",
+      "name": "서현다",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0398",
+      "name": "천채석",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0401",
+      "name": "채석아",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "IC1"
+    },
+    {
+      "empId": "E0409",
+      "name": "나빈건",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "IC1"
+    },
+    {
+      "empId": "E0411",
+      "name": "우상지",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0414",
+      "name": "구건철",
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "level": "IC1"
+    },
+    {
+      "empId": "E0023",
+      "name": "엄환도",
+      "deptCode": "D09",
+      "department": "People",
+      "level": "VP"
+    },
+    {
+      "empId": "E0082",
+      "name": "정우시",
+      "deptCode": "D09",
+      "department": "People",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0089",
+      "name": "손지민",
+      "deptCode": "D09",
+      "department": "People",
+      "level": "Director"
+    },
+    {
+      "empId": "E0108",
+      "name": "송철환",
+      "deptCode": "D09",
+      "department": "People",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0124",
+      "name": "한아성",
+      "deptCode": "D09",
+      "department": "People",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0141",
+      "name": "배수환",
+      "deptCode": "D09",
+      "department": "People",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0169",
+      "name": "류예준",
+      "deptCode": "D09",
+      "department": "People",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0190",
+      "name": "유빈민",
+      "deptCode": "D09",
+      "department": "People",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0206",
+      "name": "양주상",
+      "deptCode": "D09",
+      "department": "People",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0266",
+      "name": "주동선",
+      "deptCode": "D09",
+      "department": "People",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0276",
+      "name": "홍진다",
+      "deptCode": "D09",
+      "department": "People",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0290",
+      "name": "남나혜",
+      "deptCode": "D09",
+      "department": "People",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0293",
+      "name": "성혜준",
+      "deptCode": "D09",
+      "department": "People",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0322",
+      "name": "송정정",
+      "deptCode": "D09",
+      "department": "People",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0328",
+      "name": "황시아",
+      "deptCode": "D09",
+      "department": "People",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0338",
+      "name": "고태정",
+      "deptCode": "D09",
+      "department": "People",
+      "level": "IC3"
+    },
+    {
+      "empId": "E0340",
+      "name": "장현소",
+      "deptCode": "D09",
+      "department": "People",
+      "level": "IC1"
+    },
+    {
+      "empId": "E0381",
+      "name": "곽철석",
+      "deptCode": "D09",
+      "department": "People",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0384",
+      "name": "문도영",
+      "deptCode": "D09",
+      "department": "People",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0002",
+      "name": "하훈희",
+      "deptCode": "D10",
+      "department": "Finance",
+      "level": "Director"
+    },
+    {
+      "empId": "E0007",
+      "name": "백동희",
+      "deptCode": "D10",
+      "department": "Finance",
+      "level": "Director"
+    },
+    {
+      "empId": "E0022",
+      "name": "민태시",
+      "deptCode": "D10",
+      "department": "Finance",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0051",
+      "name": "우동철",
+      "deptCode": "D10",
+      "department": "Finance",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0064",
+      "name": "허은선",
+      "deptCode": "D10",
+      "department": "Finance",
+      "level": "VP"
+    },
+    {
+      "empId": "E0072",
+      "name": "서연경",
+      "deptCode": "D10",
+      "department": "Finance",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0084",
+      "name": "유재규",
+      "deptCode": "D10",
+      "department": "Finance",
+      "level": "Manager"
+    },
+    {
+      "empId": "E0088",
+      "name": "주서우",
+      "deptCode": "D10",
+      "department": "Finance",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0103",
+      "name": "주정혜",
+      "deptCode": "D10",
+      "department": "Finance",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0144",
+      "name": "조윤기",
+      "deptCode": "D10",
+      "department": "Finance",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0153",
+      "name": "권찬빈",
+      "deptCode": "D10",
+      "department": "Finance",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0173",
+      "name": "원하하",
+      "deptCode": "D10",
+      "department": "Finance",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0182",
+      "name": "원수시",
+      "deptCode": "D10",
+      "department": "Finance",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0208",
+      "name": "공기윤",
+      "deptCode": "D10",
+      "department": "Finance",
+      "level": "Lead"
+    },
+    {
+      "empId": "E0265",
+      "name": "장인나",
+      "deptCode": "D10",
+      "department": "Finance",
+      "level": "Senior"
+    },
+    {
+      "empId": "E0372",
+      "name": "심라현",
+      "deptCode": "D10",
+      "department": "Finance",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0378",
+      "name": "차원채",
+      "deptCode": "D10",
+      "department": "Finance",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0403",
+      "name": "권상주",
+      "deptCode": "D10",
+      "department": "Finance",
+      "level": "IC1"
+    },
+    {
+      "empId": "E0405",
+      "name": "강진라",
+      "deptCode": "D10",
+      "department": "Finance",
+      "level": "IC2"
+    },
+    {
+      "empId": "E0408",
+      "name": "곽찬율",
+      "deptCode": "D10",
+      "department": "Finance",
+      "level": "Senior"
+    }
+  ]
+}

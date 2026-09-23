@@ -1,0 +1,252 @@
+{
+  "status": "ok",
+  "asOfDate": "2026-09-23",
+  "role": "executive",
+  "tool": "insight.get_attrition_summary",
+  "data": {
+    "asOfDate": "2026-09-23",
+    "deptCode": null,
+    "summary": {
+      "높음": 44,
+      "중간": 118,
+      "낮음": 244,
+      "expectedAttritionNext3Months": 36.88
+    },
+    "byDepartment": [
+      {
+        "deptCode": "D01",
+        "department": "CEO Office",
+        "orgGroupCode": "G0",
+        "orgGroup": "Executive",
+        "activeHeadcount": 10,
+        "높음": 0,
+        "중간": 4,
+        "낮음": 6,
+        "expectedAttritionNext3Months": 0.66,
+        "toGapAsOf": 0
+      },
+      {
+        "deptCode": "D02",
+        "department": "Product",
+        "orgGroupCode": "G1",
+        "orgGroup": "Build",
+        "activeHeadcount": 51,
+        "높음": 1,
+        "중간": 16,
+        "낮음": 34,
+        "expectedAttritionNext3Months": 3.29,
+        "toGapAsOf": -3
+      },
+      {
+        "deptCode": "D03",
+        "department": "Engineering",
+        "orgGroupCode": "G1",
+        "orgGroup": "Build",
+        "activeHeadcount": 104,
+        "높음": 33,
+        "중간": 14,
+        "낮음": 57,
+        "expectedAttritionNext3Months": 14.94,
+        "toGapAsOf": -8
+      },
+      {
+        "deptCode": "D04",
+        "department": "Design",
+        "orgGroupCode": "G1",
+        "orgGroup": "Build",
+        "activeHeadcount": 25,
+        "높음": 1,
+        "중간": 6,
+        "낮음": 18,
+        "expectedAttritionNext3Months": 1.61,
+        "toGapAsOf": -1
+      },
+      {
+        "deptCode": "D05",
+        "department": "Data & AI",
+        "orgGroupCode": "G1",
+        "orgGroup": "Build",
+        "activeHeadcount": 40,
+        "높음": 2,
+        "중간": 11,
+        "낮음": 27,
+        "expectedAttritionNext3Months": 2.83,
+        "toGapAsOf": 6
+      },
+      {
+        "deptCode": "D06",
+        "department": "Sales",
+        "orgGroupCode": "G2",
+        "orgGroup": "Go-To-Market",
+        "activeHeadcount": 58,
+        "높음": 5,
+        "중간": 20,
+        "낮음": 33,
+        "expectedAttritionNext3Months": 5.14,
+        "toGapAsOf": -4
+      },
+      {
+        "deptCode": "D07",
+        "department": "Marketing",
+        "orgGroupCode": "G2",
+        "orgGroup": "Go-To-Market",
+        "activeHeadcount": 30,
+        "높음": 1,
+        "중간": 18,
+        "낮음": 11,
+        "expectedAttritionNext3Months": 2.84,
+        "toGapAsOf": -2
+      },
+      {
+        "deptCode": "D08",
+        "department": "Customer Success",
+        "orgGroupCode": "G2",
+        "orgGroup": "Go-To-Market",
+        "activeHeadcount": 40,
+        "높음": 0,
+        "중간": 16,
+        "낮음": 24,
+        "expectedAttritionNext3Months": 2.64,
+        "toGapAsOf": -2
+      },
+      {
+        "deptCode": "D09",
+        "department": "People",
+        "orgGroupCode": "G3",
+        "orgGroup": "Operations",
+        "activeHeadcount": 18,
+        "높음": 0,
+        "중간": 6,
+        "낮음": 12,
+        "expectedAttritionNext3Months": 1.08,
+        "toGapAsOf": 0
+      },
+      {
+        "deptCode": "D10",
+        "department": "Finance",
+        "orgGroupCode": "G3",
+        "orgGroup": "Operations",
+        "activeHeadcount": 19,
+        "높음": 1,
+        "중간": 1,
+        "낮음": 17,
+        "expectedAttritionNext3Months": 0.98,
+        "toGapAsOf": -1
+      },
+      {
+        "deptCode": "D11",
+        "department": "Legal & Compliance",
+        "orgGroupCode": "G3",
+        "orgGroup": "Operations",
+        "activeHeadcount": 11,
+        "높음": 0,
+        "중간": 6,
+        "낮음": 5,
+        "expectedAttritionNext3Months": 0.87,
+        "toGapAsOf": -1
+      }
+    ],
+    "byOrgGroup": [
+      {
+        "orgGroupCode": "G0",
+        "orgGroup": "Executive",
+        "activeHeadcount": 10,
+        "높음": 0,
+        "중간": 4,
+        "낮음": 6,
+        "expectedAttritionNext3Months": 0.66
+      },
+      {
+        "orgGroupCode": "G1",
+        "orgGroup": "Build",
+        "activeHeadcount": 220,
+        "높음": 37,
+        "중간": 47,
+        "낮음": 136,
+        "expectedAttritionNext3Months": 22.67
+      },
+      {
+        "orgGroupCode": "G2",
+        "orgGroup": "Go-To-Market",
+        "activeHeadcount": 128,
+        "높음": 6,
+        "중간": 54,
+        "낮음": 68,
+        "expectedAttritionNext3Months": 10.62
+      },
+      {
+        "orgGroupCode": "G3",
+        "orgGroup": "Operations",
+        "activeHeadcount": 48,
+        "높음": 1,
+        "중간": 13,
+        "낮음": 34,
+        "expectedAttritionNext3Months": 2.93
+      }
+    ],
+    "model": {
+      "bands": {
+        "높음": "score>=60",
+        "중간": "35<=score<60",
+        "낮음": "score<35"
+      },
+      "expectedProbability": {
+        "높음": 0.35,
+        "중간": 0.12,
+        "낮음": 0.03
+      },
+      "factors": [
+        {
+          "factor": "tenure-1-3y",
+          "rationale": "재직기간 1년 이상 3년 미만 (tenureBand 1~3년). 역량이 시장에서 인정받기 시작하고 첫 이직 창이 열리는 구간 — 일반적으로 이직률이 가장 높은 재직 구간. 기본 가중치 22 × 신호군 배율 1.16 → 실효 26. 해당 인원 151명(37.2%)"
+        },
+        {
+          "factor": "level-stagnation",
+          "rationale": "재직기간 3년 이상인데 레벨이 IC1 또는 IC2. 레벨은 재직기간과 양의 상관이므로 3년+ IC1/IC2는 뚜렷한 승급 정체 신호 — 승급 좌절은 자발퇴사의 대표 동기. 기본 가중치 24 × 신호군 배율 1.16 → 실효 28. 해당 인원 1명(0.2%)"
+        },
+        {
+          "factor": "contract-expiring",
+          "rationale": "고용유형 계약직·인턴·파견이고 계약종료일이 기준일로부터 90일 이내(경과 포함). 계약 만료는 가장 확실한 이탈 이벤트. 만료일이 지났는데 재직이면 갱신 미반영이므로 동일하게 취급. 기본 가중치 35 × 신호군 배율 1.16 → 실효 41. 해당 인원 24명(5.9%)"
+        },
+        {
+          "factor": "job-family-eng-data-ai",
+          "rationale": "직군이 Engineering 또는 Data/AI. 외부 수요가 가장 큰 직군 — 같은 조건이면 이직 기회 자체가 많다. 재직의 약 1/3이 해당하므로 단독으로 밴드를 바꾸지 않게 작게. 기본 가중치 10 × 기초군 배율 1.10 → 실효 11. 해당 인원 140명(34.5%)"
+        },
+        {
+          "factor": "age-20s-30s",
+          "rationale": "연령대가 20대 또는 30대. 커리어 초·중반은 이동 비용이 낮다. 재직의 약 75%가 해당하므로 단독으로 밴드를 바꾸지 않도록 작게. 기본 가중치 7 × 기초군 배율 1.10 → 실효 8. 해당 인원 303명(74.6%)"
+        },
+        {
+          "factor": "dept-understaffed",
+          "rationale": "소속 조직의 기준일 TO 과부족(재직 − TO)이 0 미만 (gapAsOf<0). 정원 미달 조직은 1인당 업무 부하가 커져 번아웃·이탈이 늘어난다. 데모에서는 11개 중 8개 조직이 해당해 재직의 약 80%가 걸리므로 조직 단위 기초 요인으로 작게. 기본 가중치 8 × 기초군 배율 1.10 → 실효 9. 해당 인원 338명(83.3%). 해당 조직: D02, D03, D04, D06, D07, D08, D10, D11"
+        },
+        {
+          "factor": "level-ic",
+          "rationale": "레벨이 IC1~IC3 (개인 기여자). 관리·리드 레벨은 보상·역할로 조직 결속이 커서 이탈이 적다. 재직의 약 45%가 해당 → 최소 가중치. 기본 가중치 5 × 기초군 배율 1.10 → 실효 6. 해당 인원 180명(44.3%)"
+        }
+      ],
+      "assumptions": [
+        "밴드별 3개월 이탈 확률 높음 0.35 / 중간 0.12 / 낮음 0.03 (계약 §4-3) — 기대 이탈 인원은 시나리오이며 예측을 대체하지 않는다",
+        "요인은 참/거짓 판정, 점수는 실효 가중치 합(0~100 캡). 밴드 경계(60/35)는 계약 고정, 분포 목표(높음 8~15%·중간 25~35%)는 신호군·기초군 배율로 보정",
+        "재직(status=재직) 406명만 점수화(휴직 21명 제외) — TO 비교·예측 기준 모집단과 동일",
+        "퇴사 예정자도 재직이면 점수화 — headcount-forecaster의 riskAdjusted에서 plannedOut과 이중 계산 가능",
+        "dept-understaffed는 기준일 TO 과부족(재직 − TO) < 0 인 조직 소속 여부(월말 예측이 아닌 기준일 기준)"
+      ]
+    }
+  },
+  "provenance": {
+    "source": "data/stats/attrition-risk.json",
+    "script": ".claude/skills/attrition-risk/scripts/score_attrition.py"
+  },
+  "claims": {
+    "implemented": [
+      "summary/byDepartment/byOrgGroup 은 attrition-risk.json 값(점수 필드 제거). byEmployee 는 role=hr 에서만 사번·등급"
+    ],
+    "mockup": [
+      "expectedAttritionNext3Months 는 밴드별 확률 가정(0.35/0.12/0.03)의 시나리오 — 예측을 대체하지 않는다"
+    ],
+    "approvalPending": [
+      "면담·리텐션 조치는 사람의 결정(민감정보 접근 gate)"
+    ]
+  }
+}

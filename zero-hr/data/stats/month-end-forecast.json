@@ -1,0 +1,720 @@
+{
+  "asOfDate": "2026-09-23",
+  "monthEnd": "2026-09-30",
+  "nextMonthEnd": "2026-10-31",
+  "assumptions": [
+    "입사 예정자는 예정일에 전원 입사",
+    "퇴사 예정자는 예정일에 전원 퇴사(예정일이 지난 stale 건 포함)",
+    "TO 비교는 재직 인원 기준(휴직 제외)",
+    "마스터에 없는 사번의 퇴사 예정은 제외",
+    "휴직자의 퇴사 예정은 재직 기준 예측에서 제외(급여 마감 총원에는 별도 반영)",
+    "다음 달 TO는 기준월 TO를 그대로 적용(다음 달 TO 계획 미수령)",
+    "리스크 반영 시나리오는 attrition-risk.json 의 조직별 3개월 기대 이탈의 1/3을 다음 달 말에 반영(기본 예측을 대체하지 않는 시나리오, 퇴사 예정자와 일부 중복 가능)"
+  ],
+  "byDepartment": [
+    {
+      "deptCode": "D01",
+      "department": "CEO Office",
+      "orgGroupCode": "G0",
+      "orgGroup": "Executive",
+      "toHeadcount": 10,
+      "activeHeadcount": 10,
+      "plannedIn": 0,
+      "plannedOut": 0,
+      "forecastMonthEnd": 10,
+      "toGapAsOf": 0,
+      "toGapMonthEnd": 0,
+      "recommendation": "정상 관리",
+      "nextMonth": {
+        "plannedIn": 0,
+        "plannedOut": 0,
+        "forecastNextMonthEnd": 10,
+        "toGapNextMonthEnd": 0
+      },
+      "riskAdjusted": {
+        "expectedAttrition": 0.22,
+        "forecastNextMonthEndRiskAdjusted": 9.78
+      }
+    },
+    {
+      "deptCode": "D02",
+      "department": "Product",
+      "orgGroupCode": "G1",
+      "orgGroup": "Build",
+      "toHeadcount": 54,
+      "activeHeadcount": 51,
+      "plannedIn": 3,
+      "plannedOut": 1,
+      "forecastMonthEnd": 53,
+      "toGapAsOf": -3,
+      "toGapMonthEnd": -1,
+      "recommendation": "정상 관리",
+      "nextMonth": {
+        "plannedIn": 1,
+        "plannedOut": 0,
+        "forecastNextMonthEnd": 54,
+        "toGapNextMonthEnd": 0
+      },
+      "riskAdjusted": {
+        "expectedAttrition": 1.1,
+        "forecastNextMonthEndRiskAdjusted": 52.9
+      }
+    },
+    {
+      "deptCode": "D03",
+      "department": "Engineering",
+      "orgGroupCode": "G1",
+      "orgGroup": "Build",
+      "toHeadcount": 112,
+      "activeHeadcount": 104,
+      "plannedIn": 5,
+      "plannedOut": 4,
+      "forecastMonthEnd": 105,
+      "toGapAsOf": -8,
+      "toGapMonthEnd": -7,
+      "recommendation": "채용 가속",
+      "nextMonth": {
+        "plannedIn": 3,
+        "plannedOut": 1,
+        "forecastNextMonthEnd": 107,
+        "toGapNextMonthEnd": -5
+      },
+      "riskAdjusted": {
+        "expectedAttrition": 4.98,
+        "forecastNextMonthEndRiskAdjusted": 102.02
+      }
+    },
+    {
+      "deptCode": "D04",
+      "department": "Design",
+      "orgGroupCode": "G1",
+      "orgGroup": "Build",
+      "toHeadcount": 26,
+      "activeHeadcount": 25,
+      "plannedIn": 1,
+      "plannedOut": 1,
+      "forecastMonthEnd": 25,
+      "toGapAsOf": -1,
+      "toGapMonthEnd": -1,
+      "recommendation": "정상 관리",
+      "nextMonth": {
+        "plannedIn": 0,
+        "plannedOut": 0,
+        "forecastNextMonthEnd": 25,
+        "toGapNextMonthEnd": -1
+      },
+      "riskAdjusted": {
+        "expectedAttrition": 0.54,
+        "forecastNextMonthEndRiskAdjusted": 24.46
+      }
+    },
+    {
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "orgGroupCode": "G1",
+      "orgGroup": "Build",
+      "toHeadcount": 34,
+      "activeHeadcount": 40,
+      "plannedIn": 2,
+      "plannedOut": 1,
+      "forecastMonthEnd": 41,
+      "toGapAsOf": 6,
+      "toGapMonthEnd": 7,
+      "recommendation": "TO 재검토/이동배치",
+      "nextMonth": {
+        "plannedIn": 2,
+        "plannedOut": 0,
+        "forecastNextMonthEnd": 43,
+        "toGapNextMonthEnd": 9
+      },
+      "riskAdjusted": {
+        "expectedAttrition": 0.94,
+        "forecastNextMonthEndRiskAdjusted": 42.06
+      }
+    },
+    {
+      "deptCode": "D06",
+      "department": "Sales",
+      "orgGroupCode": "G2",
+      "orgGroup": "Go-To-Market",
+      "toHeadcount": 62,
+      "activeHeadcount": 58,
+      "plannedIn": 3,
+      "plannedOut": 3,
+      "forecastMonthEnd": 58,
+      "toGapAsOf": -4,
+      "toGapMonthEnd": -4,
+      "recommendation": "채용 가속",
+      "nextMonth": {
+        "plannedIn": 2,
+        "plannedOut": 1,
+        "forecastNextMonthEnd": 59,
+        "toGapNextMonthEnd": -3
+      },
+      "riskAdjusted": {
+        "expectedAttrition": 1.71,
+        "forecastNextMonthEndRiskAdjusted": 57.29
+      }
+    },
+    {
+      "deptCode": "D07",
+      "department": "Marketing",
+      "orgGroupCode": "G2",
+      "orgGroup": "Go-To-Market",
+      "toHeadcount": 32,
+      "activeHeadcount": 30,
+      "plannedIn": 1,
+      "plannedOut": 1,
+      "forecastMonthEnd": 30,
+      "toGapAsOf": -2,
+      "toGapMonthEnd": -2,
+      "recommendation": "정상 관리",
+      "nextMonth": {
+        "plannedIn": 0,
+        "plannedOut": 1,
+        "forecastNextMonthEnd": 29,
+        "toGapNextMonthEnd": -3
+      },
+      "riskAdjusted": {
+        "expectedAttrition": 0.95,
+        "forecastNextMonthEndRiskAdjusted": 28.05
+      }
+    },
+    {
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "orgGroupCode": "G2",
+      "orgGroup": "Go-To-Market",
+      "toHeadcount": 42,
+      "activeHeadcount": 40,
+      "plannedIn": 2,
+      "plannedOut": 1,
+      "forecastMonthEnd": 41,
+      "toGapAsOf": -2,
+      "toGapMonthEnd": -1,
+      "recommendation": "정상 관리",
+      "nextMonth": {
+        "plannedIn": 0,
+        "plannedOut": 1,
+        "forecastNextMonthEnd": 40,
+        "toGapNextMonthEnd": -2
+      },
+      "riskAdjusted": {
+        "expectedAttrition": 0.88,
+        "forecastNextMonthEndRiskAdjusted": 39.12
+      }
+    },
+    {
+      "deptCode": "D09",
+      "department": "People",
+      "orgGroupCode": "G3",
+      "orgGroup": "Operations",
+      "toHeadcount": 18,
+      "activeHeadcount": 18,
+      "plannedIn": 1,
+      "plannedOut": 0,
+      "forecastMonthEnd": 19,
+      "toGapAsOf": 0,
+      "toGapMonthEnd": 1,
+      "recommendation": "정상 관리",
+      "nextMonth": {
+        "plannedIn": 0,
+        "plannedOut": 0,
+        "forecastNextMonthEnd": 19,
+        "toGapNextMonthEnd": 1
+      },
+      "riskAdjusted": {
+        "expectedAttrition": 0.36,
+        "forecastNextMonthEndRiskAdjusted": 18.64
+      }
+    },
+    {
+      "deptCode": "D10",
+      "department": "Finance",
+      "orgGroupCode": "G3",
+      "orgGroup": "Operations",
+      "toHeadcount": 20,
+      "activeHeadcount": 19,
+      "plannedIn": 1,
+      "plannedOut": 1,
+      "forecastMonthEnd": 19,
+      "toGapAsOf": -1,
+      "toGapMonthEnd": -1,
+      "recommendation": "정상 관리",
+      "nextMonth": {
+        "plannedIn": 0,
+        "plannedOut": 0,
+        "forecastNextMonthEnd": 19,
+        "toGapNextMonthEnd": -1
+      },
+      "riskAdjusted": {
+        "expectedAttrition": 0.33,
+        "forecastNextMonthEndRiskAdjusted": 18.67
+      }
+    },
+    {
+      "deptCode": "D11",
+      "department": "Legal & Compliance",
+      "orgGroupCode": "G3",
+      "orgGroup": "Operations",
+      "toHeadcount": 12,
+      "activeHeadcount": 11,
+      "plannedIn": 0,
+      "plannedOut": 1,
+      "forecastMonthEnd": 10,
+      "toGapAsOf": -1,
+      "toGapMonthEnd": -2,
+      "recommendation": "정상 관리",
+      "nextMonth": {
+        "plannedIn": 0,
+        "plannedOut": 0,
+        "forecastNextMonthEnd": 10,
+        "toGapNextMonthEnd": -2
+      },
+      "riskAdjusted": {
+        "expectedAttrition": 0.29,
+        "forecastNextMonthEndRiskAdjusted": 9.71
+      }
+    }
+  ],
+  "byOrgGroup": [
+    {
+      "orgGroupCode": "G0",
+      "orgGroup": "Executive",
+      "toHeadcount": 10,
+      "activeHeadcount": 10,
+      "plannedIn": 0,
+      "plannedOut": 0,
+      "forecastMonthEnd": 10,
+      "toGapAsOf": 0,
+      "toGapMonthEnd": 0,
+      "nextMonth": {
+        "plannedIn": 0,
+        "plannedOut": 0,
+        "forecastNextMonthEnd": 10,
+        "toGapNextMonthEnd": 0
+      }
+    },
+    {
+      "orgGroupCode": "G1",
+      "orgGroup": "Build",
+      "toHeadcount": 226,
+      "activeHeadcount": 220,
+      "plannedIn": 11,
+      "plannedOut": 7,
+      "forecastMonthEnd": 224,
+      "toGapAsOf": -6,
+      "toGapMonthEnd": -2,
+      "nextMonth": {
+        "plannedIn": 6,
+        "plannedOut": 1,
+        "forecastNextMonthEnd": 229,
+        "toGapNextMonthEnd": 3
+      }
+    },
+    {
+      "orgGroupCode": "G2",
+      "orgGroup": "Go-To-Market",
+      "toHeadcount": 136,
+      "activeHeadcount": 128,
+      "plannedIn": 6,
+      "plannedOut": 5,
+      "forecastMonthEnd": 129,
+      "toGapAsOf": -8,
+      "toGapMonthEnd": -7,
+      "nextMonth": {
+        "plannedIn": 2,
+        "plannedOut": 3,
+        "forecastNextMonthEnd": 128,
+        "toGapNextMonthEnd": -8
+      }
+    },
+    {
+      "orgGroupCode": "G3",
+      "orgGroup": "Operations",
+      "toHeadcount": 50,
+      "activeHeadcount": 48,
+      "plannedIn": 2,
+      "plannedOut": 2,
+      "forecastMonthEnd": 48,
+      "toGapAsOf": -2,
+      "toGapMonthEnd": -2,
+      "nextMonth": {
+        "plannedIn": 0,
+        "plannedOut": 0,
+        "forecastNextMonthEnd": 48,
+        "toGapNextMonthEnd": -2
+      }
+    }
+  ],
+  "totals": {
+    "toHeadcount": 422,
+    "activeHeadcount": 406,
+    "plannedIn": 19,
+    "plannedOut": 14,
+    "forecastMonthEnd": 411,
+    "toGapAsOf": -16,
+    "toGapMonthEnd": -11,
+    "toFillRate": 0.9739,
+    "nextMonth": {
+      "plannedIn": 8,
+      "plannedOut": 4,
+      "forecastNextMonthEnd": 415,
+      "toGapNextMonthEnd": -7
+    }
+  },
+  "plannedJoiners": [
+    {
+      "joinerId": "J014",
+      "deptCode": "D05",
+      "plannedHireDate": "2026-09-24",
+      "employmentType": "정규직"
+    },
+    {
+      "joinerId": "J020",
+      "deptCode": "D03",
+      "plannedHireDate": "2026-09-24",
+      "employmentType": "정규직"
+    },
+    {
+      "joinerId": "J021",
+      "deptCode": "D08",
+      "plannedHireDate": "2026-09-24",
+      "employmentType": "정규직"
+    },
+    {
+      "joinerId": "J003",
+      "deptCode": "D09",
+      "plannedHireDate": "2026-09-25",
+      "employmentType": "정규직"
+    },
+    {
+      "joinerId": "J015",
+      "deptCode": "D02",
+      "plannedHireDate": "2026-09-25",
+      "employmentType": "정규직"
+    },
+    {
+      "joinerId": "J016",
+      "deptCode": "D06",
+      "plannedHireDate": "2026-09-25",
+      "employmentType": "정규직"
+    },
+    {
+      "joinerId": "J022",
+      "deptCode": "D07",
+      "plannedHireDate": "2026-09-25",
+      "employmentType": "정규직"
+    },
+    {
+      "joinerId": "J023",
+      "deptCode": "D06",
+      "plannedHireDate": "2026-09-25",
+      "employmentType": "정규직"
+    },
+    {
+      "joinerId": "J007",
+      "deptCode": "D03",
+      "plannedHireDate": "2026-09-26",
+      "employmentType": "정규직"
+    },
+    {
+      "joinerId": "J013",
+      "deptCode": "D06",
+      "plannedHireDate": "2026-09-26",
+      "employmentType": "정규직"
+    },
+    {
+      "joinerId": "J025",
+      "deptCode": "D08",
+      "plannedHireDate": "2026-09-26",
+      "employmentType": "인턴"
+    },
+    {
+      "joinerId": "J002",
+      "deptCode": "D02",
+      "plannedHireDate": "2026-09-27",
+      "employmentType": "정규직"
+    },
+    {
+      "joinerId": "J012",
+      "deptCode": "D03",
+      "plannedHireDate": "2026-09-27",
+      "employmentType": "정규직"
+    },
+    {
+      "joinerId": "J024",
+      "deptCode": "D03",
+      "plannedHireDate": "2026-09-28",
+      "employmentType": "인턴"
+    },
+    {
+      "joinerId": "J026",
+      "deptCode": "D10",
+      "plannedHireDate": "2026-09-28",
+      "employmentType": "계약직"
+    },
+    {
+      "joinerId": "J027",
+      "deptCode": "D02",
+      "plannedHireDate": "2026-09-28",
+      "employmentType": "정규직"
+    },
+    {
+      "joinerId": "J008",
+      "deptCode": "D05",
+      "plannedHireDate": "2026-09-29",
+      "employmentType": "정규직"
+    },
+    {
+      "joinerId": "J005",
+      "deptCode": "D03",
+      "plannedHireDate": "2026-09-30",
+      "employmentType": "정규직"
+    },
+    {
+      "joinerId": "J011",
+      "deptCode": "D04",
+      "plannedHireDate": "2026-09-30",
+      "employmentType": "정규직"
+    },
+    {
+      "joinerId": "J010",
+      "deptCode": "D06",
+      "plannedHireDate": "2026-10-01",
+      "employmentType": "정규직"
+    },
+    {
+      "joinerId": "J017",
+      "deptCode": "D03",
+      "plannedHireDate": "2026-10-03",
+      "employmentType": "정규직"
+    },
+    {
+      "joinerId": "J019",
+      "deptCode": "D06",
+      "plannedHireDate": "2026-10-07",
+      "employmentType": "정규직"
+    },
+    {
+      "joinerId": "J009",
+      "deptCode": "D03",
+      "plannedHireDate": "2026-10-08",
+      "employmentType": "정규직"
+    },
+    {
+      "joinerId": "J006",
+      "deptCode": "D05",
+      "plannedHireDate": "2026-10-17",
+      "employmentType": "정규직"
+    },
+    {
+      "joinerId": "J018",
+      "deptCode": "D02",
+      "plannedHireDate": "2026-10-18",
+      "employmentType": "계약직"
+    },
+    {
+      "joinerId": "J001",
+      "deptCode": "D05",
+      "plannedHireDate": "2026-10-28",
+      "employmentType": "정규직"
+    },
+    {
+      "joinerId": "J004",
+      "deptCode": "D03",
+      "plannedHireDate": "2026-10-30",
+      "employmentType": "정규직"
+    }
+  ],
+  "plannedLeavers": [
+    {
+      "empId": "E0251",
+      "deptCode": "D11",
+      "plannedTerminationDate": "2026-09-15",
+      "separationType": "비자발적",
+      "separationReason": "조직개편"
+    },
+    {
+      "empId": "E0361",
+      "deptCode": "D03",
+      "plannedTerminationDate": "2026-09-25",
+      "separationType": "비자발적",
+      "separationReason": "조직개편"
+    },
+    {
+      "empId": "E0028",
+      "deptCode": "D08",
+      "plannedTerminationDate": "2026-09-27",
+      "separationType": "자발적",
+      "separationReason": "자발퇴사"
+    },
+    {
+      "empId": "E0107",
+      "deptCode": "D07",
+      "plannedTerminationDate": "2026-09-28",
+      "separationType": "자발적",
+      "separationReason": "자발퇴사"
+    },
+    {
+      "empId": "E0112",
+      "deptCode": "D03",
+      "plannedTerminationDate": "2026-09-28",
+      "separationType": "비자발적",
+      "separationReason": "성과/적합도"
+    },
+    {
+      "empId": "E0015",
+      "deptCode": "D05",
+      "plannedTerminationDate": "2026-09-30",
+      "separationType": "비자발적",
+      "separationReason": "계약만료"
+    },
+    {
+      "empId": "E0064",
+      "deptCode": "D10",
+      "plannedTerminationDate": "2026-09-30",
+      "separationType": "자발적",
+      "separationReason": "자발퇴사"
+    },
+    {
+      "empId": "E0077",
+      "deptCode": "D06",
+      "plannedTerminationDate": "2026-09-30",
+      "separationType": "자발적",
+      "separationReason": "자발퇴사"
+    },
+    {
+      "empId": "E0118",
+      "deptCode": "D04",
+      "plannedTerminationDate": "2026-09-30",
+      "separationType": "자발적",
+      "separationReason": "자발퇴사"
+    },
+    {
+      "empId": "E0128",
+      "deptCode": "D03",
+      "plannedTerminationDate": "2026-09-30",
+      "separationType": "자발적",
+      "separationReason": "개인사유"
+    },
+    {
+      "empId": "E0352",
+      "deptCode": "D03",
+      "plannedTerminationDate": "2026-09-30",
+      "separationType": "비자발적",
+      "separationReason": "계약만료"
+    },
+    {
+      "empId": "E0363",
+      "deptCode": "D06",
+      "plannedTerminationDate": "2026-09-30",
+      "separationType": "자발적",
+      "separationReason": "개인사유"
+    },
+    {
+      "empId": "E0366",
+      "deptCode": "D02",
+      "plannedTerminationDate": "2026-09-30",
+      "separationType": "비자발적",
+      "separationReason": "성과/적합도"
+    },
+    {
+      "empId": "E0395",
+      "deptCode": "D06",
+      "plannedTerminationDate": "2026-09-30",
+      "separationType": "비자발적",
+      "separationReason": "계약만료"
+    },
+    {
+      "empId": "E0401",
+      "deptCode": "D08",
+      "plannedTerminationDate": "2026-10-05",
+      "separationType": "비자발적",
+      "separationReason": "조직개편"
+    },
+    {
+      "empId": "E0240",
+      "deptCode": "D06",
+      "plannedTerminationDate": "2026-10-19",
+      "separationType": "자발적",
+      "separationReason": "개인사유"
+    },
+    {
+      "empId": "E0356",
+      "deptCode": "D07",
+      "plannedTerminationDate": "2026-10-23",
+      "separationType": "자발적",
+      "separationReason": "자발퇴사"
+    },
+    {
+      "empId": "E0011",
+      "deptCode": "D03",
+      "plannedTerminationDate": "2026-10-30",
+      "separationType": "자발적",
+      "separationReason": "자발퇴사"
+    }
+  ],
+  "insights": [
+    {
+      "type": "채용 가속 필요",
+      "scope": "department",
+      "codes": [
+        "D03",
+        "D06"
+      ],
+      "label": "Engineering, Sales",
+      "detail": "Engineering −7, Sales −4",
+      "action": "채용 pipeline 점검"
+    },
+    {
+      "type": "TO 재검토 필요",
+      "scope": "department",
+      "codes": [
+        "D05"
+      ],
+      "label": "Data & AI",
+      "detail": "+7 초과 예상",
+      "action": "TO 재배분 또는 내부 이동배치"
+    },
+    {
+      "type": "퇴사 영향 점검",
+      "scope": "department",
+      "codes": [
+        "D11"
+      ],
+      "label": "Legal & Compliance",
+      "detail": "재직 11명 조직에서 1명 퇴사 예정, 월말 −2",
+      "action": "업무 공백·인수인계 점검"
+    }
+  ],
+  "immediateActions": [
+    "Engineering/Sales 채용 pipeline 점검",
+    "Data & AI TO 재검토",
+    "Legal & Compliance 퇴사 영향 점검"
+  ],
+  "scenario": {
+    "parameters": {
+      "hiringAchievementRate": 1.0,
+      "extraAttrition": 0
+    },
+    "formula": "forecast = active + round(plannedIn × rate) − plannedOut − extraAttrition"
+  },
+  "provenance": {
+    "client": "㈜온다테크",
+    "sources": [
+      "data/reference/org-chart.csv",
+      "data/clean/headcount-master.clean.csv",
+      "data/clean/to-plan.clean.csv",
+      "data/clean/planned-joiners.clean.csv",
+      "data/clean/planned-leavers.clean.csv",
+      "data/stats/attrition-risk.json"
+    ],
+    "script": ".claude/skills/month-end-forecast/scripts/forecast.py",
+    "generatedAt": "2026-09-23T17:10:52",
+    "attritionRiskUsed": true,
+    "headcountBasis": "active",
+    "contractVersion": "v2",
+    "gate": "approval-gate: 권고(채용 가속·TO 재검토/이동배치·퇴사 영향 점검)와 즉시 액션은 제안이며 채용/TO 결정은 사람이 승인한다"
+  }
+}

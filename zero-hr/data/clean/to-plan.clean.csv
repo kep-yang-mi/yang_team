@@ -1,0 +1,12 @@
+deptCode,department,orgGroupCode,toHeadcount,effectiveMonth
+D01,CEO Office,G0,10,2026-09
+D02,Product,G1,54,2026-09
+D03,Engineering,G1,112,2026-09
+D04,Design,G1,26,2026-09
+D05,Data & AI,G1,34,2026-09
+D06,Sales,G2,62,2026-09
+D07,Marketing,G2,32,2026-09
+D08,Customer Success,G2,42,2026-09
+D09,People,G3,18,2026-09
+D10,Finance,G3,20,2026-09
+D11,Legal & Compliance,G3,12,2026-09

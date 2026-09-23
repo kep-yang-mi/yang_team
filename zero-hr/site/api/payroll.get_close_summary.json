@@ -1,0 +1,254 @@
+{
+  "status": "ok",
+  "asOfDate": "2026-09-23",
+  "role": "executive",
+  "tool": "payroll.get_close_summary",
+  "data": {
+    "payPeriod": "2026-09",
+    "periodStart": "2026-09-01",
+    "periodEnd": "2026-09-30",
+    "payrollHeadcount": {
+      "asOfActive": 406,
+      "asOfOnLeave": 21,
+      "asOfTotal": 427,
+      "monthEndActive": 411,
+      "monthEndTotal": 432,
+      "byEmploymentType": {
+        "정규직": {
+          "asOfTotal": 354,
+          "monthEndTotal": 361
+        },
+        "계약직": {
+          "asOfTotal": 31,
+          "monthEndTotal": 29
+        },
+        "인턴": {
+          "asOfTotal": 19,
+          "monthEndTotal": 19
+        },
+        "파견": {
+          "asOfTotal": 23,
+          "monthEndTotal": 23
+        }
+      },
+      "byDepartment": [
+        {
+          "deptCode": "D01",
+          "department": "CEO Office",
+          "asOfActive": 10,
+          "asOfOnLeave": 0,
+          "asOfTotal": 10,
+          "plannedIn": 0,
+          "plannedOut": 0,
+          "monthEndActive": 10,
+          "monthEndTotal": 10
+        },
+        {
+          "deptCode": "D02",
+          "department": "Product",
+          "asOfActive": 51,
+          "asOfOnLeave": 3,
+          "asOfTotal": 54,
+          "plannedIn": 3,
+          "plannedOut": 1,
+          "monthEndActive": 53,
+          "monthEndTotal": 56
+        },
+        {
+          "deptCode": "D03",
+          "department": "Engineering",
+          "asOfActive": 104,
+          "asOfOnLeave": 6,
+          "asOfTotal": 110,
+          "plannedIn": 5,
+          "plannedOut": 4,
+          "monthEndActive": 105,
+          "monthEndTotal": 111
+        },
+        {
+          "deptCode": "D04",
+          "department": "Design",
+          "asOfActive": 25,
+          "asOfOnLeave": 1,
+          "asOfTotal": 26,
+          "plannedIn": 1,
+          "plannedOut": 1,
+          "monthEndActive": 25,
+          "monthEndTotal": 26
+        },
+        {
+          "deptCode": "D05",
+          "department": "Data & AI",
+          "asOfActive": 40,
+          "asOfOnLeave": 2,
+          "asOfTotal": 42,
+          "plannedIn": 2,
+          "plannedOut": 1,
+          "monthEndActive": 41,
+          "monthEndTotal": 43
+        },
+        {
+          "deptCode": "D06",
+          "department": "Sales",
+          "asOfActive": 58,
+          "asOfOnLeave": 3,
+          "asOfTotal": 61,
+          "plannedIn": 3,
+          "plannedOut": 3,
+          "monthEndActive": 58,
+          "monthEndTotal": 61
+        },
+        {
+          "deptCode": "D07",
+          "department": "Marketing",
+          "asOfActive": 30,
+          "asOfOnLeave": 1,
+          "asOfTotal": 31,
+          "plannedIn": 1,
+          "plannedOut": 1,
+          "monthEndActive": 30,
+          "monthEndTotal": 31
+        },
+        {
+          "deptCode": "D08",
+          "department": "Customer Success",
+          "asOfActive": 40,
+          "asOfOnLeave": 3,
+          "asOfTotal": 43,
+          "plannedIn": 2,
+          "plannedOut": 1,
+          "monthEndActive": 41,
+          "monthEndTotal": 44
+        },
+        {
+          "deptCode": "D09",
+          "department": "People",
+          "asOfActive": 18,
+          "asOfOnLeave": 1,
+          "asOfTotal": 19,
+          "plannedIn": 1,
+          "plannedOut": 0,
+          "monthEndActive": 19,
+          "monthEndTotal": 20
+        },
+        {
+          "deptCode": "D10",
+          "department": "Finance",
+          "asOfActive": 19,
+          "asOfOnLeave": 1,
+          "asOfTotal": 20,
+          "plannedIn": 1,
+          "plannedOut": 1,
+          "monthEndActive": 19,
+          "monthEndTotal": 20
+        },
+        {
+          "deptCode": "D11",
+          "department": "Legal & Compliance",
+          "asOfActive": 11,
+          "asOfOnLeave": 0,
+          "asOfTotal": 11,
+          "plannedIn": 0,
+          "plannedOut": 1,
+          "monthEndActive": 10,
+          "monthEndTotal": 10
+        }
+      ]
+    },
+    "checklist": [
+      {
+        "item": "당월 입사자 일할 계산 확인",
+        "count": 5,
+        "status": "pending"
+      },
+      {
+        "item": "월말까지 입사 예정자 급여 등록 준비",
+        "count": 19,
+        "status": "pending"
+      },
+      {
+        "item": "월말까지 퇴사 예정자 최종 정산 준비",
+        "count": 14,
+        "status": "pending"
+      },
+      {
+        "item": "휴직자 급여 처리 구분 확인",
+        "count": 21,
+        "status": "pending"
+      },
+      {
+        "item": "90일 내 계약 만료자 갱신·종료 확인",
+        "count": 24,
+        "status": "pending"
+      },
+      {
+        "item": "급여 오류 위험(미해결 항목) 확인",
+        "count": 14,
+        "status": "pending"
+      },
+      {
+        "item": "급여 대상 인원 월말 예측 대사(forecastMonthEnd == monthEndActive)",
+        "count": 0,
+        "status": "done"
+      }
+    ],
+    "reconciliation": {
+      "recomputedMonthEndActive": 411,
+      "forecastMonthEnd": 411,
+      "matched": true,
+      "byDepartmentMismatches": [],
+      "statsActiveHeadcount": 406,
+      "statsOnLeave": 21,
+      "statsMatched": true,
+      "internal": {
+        "byDepartmentAsOfTotal": true,
+        "byDepartmentMonthEndActive": true,
+        "byDepartmentMonthEndTotal": true,
+        "byEmploymentTypeAsOfTotal": true,
+        "byEmploymentTypeMonthEndTotal": true,
+        "byTreatmentSum": true,
+        "contractsByMonthSum": true
+      }
+    },
+    "rules": {
+      "payrollHeadcount": "급여 대상 = 재직 + 휴직(총원). monthEndActive = 재직 + plannedIn − plannedOut(재직자만), monthEndTotal = 총원 + plannedIn − plannedOut(휴직자 포함)",
+      "plannedIn": "정제 입사 예정자 중 예정일 ≤ 월말",
+      "plannedOut": "정제 퇴사 예정자 중 예정일 ≤ 월말, 마스터에 없는 사번(unknown-emp) 제외, stale 포함",
+      "proratedRatio": "당월 근무일수 / 30, 소수 3자리",
+      "leaveTreatment": {
+        "육아휴직": "무급(정부 급여)",
+        "질병휴직": "유급",
+        "기타": "무급"
+      },
+      "contractWindowDays": 90,
+      "derivedFlags": [
+        "contract-expired-active",
+        "hire-after-as-of",
+        "leaver-not-active"
+      ],
+      "pii": "성명 포함(급여 업무), 생년월일·연령대·급여액 없음"
+    },
+    "counts": {
+      "joinersInPeriod": 5,
+      "plannedJoinersByMonthEnd": 19,
+      "plannedLeaversByMonthEnd": 14,
+      "onLeave": 21,
+      "contractsExpiringWithin90Days": 24,
+      "risks": 14
+    }
+  },
+  "provenance": {
+    "source": "data/stats/payroll-close.json",
+    "script": ".claude/skills/payroll-close/scripts/payroll_close.py"
+  },
+  "claims": {
+    "implemented": [
+      "payrollHeadcount·checklist·reconciliation 은 data/stats/payroll-close.json 을 그대로 읽는다(재계산 없음)",
+      "monthEndActive 411 = month-end-forecast.totals.forecastMonthEnd 411 대사(reconciliation.matched)"
+    ],
+    "mockup": [
+      "checklist[].status 는 스크립트가 만든 초기값(pending|done) — 실제 마감 진행 상태가 아니다"
+    ],
+    "approvalPending": []
+  }
+}

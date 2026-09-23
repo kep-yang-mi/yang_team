@@ -1,0 +1,389 @@
+{
+  "status": "ok",
+  "asOfDate": "2026-09-23",
+  "role": "executive",
+  "tool": "insight.get_department_forecast",
+  "data": {
+    "asOfDate": "2026-09-23",
+    "monthEnd": "2026-09-30",
+    "nextMonthEnd": "2026-10-31",
+    "deptCode": null,
+    "byDepartment": [
+      {
+        "deptCode": "D01",
+        "department": "CEO Office",
+        "orgGroupCode": "G0",
+        "orgGroup": "Executive",
+        "toHeadcount": 10,
+        "activeHeadcount": 10,
+        "plannedIn": 0,
+        "plannedOut": 0,
+        "forecastMonthEnd": 10,
+        "toGapAsOf": 0,
+        "toGapMonthEnd": 0,
+        "recommendation": "정상 관리",
+        "nextMonth": {
+          "plannedIn": 0,
+          "plannedOut": 0,
+          "forecastNextMonthEnd": 10,
+          "toGapNextMonthEnd": 0
+        },
+        "riskAdjusted": {
+          "expectedAttrition": 0.22,
+          "forecastNextMonthEndRiskAdjusted": 9.78
+        }
+      },
+      {
+        "deptCode": "D02",
+        "department": "Product",
+        "orgGroupCode": "G1",
+        "orgGroup": "Build",
+        "toHeadcount": 54,
+        "activeHeadcount": 51,
+        "plannedIn": 3,
+        "plannedOut": 1,
+        "forecastMonthEnd": 53,
+        "toGapAsOf": -3,
+        "toGapMonthEnd": -1,
+        "recommendation": "정상 관리",
+        "nextMonth": {
+          "plannedIn": 1,
+          "plannedOut": 0,
+          "forecastNextMonthEnd": 54,
+          "toGapNextMonthEnd": 0
+        },
+        "riskAdjusted": {
+          "expectedAttrition": 1.1,
+          "forecastNextMonthEndRiskAdjusted": 52.9
+        }
+      },
+      {
+        "deptCode": "D03",
+        "department": "Engineering",
+        "orgGroupCode": "G1",
+        "orgGroup": "Build",
+        "toHeadcount": 112,
+        "activeHeadcount": 104,
+        "plannedIn": 5,
+        "plannedOut": 4,
+        "forecastMonthEnd": 105,
+        "toGapAsOf": -8,
+        "toGapMonthEnd": -7,
+        "recommendation": "채용 가속",
+        "nextMonth": {
+          "plannedIn": 3,
+          "plannedOut": 1,
+          "forecastNextMonthEnd": 107,
+          "toGapNextMonthEnd": -5
+        },
+        "riskAdjusted": {
+          "expectedAttrition": 4.98,
+          "forecastNextMonthEndRiskAdjusted": 102.02
+        }
+      },
+      {
+        "deptCode": "D04",
+        "department": "Design",
+        "orgGroupCode": "G1",
+        "orgGroup": "Build",
+        "toHeadcount": 26,
+        "activeHeadcount": 25,
+        "plannedIn": 1,
+        "plannedOut": 1,
+        "forecastMonthEnd": 25,
+        "toGapAsOf": -1,
+        "toGapMonthEnd": -1,
+        "recommendation": "정상 관리",
+        "nextMonth": {
+          "plannedIn": 0,
+          "plannedOut": 0,
+          "forecastNextMonthEnd": 25,
+          "toGapNextMonthEnd": -1
+        },
+        "riskAdjusted": {
+          "expectedAttrition": 0.54,
+          "forecastNextMonthEndRiskAdjusted": 24.46
+        }
+      },
+      {
+        "deptCode": "D05",
+        "department": "Data & AI",
+        "orgGroupCode": "G1",
+        "orgGroup": "Build",
+        "toHeadcount": 34,
+        "activeHeadcount": 40,
+        "plannedIn": 2,
+        "plannedOut": 1,
+        "forecastMonthEnd": 41,
+        "toGapAsOf": 6,
+        "toGapMonthEnd": 7,
+        "recommendation": "TO 재검토/이동배치",
+        "nextMonth": {
+          "plannedIn": 2,
+          "plannedOut": 0,
+          "forecastNextMonthEnd": 43,
+          "toGapNextMonthEnd": 9
+        },
+        "riskAdjusted": {
+          "expectedAttrition": 0.94,
+          "forecastNextMonthEndRiskAdjusted": 42.06
+        }
+      },
+      {
+        "deptCode": "D06",
+        "department": "Sales",
+        "orgGroupCode": "G2",
+        "orgGroup": "Go-To-Market",
+        "toHeadcount": 62,
+        "activeHeadcount": 58,
+        "plannedIn": 3,
+        "plannedOut": 3,
+        "forecastMonthEnd": 58,
+        "toGapAsOf": -4,
+        "toGapMonthEnd": -4,
+        "recommendation": "채용 가속",
+        "nextMonth": {
+          "plannedIn": 2,
+          "plannedOut": 1,
+          "forecastNextMonthEnd": 59,
+          "toGapNextMonthEnd": -3
+        },
+        "riskAdjusted": {
+          "expectedAttrition": 1.71,
+          "forecastNextMonthEndRiskAdjusted": 57.29
+        }
+      },
+      {
+        "deptCode": "D07",
+        "department": "Marketing",
+        "orgGroupCode": "G2",
+        "orgGroup": "Go-To-Market",
+        "toHeadcount": 32,
+        "activeHeadcount": 30,
+        "plannedIn": 1,
+        "plannedOut": 1,
+        "forecastMonthEnd": 30,
+        "toGapAsOf": -2,
+        "toGapMonthEnd": -2,
+        "recommendation": "정상 관리",
+        "nextMonth": {
+          "plannedIn": 0,
+          "plannedOut": 1,
+          "forecastNextMonthEnd": 29,
+          "toGapNextMonthEnd": -3
+        },
+        "riskAdjusted": {
+          "expectedAttrition": 0.95,
+          "forecastNextMonthEndRiskAdjusted": 28.05
+        }
+      },
+      {
+        "deptCode": "D08",
+        "department": "Customer Success",
+        "orgGroupCode": "G2",
+        "orgGroup": "Go-To-Market",
+        "toHeadcount": 42,
+        "activeHeadcount": 40,
+        "plannedIn": 2,
+        "plannedOut": 1,
+        "forecastMonthEnd": 41,
+        "toGapAsOf": -2,
+        "toGapMonthEnd": -1,
+        "recommendation": "정상 관리",
+        "nextMonth": {
+          "plannedIn": 0,
+          "plannedOut": 1,
+          "forecastNextMonthEnd": 40,
+          "toGapNextMonthEnd": -2
+        },
+        "riskAdjusted": {
+          "expectedAttrition": 0.88,
+          "forecastNextMonthEndRiskAdjusted": 39.12
+        }
+      },
+      {
+        "deptCode": "D09",
+        "department": "People",
+        "orgGroupCode": "G3",
+        "orgGroup": "Operations",
+        "toHeadcount": 18,
+        "activeHeadcount": 18,
+        "plannedIn": 1,
+        "plannedOut": 0,
+        "forecastMonthEnd": 19,
+        "toGapAsOf": 0,
+        "toGapMonthEnd": 1,
+        "recommendation": "정상 관리",
+        "nextMonth": {
+          "plannedIn": 0,
+          "plannedOut": 0,
+          "forecastNextMonthEnd": 19,
+          "toGapNextMonthEnd": 1
+        },
+        "riskAdjusted": {
+          "expectedAttrition": 0.36,
+          "forecastNextMonthEndRiskAdjusted": 18.64
+        }
+      },
+      {
+        "deptCode": "D10",
+        "department": "Finance",
+        "orgGroupCode": "G3",
+        "orgGroup": "Operations",
+        "toHeadcount": 20,
+        "activeHeadcount": 19,
+        "plannedIn": 1,
+        "plannedOut": 1,
+        "forecastMonthEnd": 19,
+        "toGapAsOf": -1,
+        "toGapMonthEnd": -1,
+        "recommendation": "정상 관리",
+        "nextMonth": {
+          "plannedIn": 0,
+          "plannedOut": 0,
+          "forecastNextMonthEnd": 19,
+          "toGapNextMonthEnd": -1
+        },
+        "riskAdjusted": {
+          "expectedAttrition": 0.33,
+          "forecastNextMonthEndRiskAdjusted": 18.67
+        }
+      },
+      {
+        "deptCode": "D11",
+        "department": "Legal & Compliance",
+        "orgGroupCode": "G3",
+        "orgGroup": "Operations",
+        "toHeadcount": 12,
+        "activeHeadcount": 11,
+        "plannedIn": 0,
+        "plannedOut": 1,
+        "forecastMonthEnd": 10,
+        "toGapAsOf": -1,
+        "toGapMonthEnd": -2,
+        "recommendation": "정상 관리",
+        "nextMonth": {
+          "plannedIn": 0,
+          "plannedOut": 0,
+          "forecastNextMonthEnd": 10,
+          "toGapNextMonthEnd": -2
+        },
+        "riskAdjusted": {
+          "expectedAttrition": 0.29,
+          "forecastNextMonthEndRiskAdjusted": 9.71
+        }
+      }
+    ],
+    "byOrgGroup": [
+      {
+        "orgGroupCode": "G0",
+        "orgGroup": "Executive",
+        "toHeadcount": 10,
+        "activeHeadcount": 10,
+        "plannedIn": 0,
+        "plannedOut": 0,
+        "forecastMonthEnd": 10,
+        "toGapAsOf": 0,
+        "toGapMonthEnd": 0,
+        "nextMonth": {
+          "plannedIn": 0,
+          "plannedOut": 0,
+          "forecastNextMonthEnd": 10,
+          "toGapNextMonthEnd": 0
+        }
+      },
+      {
+        "orgGroupCode": "G1",
+        "orgGroup": "Build",
+        "toHeadcount": 226,
+        "activeHeadcount": 220,
+        "plannedIn": 11,
+        "plannedOut": 7,
+        "forecastMonthEnd": 224,
+        "toGapAsOf": -6,
+        "toGapMonthEnd": -2,
+        "nextMonth": {
+          "plannedIn": 6,
+          "plannedOut": 1,
+          "forecastNextMonthEnd": 229,
+          "toGapNextMonthEnd": 3
+        }
+      },
+      {
+        "orgGroupCode": "G2",
+        "orgGroup": "Go-To-Market",
+        "toHeadcount": 136,
+        "activeHeadcount": 128,
+        "plannedIn": 6,
+        "plannedOut": 5,
+        "forecastMonthEnd": 129,
+        "toGapAsOf": -8,
+        "toGapMonthEnd": -7,
+        "nextMonth": {
+          "plannedIn": 2,
+          "plannedOut": 3,
+          "forecastNextMonthEnd": 128,
+          "toGapNextMonthEnd": -8
+        }
+      },
+      {
+        "orgGroupCode": "G3",
+        "orgGroup": "Operations",
+        "toHeadcount": 50,
+        "activeHeadcount": 48,
+        "plannedIn": 2,
+        "plannedOut": 2,
+        "forecastMonthEnd": 48,
+        "toGapAsOf": -2,
+        "toGapMonthEnd": -2,
+        "nextMonth": {
+          "plannedIn": 0,
+          "plannedOut": 0,
+          "forecastNextMonthEnd": 48,
+          "toGapNextMonthEnd": -2
+        }
+      }
+    ],
+    "totals": {
+      "toHeadcount": 422,
+      "activeHeadcount": 406,
+      "plannedIn": 19,
+      "plannedOut": 14,
+      "forecastMonthEnd": 411,
+      "toGapAsOf": -16,
+      "toGapMonthEnd": -11,
+      "toFillRate": 0.9739,
+      "nextMonth": {
+        "plannedIn": 8,
+        "plannedOut": 4,
+        "forecastNextMonthEnd": 415,
+        "toGapNextMonthEnd": -7
+      }
+    },
+    "recommendationRule": "gapME ≤ −4 → 채용 가속 / gapME ≥ +5 → TO 재검토/이동배치 / 그 외 정상 관리",
+    "assumptions": [
+      "입사 예정자는 예정일에 전원 입사",
+      "퇴사 예정자는 예정일에 전원 퇴사(예정일이 지난 stale 건 포함)",
+      "TO 비교는 재직 인원 기준(휴직 제외)",
+      "마스터에 없는 사번의 퇴사 예정은 제외",
+      "휴직자의 퇴사 예정은 재직 기준 예측에서 제외(급여 마감 총원에는 별도 반영)",
+      "다음 달 TO는 기준월 TO를 그대로 적용(다음 달 TO 계획 미수령)",
+      "리스크 반영 시나리오는 attrition-risk.json 의 조직별 3개월 기대 이탈의 1/3을 다음 달 말에 반영(기본 예측을 대체하지 않는 시나리오, 퇴사 예정자와 일부 중복 가능)"
+    ]
+  },
+  "provenance": {
+    "source": "data/stats/month-end-forecast.json",
+    "script": ".claude/skills/month-end-forecast/scripts/forecast.py"
+  },
+  "claims": {
+    "implemented": [
+      "byDepartment/byOrgGroup/totals 는 month-end-forecast.json 값 그대로(필터만)"
+    ],
+    "mockup": [
+      "riskAdjusted 는 attrition-risk 기대 이탈을 반영한 시나리오(추정)"
+    ],
+    "approvalPending": [
+      "권고(채용 가속·TO 재검토/이동배치·퇴사 영향 점검)의 채택은 사람의 승인 gate — 이 응답은 제안이다"
+    ]
+  }
+}

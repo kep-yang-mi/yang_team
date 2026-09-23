@@ -1,0 +1,119 @@
+{
+  "status": "ok",
+  "asOfDate": "2026-09-23",
+  "role": "executive",
+  "tool": "payroll.list_risks",
+  "data": {
+    "payPeriod": "2026-09",
+    "risks": [
+      {
+        "empId": "E0251",
+        "issue": "퇴사 예정일이 이미 지남 → 월말 예측에서는 퇴사로 반영",
+        "impact": "퇴직 처리 누락 시 급여 과지급 위험",
+        "unresolvedFlag": "stale-planned-leaver"
+      },
+      {
+        "empId": "E9999",
+        "issue": "퇴사 예정자 사번이 마스터에 없음 → 예측 제외",
+        "impact": "퇴직 정산 대상 오류 위험",
+        "unresolvedFlag": "unknown-emp"
+      },
+      {
+        "empId": "E0426",
+        "issue": "입사일이 기준일 이후인데 재직/휴직",
+        "impact": "입사 전 급여 발생 위험",
+        "unresolvedFlag": "hire-after-as-of"
+      },
+      {
+        "empId": "E0427",
+        "issue": "입사일이 기준일 이후인데 재직/휴직",
+        "impact": "입사 전 급여 발생 위험",
+        "unresolvedFlag": "hire-after-as-of"
+      },
+      {
+        "empId": "E0046",
+        "issue": "계약직/인턴/파견인데 계약종료일 없음",
+        "impact": "계약 만료 급여 종료 시점 미확정 위험",
+        "unresolvedFlag": "missing-required"
+      },
+      {
+        "empId": "E0281",
+        "issue": "소속이 조직 체계에 없어 직군 기준 임시 배정",
+        "impact": "조직별 급여 대상 집계·비용 배부 오류 위험",
+        "unresolvedFlag": "org-unknown"
+      },
+      {
+        "empId": "E0306",
+        "issue": "소속이 조직 체계에 없어 직군 기준 임시 배정",
+        "impact": "조직별 급여 대상 집계·비용 배부 오류 위험",
+        "unresolvedFlag": "org-unknown"
+      },
+      {
+        "empId": "E0350",
+        "issue": "계약직/인턴/파견인데 계약종료일 없음",
+        "impact": "계약 만료 급여 종료 시점 미확정 위험",
+        "unresolvedFlag": "missing-required"
+      },
+      {
+        "empId": "E0370",
+        "issue": "계약직/인턴/파견인데 계약종료일 없음",
+        "impact": "계약 만료 급여 종료 시점 미확정 위험",
+        "unresolvedFlag": "missing-required"
+      },
+      {
+        "empId": "E0426",
+        "issue": "재직인데 입사일이 기준일 이후(플래그, 재직기간 0)",
+        "impact": "입사 전 급여 발생·일할 계산 오류 위험",
+        "unresolvedFlag": "date-logic"
+      },
+      {
+        "empId": "E0427",
+        "issue": "재직인데 입사일이 기준일 이후(플래그, 재직기간 0)",
+        "impact": "입사 전 급여 발생·일할 계산 오류 위험",
+        "unresolvedFlag": "date-logic"
+      },
+      {
+        "empId": "E0031",
+        "issue": "휴직인데 휴직유형 없음 → 기타로 보정(미확인)",
+        "impact": "휴직 급여 처리 구분 오류 위험",
+        "unresolvedFlag": "status-inconsistency"
+      },
+      {
+        "empId": "E0049",
+        "issue": "휴직인데 휴직유형 없음 → 기타로 보정(미확인)",
+        "impact": "휴직 급여 처리 구분 오류 위험",
+        "unresolvedFlag": "status-inconsistency"
+      },
+      {
+        "empId": "E0273",
+        "issue": "휴직인데 휴직유형 없음 → 기타로 보정(미확인)",
+        "impact": "휴직 급여 처리 구분 오류 위험",
+        "unresolvedFlag": "status-inconsistency"
+      }
+    ],
+    "count": 14,
+    "byUnresolvedFlag": {
+      "stale-planned-leaver": 1,
+      "unknown-emp": 1,
+      "hire-after-as-of": 2,
+      "missing-required": 3,
+      "org-unknown": 2,
+      "date-logic": 2,
+      "status-inconsistency": 3
+    },
+    "note": "byUnresolvedFlag 는 표시용 집계. 성명은 원본에 없다(사번만)"
+  },
+  "provenance": {
+    "source": "data/stats/payroll-close.json",
+    "script": ".claude/skills/payroll-close/scripts/payroll_close.py"
+  },
+  "claims": {
+    "implemented": [
+      "risks 를 payroll-close.json 에서 그대로 읽는다"
+    ],
+    "mockup": [],
+    "approvalPending": [
+      "미해결 항목 확정(어느 조직·휴직 여부·계약종료일)은 고객사 HR 의 답 → people-data-cleanser 재실행"
+    ]
+  }
+}

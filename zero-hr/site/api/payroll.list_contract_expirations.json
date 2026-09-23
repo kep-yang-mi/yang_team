@@ -1,0 +1,178 @@
+{
+  "status": "ok",
+  "asOfDate": "2026-09-23",
+  "role": "executive",
+  "tool": "payroll.list_contract_expirations",
+  "data": {
+    "asOfDate": "2026-09-23",
+    "withinDays": 90,
+    "windowEnd": "2026-12-22",
+    "expiring": [
+      {
+        "empId": "E0015",
+        "deptCode": "D05",
+        "employmentType": "계약직",
+        "contractEndDate": "2026-09-30"
+      },
+      {
+        "empId": "E0352",
+        "deptCode": "D03",
+        "employmentType": "인턴",
+        "contractEndDate": "2026-09-30"
+      },
+      {
+        "empId": "E0395",
+        "deptCode": "D06",
+        "employmentType": "인턴",
+        "contractEndDate": "2026-09-30"
+      },
+      {
+        "empId": "E0417",
+        "deptCode": "D03",
+        "employmentType": "인턴",
+        "contractEndDate": "2026-10-03"
+      },
+      {
+        "empId": "E0327",
+        "deptCode": "D02",
+        "employmentType": "계약직",
+        "contractEndDate": "2026-10-05"
+      },
+      {
+        "empId": "E0227",
+        "deptCode": "D03",
+        "employmentType": "파견",
+        "contractEndDate": "2026-10-06"
+      },
+      {
+        "empId": "E0333",
+        "deptCode": "D03",
+        "employmentType": "인턴",
+        "contractEndDate": "2026-10-10"
+      },
+      {
+        "empId": "E0372",
+        "deptCode": "D10",
+        "employmentType": "인턴",
+        "contractEndDate": "2026-10-11"
+      },
+      {
+        "empId": "E0407",
+        "deptCode": "D03",
+        "employmentType": "인턴",
+        "contractEndDate": "2026-10-22"
+      },
+      {
+        "empId": "E0236",
+        "deptCode": "D06",
+        "employmentType": "인턴",
+        "contractEndDate": "2026-11-01"
+      },
+      {
+        "empId": "E0269",
+        "deptCode": "D04",
+        "employmentType": "계약직",
+        "contractEndDate": "2026-11-06"
+      },
+      {
+        "empId": "E0143",
+        "deptCode": "D04",
+        "employmentType": "파견",
+        "contractEndDate": "2026-11-07"
+      },
+      {
+        "empId": "E0346",
+        "deptCode": "D03",
+        "employmentType": "인턴",
+        "contractEndDate": "2026-11-07"
+      },
+      {
+        "empId": "E0390",
+        "deptCode": "D06",
+        "employmentType": "인턴",
+        "contractEndDate": "2026-11-07"
+      },
+      {
+        "empId": "E0079",
+        "deptCode": "D08",
+        "employmentType": "파견",
+        "contractEndDate": "2026-11-09"
+      },
+      {
+        "empId": "E0090",
+        "deptCode": "D03",
+        "employmentType": "계약직",
+        "contractEndDate": "2026-11-14"
+      },
+      {
+        "empId": "E0156",
+        "deptCode": "D03",
+        "employmentType": "파견",
+        "contractEndDate": "2026-11-14"
+      },
+      {
+        "empId": "E0392",
+        "deptCode": "D03",
+        "employmentType": "계약직",
+        "contractEndDate": "2026-11-17"
+      },
+      {
+        "empId": "E0313",
+        "deptCode": "D03",
+        "employmentType": "인턴",
+        "contractEndDate": "2026-12-05"
+      },
+      {
+        "empId": "E0127",
+        "deptCode": "D05",
+        "employmentType": "파견",
+        "contractEndDate": "2026-12-10"
+      },
+      {
+        "empId": "E0374",
+        "deptCode": "D07",
+        "employmentType": "인턴",
+        "contractEndDate": "2026-12-11"
+      },
+      {
+        "empId": "E0217",
+        "deptCode": "D05",
+        "employmentType": "인턴",
+        "contractEndDate": "2026-12-13"
+      },
+      {
+        "empId": "E0388",
+        "deptCode": "D06",
+        "employmentType": "계약직",
+        "contractEndDate": "2026-12-14"
+      },
+      {
+        "empId": "E0345",
+        "deptCode": "D06",
+        "employmentType": "인턴",
+        "contractEndDate": "2026-12-19"
+      }
+    ],
+    "count": 24,
+    "byMonth": {
+      "2026-09": 3,
+      "2026-10": 6,
+      "2026-11": 9,
+      "2026-12": 6
+    },
+    "note": "byMonth 는 payroll-close.json 값(90일 창)"
+  },
+  "provenance": {
+    "source": "data/stats/payroll-close.json",
+    "script": ".claude/skills/payroll-close/scripts/payroll_close.py"
+  },
+  "claims": {
+    "implemented": [
+      "contracts.expiringWithin90Days 를 읽고 withinDays 로 필터만 한다"
+    ],
+    "mockup": [],
+    "approvalPending": [
+      "계약 갱신·종료 결정은 사람(채용/해고 관련 결정 gate)"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "apr-20260923-173441-e37393",
+  "status": "pending",
+  "action": "send-monthly-report",
+  "payload": {
+    "to": "executive"
+  },
+  "requestedBy": "executive",
+  "role": "executive",
+  "requestedAt": "2026-09-23T17:34:41",
+  "asOfDate": "2026-09-23",
+  "gate": "approval-gate: send-monthly-report",
+  "approvalPhrase": "'send-monthly-report' 승인 요청(apr-20260923-173441-e37393)을 승인합니다",
+  "note": "agent 는 실행하지 않았다. 사용자의 명시적 승인 문장 뒤에 사람의 환경에서 실행한다(approval-gate-policy 3·4)",
+  "approvedBy": null,
+  "approvedAt": null
+}

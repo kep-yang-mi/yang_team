@@ -1,0 +1,25 @@
+{
+  "persona": "finance-controller",
+  "title": "재무 통제",
+  "titleEn": "Finance Controller",
+  "submittedAt": "2026-09-23",
+  "source": "interview",
+  "needs": [
+    {"id": "FC-N1", "need": "조직 그룹별 월말 급여 대상 인원을 Finance 예산 코드(조직 그룹 단위)로 본다", "importance": 4},
+    {"id": "FC-N2", "need": "고용유형별 인원(정규직/계약직/인턴/파견)으로 인건비 예산 소진을 추정한다 — 금액은 재무 시스템에서, 여기서는 인원 기준(head)만", "importance": 4},
+    {"id": "FC-N3", "need": "다음 달 말 인원 전망과 TO 충족률로 분기 인건비 예측을 갱신한다", "importance": 3},
+    {"id": "FC-N4", "need": "미해결 데이터 항목 수를 보고 이번 달 마감 숫자를 신뢰할지 결정한다", "importance": 2}
+  ],
+  "fitCriteria": [
+    {"id": "FC-F1", "criterion": "조직별 월말 급여 대상 인원(재직·총원)을 조직 그룹으로 묶어 한 표에서 본다", "weight": 4, "evidence": "payroll-close.payrollHeadcount.byDepartment"},
+    {"id": "FC-F2", "criterion": "고용유형별 인원(총원 427 기준)을 본다", "weight": 4, "evidence": "headcount-stats.byAttributeAll.employmentType"},
+    {"id": "FC-F3", "criterion": "다음 달 말 전망 인원과 TO 대비 gap을 본다", "weight": 3, "evidence": "month-end-forecast.totals.nextMonth"},
+    {"id": "FC-F4", "criterion": "조직 그룹(4) 단위 TO 과부족(기준일·월말)을 본다", "weight": 3, "evidence": "month-end-forecast.byOrgGroup"},
+    {"id": "FC-F5", "criterion": "미해결 항목 수와 목록을 본다", "weight": 2, "evidence": "cleansing-summary.unresolvedCount"},
+    {"id": "FC-F6", "criterion": "개인 성명·급여액은 보지 않는다(집계와 사번만)", "weight": 3, "evidence": "policy:pii-minimization-policy"}
+  ],
+  "rubric": {
+    "lens": "분기 인건비 예측을 갱신하는 재무 통제 담당이 이 화면만으로 인원 기준(head)을 확정할 수 있는가",
+    "scoring": "0~10, 기준: 0 해당 정보 없음 / 3 있으나 조직 그룹·고용유형 단위로 잘리지 않음 / 5 쓸 수 있으나 엑셀로 재정리 필요 / 8 화면만으로 인원 기준 확정 / 10 다음 달 전망까지 예산 코드(조직 그룹) 단위로 제시"
+  }
+}

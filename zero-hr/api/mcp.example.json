@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "zerohr": {
+      "command": "python3",
+      "args": ["/Users/yang/development/zero-hr/api/mcp_server.py"],
+      "env": { "ZERO_HR_ROOT": "/Users/yang/development/zero-hr" }
+    }
+  }
+}

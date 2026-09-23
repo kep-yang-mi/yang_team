@@ -1,0 +1,23 @@
+{
+  "asOfDate": "2026-09-23",
+  "manualBaseline": {
+    "hoursPerMonth": 40,
+    "breakdown": {
+      "수집·통합": 8,
+      "클린징": 12,
+      "집계·예측": 12,
+      "리포트 작성·배포": 8
+    },
+    "basis": "중견 스타트업 HR 월간 인원 리포트 수작업 공수 추정(가정)"
+  },
+  "automated": {
+    "pipelineSeconds": 0.0,
+    "humanReviewHoursPerMonth": 8,
+    "breakdown": {
+      "미해결 항목 확인": 3,
+      "리포트 검토·승인(승인 gate)": 5
+    }
+  },
+  "savingRate": 0.8,
+  "note": "가정 기반 추정치. 고객사 실측으로 갱신 (run_meta.json 부재 — pipelineSeconds 0)"
+}

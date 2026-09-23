@@ -1,0 +1,12 @@
+﻿orgGroupCode,orgGroup,deptCode,department,formerNames,establishedOn
+G0,Executive,D01,CEO Office,Executive Office;CEO Staff;경영지원,2019-01-01
+G1,Build,D02,Product,Product Management;PM;프로덕트,2019-01-01
+G1,Build,D03,Engineering,R&D;Eng;Engineering Dept;개발,2019-01-01
+G1,Build,D04,Design,UX;Product Design;디자인,2019-01-01
+G1,Build,D05,Data & AI,Data and AI;Data/AI;AI Lab;Data Science,2019-01-01
+G2,Go-To-Market,D06,Sales,Sales Team;BizDev;영업,2019-01-01
+G2,Go-To-Market,D07,Marketing,Growth;Growth Marketing;마케팅,2019-01-01
+G2,Go-To-Market,D08,Customer Success,Customer Support;CS;CX;고객지원,2019-01-01
+G3,Operations,D09,People,HR;People Team;Human Resources;인사,2019-01-01
+G3,Operations,D10,Finance,Finance & Accounting;Accounting;재무,2019-01-01
+G3,Operations,D11,Legal & Compliance,Legal and Compliance;Legal&Compliance;Legal;법무,2019-01-01

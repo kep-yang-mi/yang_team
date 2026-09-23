@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Everyday People Agent — Zero Company HR</title>
+<meta name="description" content="Zero Company HR — agent가 HR 운영을 직접 수행하는 HR Operations Agent Platform. 인원 통계·월말 예측·급여 마감·온보딩 계획을 화면과 Function Call로 제공한다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+KR:wght@400;600&family=Noto+Sans+KR:wght@400;500;700&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+<style>
+/* Anthropic 디자인 시스템 — .claude/skills/product-build/references/design-system.md 정본 */
+:root {
+  color-scheme: light;
+  --bg: #f0eee6; --surface: #faf9f5; --surface-2: #e3dacc; --surface-hero: #f5e3c7;
+  --ink: #141413; --ink-2: #3d3d3a; --ink-muted: #87867f; --ink-faint: #b0aea5;
+  --line: #cccbc8; --line-strong: #87867f;
+  --accent: #d97757; --accent-deep: #c6613f; --on-accent: #ffffff;
+  --series-1: #d97757; --series-2: #3d3d3a; --series-3: #b8965e; --series-4: #7f8b74;
+  --good: #6f8f6a; --warning: #b8965e; --critical: #c6613f; --neutral: #87867f;
+  --radius: 24px; --radius-btn: 12px; --radius-cta: 8px; --radius-badge: 0px; --gutter: 16px; --max-w: 1280px;
+  --font-serif: "Source Serif 4", "Noto Serif KR", Georgia, serif;
+  --font-sans: "Inter", "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #141413; --surface: #1f1f1e; --surface-2: #2a2a28; --surface-hero: #2f2a22;
+    --ink: #faf9f5; --ink-2: #e3dacc; --ink-muted: #b0aea5; --ink-faint: #87867f;
+    --line: #3d3d3a; --line-strong: #87867f; --series-2: #cccbc8;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #141413; --surface: #1f1f1e; --surface-2: #2a2a28; --surface-hero: #2f2a22;
+  --ink: #faf9f5; --ink-2: #e3dacc; --ink-muted: #b0aea5; --ink-faint: #87867f;
+  --line: #3d3d3a; --line-strong: #87867f; --series-2: #cccbc8;
+}
+html { background: var(--bg); }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-sans); line-height: 1.5; -webkit-text-size-adjust: 100%; }
+h1, h2, h3, .display, .tile-value { font-family: var(--font-serif); letter-spacing: -0.01em; }
+h1 { font-size: 1.75rem; font-weight: 600; margin: 0; }
+h2 { font-size: 1.35rem; font-weight: 600; margin: 0 0 12px; }
+h3 { font-size: 1.05rem; font-weight: 600; margin: 0 0 6px; }
+a { color: var(--ink); text-decoration: underline; }
+a:hover { color: var(--accent-deep); }
+p { margin: 8px 0; }
+.muted { color: var(--ink-muted); } .small { font-size: 0.85rem; } .num { font-variant-numeric: tabular-nums; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.app-header { max-width: var(--max-w); margin: 0 auto; padding: 16px var(--gutter); display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: baseline; border-bottom: 1px solid var(--line); }
+.brand { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 600; }
+.brand span { display: block; font-family: var(--font-sans); font-size: 0.78rem; font-weight: 500; color: var(--ink-muted); }
+.hdr-right { margin-left: auto; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; font-size: 0.85rem; color: var(--ink-2); }
+main { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter) 64px; }
+section { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; margin: 16px 0; }
+section.hero { background: var(--surface-hero); }
+.display { font-size: 2.2rem; line-height: 1.15; margin: 0 0 8px; font-weight: 400; }
+.lede { font-size: 1.05rem; max-width: 62ch; color: var(--ink-2); }
+.kpis { display: flex; flex-wrap: wrap; gap: 8px 32px; margin-top: 16px; }
+.kpi { min-width: 120px; }
+.tile-value { display: block; font-size: 2rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+.kpi span.label { font-size: 0.8rem; color: var(--ink-muted); }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 6px; }
+.card .persona { font-size: 0.8rem; color: var(--ink-muted); }
+.card .go { margin-top: auto; padding-top: 12px; }
+.badge { display: inline-block; padding: 2px 8px; border-radius: var(--radius-badge); border: 1px solid var(--line-strong); font-size: 0.75rem; color: var(--ink); }
+.badge.accent { border-color: var(--accent); }
+.cta { display: inline-block; background: var(--accent); color: var(--on-accent); border-radius: var(--radius-cta); padding: 10px 20px; text-decoration: none; font-weight: 600; }
+.cta:hover { background: var(--accent-deep); color: var(--on-accent); }
+.btn { display: inline-block; border: 1px solid var(--line-strong); border-radius: var(--radius-btn); padding: 8px 16px; text-decoration: none; }
+table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 0.78rem; font-weight: 500; color: var(--ink-muted); }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+.pipeline { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 0.9rem; color: var(--ink-2); }
+.pipeline b { font-weight: 600; color: var(--ink); }
+.claims { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.claims h3 { font-size: 0.95rem; }
+.claims ul { margin: 0; padding-left: 18px; font-size: 0.88rem; color: var(--ink-2); }
+footer.page { max-width: var(--max-w); margin: 0 auto; padding: 16px var(--gutter) 48px; color: var(--ink-muted); font-size: 0.82rem; }
+code { font-family: var(--font-mono); font-size: 0.85em; }
+@media (max-width: 480px) { section { padding: 16px; border-radius: 16px; } .display { font-size: 1.6rem; } }
+</style>
+</head>
+<body>
+<header class="app-header">
+  <div class="brand">Everyday People Agent<span>Zero Company HR · HR Operations Agent Platform</span></div>
+  <nav class="hdr-right">
+    <a href="insight/">Insight</a><a href="payroll/">Payroll Close</a><a href="onboard/">Onboarding</a>
+    <a href="app/">통합 제품</a><a href="decision/">채택 근거</a><a href="api/index.json">Function Call</a>
+    <span id="asof" class="muted"></span>
+  </nav>
+</header>
+<main>
+  <section class="hero" data-section="hero">
+    <p class="display">사람이 매달 손으로 하던 인원 리포트를<br>agent가 수집·정제·분석·배포까지 수행합니다.</p>
+    <p class="lede">고객사 ㈜온다테크의 인원현황 마스터·TO 계획·입퇴사 예정 데이터를 받아, 조직별 인원 통계와 월말 인원 예측을 만들고, 권한별 화면과 월초 리포트로 배포합니다. 급여·온보딩·인사 총괄은 각자 쓰는 시스템에서 Function Call로 같은 숫자를 받습니다.</p>
+    <div class="kpis" id="kpis"></div>
+    <p class="go" style="margin-top:20px"><a class="cta" href="insight/?view=executive">경영진 화면 열기</a> <a class="btn" href="decision/">왜 이 제품인가</a></p>
+  </section>
+
+  <section data-section="products">
+    <h2>제품</h2>
+    <p class="muted small">세 페르소나의 질문이 다르므로 시안을 세 개 만들고, 세 심판이 각자의 루브릭으로 채점한 뒤 하나로 합쳤습니다.</p>
+    <div class="cards" id="product-cards">
+      <article class="card">
+        <span class="persona">인사 총괄 · head-of-hr</span><h3>Insight</h3>
+        <p class="small">실시간 HR 리포트. 권한별 뷰 4종(경영진·HR·경영기획·조직장), TO 과부족, 월말·다음 달 예측, 이직 리스크, 데이터 품질.</p>
+        <p class="go"><a class="btn" href="insight/">열기</a> <span class="badge" data-fit-badge="insight"></span></p>
+      </article>
+      <article class="card">
+        <span class="persona">급여 담당 · payroll</span><h3>Payroll Close</h3>
+        <p class="small">월말 급여 마감 보드. 급여 대상 인원(기준일·월말), 일할 계산 대상, 휴직 처리 구분, 계약 만료, 오류 위험, 체크리스트. 금액은 다루지 않습니다.</p>
+        <p class="go"><a class="btn" href="payroll/">열기</a> <span class="badge" data-fit-badge="payroll"></span></p>
+      </article>
+      <article class="card">
+        <span class="persona">온보딩 담당 · onboarding</span><h3>Onboarding</h3>
+        <p class="small">입사 예정자 온보딩 보드. 주차별 타임라인, 조직 배치·버디, 체크리스트, 90일 코호트, 1년 미만 이탈률.</p>
+        <p class="go"><a class="btn" href="onboard/">열기</a> <span class="badge" data-fit-badge="onboard"></span></p>
+      </article>
+      <article class="card">
+        <span class="persona">세 페르소나 공통</span><h3>통합 제품</h3>
+        <p class="small">심판 결과로 승자 골격에 차점 제품의 강점을 흡수한 하나의 제품. 역할 탭 6종.</p>
+        <p class="go"><a class="btn" href="app/">열기</a> <span class="badge accent">심판 이후 생성</span></p>
+      </article>
+      <article class="card">
+        <span class="persona">의사결정 기록</span><h3>채택 근거</h3>
+        <p class="small">세 심판의 루브릭 항목별 채점, 종합 순위, 통합 결정, 변경 이력. 어떤 기준으로 이 서비스를 채택했는지의 과정.</p>
+        <p class="go"><a class="btn" href="decision/">열기</a></p>
+      </article>
+      <article class="card">
+        <span class="persona">기존 시스템 연동</span><h3>Function Call</h3>
+        <p class="small">급여·온보딩·인사 총괄 시스템의 agent가 도구로 호출합니다. 도구 18개, HTTP·MCP 서버, 정적 스냅샷.</p>
+        <p class="go"><a class="btn" href="api/index.json">카탈로그</a> <span class="badge">payroll · onboarding · insight</span></p>
+      </article>
+    </div>
+  </section>
+
+  <section data-section="comparison">
+    <h2>제품 비교 — 심판 3명</h2>
+    <div id="comparison-body"><p class="muted">제품 비교 대기 중 — product-judge 실행 후 <code>--product comparison --embed</code>로 갱신됩니다.</p></div>
+    <p class="small muted">상세 채점 과정(루브릭 항목·앵커·mustFix)은 <a href="decision/">채택 근거 페이지</a>에 있습니다.</p>
+  </section>
+
+  <section data-section="pipeline">
+    <h2>Zero Company OS — agent 4역할</h2>
+    <p class="pipeline"><b>데이터 통합</b> → <b>클린징</b> → <b>분석</b>(통계·예측·리스크·급여·온보딩) → <b>배포</b>(권한별 화면·월초 리포트·Function Call) → <span>owner agent가 종합하고 사람이 승인합니다.</span></p>
+    <p class="small muted">모든 단계는 핸드오프 로그(시도·근거·실패·검증·인계점)를 남기고, 외부 발송·배포는 사람 승인을 거칩니다.</p>
+  </section>
+
+  <section data-section="claims">
+    <h2>이 화면의 범위</h2>
+    <div class="claims">
+      <div><h3>구현됨</h3><ul>
+        <li>원천 생성·클린징·통계·월말 예측·이직 리스크·급여 마감·온보딩 계획 스크립트와 테스트</li>
+        <li>역할 전환·조직 선택·시나리오 플래너(가정 표기, 저장 안 함)</li>
+        <li>Function Call 도구 18개 · HTTP/MCP 서버 · 정적 스냅샷</li></ul></div>
+      <div><h3>목업 · 준비 완료</h3><ul>
+        <li>월초 이메일: 발송 명세만 <code>ready-to-send</code>, 수신자는 가상 주소</li>
+        <li>Supabase 실시간 갱신: <code>config.js</code>가 있을 때만 덮어씀</li>
+        <li>온보딩 체크리스트 상태: seed 고정 가상 데이터</li></ul></div>
+      <div><h3>승인 대기</h3><ul>
+        <li>실제 발송, GitHub·Supabase·Vercel 배포</li>
+        <li>채용 가속·TO 재검토 권고의 채택</li></ul></div>
+    </div>
+    <p class="small muted">역할 뷰는 <b>표시 필터</b>이며 접근 통제가 아닙니다(행 단위 보안은 고도화 항목). 데이터는 agent가 생성한 가상 HR 데이터입니다.</p>
+  </section>
+</main>
+<footer class="page">
+  <span id="source-badge">데이터 출처: 내장 스냅샷</span> · 고객사 ㈜온다테크(가상) · <span id="asof2"></span> · Zero Company HR
+</footer>
+
+<script id="report-data" type="application/json">
+{"asOfDate":"2026-09-23","products":[{"code":"insight","name":"Everyday People Agent — Insight","persona":"head-of-hr","fitScore":{"coverage":1.0,"weightedCoverage":1.0,"panelScore":5.23,"criteriaMet":[{"id":"H-F1","met":true,"evidence":"site/insight/index.html data-section=kpi,department-gap,org-group-gap data-fit=H-F1 · insight.json forecast.byDepartment[].toGapAsOf[11], toGapMonthEnd[11] · forecast.byOrgGroup[].toGapMonthEnd[4]"},{"id":"H-F2","met":true,"evidence":"site/insight/index.html data-section=views,kpi · insight.json forecast.totals reconciled across executive/hr/planning/orgLead"},{"id":"H-F3","met":true,"evidence":"PII 부정 검사 3건 전부 통과 · data-section=planned-moves,views"},{"id":"H-F4","met":true,"evidence":"site/insight/index.html data-section=department-gap,insights data-fit=H-F4 · insight.json forecast.byDepartment[].forecastMonthEnd/recommendation · forecast.insights[3]"},{"id":"H-F5","met":true,"evidence":"site/insight/index.html data-section=risk-summary data-fit=H-F5 · insight.json attrition.summary[4], attrition.byDepartment[11]"},{"id":"H-F6","met":true,"evidence":"site/insight/index.html data-section=risk-people data-fit=H-F6 · insight.json attrition.byEmployee[406], hrDirectory[427]"},{"id":"H-F7","met":true,"evidence":"site/insight/index.html data-section=data-quality data-fit=H-F7 · insight.json cleansingSummary.unresolvedItems[12] · stats.dataQuality.briefDiscrepancies[1]"},{"id":"H-F8","met":true,"evidence":"reports/monthly-report-dispatch.json (status=ready-to-send) + site/insight/index.html data-section=report"},{"id":"H-F9","met":true,"evidence":"site/insight/index.html data-section=automation-effect data-fit=H-F9 · insight.json automationEffect.savingRate/manualBaseline/note"},{"id":"H-F10","met":true,"evidence":"site/insight/index.html data-section=attributes data-fit=H-F10 · insight.json stats.byAttribute.level/tenureBand/stage"},{"id":"H-F11","met":true,"evidence":"site/insight/index.html data-section=separations data-fit=H-F11 · insight.json stats.plannedSeparations.bySeparationReason[5]/bySeparationType[2]/byDepartment[9]"},{"id":"H-F12","met":true,"evidence":"site/insight/index.html data-section=scenario,next-month data-fit=H-F12 · insight.json forecast.byDepartment[].nextMonth/riskAdjusted · forecast.scenario"},{"id":"H-F13","met":true,"evidence":"site/insight/index.html data-section=org-lead data-fit=H-F13 · insight.json forecast.byDepartment[11]; PII 부정 검사 통과"},{"id":"H-F14","met":true,"evidence":"site/insight/index.html data-section=header data-fit=H-F14 · insight.json stats.asOfDate=2026-09-23, client"},{"id":"H-F15","met":true,"evidence":"api/tools.json: insight.get_executive_snapshot, insight.get_department_forecast, insight.get_insights, insight.get_attribute_stats"}]},"sharedLayerReuse":1.0,"uniqueFeatures":["attributes","automation-effect","department-gap","directory","experience","insights","org-group-gap","org-lead","planned-moves","report","risk-people","risk-summary","scenario","separations"],"buildEffort":{"agentMinutes":0,"linesOfHtml":942},"strengths":["[H-F1] 조직 그룹(4)·조직(11)별 TO 과부족을 기준일(−16)과 월말(−11) 기준으로 한 화면에서 본다","[H-F2] 권한별 뷰 4종(executive/hr/planning/orgLead)을 역할 선택기로 전환하며 같은 지표(재직 406·월말 411·gap −11)는 어느 뷰에서도 같은 값이다","[H-F3] 경영진·경영기획·조직장 뷰에는 성명·생년월일·개인 리스크 점수가 나타나지 않고 조직 단위 집계와 사번만 보인다","[H-F4] 조직별 월말 예측과 권고(정상 관리/채용 가속/TO 재검토·이동배치)가 인사이트 3건(Engineering −7·Sales −4 채용 가속, Data & AI +7 TO 재검토, Legal & Compliance 퇴사 영향)의 detail·action과 함께 표시된다","[H-F5] 이직 리스크 요약이 경영진 뷰에는 등급(높음/중간/낮음) 건수와 조직별 분포만, 점수 없이 표시된다","[H-F6] HR 뷰에서만 이직 리스크 높음 인원 목록을 성명 조인으로 조직별·요인과 함께 본다"],"gaps":["[nice-to-have:payroll] 월말 인원·입퇴사 예정 건수는 있으나 급여 대상(재직+휴직) 구분과 예측 일치 배지가 없어 급여 마감에는 참조용이다 — 통합 제품은 payroll의 kpi 히어로 타일 구조를 그대로 흡수해야 한다","[must-fix:onboarding] 조직별 입사 예정(plannedIn)은 있으나 조직장(deptLeadEmpId) 조인이 없어 온보딩 조율에 못 쓴다(R2=3)","[must-fix:onboarding] 온보딩 체크리스트 섹션 자체가 없어 입사자 준비 상태를 전혀 볼 수 없다(R3=0)","[nice-to-have:onboarding] joinerId 옆에 성명·레벨·주차 그룹을 추가하면 온보딩 담당도 참고용으로 쓸 수 있다"]},{"code":"payroll","name":"Everyday People Agent — Payroll Close","persona":"payroll","fitScore":{"coverage":1.0,"weightedCoverage":1.0,"panelScore":3.7,"criteriaMet":[{"id":"P-F1","met":true,"evidence":"site/payroll/index.html data-section=kpi data-fit=P-F1 · reconciliation:payroll.payrollHeadcount.monthEndActive=411=month-end-forecast.totals.forecastMonthEnd"},{"id":"P-F2","met":true,"evidence":"site/payroll/index.html data-section=prorations-actual data-fit=P-F2 · payroll.json payrollClose.prorations.joinersInPeriod[5]"},{"id":"P-F3","met":true,"evidence":"site/payroll/index.html data-section=prorations-planned data-fit=P-F3 · payroll.json payrollClose.prorations.plannedJoinersByMonthEnd[19]/plannedLeaversByMonthEnd[14]"},{"id":"P-F4","met":true,"evidence":"site/payroll/index.html data-section=leaves data-fit=P-F4 · payroll.json payrollClose.leaves.onLeave[21]/byTreatment[3]"},{"id":"P-F5","met":true,"evidence":"site/payroll/index.html data-section=contracts data-fit=P-F5 · payroll.json payrollClose.contracts.expiringWithin90Days[24]/byMonth[4]"},{"id":"P-F6","met":true,"evidence":"site/payroll/index.html data-section=risks data-fit=P-F6 · payroll.json payrollClose.risks[].unresolvedFlag[14]/impact[14]"},{"id":"P-F7","met":true,"evidence":"site/payroll/index.html data-section=headcount data-fit=P-F7 · payroll.json payrollClose.payrollHeadcount.byEmploymentType[4]/byDepartment[11]"},{"id":"P-F8","met":true,"evidence":"site/payroll/index.html data-section=kpi,checklist data-fit=P-F8 · payroll.json payrollClose.checklist[7]"},{"id":"P-F9","met":true,"evidence":"site/payroll/index.html data-section=claims data-fit=P-F9 · PII 부정 검사 3건 전부 통과 (금액/계좌 필드 없음)"},{"id":"P-F10","met":true,"evidence":"site/payroll/index.html data-section=header data-fit=P-F10 · payroll.json payrollClose.payPeriod/periodStart/periodEnd"},{"id":"P-F11","met":true,"evidence":"reconciliation:payroll.cleansingSummary.unresolvedCount=12=cleansing-summary.unresolvedCount"},{"id":"P-F12","met":true,"evidence":"site/payroll/index.html data-section=prorations-planned data-fit=P-F12 · payroll.json plannedLeaversByMonthEnd[].separationType[14]"},{"id":"P-F13","met":true,"evidence":"reconciliation:payroll.payrollHeadcount.asOfTotal=427=headcount-stats.totals.headcount"},{"id":"P-F14","met":true,"evidence":"api/tools.json: payroll.get_close_summary, payroll.list_prorations, payroll.list_leave_treatments, payroll.list_contract_expirations, payroll.list_risks"}]},"sharedLayerReuse":0.6667,"uniqueFeatures":["contracts","headcount","leaves","prorations-actual","prorations-planned","risks"],"buildEffort":{"agentMinutes":0,"linesOfHtml":712},"strengths":["[P-F1] 월말 급여 대상 재직 인원이 월말 인원 예측(411)과 대사 규칙대로 일치하고, 월말 총원(432)은 휴직 21을 더한 값으로 별도 표시된다","[P-F2] 당월 입사자(일할 계산 대상)를 성명·조직·입사일·고용유형·근무일수·일할 비율(근무일수/30, 3자리)과 함께 목록으로 본다","[P-F3] 월말까지 입사 예정(19)·퇴사 예정(14)이 확정 입사자와 구분된 목록으로 근무일수·비율과 함께 보인다","[P-F4] 휴직자 21명 목록(성명·조직·휴직유형·시작일)과 급여 처리 구분(무급(정부 급여)/유급/무급) 집계를 본다","[P-F5] 90일 내 계약 만료 예정자(계약직·인턴·파견) 목록과 월별(2026-10/11/12) 건수를 본다","[P-F6] 급여 오류 위험이 사번·이슈·영향·미해결 플래그(status-inconsistency·missing-required·stale-planned-leaver·unknown-emp)와 함께 표시되고 급여 확정 전 확인 대상으로 구분된다"],"gaps":["[must-fix:head-of-hr] TO·gap·recommendation이 화면에 전혀 없다 — 통합 제품의 payroll 탭에서 head-of-hr가 TO 과부족을 보려면 Insight의 department-gap을 그대로 끌어와야 한다(R1=2, R2=1, must 3점 이하)","[must-fix:head-of-hr] data-views 속성이 0건 — 통합 제품에서 payroll 탭을 경영진·경영기획에 그대로 노출하면 사번+성명이 보인다(R3=0, must). 통합 시 payroll 탭은 hr·payroll role 전용으로 게이트해야 한다","[nice-to-have:head-of-hr] 이직 리스크(attrition) 참조가 전혀 없다 — Insight의 risk-summary(등급 분포만, 점수 없음)를 payroll 탭에도 요약 타일로 병기하면 급여 담당도 임박 퇴사 리스크를 인지할 수 있다","[nice-to-have:head-of-hr] 월초 리포트 링크·자동화 효과 타일이 없다 — 통합 제품에서는 공통 헤더에 리포트 링크를 전 탭 공통 배치해 payroll에서도 접근 가능하게 한다","[must-fix:payroll] 월말까지 퇴사 예정 표의 E0251(퇴사예정일 2026-09-15, 이미 기준일 09-23 이전에 경과)이 '예정' 배지로만 표시되고, risks 섹션의 stale-planned-leaver 플래그와 화면상 연결되지 않는다. 급여 담당이 risks 탭을 따로 확인하지 않으면 이미 퇴사 처리해야 할 사람을 여전히 '예정'으로 보고 이중 처리(급여 과지급)할 위험이 있다 — prorations-planned 표 안에 인라인 경고(stale 배지)가 필요하다.","[nice-to-have:payroll] 체크리스트 항목이 해당 섹션(prorations-actual, leaves 등)으로 링크되지 않아 pending 항목을 클릭해 바로 이동할 수 없다","[nice-to-have:payroll] 휴직유형 '기타'(클린저가 status-inconsistency로 임시 보정한 미확인 유형)가 경고 색상만 있고 '미확인'이라는 명시적 라벨이 없어, 실제 기타휴직과 구별되지 않는다","[must-fix:onboarding] 조직별 집계가 급여 대상 중심이라 조직장 조인·신규입사 클러스터링이 없다(R2=0)","[must-fix:onboarding] 체크리스트가 급여 마감 전용 항목이라 온보딩 6항목과 무관하다(R3=0)","[nice-to-have:onboarding] 고용유형·레벨·주차 그룹을 추가하면 급여 담당과 온보딩 담당이 같은 표를 함께 볼 수 있다"]},{"code":"onboard","name":"Everyday People Agent — Onboarding","persona":"onboarding","fitScore":{"coverage":1.0,"weightedCoverage":1.0,"panelScore":3.8,"criteriaMet":[{"id":"O-F1","met":true,"evidence":"site/onboard/index.html data-section=timeline data-fit=O-F1 · onboard.json onboardingPlan.timeline[].weekStart[5]/joiners[27]"},{"id":"O-F2","met":true,"evidence":"site/onboard/index.html data-section=departments data-fit=O-F2 · onboard.json onboardingPlan.byDepartment[].joiners/joinersByMonthEnd/deptLeadEmpId[9]"},{"id":"O-F3","met":true,"evidence":"site/onboard/index.html data-section=checklist data-fit=O-F3 · onboard.json onboardingPlan.checklist.items[6]/status[27]"},{"id":"O-F4","met":true,"evidence":"site/onboard/index.html data-section=departments data-fit=O-F4 · onboard.json onboardingPlan.byDepartment[].buddyCandidates[27]"},{"id":"O-F5","met":true,"evidence":"site/onboard/index.html data-section=cohort data-fit=O-F5 · onboard.json onboardingPlan.earlyTenureCohort.members[12]/count/highRiskCount"},{"id":"O-F6","met":true,"evidence":"site/onboard/index.html data-section=early-attrition data-fit=O-F6 · onboard.json onboardingPlan.earlyAttrition.rate/under1YearLeavers/byDepartment[9]"},{"id":"O-F7","met":true,"evidence":"site/onboard/index.html data-section=timeline data-fit=O-F7 · onboard.json plannedJoiners[27]"},{"id":"O-F8","met":true,"evidence":"reconciliation:onboard.timeline[].joiners=27=planned-joiners.clean=27; joinersByMonthEnd=19=month-end-forecast.totals.plannedIn"},{"id":"O-F9","met":true,"evidence":"PII 부정 검사 3건 전부 통과 · data-section=cohort,claims"},{"id":"O-F10","met":true,"evidence":"site/onboard/index.html data-section=timeline data-fit=O-F10 · onboard.json onboardingPlan.timeline[].joiners[].plannedHireDate[27]/asOfDate"},{"id":"O-F11","met":true,"evidence":"site/onboard/index.html data-section=next-month data-fit=O-F11 · onboard.json onboardingPlan.byDepartment[].joiners[9]"},{"id":"O-F12","met":true,"evidence":"site/onboard/index.html data-section=header data-fit=O-F12 · onboard.json onboardingPlan.horizonEnd"},{"id":"O-F13","met":true,"evidence":"api/tools.json: onboarding.get_timeline, onboarding.get_department_plan, onboarding.get_checklist, onboarding.get_early_tenure_cohort"}]},"sharedLayerReuse":0.6667,"uniqueFeatures":["cohort","departments","early-attrition","reconciliation","timeline"],"buildEffort":{"agentMinutes":0,"linesOfHtml":600},"strengths":["[O-F1] 주차별 입사 타임라인에 입사 예정자 27명 전원이 성명·조직·입사 예정일·고용유형·레벨과 함께 보이고, 기준일 기준 이번 주·다음 주가 강조된다","[O-F2] 조직별 배치 현황(입사자 수·월말까지 수·조직장 사번)을 보고 입사자가 몰린 조직(Engineering 월말 5·horizon 8)이 묶여 보인다","[O-F3] 입사자별 체크리스트 6항목(계정 발급·장비 지급·보안 교육·조직 소개·버디 배정·30일 면담) 상태가 매트릭스로 보이고 진행률을 알 수 있다","[O-F4] 입사자마다 같은 조직 버디 후보(최대 3명, 재직기간·레벨·리스크 등급)를 본다","[O-F5] 입사 90일 코호트 목록(사번·조직·입사일·경과일·리스크 등급)과 고위험 수를 본다","[O-F9] 생년월일은 어디에도 나타나지 않고, 이직 리스크는 점수 없이 등급(높음/중간/낮음)만 표시된다"],"gaps":["[must-fix:head-of-hr] TO·gap 개념이 없다 — head-of-hr가 온보딩 화면에서 조직별 과부족을 볼 수 없다(R1=0, must)","[must-fix:head-of-hr] data-views 속성이 0건 — 버디 후보 카드·타임라인 표에 성명·사번·리스크 등급이 필터 없이 노출된다(R3=0, must). 통합 시 onboarding 탭도 hr·onboarding role 전용으로 게이트해야 한다","[nice-to-have:head-of-hr] 미해결 항목·확인 질문 표가 없다 — reconciliation 섹션은 있으나 Insight의 data-quality 표(unresolvedItems 목록)를 참조 링크로 연결하면 좋다","[nice-to-have:head-of-hr] 월초 리포트 링크가 없다 — payroll과 동일하게 공통 헤더 배치로 해결 가능","[nice-to-have:payroll] 입사 예정자 목록(성명·plannedHireDate·D-day 범례)은 있으나 근무일수·일할비율이 없어 급여 마감의 일할 대상 근거로는 재사용만 가능하다 — 통합 제품은 payroll의 prorations-planned 열 구조를 흡수해야 한다","[nice-to-have:onboarding] 조직별 조기 이탈률을 kpi 타일로 승격하면 조직장 대화 근거가 더 빨라진다(현재 early-attrition 섹션에만 있음)","[nice-to-have:onboarding] 입사일까지 남은 일수 대비 진행률이 낮은 입사자에게 '지연' 배지를 추가하면 담당자를 바로 지목할 수 있다","[nice-to-have:onboarding] Insight의 forecast.byDepartment.recommendation(채용 가속 등)과 연결한 TO 부족 배지를 추가하면 급성장 조직을 먼저 준비할 수 있다","[nice-to-have:onboarding] 현재 미해결 플래그가 0건이라 배지 노출이 실증되지 않았다 — 다음 정제 배치에서 최소 1건이라도 남기면 검증 가능(제품 결함 아님, 데이터 상태)"]}],"comparison":{"bestFit":"insight","summary":"심판 3명(페르소나 옹호자 렌즈)이 제품 3종을 채점했다. bestFit은 Insight(가중 충족률 100%, 패널 5.2/10, 종합 7.62), 차점은 Onboarding(종합 6.90). 종합 = 0.5×가중충족률×10 + 0.5×패널 점수.","recommendation":"통합 제품(app)은 Insight의 정보 구조를 골격으로 하고, Onboarding·Payroll Close의 충족 섹션(strengths·criteriaMet met=true)을 역할 탭으로 흡수한다. 각 제품 gaps의 [must-fix] 항목을 통합 전에 해소한다.","formula":"composite = 0.5 * weightedCoverage * 10 + 0.5 * panelScore","ranking":[{"code":"insight","composite":7.615,"weightedCoverage":1.0,"panelScore":5.23},{"code":"onboard","composite":6.9,"weightedCoverage":1.0,"panelScore":3.8},{"code":"payroll","composite":6.85,"weightedCoverage":1.0,"panelScore":3.7}]},"judges":[{"judge":"persona-advocate:head-of-hr","scores":{"insight":10.0,"payroll":1.3,"onboard":1.7},"notes":"인사 총괄 옹호자: Insight는 6개 정성 항목 전부 10점(만점) — 4뷰 전환 시 동일 KPI·URL 공유·뷰별 숨김 안내(R3), 색·라벨로 즉시 읽히는 권고 배지(R1·R2), 브리프 불일치까지 드러내는 데이터 품질(R4), 점수 없이 등급+요인설명으로 끝나는 리스크(R5), 화면 수치와 일치하는 ready-to-send 리포트(R6)까지 월초 경영보고를 이 화면 하나로 끝낼 수 있다. Payroll Close(1.3점)와 Onboarding(1.7점)은 각자 도메인에 충실할수록 오히려 head-of-hr 기준에서는 낮다 — 둘 다 조직 단위 TO·gap·recommendation이 없고(R1·R2 미충족), data-views 속성이 전무해 사번+성명이 필터 없이 노출된다(R3=0, PII 정책 위반은 아니지만 경영진 공유 불가). 두 제품에서 재사용 가치가 있는 것은 Payroll의 cleansing-summary 대사(R4=5, cap)와 Onboarding의 cohort 리스크 등급(R5=4)뿐이다. Function Call 카탈로그(H-F15)는 세 제품 모두 role-aware PII 필터를 구현해 만점."},{"judge":"persona-advocate:payroll","scores":{"insight":2.7,"payroll":9.0,"onboard":1.0},"notes":"급여 담당 옹호자 렌즈: Payroll Close(홈)는 마감 작업 순서(kpi→checklist→headcount→prorations-actual→prorations-planned→leaves→contracts→risks→data-quality→claims)대로 읽히고, must 항목 3개(R1 대상 확정, R2 일할 대상, R5 위험 어휘 구분)가 모두 8점 이상이라 실격도 mustFix도 없다. 실격 조건(급여액·계좌·세금 필드, birthDate, riskScore, 월말 대사 불일치) 전부 미해당 — grep 0건, 대사 411=411/427=427 일치 확인. Insight·Onboarding은 각각 R2(예정 입사자 참조)에서만 5점 상한을 받고 나머지 항목(계약 만료·휴직 처리·마감 순서)은 대부분 0~3점이다 — 이는 결함이 아니라 통합 제품이 payroll 탭에 무엇을 그대로 가져와야 하는지를 보여준다. 이전 라운드 없음(첫 채점, _workspace/judging/payroll.json 신규 생성)."},{"judge":"persona-advocate:onboarding","scores":{"insight":3.0,"payroll":0.8,"onboard":8.7},"notes":"온보딩 담당 옹호자: Onboarding(홈)은 주차·조직 단위로 이미 완결돼 월요일 준비 회의를 화면 하나로 할 수 있다(R1=10, R4=10). 남은 감점은 전부 nice-to-have 항목의 '한 걸음 더'(조직별 이탈률 KPI 승격, 지연 배지, TO 맥락 연결)이며 must 항목(R1~R3)은 모두 8점 이상이라 mustFix 없음. Insight·Payroll은 각자 자기 업무의 부산물로 입사자 성명·일자를 흘려주지만(R1=5), 조직장 식별·체크리스트·버디·조기 이탈은 구조적으로 없어(R2·R3·R4·R5·R6 대부분 0~5) 온보딩 담당이 이 두 화면만으로 주간 준비를 끝낼 수 없다 — 이는 결함이 아니라 통합 제품이 onboarding 탭으로 무엇을 그대로 가져와야 하는지의 지도다. 기계 채점(advocateCoverage)이 Insight·Payroll에서 O-F1·O-F8·O-F9·O-F12·O-F13을 met으로 잡은 것은 evidence 경로 존재 여부만 본 결과이며, 실제 화면 품질(주차 묶음·성명·레벨 없음)은 그보다 낮다 — 이 차이가 정성 채점(R1=5)의 근거다."}]}
+</script>
+<script>
+(function () {
+  "use strict";
+  var DATA = {};
+  try { DATA = JSON.parse(document.getElementById("report-data").textContent || "{}"); } catch (e) { DATA = {}; }
+  var asOf = DATA.asOfDate || "2026-09-23";
+  document.getElementById("asof").textContent = "기준일 " + asOf;
+  document.getElementById("asof2").textContent = "기준일 " + asOf;
+
+  var SNAPSHOT_KPIS = [
+    { label: "재직", value: 406 }, { label: "휴직", value: 21 }, { label: "총 TO", value: 422 },
+    { label: "월말 예측", value: 411 }, { label: "월말 TO 대비", value: -11 }
+  ];
+  function renderKpis(list) {
+    var box = document.getElementById("kpis");
+    box.innerHTML = "";
+    list.forEach(function (k) {
+      var d = document.createElement("div");
+      d.className = "kpi";
+      var v = document.createElement("strong");
+      v.className = "tile-value";
+      v.textContent = (k.value > 0 && k.label.indexOf("대비") >= 0 ? "+" : "") + k.value;
+      var l = document.createElement("span");
+      l.className = "label";
+      l.textContent = k.label;
+      d.appendChild(v); d.appendChild(l); box.appendChild(d);
+    });
+  }
+  renderKpis(SNAPSHOT_KPIS);
+
+  function pct(x) { return (Math.round(x * 1000) / 10).toFixed(1) + "%"; }
+  function renderComparison() {
+    var products = (DATA.products || []);
+    var box = document.getElementById("comparison-body");
+    if (!products.length) { return; }
+    var rank = (DATA.comparison && DATA.comparison.ranking) || [];
+    var rows = products.map(function (p) {
+      var r = rank.filter(function (x) { return x.code === p.code; })[0] || {};
+      return { code: p.code, name: p.name, persona: p.persona,
+               wc: (p.fitScore || {}).weightedCoverage, ps: (p.fitScore || {}).panelScore,
+               composite: r.composite, strengths: (p.strengths || []).slice(0, 2).join(" · "),
+               gaps: (p.gaps || []).slice(0, 2).join(" · ") };
+    });
+    var html = '<table><thead><tr><th>제품</th><th>페르소나</th><th class="num">가중 충족률</th><th class="num">패널 점수</th><th class="num">종합</th><th>강점</th><th>갭</th></tr></thead><tbody>';
+    rows.forEach(function (r) {
+      html += "<tr><td>" + (r.name || r.code) + "</td><td>" + (r.persona || "") + '</td><td class="num">' +
+        (r.wc == null ? "—" : pct(r.wc)) + '</td><td class="num">' + (r.ps == null ? "—" : r.ps.toFixed(1)) +
+        '</td><td class="num">' + (r.composite == null ? "—" : r.composite.toFixed(2)) + "</td><td>" +
+        (r.strengths || "") + "</td><td>" + (r.gaps || "") + "</td></tr>";
+    });
+    html += "</tbody></table>";
+    var c = DATA.comparison || {};
+    if (c.bestFit) {
+      html += '<p style="margin-top:12px"><span class="badge accent">채택: ' + c.bestFit + "</span> " + (c.summary || "") + "</p>";
+      if (c.recommendation) { html += '<p class="small muted">' + c.recommendation + "</p>"; }
+      if (c.formula) { html += '<p class="small muted">종합 = <code>' + c.formula + "</code></p>"; }
+    }
+    var judges = DATA.judges || [];
+    if (judges.length) {
+      html += '<h3 style="margin-top:20px">심판</h3><table><thead><tr><th>심판</th><th class="num">Insight</th><th class="num">Payroll Close</th><th class="num">Onboarding</th></tr></thead><tbody>';
+      judges.forEach(function (j) {
+        var s = j.scores || {};
+        html += "<tr><td>" + j.judge + '</td><td class="num">' + (s.insight != null ? s.insight : "—") +
+          '</td><td class="num">' + (s.payroll != null ? s.payroll : "—") + '</td><td class="num">' +
+          (s.onboard != null ? s.onboard : "—") + "</td></tr>";
+      });
+      html += "</tbody></table>";
+    }
+    box.innerHTML = html;
+    products.forEach(function (p) {
+      var badge = document.querySelector('[data-fit-badge="' + p.code + '"]');
+      if (badge && p.fitScore && p.fitScore.weightedCoverage != null) {
+        badge.textContent = "fit " + pct(p.fitScore.weightedCoverage) +
+          (p.fitScore.panelScore != null ? " · 패널 " + p.fitScore.panelScore.toFixed(1) : "");
+      }
+    });
+  }
+  renderComparison();
+
+  // Supabase 스냅샷이 있으면 덮어쓴다(선택). config.js 가 없으면 내장 스냅샷을 그대로 쓴다.
+  if (window.ZEROHR_CONFIG && window.ZEROHR_CONFIG.supabaseUrl && window.ZEROHR_CONFIG.supabaseAnonKey) {
+    var url = window.ZEROHR_CONFIG.supabaseUrl.replace(/\/$/, "") +
+      "/rest/v1/report_snapshots?product=eq.comparison&select=payload,created_at&order=created_at.desc&limit=1";
+    fetch(url, { headers: { apikey: window.ZEROHR_CONFIG.supabaseAnonKey, Authorization: "Bearer " + window.ZEROHR_CONFIG.supabaseAnonKey } })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (rows) {
+        if (!rows || !rows.length || !rows[0].payload) { return; }
+        DATA = rows[0].payload;
+        document.getElementById("source-badge").textContent = "데이터 출처: Supabase 스냅샷";
+        renderComparison();
+      })
+      .catch(function () { /* 내장 유지 */ });
+  }
+})();
+</script>
+<script src="config.js" onerror="void 0"></script>
+</body>
+</html>

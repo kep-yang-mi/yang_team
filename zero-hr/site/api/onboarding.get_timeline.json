@@ -1,0 +1,309 @@
+{
+  "status": "ok",
+  "asOfDate": "2026-09-23",
+  "role": "executive",
+  "tool": "onboarding.get_timeline",
+  "data": {
+    "asOfDate": "2026-09-23",
+    "horizonEnd": "2026-10-31",
+    "week": null,
+    "timeline": [
+      {
+        "week": "2026-W39",
+        "weekStart": "2026-09-21",
+        "joiners": [
+          {
+            "joinerId": "J014",
+            "deptCode": "D05",
+            "department": "Data & AI",
+            "plannedHireDate": "2026-09-24",
+            "employmentType": "정규직",
+            "level": "IC2",
+            "unresolvedFlags": []
+          },
+          {
+            "joinerId": "J020",
+            "deptCode": "D03",
+            "department": "Engineering",
+            "plannedHireDate": "2026-09-24",
+            "employmentType": "정규직",
+            "level": "IC3",
+            "unresolvedFlags": []
+          },
+          {
+            "joinerId": "J021",
+            "deptCode": "D08",
+            "department": "Customer Success",
+            "plannedHireDate": "2026-09-24",
+            "employmentType": "정규직",
+            "level": "IC3",
+            "unresolvedFlags": []
+          },
+          {
+            "joinerId": "J003",
+            "deptCode": "D09",
+            "department": "People",
+            "plannedHireDate": "2026-09-25",
+            "employmentType": "정규직",
+            "level": "Senior",
+            "unresolvedFlags": []
+          },
+          {
+            "joinerId": "J015",
+            "deptCode": "D02",
+            "department": "Product",
+            "plannedHireDate": "2026-09-25",
+            "employmentType": "정규직",
+            "level": "Senior",
+            "unresolvedFlags": []
+          },
+          {
+            "joinerId": "J016",
+            "deptCode": "D06",
+            "department": "Sales",
+            "plannedHireDate": "2026-09-25",
+            "employmentType": "정규직",
+            "level": "Lead",
+            "unresolvedFlags": []
+          },
+          {
+            "joinerId": "J022",
+            "deptCode": "D07",
+            "department": "Marketing",
+            "plannedHireDate": "2026-09-25",
+            "employmentType": "정규직",
+            "level": "IC2",
+            "unresolvedFlags": []
+          },
+          {
+            "joinerId": "J023",
+            "deptCode": "D06",
+            "department": "Sales",
+            "plannedHireDate": "2026-09-25",
+            "employmentType": "정규직",
+            "level": "Lead",
+            "unresolvedFlags": []
+          },
+          {
+            "joinerId": "J007",
+            "deptCode": "D03",
+            "department": "Engineering",
+            "plannedHireDate": "2026-09-26",
+            "employmentType": "정규직",
+            "level": "IC2",
+            "unresolvedFlags": []
+          },
+          {
+            "joinerId": "J013",
+            "deptCode": "D06",
+            "department": "Sales",
+            "plannedHireDate": "2026-09-26",
+            "employmentType": "정규직",
+            "level": "IC1",
+            "unresolvedFlags": []
+          },
+          {
+            "joinerId": "J025",
+            "deptCode": "D08",
+            "department": "Customer Success",
+            "plannedHireDate": "2026-09-26",
+            "employmentType": "인턴",
+            "level": "IC1",
+            "unresolvedFlags": []
+          },
+          {
+            "joinerId": "J002",
+            "deptCode": "D02",
+            "department": "Product",
+            "plannedHireDate": "2026-09-27",
+            "employmentType": "정규직",
+            "level": "IC3",
+            "unresolvedFlags": []
+          },
+          {
+            "joinerId": "J012",
+            "deptCode": "D03",
+            "department": "Engineering",
+            "plannedHireDate": "2026-09-27",
+            "employmentType": "정규직",
+            "level": "IC1",
+            "unresolvedFlags": []
+          }
+        ],
+        "count": 13
+      },
+      {
+        "week": "2026-W40",
+        "weekStart": "2026-09-28",
+        "joiners": [
+          {
+            "joinerId": "J024",
+            "deptCode": "D03",
+            "department": "Engineering",
+            "plannedHireDate": "2026-09-28",
+            "employmentType": "인턴",
+            "level": "Lead",
+            "unresolvedFlags": []
+          },
+          {
+            "joinerId": "J026",
+            "deptCode": "D10",
+            "department": "Finance",
+            "plannedHireDate": "2026-09-28",
+            "employmentType": "계약직",
+            "level": "Senior",
+            "unresolvedFlags": []
+          },
+          {
+            "joinerId": "J027",
+            "deptCode": "D02",
+            "department": "Product",
+            "plannedHireDate": "2026-09-28",
+            "employmentType": "정규직",
+            "level": "Senior",
+            "unresolvedFlags": []
+          },
+          {
+            "joinerId": "J008",
+            "deptCode": "D05",
+            "department": "Data & AI",
+            "plannedHireDate": "2026-09-29",
+            "employmentType": "정규직",
+            "level": "IC2",
+            "unresolvedFlags": []
+          },
+          {
+            "joinerId": "J005",
+            "deptCode": "D03",
+            "department": "Engineering",
+            "plannedHireDate": "2026-09-30",
+            "employmentType": "정규직",
+            "level": "IC2",
+            "unresolvedFlags": []
+          },
+          {
+            "joinerId": "J011",
+            "deptCode": "D04",
+            "department": "Design",
+            "plannedHireDate": "2026-09-30",
+            "employmentType": "정규직",
+            "level": "Senior",
+            "unresolvedFlags": []
+          },
+          {
+            "joinerId": "J010",
+            "deptCode": "D06",
+            "department": "Sales",
+            "plannedHireDate": "2026-10-01",
+            "employmentType": "정규직",
+            "level": "IC3",
+            "unresolvedFlags": []
+          },
+          {
+            "joinerId": "J017",
+            "deptCode": "D03",
+            "department": "Engineering",
+            "plannedHireDate": "2026-10-03",
+            "employmentType": "정규직",
+            "level": "IC2",
+            "unresolvedFlags": []
+          }
+        ],
+        "count": 8
+      },
+      {
+        "week": "2026-W41",
+        "weekStart": "2026-10-05",
+        "joiners": [
+          {
+            "joinerId": "J019",
+            "deptCode": "D06",
+            "department": "Sales",
+            "plannedHireDate": "2026-10-07",
+            "employmentType": "정규직",
+            "level": "Senior",
+            "unresolvedFlags": []
+          },
+          {
+            "joinerId": "J009",
+            "deptCode": "D03",
+            "department": "Engineering",
+            "plannedHireDate": "2026-10-08",
+            "employmentType": "정규직",
+            "level": "Senior",
+            "unresolvedFlags": []
+          }
+        ],
+        "count": 2
+      },
+      {
+        "week": "2026-W42",
+        "weekStart": "2026-10-12",
+        "joiners": [
+          {
+            "joinerId": "J006",
+            "deptCode": "D05",
+            "department": "Data & AI",
+            "plannedHireDate": "2026-10-17",
+            "employmentType": "정규직",
+            "level": "IC3",
+            "unresolvedFlags": []
+          },
+          {
+            "joinerId": "J018",
+            "deptCode": "D02",
+            "department": "Product",
+            "plannedHireDate": "2026-10-18",
+            "employmentType": "계약직",
+            "level": "IC1",
+            "unresolvedFlags": []
+          }
+        ],
+        "count": 2
+      },
+      {
+        "week": "2026-W44",
+        "weekStart": "2026-10-26",
+        "joiners": [
+          {
+            "joinerId": "J001",
+            "deptCode": "D05",
+            "department": "Data & AI",
+            "plannedHireDate": "2026-10-28",
+            "employmentType": "정규직",
+            "level": "IC2",
+            "unresolvedFlags": []
+          },
+          {
+            "joinerId": "J004",
+            "deptCode": "D03",
+            "department": "Engineering",
+            "plannedHireDate": "2026-10-30",
+            "employmentType": "정규직",
+            "level": "Senior",
+            "unresolvedFlags": []
+          }
+        ],
+        "count": 2
+      }
+    ],
+    "totals": {
+      "joiners": 27,
+      "timelineJoiners": 27,
+      "monthEndJoiners": 19,
+      "forecastPlannedIn": 19
+    }
+  },
+  "provenance": {
+    "source": "data/stats/onboarding-plan.json",
+    "script": ".claude/skills/onboarding-plan/scripts/onboarding_plan.py",
+    "joinedWith": "data/clean/planned-joiners.clean.csv"
+  },
+  "claims": {
+    "implemented": [
+      "timeline 을 onboarding-plan.json 에서 읽고 planned-joiners.clean.csv 의 unresolvedFlags 를 joinerId 로 조인"
+    ],
+    "mockup": [],
+    "approvalPending": []
+  }
+}

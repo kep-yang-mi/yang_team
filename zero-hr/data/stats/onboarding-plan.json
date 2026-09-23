@@ -1,0 +1,989 @@
+{
+  "asOfDate": "2026-09-23",
+  "horizonEnd": "2026-10-31",
+  "timeline": [
+    {
+      "week": "2026-W39",
+      "weekStart": "2026-09-21",
+      "joiners": [
+        {
+          "joinerId": "J014",
+          "name": "한아석",
+          "deptCode": "D05",
+          "department": "Data & AI",
+          "plannedHireDate": "2026-09-24",
+          "employmentType": "정규직",
+          "level": "IC2"
+        },
+        {
+          "joinerId": "J020",
+          "name": "장건라",
+          "deptCode": "D03",
+          "department": "Engineering",
+          "plannedHireDate": "2026-09-24",
+          "employmentType": "정규직",
+          "level": "IC3"
+        },
+        {
+          "joinerId": "J021",
+          "name": "신원경",
+          "deptCode": "D08",
+          "department": "Customer Success",
+          "plannedHireDate": "2026-09-24",
+          "employmentType": "정규직",
+          "level": "IC3"
+        },
+        {
+          "joinerId": "J003",
+          "name": "권재호",
+          "deptCode": "D09",
+          "department": "People",
+          "plannedHireDate": "2026-09-25",
+          "employmentType": "정규직",
+          "level": "Senior"
+        },
+        {
+          "joinerId": "J015",
+          "name": "송유도",
+          "deptCode": "D02",
+          "department": "Product",
+          "plannedHireDate": "2026-09-25",
+          "employmentType": "정규직",
+          "level": "Senior"
+        },
+        {
+          "joinerId": "J016",
+          "name": "장민기",
+          "deptCode": "D06",
+          "department": "Sales",
+          "plannedHireDate": "2026-09-25",
+          "employmentType": "정규직",
+          "level": "Lead"
+        },
+        {
+          "joinerId": "J022",
+          "name": "노우소",
+          "deptCode": "D07",
+          "department": "Marketing",
+          "plannedHireDate": "2026-09-25",
+          "employmentType": "정규직",
+          "level": "IC2"
+        },
+        {
+          "joinerId": "J023",
+          "name": "오주도",
+          "deptCode": "D06",
+          "department": "Sales",
+          "plannedHireDate": "2026-09-25",
+          "employmentType": "정규직",
+          "level": "Lead"
+        },
+        {
+          "joinerId": "J007",
+          "name": "장소미",
+          "deptCode": "D03",
+          "department": "Engineering",
+          "plannedHireDate": "2026-09-26",
+          "employmentType": "정규직",
+          "level": "IC2"
+        },
+        {
+          "joinerId": "J013",
+          "name": "류라정",
+          "deptCode": "D06",
+          "department": "Sales",
+          "plannedHireDate": "2026-09-26",
+          "employmentType": "정규직",
+          "level": "IC1"
+        },
+        {
+          "joinerId": "J025",
+          "name": "임희수",
+          "deptCode": "D08",
+          "department": "Customer Success",
+          "plannedHireDate": "2026-09-26",
+          "employmentType": "인턴",
+          "level": "IC1"
+        },
+        {
+          "joinerId": "J002",
+          "name": "곽아주",
+          "deptCode": "D02",
+          "department": "Product",
+          "plannedHireDate": "2026-09-27",
+          "employmentType": "정규직",
+          "level": "IC3"
+        },
+        {
+          "joinerId": "J012",
+          "name": "심서찬",
+          "deptCode": "D03",
+          "department": "Engineering",
+          "plannedHireDate": "2026-09-27",
+          "employmentType": "정규직",
+          "level": "IC1"
+        }
+      ]
+    },
+    {
+      "week": "2026-W40",
+      "weekStart": "2026-09-28",
+      "joiners": [
+        {
+          "joinerId": "J024",
+          "name": "주은도",
+          "deptCode": "D03",
+          "department": "Engineering",
+          "plannedHireDate": "2026-09-28",
+          "employmentType": "인턴",
+          "level": "Lead"
+        },
+        {
+          "joinerId": "J026",
+          "name": "우소빈",
+          "deptCode": "D10",
+          "department": "Finance",
+          "plannedHireDate": "2026-09-28",
+          "employmentType": "계약직",
+          "level": "Senior"
+        },
+        {
+          "joinerId": "J027",
+          "name": "유희윤",
+          "deptCode": "D02",
+          "department": "Product",
+          "plannedHireDate": "2026-09-28",
+          "employmentType": "정규직",
+          "level": "Senior"
+        },
+        {
+          "joinerId": "J008",
+          "name": "곽철연",
+          "deptCode": "D05",
+          "department": "Data & AI",
+          "plannedHireDate": "2026-09-29",
+          "employmentType": "정규직",
+          "level": "IC2"
+        },
+        {
+          "joinerId": "J005",
+          "name": "공채건",
+          "deptCode": "D03",
+          "department": "Engineering",
+          "plannedHireDate": "2026-09-30",
+          "employmentType": "정규직",
+          "level": "IC2"
+        },
+        {
+          "joinerId": "J011",
+          "name": "최동주",
+          "deptCode": "D04",
+          "department": "Design",
+          "plannedHireDate": "2026-09-30",
+          "employmentType": "정규직",
+          "level": "Senior"
+        },
+        {
+          "joinerId": "J010",
+          "name": "고환하",
+          "deptCode": "D06",
+          "department": "Sales",
+          "plannedHireDate": "2026-10-01",
+          "employmentType": "정규직",
+          "level": "IC3"
+        },
+        {
+          "joinerId": "J017",
+          "name": "지나율",
+          "deptCode": "D03",
+          "department": "Engineering",
+          "plannedHireDate": "2026-10-03",
+          "employmentType": "정규직",
+          "level": "IC2"
+        }
+      ]
+    },
+    {
+      "week": "2026-W41",
+      "weekStart": "2026-10-05",
+      "joiners": [
+        {
+          "joinerId": "J019",
+          "name": "조은다",
+          "deptCode": "D06",
+          "department": "Sales",
+          "plannedHireDate": "2026-10-07",
+          "employmentType": "정규직",
+          "level": "Senior"
+        },
+        {
+          "joinerId": "J009",
+          "name": "백원호",
+          "deptCode": "D03",
+          "department": "Engineering",
+          "plannedHireDate": "2026-10-08",
+          "employmentType": "정규직",
+          "level": "Senior"
+        }
+      ]
+    },
+    {
+      "week": "2026-W42",
+      "weekStart": "2026-10-12",
+      "joiners": [
+        {
+          "joinerId": "J006",
+          "name": "임시인",
+          "deptCode": "D05",
+          "department": "Data & AI",
+          "plannedHireDate": "2026-10-17",
+          "employmentType": "정규직",
+          "level": "IC3"
+        },
+        {
+          "joinerId": "J018",
+          "name": "주우진",
+          "deptCode": "D02",
+          "department": "Product",
+          "plannedHireDate": "2026-10-18",
+          "employmentType": "계약직",
+          "level": "IC1"
+        }
+      ]
+    },
+    {
+      "week": "2026-W44",
+      "weekStart": "2026-10-26",
+      "joiners": [
+        {
+          "joinerId": "J001",
+          "name": "주훈원",
+          "deptCode": "D05",
+          "department": "Data & AI",
+          "plannedHireDate": "2026-10-28",
+          "employmentType": "정규직",
+          "level": "IC2"
+        },
+        {
+          "joinerId": "J004",
+          "name": "방성태",
+          "deptCode": "D03",
+          "department": "Engineering",
+          "plannedHireDate": "2026-10-30",
+          "employmentType": "정규직",
+          "level": "Senior"
+        }
+      ]
+    }
+  ],
+  "byDepartment": [
+    {
+      "deptCode": "D02",
+      "department": "Product",
+      "joiners": 4,
+      "joinersByMonthEnd": 3,
+      "buddyCandidates": [
+        {
+          "empId": "E0081",
+          "name": "현빈찬",
+          "tenureYears": 5.7,
+          "level": "Senior",
+          "riskBand": "낮음"
+        },
+        {
+          "empId": "E0086",
+          "name": "정선건",
+          "tenureYears": 5.59,
+          "level": "Lead",
+          "riskBand": "낮음"
+        },
+        {
+          "empId": "E0116",
+          "name": "배건찬",
+          "tenureYears": 4.71,
+          "level": "Lead",
+          "riskBand": "낮음"
+        }
+      ],
+      "deptLeadEmpId": "E0076"
+    },
+    {
+      "deptCode": "D03",
+      "department": "Engineering",
+      "joiners": 8,
+      "joinersByMonthEnd": 5,
+      "buddyCandidates": [
+        {
+          "empId": "E0078",
+          "name": "천동하",
+          "tenureYears": 5.79,
+          "level": "Senior",
+          "riskBand": "낮음"
+        },
+        {
+          "empId": "E0097",
+          "name": "주호지",
+          "tenureYears": 5.3,
+          "level": "Lead",
+          "riskBand": "낮음"
+        },
+        {
+          "empId": "E0094",
+          "name": "양동희",
+          "tenureYears": 5.23,
+          "level": "Lead",
+          "riskBand": "낮음"
+        }
+      ],
+      "deptLeadEmpId": "E0146"
+    },
+    {
+      "deptCode": "D04",
+      "department": "Design",
+      "joiners": 1,
+      "joinersByMonthEnd": 1,
+      "buddyCandidates": [
+        {
+          "empId": "E0080",
+          "name": "우기주",
+          "tenureYears": 5.67,
+          "level": "Senior",
+          "riskBand": "낮음"
+        },
+        {
+          "empId": "E0118",
+          "name": "원준재",
+          "tenureYears": 4.67,
+          "level": "Lead",
+          "riskBand": "낮음"
+        },
+        {
+          "empId": "E0125",
+          "name": "구정리",
+          "tenureYears": 4.65,
+          "level": "Senior",
+          "riskBand": "낮음"
+        }
+      ],
+      "deptLeadEmpId": "E0010"
+    },
+    {
+      "deptCode": "D05",
+      "department": "Data & AI",
+      "joiners": 4,
+      "joinersByMonthEnd": 2,
+      "buddyCandidates": [
+        {
+          "empId": "E0114",
+          "name": "윤나서",
+          "tenureYears": 4.86,
+          "level": "IC3",
+          "riskBand": "낮음"
+        },
+        {
+          "empId": "E0123",
+          "name": "장채라",
+          "tenureYears": 4.67,
+          "level": "Senior",
+          "riskBand": "낮음"
+        },
+        {
+          "empId": "E0133",
+          "name": "현경서",
+          "tenureYears": 4.46,
+          "level": "IC3",
+          "riskBand": "낮음"
+        }
+      ],
+      "deptLeadEmpId": "E0204"
+    },
+    {
+      "deptCode": "D06",
+      "department": "Sales",
+      "joiners": 5,
+      "joinersByMonthEnd": 3,
+      "buddyCandidates": [
+        {
+          "empId": "E0077",
+          "name": "성훈희",
+          "tenureYears": 5.76,
+          "level": "Senior",
+          "riskBand": "낮음"
+        },
+        {
+          "empId": "E0095",
+          "name": "천승율",
+          "tenureYears": 5.42,
+          "level": "Lead",
+          "riskBand": "낮음"
+        },
+        {
+          "empId": "E0099",
+          "name": "정경지",
+          "tenureYears": 5.16,
+          "level": "Senior",
+          "riskBand": "낮음"
+        }
+      ],
+      "deptLeadEmpId": "E0201"
+    },
+    {
+      "deptCode": "D07",
+      "department": "Marketing",
+      "joiners": 1,
+      "joinersByMonthEnd": 1,
+      "buddyCandidates": [
+        {
+          "empId": "E0092",
+          "name": "지성혜",
+          "tenureYears": 5.36,
+          "level": "Senior",
+          "riskBand": "낮음"
+        },
+        {
+          "empId": "E0131",
+          "name": "박도석",
+          "tenureYears": 4.56,
+          "level": "Lead",
+          "riskBand": "낮음"
+        },
+        {
+          "empId": "E0137",
+          "name": "양재연",
+          "tenureYears": 4.53,
+          "level": "Senior",
+          "riskBand": "낮음"
+        }
+      ],
+      "deptLeadEmpId": "E0150"
+    },
+    {
+      "deptCode": "D08",
+      "department": "Customer Success",
+      "joiners": 2,
+      "joinersByMonthEnd": 2,
+      "buddyCandidates": [
+        {
+          "empId": "E0067",
+          "name": "류나수",
+          "tenureYears": 5.96,
+          "level": "Senior",
+          "riskBand": "낮음"
+        },
+        {
+          "empId": "E0075",
+          "name": "정정성",
+          "tenureYears": 5.92,
+          "level": "Senior",
+          "riskBand": "낮음"
+        },
+        {
+          "empId": "E0102",
+          "name": "손기유",
+          "tenureYears": 5.21,
+          "level": "Lead",
+          "riskBand": "낮음"
+        }
+      ],
+      "deptLeadEmpId": "E0008"
+    },
+    {
+      "deptCode": "D09",
+      "department": "People",
+      "joiners": 1,
+      "joinersByMonthEnd": 1,
+      "buddyCandidates": [
+        {
+          "empId": "E0082",
+          "name": "정우시",
+          "tenureYears": 5.82,
+          "level": "Senior",
+          "riskBand": "낮음"
+        },
+        {
+          "empId": "E0108",
+          "name": "송철환",
+          "tenureYears": 4.95,
+          "level": "IC3",
+          "riskBand": "낮음"
+        },
+        {
+          "empId": "E0124",
+          "name": "한아성",
+          "tenureYears": 4.59,
+          "level": "Senior",
+          "riskBand": "낮음"
+        }
+      ],
+      "deptLeadEmpId": "E0023"
+    },
+    {
+      "deptCode": "D10",
+      "department": "Finance",
+      "joiners": 1,
+      "joinersByMonthEnd": 1,
+      "buddyCandidates": [
+        {
+          "empId": "E0072",
+          "name": "서연경",
+          "tenureYears": 5.82,
+          "level": "Senior",
+          "riskBand": "낮음"
+        },
+        {
+          "empId": "E0088",
+          "name": "주서우",
+          "tenureYears": 5.41,
+          "level": "Senior",
+          "riskBand": "낮음"
+        },
+        {
+          "empId": "E0144",
+          "name": "조윤기",
+          "tenureYears": 4.25,
+          "level": "Lead",
+          "riskBand": "낮음"
+        }
+      ],
+      "deptLeadEmpId": "E0064"
+    }
+  ],
+  "checklist": {
+    "items": [
+      "계정 발급",
+      "장비 지급",
+      "보안 교육",
+      "조직 소개",
+      "버디 배정",
+      "30일 면담"
+    ],
+    "status": [
+      {
+        "joinerId": "J001",
+        "계정 발급": "pending",
+        "장비 지급": "pending",
+        "보안 교육": "pending",
+        "조직 소개": "pending",
+        "버디 배정": "pending",
+        "30일 면담": "pending"
+      },
+      {
+        "joinerId": "J002",
+        "계정 발급": "done",
+        "장비 지급": "done",
+        "보안 교육": "pending",
+        "조직 소개": "pending",
+        "버디 배정": "done",
+        "30일 면담": "pending"
+      },
+      {
+        "joinerId": "J003",
+        "계정 발급": "done",
+        "장비 지급": "done",
+        "보안 교육": "done",
+        "조직 소개": "pending",
+        "버디 배정": "done",
+        "30일 면담": "pending"
+      },
+      {
+        "joinerId": "J004",
+        "계정 발급": "pending",
+        "장비 지급": "pending",
+        "보안 교육": "pending",
+        "조직 소개": "pending",
+        "버디 배정": "pending",
+        "30일 면담": "pending"
+      },
+      {
+        "joinerId": "J005",
+        "계정 발급": "done",
+        "장비 지급": "done",
+        "보안 교육": "pending",
+        "조직 소개": "pending",
+        "버디 배정": "done",
+        "30일 면담": "pending"
+      },
+      {
+        "joinerId": "J006",
+        "계정 발급": "pending",
+        "장비 지급": "pending",
+        "보안 교육": "pending",
+        "조직 소개": "pending",
+        "버디 배정": "done",
+        "30일 면담": "pending"
+      },
+      {
+        "joinerId": "J007",
+        "계정 발급": "done",
+        "장비 지급": "done",
+        "보안 교육": "done",
+        "조직 소개": "pending",
+        "버디 배정": "done",
+        "30일 면담": "pending"
+      },
+      {
+        "joinerId": "J008",
+        "계정 발급": "done",
+        "장비 지급": "done",
+        "보안 교육": "pending",
+        "조직 소개": "pending",
+        "버디 배정": "pending",
+        "30일 면담": "pending"
+      },
+      {
+        "joinerId": "J009",
+        "계정 발급": "pending",
+        "장비 지급": "done",
+        "보안 교육": "pending",
+        "조직 소개": "pending",
+        "버디 배정": "pending",
+        "30일 면담": "pending"
+      },
+      {
+        "joinerId": "J010",
+        "계정 발급": "done",
+        "장비 지급": "done",
+        "보안 교육": "pending",
+        "조직 소개": "pending",
+        "버디 배정": "done",
+        "30일 면담": "pending"
+      },
+      {
+        "joinerId": "J011",
+        "계정 발급": "pending",
+        "장비 지급": "done",
+        "보안 교육": "pending",
+        "조직 소개": "pending",
+        "버디 배정": "done",
+        "30일 면담": "pending"
+      },
+      {
+        "joinerId": "J012",
+        "계정 발급": "done",
+        "장비 지급": "done",
+        "보안 교육": "pending",
+        "조직 소개": "pending",
+        "버디 배정": "pending",
+        "30일 면담": "pending"
+      },
+      {
+        "joinerId": "J013",
+        "계정 발급": "done",
+        "장비 지급": "pending",
+        "보안 교육": "done",
+        "조직 소개": "pending",
+        "버디 배정": "done",
+        "30일 면담": "pending"
+      },
+      {
+        "joinerId": "J014",
+        "계정 발급": "done",
+        "장비 지급": "done",
+        "보안 교육": "done",
+        "조직 소개": "pending",
+        "버디 배정": "done",
+        "30일 면담": "pending"
+      },
+      {
+        "joinerId": "J015",
+        "계정 발급": "done",
+        "장비 지급": "done",
+        "보안 교육": "done",
+        "조직 소개": "pending",
+        "버디 배정": "done",
+        "30일 면담": "pending"
+      },
+      {
+        "joinerId": "J016",
+        "계정 발급": "done",
+        "장비 지급": "pending",
+        "보안 교육": "pending",
+        "조직 소개": "pending",
+        "버디 배정": "done",
+        "30일 면담": "pending"
+      },
+      {
+        "joinerId": "J017",
+        "계정 발급": "done",
+        "장비 지급": "done",
+        "보안 교육": "pending",
+        "조직 소개": "pending",
+        "버디 배정": "pending",
+        "30일 면담": "pending"
+      },
+      {
+        "joinerId": "J018",
+        "계정 발급": "pending",
+        "장비 지급": "pending",
+        "보안 교육": "pending",
+        "조직 소개": "pending",
+        "버디 배정": "pending",
+        "30일 면담": "pending"
+      },
+      {
+        "joinerId": "J019",
+        "계정 발급": "done",
+        "장비 지급": "pending",
+        "보안 교육": "done",
+        "조직 소개": "pending",
+        "버디 배정": "pending",
+        "30일 면담": "pending"
+      },
+      {
+        "joinerId": "J020",
+        "계정 발급": "pending",
+        "장비 지급": "done",
+        "보안 교육": "done",
+        "조직 소개": "pending",
+        "버디 배정": "done",
+        "30일 면담": "pending"
+      },
+      {
+        "joinerId": "J021",
+        "계정 발급": "done",
+        "장비 지급": "done",
+        "보안 교육": "done",
+        "조직 소개": "pending",
+        "버디 배정": "pending",
+        "30일 면담": "pending"
+      },
+      {
+        "joinerId": "J022",
+        "계정 발급": "done",
+        "장비 지급": "done",
+        "보안 교육": "done",
+        "조직 소개": "pending",
+        "버디 배정": "done",
+        "30일 면담": "pending"
+      },
+      {
+        "joinerId": "J023",
+        "계정 발급": "done",
+        "장비 지급": "done",
+        "보안 교육": "done",
+        "조직 소개": "pending",
+        "버디 배정": "done",
+        "30일 면담": "pending"
+      },
+      {
+        "joinerId": "J024",
+        "계정 발급": "done",
+        "장비 지급": "done",
+        "보안 교육": "pending",
+        "조직 소개": "pending",
+        "버디 배정": "done",
+        "30일 면담": "pending"
+      },
+      {
+        "joinerId": "J025",
+        "계정 발급": "done",
+        "장비 지급": "done",
+        "보안 교육": "pending",
+        "조직 소개": "pending",
+        "버디 배정": "done",
+        "30일 면담": "pending"
+      },
+      {
+        "joinerId": "J026",
+        "계정 발급": "pending",
+        "장비 지급": "done",
+        "보안 교육": "pending",
+        "조직 소개": "pending",
+        "버디 배정": "done",
+        "30일 면담": "pending"
+      },
+      {
+        "joinerId": "J027",
+        "계정 발급": "done",
+        "장비 지급": "pending",
+        "보안 교육": "pending",
+        "조직 소개": "pending",
+        "버디 배정": "done",
+        "30일 면담": "pending"
+      }
+    ]
+  },
+  "earlyTenureCohort": {
+    "definition": "기준일 기준 입사 90일 이내 재직자",
+    "members": [
+      {
+        "empId": "E0416",
+        "deptCode": "D03",
+        "hireDate": "2026-07-04",
+        "daysSinceHire": 81,
+        "riskBand": "낮음"
+      },
+      {
+        "empId": "E0414",
+        "deptCode": "D08",
+        "hireDate": "2026-07-05",
+        "daysSinceHire": 80,
+        "riskBand": "낮음"
+      },
+      {
+        "empId": "E0412",
+        "deptCode": "D03",
+        "hireDate": "2026-07-06",
+        "daysSinceHire": 79,
+        "riskBand": "낮음"
+      },
+      {
+        "empId": "E0421",
+        "deptCode": "D06",
+        "hireDate": "2026-07-14",
+        "daysSinceHire": 71,
+        "riskBand": "낮음"
+      },
+      {
+        "empId": "E0423",
+        "deptCode": "D02",
+        "hireDate": "2026-08-07",
+        "daysSinceHire": 47,
+        "riskBand": "낮음"
+      },
+      {
+        "empId": "E0417",
+        "deptCode": "D03",
+        "hireDate": "2026-08-13",
+        "daysSinceHire": 41,
+        "riskBand": "높음"
+      },
+      {
+        "empId": "E0415",
+        "deptCode": "D03",
+        "hireDate": "2026-08-30",
+        "daysSinceHire": 24,
+        "riskBand": "낮음"
+      },
+      {
+        "empId": "E0419",
+        "deptCode": "D02",
+        "hireDate": "2026-09-05",
+        "daysSinceHire": 18,
+        "riskBand": "낮음"
+      },
+      {
+        "empId": "E0420",
+        "deptCode": "D05",
+        "hireDate": "2026-09-08",
+        "daysSinceHire": 15,
+        "riskBand": "낮음"
+      },
+      {
+        "empId": "E0422",
+        "deptCode": "D07",
+        "hireDate": "2026-09-10",
+        "daysSinceHire": 13,
+        "riskBand": "낮음"
+      },
+      {
+        "empId": "E0424",
+        "deptCode": "D06",
+        "hireDate": "2026-09-10",
+        "daysSinceHire": 13,
+        "riskBand": "낮음"
+      },
+      {
+        "empId": "E0425",
+        "deptCode": "D02",
+        "hireDate": "2026-09-20",
+        "daysSinceHire": 3,
+        "riskBand": "낮음"
+      }
+    ],
+    "count": 12,
+    "highRiskCount": 1
+  },
+  "earlyAttrition": {
+    "definition": "퇴사 예정자(14) 중 재직기간 1년 미만 비율",
+    "under1YearLeavers": 1,
+    "totalLeavers": 14,
+    "rate": 0.0714,
+    "byDepartment": {
+      "D02": {
+        "department": "Product",
+        "under1YearLeavers": 0,
+        "totalLeavers": 1,
+        "rate": 0.0
+      },
+      "D03": {
+        "department": "Engineering",
+        "under1YearLeavers": 0,
+        "totalLeavers": 4,
+        "rate": 0.0
+      },
+      "D04": {
+        "department": "Design",
+        "under1YearLeavers": 0,
+        "totalLeavers": 1,
+        "rate": 0.0
+      },
+      "D05": {
+        "department": "Data & AI",
+        "under1YearLeavers": 0,
+        "totalLeavers": 1,
+        "rate": 0.0
+      },
+      "D06": {
+        "department": "Sales",
+        "under1YearLeavers": 1,
+        "totalLeavers": 3,
+        "rate": 0.3333
+      },
+      "D07": {
+        "department": "Marketing",
+        "under1YearLeavers": 0,
+        "totalLeavers": 1,
+        "rate": 0.0
+      },
+      "D08": {
+        "department": "Customer Success",
+        "under1YearLeavers": 0,
+        "totalLeavers": 1,
+        "rate": 0.0
+      },
+      "D10": {
+        "department": "Finance",
+        "under1YearLeavers": 0,
+        "totalLeavers": 1,
+        "rate": 0.0
+      },
+      "D11": {
+        "department": "Legal & Compliance",
+        "under1YearLeavers": 0,
+        "totalLeavers": 1,
+        "rate": 0.0
+      }
+    }
+  },
+  "provenance": {
+    "sources": [
+      "data/clean/planned-joiners.clean.csv",
+      "data/clean/headcount-master.clean.csv",
+      "data/clean/planned-leavers.clean.csv",
+      "data/reference/org-chart.csv",
+      "data/stats/attrition-risk.json",
+      "data/stats/month-end-forecast.json",
+      "personas/persona-needs.json"
+    ],
+    "script": ".claude/skills/onboarding-plan/scripts/onboarding_plan.py",
+    "reconciliation": {
+      "timelineJoiners": 27,
+      "plannedJoinersValidRows": 27,
+      "match": true,
+      "monthEndJoiners": 19,
+      "forecastPlannedIn": 19,
+      "monthEndMatch": true
+    },
+    "gaps": [],
+    "seed": 20260923,
+    "checklistNote": "체크리스트 상태는 가상 생성(random.seed(20260923), 입사일 근접 → done 확률 상승). 실제 진행 상태가 아니다",
+    "buddyRule": "같은 조직 재직자 중 재직 2~6년, 리스크 낮음, 레벨 IC3/Senior/Lead, 최대 3명",
+    "deptLeadRule": "재직 VP 중 최장 재직(동률: 사번 오름차순), 없으면 최고 레벨 + gap(dept-lead-fallback)",
+    "pii": "timeline·buddyCandidates 성명 허용(온보딩 업무), 생년월일 없음. earlyTenureCohort·earlyAttrition은 사번·집계만",
+    "fitCriteriaChecked": {
+      "fitCriteria": 12,
+      "requiredFields": 1
+    }
+  }
+}

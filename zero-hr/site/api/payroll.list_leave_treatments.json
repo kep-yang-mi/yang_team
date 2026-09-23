@@ -1,0 +1,182 @@
+{
+  "status": "ok",
+  "asOfDate": "2026-09-23",
+  "role": "executive",
+  "tool": "payroll.list_leave_treatments",
+  "data": {
+    "payPeriod": "2026-09",
+    "onLeave": [
+      {
+        "empId": "E0169",
+        "deptCode": "D09",
+        "leaveType": "질병휴직",
+        "leaveStart": "2025-09-27",
+        "payrollTreatment": "유급"
+      },
+      {
+        "empId": "E0216",
+        "deptCode": "D03",
+        "leaveType": "육아휴직",
+        "leaveStart": "2025-09-29",
+        "payrollTreatment": "무급(정부 급여)"
+      },
+      {
+        "empId": "E0273",
+        "deptCode": "D07",
+        "leaveType": "기타",
+        "leaveStart": "2025-10-24",
+        "payrollTreatment": "무급"
+      },
+      {
+        "empId": "E0321",
+        "deptCode": "D02",
+        "leaveType": "육아휴직",
+        "leaveStart": "2025-11-28",
+        "payrollTreatment": "무급(정부 급여)"
+      },
+      {
+        "empId": "E0091",
+        "deptCode": "D03",
+        "leaveType": "질병휴직",
+        "leaveStart": "2025-12-08",
+        "payrollTreatment": "유급"
+      },
+      {
+        "empId": "E0199",
+        "deptCode": "D06",
+        "leaveType": "질병휴직",
+        "leaveStart": "2025-12-09",
+        "payrollTreatment": "유급"
+      },
+      {
+        "empId": "E0103",
+        "deptCode": "D10",
+        "leaveType": "질병휴직",
+        "leaveStart": "2025-12-14",
+        "payrollTreatment": "유급"
+      },
+      {
+        "empId": "E0302",
+        "deptCode": "D08",
+        "leaveType": "육아휴직",
+        "leaveStart": "2026-01-12",
+        "payrollTreatment": "무급(정부 급여)"
+      },
+      {
+        "empId": "E0202",
+        "deptCode": "D03",
+        "leaveType": "육아휴직",
+        "leaveStart": "2026-01-27",
+        "payrollTreatment": "무급(정부 급여)"
+      },
+      {
+        "empId": "E0111",
+        "deptCode": "D05",
+        "leaveType": "육아휴직",
+        "leaveStart": "2026-02-04",
+        "payrollTreatment": "무급(정부 급여)"
+      },
+      {
+        "empId": "E0121",
+        "deptCode": "D06",
+        "leaveType": "육아휴직",
+        "leaveStart": "2026-03-19",
+        "payrollTreatment": "무급(정부 급여)"
+      },
+      {
+        "empId": "E0307",
+        "deptCode": "D05",
+        "leaveType": "육아휴직",
+        "leaveStart": "2026-04-25",
+        "payrollTreatment": "무급(정부 급여)"
+      },
+      {
+        "empId": "E0359",
+        "deptCode": "D03",
+        "leaveType": "육아휴직",
+        "leaveStart": "2026-05-19",
+        "payrollTreatment": "무급(정부 급여)"
+      },
+      {
+        "empId": "E0299",
+        "deptCode": "D08",
+        "leaveType": "육아휴직",
+        "leaveStart": "2026-05-21",
+        "payrollTreatment": "무급(정부 급여)"
+      },
+      {
+        "empId": "E0189",
+        "deptCode": "D02",
+        "leaveType": "육아휴직",
+        "leaveStart": "2026-05-25",
+        "payrollTreatment": "무급(정부 급여)"
+      },
+      {
+        "empId": "E0085",
+        "deptCode": "D02",
+        "leaveType": "기타",
+        "leaveStart": "2026-07-02",
+        "payrollTreatment": "무급"
+      },
+      {
+        "empId": "E0161",
+        "deptCode": "D03",
+        "leaveType": "육아휴직",
+        "leaveStart": "2026-07-23",
+        "payrollTreatment": "무급(정부 급여)"
+      },
+      {
+        "empId": "E0305",
+        "deptCode": "D04",
+        "leaveType": "육아휴직",
+        "leaveStart": "2026-07-27",
+        "payrollTreatment": "무급(정부 급여)"
+      },
+      {
+        "empId": "E0031",
+        "deptCode": "D06",
+        "leaveType": "기타",
+        "leaveStart": "2026-08-05",
+        "payrollTreatment": "무급"
+      },
+      {
+        "empId": "E0043",
+        "deptCode": "D03",
+        "leaveType": "질병휴직",
+        "leaveStart": "2026-08-06",
+        "payrollTreatment": "유급"
+      },
+      {
+        "empId": "E0049",
+        "deptCode": "D08",
+        "leaveType": "기타",
+        "leaveStart": "2026-08-28",
+        "payrollTreatment": "무급"
+      }
+    ],
+    "byTreatment": {
+      "무급(정부 급여)": 12,
+      "유급": 5,
+      "무급": 4
+    },
+    "treatmentRule": {
+      "육아휴직": "무급(정부 급여)",
+      "질병휴직": "유급",
+      "기타": "무급"
+    },
+    "count": 21
+  },
+  "provenance": {
+    "source": "data/stats/payroll-close.json",
+    "script": ".claude/skills/payroll-close/scripts/payroll_close.py"
+  },
+  "claims": {
+    "implemented": [
+      "leaves 를 payroll-close.json 에서 그대로 읽는다"
+    ],
+    "mockup": [],
+    "approvalPending": [
+      "휴직유형 미상(status-inconsistency) 건은 HR 확인 후 처리 구분 확정"
+    ]
+  }
+}

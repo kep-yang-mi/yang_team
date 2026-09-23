@@ -1,0 +1,12 @@
+deptCode,department,orgGroup,toHeadcount,activeHeadcount,plannedIn,plannedOut,forecastMonthEnd,toGapMonthEnd,recommendation
+D01,CEO Office,Executive,10,10,0,0,10,0,정상 관리
+D02,Product,Build,54,51,3,1,53,-1,정상 관리
+D03,Engineering,Build,112,104,5,4,105,-7,채용 가속
+D04,Design,Build,26,25,1,1,25,-1,정상 관리
+D05,Data & AI,Build,34,40,2,1,41,7,TO 재검토/이동배치
+D06,Sales,Go-To-Market,62,58,3,3,58,-4,채용 가속
+D07,Marketing,Go-To-Market,32,30,1,1,30,-2,정상 관리
+D08,Customer Success,Go-To-Market,42,40,2,1,41,-1,정상 관리
+D09,People,Operations,18,18,1,0,19,1,정상 관리
+D10,Finance,Operations,20,19,1,1,19,-1,정상 관리
+D11,Legal & Compliance,Operations,12,11,0,1,10,-2,정상 관리

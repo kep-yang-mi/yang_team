@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Onboarding — ㈜온다테크</title>
+<meta name="description" content="Zero Company HR · Everyday People Agent — 온보딩 담당용 입사 예정자 온보딩 보드">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600;700&family=Noto+Serif+KR:wght@400;600&family=Noto+Sans+KR:wght@400;500;700&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+<style>
+:root {
+  color-scheme: light;
+  /* 면 */
+  --bg: #f0eee6; --surface: #faf9f5; --surface-2: #e3dacc; --surface-hero: #f5e3c7;
+  /* 잉크 */
+  --ink: #141413; --ink-2: #3d3d3a; --ink-muted: #87867f; --ink-faint: #b0aea5;
+  --line: #cccbc8; --line-strong: #87867f;
+  /* 액센트 (하나만) */
+  --accent: #d97757; --accent-deep: #c6613f; --on-accent: #ffffff;
+  /* 상태 (텍스트 병기 필수) */
+  --good: #6f8f6a; --warning: #b8965e; --critical: #c6613f; --neutral: #87867f;
+  /* 차트 — 따뜻한 대지색 4 + 보조 4 */
+  --series-1: #d97757; --series-2: #3d3d3a; --series-3: #b8965e; --series-4: #7f8b74;
+  --series-5: #8c5a6b; --series-6: #a17c4a; --series-7: #5f6f7a; --series-8: #b0aea5;
+  --diverge-neg: #c6613f; --diverge-pos: #7f8b74; --diverge-mid: #cccbc8;
+  /* 타이포 */
+  --font-serif: "Source Serif 4", "Noto Serif KR", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font: var(--font-sans);
+  /* 형태 */
+  --radius: 24px; --radius-btn: 12px; --radius-cta: 8px; --radius-badge: 0px; --shadow: none;
+  --max-w: 1280px; --gutter: 16px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #141413; --surface: #1f1f1e; --surface-2: #2a2a28; --surface-hero: #2f2a22;
+    --ink: #faf9f5; --ink-2: #e3dacc; --ink-muted: #b0aea5; --ink-faint: #87867f;
+    --line: #3d3d3a; --line-strong: #87867f;
+    --series-2: #cccbc8; --diverge-mid: #3d3d3a;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #141413; --surface: #1f1f1e; --surface-2: #2a2a28; --surface-hero: #2f2a22;
+  --ink: #faf9f5; --ink-2: #e3dacc; --ink-muted: #b0aea5; --ink-faint: #87867f;
+  --line: #3d3d3a; --line-strong: #87867f;
+  --series-2: #cccbc8; --diverge-mid: #3d3d3a;
+}
+html { background: var(--bg); }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-sans); font-size: 16px; letter-spacing: -0.08px; line-height: 1.5; -webkit-text-size-adjust: 100%; }
+main { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter) 48px; }
+section { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; margin: 16px 0; box-shadow: none; }
+@media (max-width: 480px) { section { padding: 16px; } }
+h1, h2, h3, .tile-value { font-family: var(--font-serif); font-weight: 600; }
+h1 { font-size: 32px; line-height: 1.1; letter-spacing: -0.12px; margin: 0; }
+h2 { font-size: 24px; line-height: 1.3; letter-spacing: -0.05px; margin: 0 0 16px; }
+h3 { font-size: 18px; line-height: 1.3; margin: 20px 0 8px; }
+@media (max-width: 480px) { h1 { font-size: 26px; } h2 { font-size: 20px; } }
+.muted { color: var(--ink-muted); } .num { font-variant-numeric: tabular-nums; }
+code { font-family: var(--font-mono); font-size: 13px; }
+a { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; } a:hover { color: var(--accent-deep); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+.skip { position: absolute; left: -9999px; top: 0; background: var(--surface); padding: 8px; }
+.skip:focus { left: 8px; top: 8px; z-index: 10; }
+.caption, .foot, caption, th, .tile-label, .tile-sub, .badge, .band, .dday, dl.meta dt { font-size: 12px; line-height: 1.4; letter-spacing: -0.24px; font-weight: 500; }
+
+/* 헤더 */
+.app-header { max-width: var(--max-w); margin: 0 auto; padding: 20px var(--gutter); display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: flex-start; border-bottom: 1px solid var(--line); }
+.brand-os { display: block; font-family: var(--font-serif); font-size: 18px; color: var(--ink); }
+#product-name { font-family: var(--font-sans); font-weight: 600; font-size: 20px; letter-spacing: -0.08px; }
+dl.meta { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 0; font-size: 14px; }
+dl.meta div { display: flex; flex-direction: column; }
+dl.meta dt { color: var(--ink-muted); } dl.meta dd { margin: 0; }
+.app-header nav { margin-left: auto; display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: center; font-size: 14px; }
+.badge { display: inline-block; padding: 1px 8px; border-radius: var(--radius-badge); border: 1px solid var(--line-strong); background: transparent; color: var(--ink); white-space: nowrap; }
+.badge-flag { border-color: var(--critical); }
+.badge-ok { border-color: var(--good); }
+.badge-neutral { border-color: var(--line); color: var(--ink-muted); }
+.badge-accent { border-color: var(--accent); }
+.badge-fill { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.theme-btn { background: transparent; color: var(--ink); border: 1px solid var(--line-strong); border-radius: var(--radius-btn); padding: 4px 12px; font: inherit; font-size: 14px; cursor: pointer; }
+.theme-btn:hover { border-color: var(--accent-deep); color: var(--accent-deep); }
+
+/* 타일 */
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+.tile { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 14px 16px; display: flex; flex-direction: column; gap: 4px; }
+section[data-section="kpi"] { background: var(--surface-hero); }
+section[data-section="kpi"] .tile { background: var(--surface); }
+.tile-label { color: var(--ink-2); } .tile-value { font-size: 40px; line-height: 1; color: var(--ink); } .tile-sub { color: var(--ink-muted); }
+.tile.hl { border-color: var(--accent); border-width: 2px; }
+.foot { color: var(--ink-muted); margin: 12px 0 0; font-weight: 400; }
+
+/* 표 */
+.table-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+caption { text-align: left; color: var(--ink-muted); padding: 0 0 8px; }
+th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; white-space: nowrap; }
+th { color: var(--ink-muted); font-weight: 500; }
+td.num, th.num { text-align: right; }
+tr.risk-high td:first-child { border-left: 2px solid var(--critical); }
+tr.cluster td:first-child { border-left: 2px solid var(--accent); }
+.chart { position: relative; height: 280px; }
+@media (max-width: 480px) { .chart { height: 220px; } }
+details summary { cursor: pointer; color: var(--ink-2); font-size: 14px; }
+.empty { color: var(--ink-muted); font-size: 14px; padding: 8px 0; }
+input[type="search"] { font: inherit; font-size: 14px; padding: 8px 12px; border: 1px solid var(--line-strong); border-radius: var(--radius-btn); background: var(--surface); color: var(--ink); width: 100%; max-width: 320px; box-sizing: border-box; }
+
+/* 타임라인 */
+.weeks { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+.week { border: 1px solid var(--line); border-radius: 16px; padding: 16px; background: var(--surface); }
+.week.this-week { border: 2px solid var(--accent); background: var(--surface-2); }
+.week.next-week { border: 1px dashed var(--accent); }
+.week-head { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+.week-head strong { font-family: var(--font-serif); font-size: 18px; }
+.joiner { border-top: 1px solid var(--line); padding: 8px 0; display: grid; grid-template-columns: 1fr auto; gap: 2px 8px; font-size: 14px; }
+.joiner:first-of-type { border-top: 0; }
+.joiner .who { font-weight: 600; } .joiner .dept { color: var(--ink-2); }
+.joiner .meta { grid-column: 1 / -1; color: var(--ink-2); font-size: 12px; display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: center; }
+.dday { font-variant-numeric: tabular-nums; font-weight: 600; padding: 1px 8px; border-radius: var(--radius-badge); border: 1px solid var(--line); color: var(--ink); background: transparent; }
+.dday.d0 { border-color: var(--critical); } .dday.d3 { border-color: var(--warning); } .dday.d7 { border-color: var(--line-strong); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12px; color: var(--ink-2); margin: 8px 0 16px; }
+
+/* 조직 카드 */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; }
+.card { border: 1px solid var(--line); border-radius: 16px; padding: 16px; background: var(--surface); }
+.card.cluster { border-color: var(--accent); }
+.card-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 10px; }
+.card-head strong { font-family: var(--font-serif); font-size: 18px; }
+.card dl { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; margin: 10px 0; font-size: 14px; }
+.card dt { color: var(--ink-muted); } .card dd { margin: 0; }
+
+/* 체크리스트 */
+.matrix td.st { text-align: center; }
+.bar { display: inline-block; height: 6px; background: var(--good); vertical-align: middle; }
+.bar-track { display: inline-block; width: 72px; height: 6px; background: var(--surface-2); vertical-align: middle; margin-right: 6px; overflow: hidden; }
+.band { display: inline-block; padding: 0 8px; border-radius: var(--radius-badge); border: 1px solid var(--line-strong); color: var(--ink); white-space: nowrap; }
+.band-high { border-color: var(--critical); } .band-mid { border-color: var(--warning); } .band-low { border-color: var(--good); }
+.st-done { border-color: var(--good); } .st-pending { border-color: var(--line); color: var(--ink-muted); }
+.mark-fail { border-color: var(--critical); }
+
+/* 푸터 — 이 화면의 범위 */
+.app-footer { max-width: var(--max-w); margin: 16px auto 0; padding: 24px var(--gutter) 48px; font-size: 14px; color: var(--ink-2); }
+.app-footer .claims-panel { background: var(--surface-2); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
+.app-footer h2 { margin: 0 0 12px; }
+.app-footer table { font-size: 14px; }
+.app-footer td, .app-footer th { white-space: normal; vertical-align: top; }
+.app-footer p { margin: 12px 0 0; color: var(--ink-muted); font-size: 12px; }
+canvas { max-width: 100%; }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">본문으로</a>
+<header class="app-header" data-section="header" data-fit="O-F12 O-F13" data-evidence="onboardingPlan.asOfDate onboardingPlan.horizonEnd api/tools.json">
+  <div class="brand">
+    <h1 class="brand-os">Everyday People Agent <span class="muted" style="font-family:var(--font-sans);font-size:12px">· Zero Company HR</span></h1>
+    <p id="product-name" style="margin:2px 0 0">Onboarding <span class="muted">— 온보딩 담당</span></p>
+  </div>
+  <dl class="meta">
+    <div><dt>고객사</dt><dd id="meta-client">㈜온다테크</dd></div>
+    <div><dt>기준일</dt><dd id="meta-as-of" class="num">—</dd></div>
+    <div><dt>기간(기준일~horizonEnd)</dt><dd id="meta-horizon" class="num">—</dd></div>
+    <div><dt>데이터 출처</dt><dd><span id="source-badge" class="badge" aria-live="polite" data-source="embedded">내장</span></dd></div>
+  </dl>
+  <nav aria-label="제품 이동">
+    <button type="button" class="theme-btn" id="theme-toggle" aria-label="테마 전환">테마: 자동</button>
+    <a href="../api/tools.json" title="Function Call 도구 카탈로그 (onboarding.get_timeline · get_department_plan · get_checklist · get_early_tenure_cohort)">이 데이터를 도구로 호출</a>
+    <a href="../">← 허브</a>
+  </nav>
+</header>
+
+<main id="main">
+  <section data-section="kpi" data-fit="O-F8" data-evidence="onboardingPlan.provenance.reconciliation.timelineJoiners onboardingPlan.provenance.reconciliation.monthEndJoiners onboardingPlan.timeline[].joiners onboardingPlan.earlyTenureCohort.count onboardingPlan.earlyTenureCohort.highRiskCount onboardingPlan.earlyAttrition.rate">
+    <h2>한눈에 — 입사 예정과 초기 재직</h2>
+    <div class="tiles" id="kpi-tiles"></div>
+    <p class="foot" id="kpi-foot"></p>
+  </section>
+
+  <section data-section="timeline" data-fit="O-F1 O-F7 O-F10" data-evidence="onboardingPlan.timeline[].week onboardingPlan.timeline[].weekStart onboardingPlan.timeline[].joiners[] onboardingPlan.timeline[].joiners[].plannedHireDate onboardingPlan.asOfDate plannedJoiners[].unresolvedFlags">
+    <h2>주차별 입사 타임라인 — 이번 주·다음 주 누가 어느 조직으로 오나</h2>
+    <div class="legend" aria-hidden="true">
+      <span><span class="dday d0">D-0</span> 오늘 입사 — 조직 소개·오리엔테이션</span>
+      <span><span class="dday d3">D-3 이내</span> 버디·보안 교육 확정</span>
+      <span><span class="dday d7">D-7 이내</span> 계정·장비 요청, 좌석 확인</span>
+      <span><span class="badge badge-flag">플래그</span> 미해결 항목(클린저 어휘 그대로)</span>
+      <span><span class="badge badge-fill">이번 주</span> 기준일이 속한 ISO 주 · <span class="badge badge-accent">다음 주</span></span>
+    </div>
+    <div class="weeks" id="timeline-weeks"></div>
+    <details style="margin-top:12px">
+      <summary>표로 보기 — 입사 예정자 전원</summary>
+      <div class="table-wrap" id="timeline-table"></div>
+    </details>
+    <p class="foot" id="timeline-foot"></p>
+  </section>
+
+  <section data-section="departments" data-fit="O-F2 O-F4" data-evidence="onboardingPlan.byDepartment[].joiners onboardingPlan.byDepartment[].joinersByMonthEnd onboardingPlan.byDepartment[].deptLeadEmpId onboardingPlan.byDepartment[].buddyCandidates[] hrDirectorySubset[]">
+    <h2>조직별 배치 — 몰리는 조직·조직장·버디 후보</h2>
+    <div class="chart" id="dept-chart-wrap"><canvas id="dept-chart" role="img" aria-label="조직별 입사 예정 인원 — 월말까지와 horizon 전체"></canvas></div>
+    <div class="table-wrap" id="dept-table"></div>
+    <h3>조직 카드</h3>
+    <div class="cards" id="dept-cards"></div>
+    <p class="foot" id="dept-foot"></p>
+  </section>
+
+  <section data-section="checklist" data-fit="O-F3" data-evidence="onboardingPlan.checklist.items onboardingPlan.checklist.status[] onboardingPlan.provenance.checklistNote">
+    <h2>준비 체크리스트 매트릭스 — 입사자 × 6항목</h2>
+    <div class="tiles" id="checklist-tiles" style="margin-bottom:12px"></div>
+    <label for="checklist-search" class="muted" style="font-size:0.85rem">입사자·조직 검색</label>
+    <input type="search" id="checklist-search" aria-label="체크리스트 입사자 검색" placeholder="성명 또는 조직">
+    <div class="table-wrap" id="checklist-table" style="margin-top:8px"></div>
+    <p class="foot" id="checklist-foot"></p>
+  </section>
+
+  <section data-section="next-month" data-fit="O-F11" data-evidence="onboardingPlan.byDepartment[].joiners onboardingPlan.byDepartment[].joinersByMonthEnd onboardingPlan.timeline[].joiners[]">
+    <h2>다음 달 입사 예정 — IT·총무 월간 수요 예고</h2>
+    <div class="table-wrap" id="next-month-table"></div>
+    <p class="foot" id="next-month-foot"></p>
+  </section>
+
+  <section data-section="cohort" data-fit="O-F5 O-F9" data-evidence="onboardingPlan.earlyTenureCohort.members[] onboardingPlan.earlyTenureCohort.count onboardingPlan.earlyTenureCohort.highRiskCount onboardingPlan.earlyTenureCohort.members[].riskBand">
+    <h2>입사 90일 코호트 — 30/60/90일 면담 대상</h2>
+    <div class="tiles" id="cohort-tiles" style="margin-bottom:12px"></div>
+    <div class="table-wrap" id="cohort-table"></div>
+    <p class="foot" id="cohort-foot"></p>
+  </section>
+
+  <section data-section="early-attrition" data-fit="O-F6" data-evidence="onboardingPlan.earlyAttrition.rate onboardingPlan.earlyAttrition.under1YearLeavers onboardingPlan.earlyAttrition.totalLeavers onboardingPlan.earlyAttrition.byDepartment">
+    <h2>조기 이탈 — 퇴사 예정자 중 재직 1년 미만</h2>
+    <div class="tiles" id="attrition-tiles" style="margin-bottom:12px"></div>
+    <div class="chart" id="attrition-chart-wrap"><canvas id="attrition-chart" role="img" aria-label="조직별 퇴사 예정자 중 1년 미만 인원"></canvas></div>
+    <div class="table-wrap" id="attrition-table"></div>
+    <p class="foot" id="attrition-foot"></p>
+  </section>
+
+  <section data-section="reconciliation" data-fit="O-F8" data-evidence="onboardingPlan.provenance.reconciliation.timelineJoiners onboardingPlan.provenance.reconciliation.plannedJoinersValidRows onboardingPlan.provenance.reconciliation.monthEndJoiners onboardingPlan.provenance.reconciliation.forecastPlannedIn onboardingPlan.provenance.reconciliation.match onboardingPlan.provenance.reconciliation.monthEndMatch">
+    <h2>대사 — 이 화면의 숫자는 어디와 같은가</h2>
+    <div class="table-wrap" id="recon-table"></div>
+    <p class="foot" id="recon-foot"></p>
+  </section>
+</main>
+
+<footer class="app-footer" data-section="claims" data-fit="O-F9" data-evidence="policy:pii-minimization-policy policy:claims-boundary-policy">
+  <div class="claims-panel">
+    <h2>이 화면의 범위</h2>
+    <div class="table-wrap">
+      <table>
+        <caption>주장 범위 구분 — claims-boundary-policy</caption>
+        <thead><tr><th scope="col"><span class="badge badge-ok">구현됨</span></th><th scope="col"><span class="badge badge-neutral">목업 / 준비 완료</span></th><th scope="col"><span class="badge badge-flag">승인 대기</span></th></tr></thead>
+        <tbody><tr>
+          <td>스냅샷 내장 렌더(<code>site/data/onboard.json</code>), 주차 그룹·D-day·조직장/버디 성명 조인(<code>hrDirectorySubset</code>), 검색 필터. 숫자는 상류 산출물(<code>data/stats/onboarding-plan.json</code>)을 그대로 보이며 페이지는 재계산하지 않는다(표시용 집계는 각주 표기).</td>
+          <td>체크리스트 6항목 상태는 가상 생성(seed 고정) 목업이며 실제 진행 상태가 아니다. Supabase 덮어쓰기는 <code>config.js</code>가 있을 때만 시도되고 실패 시 내장 데이터로 유지된다 — 실시간 갱신이 아니라 스냅샷 기준 <span id="claims-as-of" class="num">—</span>.</td>
+          <td>버디 배정 확정, 조직별 일괄 온보딩 편성, 조직장 미배정 조직의 임시 리더 요청은 사람이 승인해야 실행된다.</td>
+        </tr></tbody>
+      </table>
+    </div>
+    <p>PII: 입사 예정자·버디 후보·조직장 성명은 온보딩 업무상 표시. 생년월일·연령대는 스냅샷에도 화면에도 없음. 90일 코호트는 사번만, 이직 리스크는 점수 없이 등급만. 데이터 정본: <code>site/data/onboard.json</code> · 생성 스크립트: <code>build_snapshots.py</code>.</p>
+  </div>
+</footer>
+
+<script id="report-data" type="application/json">
+{"onboardingPlan":{"asOfDate":"2026-09-23","horizonEnd":"2026-10-31","timeline":[{"week":"2026-W39","weekStart":"2026-09-21","joiners":[{"joinerId":"J014","name":"한아석","deptCode":"D05","department":"Data & AI","plannedHireDate":"2026-09-24","employmentType":"정규직","level":"IC2"},{"joinerId":"J020","name":"장건라","deptCode":"D03","department":"Engineering","plannedHireDate":"2026-09-24","employmentType":"정규직","level":"IC3"},{"joinerId":"J021","name":"신원경","deptCode":"D08","department":"Customer Success","plannedHireDate":"2026-09-24","employmentType":"정규직","level":"IC3"},{"joinerId":"J003","name":"권재호","deptCode":"D09","department":"People","plannedHireDate":"2026-09-25","employmentType":"정규직","level":"Senior"},{"joinerId":"J015","name":"송유도","deptCode":"D02","department":"Product","plannedHireDate":"2026-09-25","employmentType":"정규직","level":"Senior"},{"joinerId":"J016","name":"장민기","deptCode":"D06","department":"Sales","plannedHireDate":"2026-09-25","employmentType":"정규직","level":"Lead"},{"joinerId":"J022","name":"노우소","deptCode":"D07","department":"Marketing","plannedHireDate":"2026-09-25","employmentType":"정규직","level":"IC2"},{"joinerId":"J023","name":"오주도","deptCode":"D06","department":"Sales","plannedHireDate":"2026-09-25","employmentType":"정규직","level":"Lead"},{"joinerId":"J007","name":"장소미","deptCode":"D03","department":"Engineering","plannedHireDate":"2026-09-26","employmentType":"정규직","level":"IC2"},{"joinerId":"J013","name":"류라정","deptCode":"D06","department":"Sales","plannedHireDate":"2026-09-26","employmentType":"정규직","level":"IC1"},{"joinerId":"J025","name":"임희수","deptCode":"D08","department":"Customer Success","plannedHireDate":"2026-09-26","employmentType":"인턴","level":"IC1"},{"joinerId":"J002","name":"곽아주","deptCode":"D02","department":"Product","plannedHireDate":"2026-09-27","employmentType":"정규직","level":"IC3"},{"joinerId":"J012","name":"심서찬","deptCode":"D03","department":"Engineering","plannedHireDate":"2026-09-27","employmentType":"정규직","level":"IC1"}]},{"week":"2026-W40","weekStart":"2026-09-28","joiners":[{"joinerId":"J024","name":"주은도","deptCode":"D03","department":"Engineering","plannedHireDate":"2026-09-28","employmentType":"인턴","level":"Lead"},{"joinerId":"J026","name":"우소빈","deptCode":"D10","department":"Finance","plannedHireDate":"2026-09-28","employmentType":"계약직","level":"Senior"},{"joinerId":"J027","name":"유희윤","deptCode":"D02","department":"Product","plannedHireDate":"2026-09-28","employmentType":"정규직","level":"Senior"},{"joinerId":"J008","name":"곽철연","deptCode":"D05","department":"Data & AI","plannedHireDate":"2026-09-29","employmentType":"정규직","level":"IC2"},{"joinerId":"J005","name":"공채건","deptCode":"D03","department":"Engineering","plannedHireDate":"2026-09-30","employmentType":"정규직","level":"IC2"},{"joinerId":"J011","name":"최동주","deptCode":"D04","department":"Design","plannedHireDate":"2026-09-30","employmentType":"정규직","level":"Senior"},{"joinerId":"J010","name":"고환하","deptCode":"D06","department":"Sales","plannedHireDate":"2026-10-01","employmentType":"정규직","level":"IC3"},{"joinerId":"J017","name":"지나율","deptCode":"D03","department":"Engineering","plannedHireDate":"2026-10-03","employmentType":"정규직","level":"IC2"}]},{"week":"2026-W41","weekStart":"2026-10-05","joiners":[{"joinerId":"J019","name":"조은다","deptCode":"D06","department":"Sales","plannedHireDate":"2026-10-07","employmentType":"정규직","level":"Senior"},{"joinerId":"J009","name":"백원호","deptCode":"D03","department":"Engineering","plannedHireDate":"2026-10-08","employmentType":"정규직","level":"Senior"}]},{"week":"2026-W42","weekStart":"2026-10-12","joiners":[{"joinerId":"J006","name":"임시인","deptCode":"D05","department":"Data & AI","plannedHireDate":"2026-10-17","employmentType":"정규직","level":"IC3"},{"joinerId":"J018","name":"주우진","deptCode":"D02","department":"Product","plannedHireDate":"2026-10-18","employmentType":"계약직","level":"IC1"}]},{"week":"2026-W44","weekStart":"2026-10-26","joiners":[{"joinerId":"J001","name":"주훈원","deptCode":"D05","department":"Data & AI","plannedHireDate":"2026-10-28","employmentType":"정규직","level":"IC2"},{"joinerId":"J004","name":"방성태","deptCode":"D03","department":"Engineering","plannedHireDate":"2026-10-30","employmentType":"정규직","level":"Senior"}]}],"byDepartment":[{"deptCode":"D02","department":"Product","joiners":4,"joinersByMonthEnd":3,"buddyCandidates":[{"empId":"E0081","name":"현빈찬","tenureYears":5.7,"level":"Senior","riskBand":"낮음"},{"empId":"E0086","name":"정선건","tenureYears":5.59,"level":"Lead","riskBand":"낮음"},{"empId":"E0116","name":"배건찬","tenureYears":4.71,"level":"Lead","riskBand":"낮음"}],"deptLeadEmpId":"E0076"},{"deptCode":"D03","department":"Engineering","joiners":8,"joinersByMonthEnd":5,"buddyCandidates":[{"empId":"E0078","name":"천동하","tenureYears":5.79,"level":"Senior","riskBand":"낮음"},{"empId":"E0097","name":"주호지","tenureYears":5.3,"level":"Lead","riskBand":"낮음"},{"empId":"E0094","name":"양동희","tenureYears":5.23,"level":"Lead","riskBand":"낮음"}],"deptLeadEmpId":"E0146"},{"deptCode":"D04","department":"Design","joiners":1,"joinersByMonthEnd":1,"buddyCandidates":[{"empId":"E0080","name":"우기주","tenureYears":5.67,"level":"Senior","riskBand":"낮음"},{"empId":"E0118","name":"원준재","tenureYears":4.67,"level":"Lead","riskBand":"낮음"},{"empId":"E0125","name":"구정리","tenureYears":4.65,"level":"Senior","riskBand":"낮음"}],"deptLeadEmpId":"E0010"},{"deptCode":"D05","department":"Data & AI","joiners":4,"joinersByMonthEnd":2,"buddyCandidates":[{"empId":"E0114","name":"윤나서","tenureYears":4.86,"level":"IC3","riskBand":"낮음"},{"empId":"E0123","name":"장채라","tenureYears":4.67,"level":"Senior","riskBand":"낮음"},{"empId":"E0133","name":"현경서","tenureYears":4.46,"level":"IC3","riskBand":"낮음"}],"deptLeadEmpId":"E0204"},{"deptCode":"D06","department":"Sales","joiners":5,"joinersByMonthEnd":3,"buddyCandidates":[{"empId":"E0077","name":"성훈희","tenureYears":5.76,"level":"Senior","riskBand":"낮음"},{"empId":"E0095","name":"천승율","tenureYears":5.42,"level":"Lead","riskBand":"낮음"},{"empId":"E0099","name":"정경지","tenureYears":5.16,"level":"Senior","riskBand":"낮음"}],"deptLeadEmpId":"E0201"},{"deptCode":"D07","department":"Marketing","joiners":1,"joinersByMonthEnd":1,"buddyCandidates":[{"empId":"E0092","name":"지성혜","tenureYears":5.36,"level":"Senior","riskBand":"낮음"},{"empId":"E0131","name":"박도석","tenureYears":4.56,"level":"Lead","riskBand":"낮음"},{"empId":"E0137","name":"양재연","tenureYears":4.53,"level":"Senior","riskBand":"낮음"}],"deptLeadEmpId":"E0150"},{"deptCode":"D08","department":"Customer Success","joiners":2,"joinersByMonthEnd":2,"buddyCandidates":[{"empId":"E0067","name":"류나수","tenureYears":5.96,"level":"Senior","riskBand":"낮음"},{"empId":"E0075","name":"정정성","tenureYears":5.92,"level":"Senior","riskBand":"낮음"},{"empId":"E0102","name":"손기유","tenureYears":5.21,"level":"Lead","riskBand":"낮음"}],"deptLeadEmpId":"E0008"},{"deptCode":"D09","department":"People","joiners":1,"joinersByMonthEnd":1,"buddyCandidates":[{"empId":"E0082","name":"정우시","tenureYears":5.82,"level":"Senior","riskBand":"낮음"},{"empId":"E0108","name":"송철환","tenureYears":4.95,"level":"IC3","riskBand":"낮음"},{"empId":"E0124","name":"한아성","tenureYears":4.59,"level":"Senior","riskBand":"낮음"}],"deptLeadEmpId":"E0023"},{"deptCode":"D10","department":"Finance","joiners":1,"joinersByMonthEnd":1,"buddyCandidates":[{"empId":"E0072","name":"서연경","tenureYears":5.82,"level":"Senior","riskBand":"낮음"},{"empId":"E0088","name":"주서우","tenureYears":5.41,"level":"Senior","riskBand":"낮음"},{"empId":"E0144","name":"조윤기","tenureYears":4.25,"level":"Lead","riskBand":"낮음"}],"deptLeadEmpId":"E0064"}],"checklist":{"items":["계정 발급","장비 지급","보안 교육","조직 소개","버디 배정","30일 면담"],"status":[{"joinerId":"J001","계정 발급":"pending","장비 지급":"pending","보안 교육":"pending","조직 소개":"pending","버디 배정":"pending","30일 면담":"pending"},{"joinerId":"J002","계정 발급":"done","장비 지급":"done","보안 교육":"pending","조직 소개":"pending","버디 배정":"done","30일 면담":"pending"},{"joinerId":"J003","계정 발급":"done","장비 지급":"done","보안 교육":"done","조직 소개":"pending","버디 배정":"done","30일 면담":"pending"},{"joinerId":"J004","계정 발급":"pending","장비 지급":"pending","보안 교육":"pending","조직 소개":"pending","버디 배정":"pending","30일 면담":"pending"},{"joinerId":"J005","계정 발급":"done","장비 지급":"done","보안 교육":"pending","조직 소개":"pending","버디 배정":"done","30일 면담":"pending"},{"joinerId":"J006","계정 발급":"pending","장비 지급":"pending","보안 교육":"pending","조직 소개":"pending","버디 배정":"done","30일 면담":"pending"},{"joinerId":"J007","계정 발급":"done","장비 지급":"done","보안 교육":"done","조직 소개":"pending","버디 배정":"done","30일 면담":"pending"},{"joinerId":"J008","계정 발급":"done","장비 지급":"done","보안 교육":"pending","조직 소개":"pending","버디 배정":"pending","30일 면담":"pending"},{"joinerId":"J009","계정 발급":"pending","장비 지급":"done","보안 교육":"pending","조직 소개":"pending","버디 배정":"pending","30일 면담":"pending"},{"joinerId":"J010","계정 발급":"done","장비 지급":"done","보안 교육":"pending","조직 소개":"pending","버디 배정":"done","30일 면담":"pending"},{"joinerId":"J011","계정 발급":"pending","장비 지급":"done","보안 교육":"pending","조직 소개":"pending","버디 배정":"done","30일 면담":"pending"},{"joinerId":"J012","계정 발급":"done","장비 지급":"done","보안 교육":"pending","조직 소개":"pending","버디 배정":"pending","30일 면담":"pending"},{"joinerId":"J013","계정 발급":"done","장비 지급":"pending","보안 교육":"done","조직 소개":"pending","버디 배정":"done","30일 면담":"pending"},{"joinerId":"J014","계정 발급":"done","장비 지급":"done","보안 교육":"done","조직 소개":"pending","버디 배정":"done","30일 면담":"pending"},{"joinerId":"J015","계정 발급":"done","장비 지급":"done","보안 교육":"done","조직 소개":"pending","버디 배정":"done","30일 면담":"pending"},{"joinerId":"J016","계정 발급":"done","장비 지급":"pending","보안 교육":"pending","조직 소개":"pending","버디 배정":"done","30일 면담":"pending"},{"joinerId":"J017","계정 발급":"done","장비 지급":"done","보안 교육":"pending","조직 소개":"pending","버디 배정":"pending","30일 면담":"pending"},{"joinerId":"J018","계정 발급":"pending","장비 지급":"pending","보안 교육":"pending","조직 소개":"pending","버디 배정":"pending","30일 면담":"pending"},{"joinerId":"J019","계정 발급":"done","장비 지급":"pending","보안 교육":"done","조직 소개":"pending","버디 배정":"pending","30일 면담":"pending"},{"joinerId":"J020","계정 발급":"pending","장비 지급":"done","보안 교육":"done","조직 소개":"pending","버디 배정":"done","30일 면담":"pending"},{"joinerId":"J021","계정 발급":"done","장비 지급":"done","보안 교육":"done","조직 소개":"pending","버디 배정":"pending","30일 면담":"pending"},{"joinerId":"J022","계정 발급":"done","장비 지급":"done","보안 교육":"done","조직 소개":"pending","버디 배정":"done","30일 면담":"pending"},{"joinerId":"J023","계정 발급":"done","장비 지급":"done","보안 교육":"done","조직 소개":"pending","버디 배정":"done","30일 면담":"pending"},{"joinerId":"J024","계정 발급":"done","장비 지급":"done","보안 교육":"pending","조직 소개":"pending","버디 배정":"done","30일 면담":"pending"},{"joinerId":"J025","계정 발급":"done","장비 지급":"done","보안 교육":"pending","조직 소개":"pending","버디 배정":"done","30일 면담":"pending"},{"joinerId":"J026","계정 발급":"pending","장비 지급":"done","보안 교육":"pending","조직 소개":"pending","버디 배정":"done","30일 면담":"pending"},{"joinerId":"J027","계정 발급":"done","장비 지급":"pending","보안 교육":"pending","조직 소개":"pending","버디 배정":"done","30일 면담":"pending"}]},"earlyTenureCohort":{"definition":"기준일 기준 입사 90일 이내 재직자","members":[{"empId":"E0416","deptCode":"D03","hireDate":"2026-07-04","daysSinceHire":81,"riskBand":"낮음"},{"empId":"E0414","deptCode":"D08","hireDate":"2026-07-05","daysSinceHire":80,"riskBand":"낮음"},{"empId":"E0412","deptCode":"D03","hireDate":"2026-07-06","daysSinceHire":79,"riskBand":"낮음"},{"empId":"E0421","deptCode":"D06","hireDate":"2026-07-14","daysSinceHire":71,"riskBand":"낮음"},{"empId":"E0423","deptCode":"D02","hireDate":"2026-08-07","daysSinceHire":47,"riskBand":"낮음"},{"empId":"E0417","deptCode":"D03","hireDate":"2026-08-13","daysSinceHire":41,"riskBand":"높음"},{"empId":"E0415","deptCode":"D03","hireDate":"2026-08-30","daysSinceHire":24,"riskBand":"낮음"},{"empId":"E0419","deptCode":"D02","hireDate":"2026-09-05","daysSinceHire":18,"riskBand":"낮음"},{"empId":"E0420","deptCode":"D05","hireDate":"2026-09-08","daysSinceHire":15,"riskBand":"낮음"},{"empId":"E0422","deptCode":"D07","hireDate":"2026-09-10","daysSinceHire":13,"riskBand":"낮음"},{"empId":"E0424","deptCode":"D06","hireDate":"2026-09-10","daysSinceHire":13,"riskBand":"낮음"},{"empId":"E0425","deptCode":"D02","hireDate":"2026-09-20","daysSinceHire":3,"riskBand":"낮음"}],"count":12,"highRiskCount":1},"earlyAttrition":{"definition":"퇴사 예정자(14) 중 재직기간 1년 미만 비율","under1YearLeavers":1,"totalLeavers":14,"rate":0.0714,"byDepartment":{"D02":{"department":"Product","under1YearLeavers":0,"totalLeavers":1,"rate":0.0},"D03":{"department":"Engineering","under1YearLeavers":0,"totalLeavers":4,"rate":0.0},"D04":{"department":"Design","under1YearLeavers":0,"totalLeavers":1,"rate":0.0},"D05":{"department":"Data & AI","under1YearLeavers":0,"totalLeavers":1,"rate":0.0},"D06":{"department":"Sales","under1YearLeavers":1,"totalLeavers":3,"rate":0.3333},"D07":{"department":"Marketing","under1YearLeavers":0,"totalLeavers":1,"rate":0.0},"D08":{"department":"Customer Success","under1YearLeavers":0,"totalLeavers":1,"rate":0.0},"D10":{"department":"Finance","under1YearLeavers":0,"totalLeavers":1,"rate":0.0},"D11":{"department":"Legal & Compliance","under1YearLeavers":0,"totalLeavers":1,"rate":0.0}}},"provenance":{"sources":["data/clean/planned-joiners.clean.csv","data/clean/headcount-master.clean.csv","data/clean/planned-leavers.clean.csv","data/reference/org-chart.csv","data/stats/attrition-risk.json","data/stats/month-end-forecast.json","personas/persona-needs.json"],"script":".claude/skills/onboarding-plan/scripts/onboarding_plan.py","reconciliation":{"timelineJoiners":27,"plannedJoinersValidRows":27,"match":true,"monthEndJoiners":19,"forecastPlannedIn":19,"monthEndMatch":true},"gaps":[],"seed":20260923,"checklistNote":"체크리스트 상태는 가상 생성(random.seed(20260923), 입사일 근접 → done 확률 상승). 실제 진행 상태가 아니다","buddyRule":"같은 조직 재직자 중 재직 2~6년, 리스크 낮음, 레벨 IC3/Senior/Lead, 최대 3명","deptLeadRule":"재직 VP 중 최장 재직(동률: 사번 오름차순), 없으면 최고 레벨 + gap(dept-lead-fallback)","pii":"timeline·buddyCandidates 성명 허용(온보딩 업무), 생년월일 없음. earlyTenureCohort·earlyAttrition은 사번·집계만","fitCriteriaChecked":{"fitCriteria":12,"requiredFields":1}}},"plannedJoiners":[{"joinerId":"J001","name":"주훈원","deptCode":"D05","department":"Data & AI","jobFamily":"Data/AI","level":"IC2","employmentType":"정규직","gender":"여성","plannedHireDate":"2026-10-28","priorExperienceMonths":"41","unresolvedFlags":""},{"joinerId":"J002","name":"곽아주","deptCode":"D02","department":"Product","jobFamily":"Product","level":"IC3","employmentType":"정규직","gender":"여성","plannedHireDate":"2026-09-27","priorExperienceMonths":"54","unresolvedFlags":""},{"joinerId":"J003","name":"권재호","deptCode":"D09","department":"People","jobFamily":"People","level":"Senior","employmentType":"정규직","gender":"여성","plannedHireDate":"2026-09-25","priorExperienceMonths":"148","unresolvedFlags":""},{"joinerId":"J004","name":"방성태","deptCode":"D03","department":"Engineering","jobFamily":"Engineering","level":"Senior","employmentType":"정규직","gender":"남성","plannedHireDate":"2026-10-30","priorExperienceMonths":"93","unresolvedFlags":""},{"joinerId":"J005","name":"공채건","deptCode":"D03","department":"Engineering","jobFamily":"Engineering","level":"IC2","employmentType":"정규직","gender":"여성","plannedHireDate":"2026-09-30","priorExperienceMonths":"24","unresolvedFlags":""},{"joinerId":"J006","name":"임시인","deptCode":"D05","department":"Data & AI","jobFamily":"Engineering","level":"IC3","employmentType":"정규직","gender":"여성","plannedHireDate":"2026-10-17","priorExperienceMonths":"55","unresolvedFlags":""},{"joinerId":"J007","name":"장소미","deptCode":"D03","department":"Engineering","jobFamily":"Engineering","level":"IC2","employmentType":"정규직","gender":"남성","plannedHireDate":"2026-09-26","priorExperienceMonths":"22","unresolvedFlags":""},{"joinerId":"J008","name":"곽철연","deptCode":"D05","department":"Data & AI","jobFamily":"Data/AI","level":"IC2","employmentType":"정규직","gender":"여성","plannedHireDate":"2026-09-29","priorExperienceMonths":"13","unresolvedFlags":""},{"joinerId":"J009","name":"백원호","deptCode":"D03","department":"Engineering","jobFamily":"Engineering","level":"Senior","employmentType":"정규직","gender":"남성","plannedHireDate":"2026-10-08","priorExperienceMonths":"128","unresolvedFlags":""},{"joinerId":"J010","name":"고환하","deptCode":"D06","department":"Sales","jobFamily":"Sales","level":"IC3","employmentType":"정규직","gender":"여성","plannedHireDate":"2026-10-01","priorExperienceMonths":"74","unresolvedFlags":""},{"joinerId":"J011","name":"최동주","deptCode":"D04","department":"Design","jobFamily":"Design","level":"Senior","employmentType":"정규직","gender":"남성","plannedHireDate":"2026-09-30","priorExperienceMonths":"125","unresolvedFlags":""},{"joinerId":"J012","name":"심서찬","deptCode":"D03","department":"Engineering","jobFamily":"Engineering","level":"IC1","employmentType":"정규직","gender":"남성","plannedHireDate":"2026-09-27","priorExperienceMonths":"18","unresolvedFlags":""},{"joinerId":"J013","name":"류라정","deptCode":"D06","department":"Sales","jobFamily":"Sales","level":"IC1","employmentType":"정규직","gender":"여성","plannedHireDate":"2026-09-26","priorExperienceMonths":"17","unresolvedFlags":""},{"joinerId":"J014","name":"한아석","deptCode":"D05","department":"Data & AI","jobFamily":"Data/AI","level":"IC2","employmentType":"정규직","gender":"남성","plannedHireDate":"2026-09-24","priorExperienceMonths":"40","unresolvedFlags":""},{"joinerId":"J015","name":"송유도","deptCode":"D02","department":"Product","jobFamily":"Product","level":"Senior","employmentType":"정규직","gender":"미응답","plannedHireDate":"2026-09-25","priorExperienceMonths":"139","unresolvedFlags":""},{"joinerId":"J016","name":"장민기","deptCode":"D06","department":"Sales","jobFamily":"Sales","level":"Lead","employmentType":"정규직","gender":"미응답","plannedHireDate":"2026-09-25","priorExperienceMonths":"138","unresolvedFlags":""},{"joinerId":"J017","name":"지나율","deptCode":"D03","department":"Engineering","jobFamily":"Engineering","level":"IC2","employmentType":"정규직","gender":"남성","plannedHireDate":"2026-10-03","priorExperienceMonths":"18","unresolvedFlags":""},{"joinerId":"J018","name":"주우진","deptCode":"D02","department":"Product","jobFamily":"Product","level":"IC1","employmentType":"계약직","gender":"미응답","plannedHireDate":"2026-10-18","priorExperienceMonths":"0","unresolvedFlags":""},{"joinerId":"J019","name":"조은다","deptCode":"D06","department":"Sales","jobFamily":"Sales","level":"Senior","employmentType":"정규직","gender":"남성","plannedHireDate":"2026-10-07","priorExperienceMonths":"115","unresolvedFlags":""},{"joinerId":"J020","name":"장건라","deptCode":"D03","department":"Engineering","jobFamily":"Engineering","level":"IC3","employmentType":"정규직","gender":"미응답","plannedHireDate":"2026-09-24","priorExperienceMonths":"59","unresolvedFlags":""},{"joinerId":"J021","name":"신원경","deptCode":"D08","department":"Customer Success","jobFamily":"Customer Success","level":"IC3","employmentType":"정규직","gender":"남성","plannedHireDate":"2026-09-24","priorExperienceMonths":"82","unresolvedFlags":""},{"joinerId":"J022","name":"노우소","deptCode":"D07","department":"Marketing","jobFamily":"Marketing","level":"IC2","employmentType":"정규직","gender":"미응답","plannedHireDate":"2026-09-25","priorExperienceMonths":"17","unresolvedFlags":""},{"joinerId":"J023","name":"오주도","deptCode":"D06","department":"Sales","jobFamily":"Sales","level":"Lead","employmentType":"정규직","gender":"미응답","plannedHireDate":"2026-09-25","priorExperienceMonths":"151","unresolvedFlags":""},{"joinerId":"J024","name":"주은도","deptCode":"D03","department":"Engineering","jobFamily":"Engineering","level":"Lead","employmentType":"인턴","gender":"여성","plannedHireDate":"2026-09-28","priorExperienceMonths":"126","unresolvedFlags":""},{"joinerId":"J025","name":"임희수","deptCode":"D08","department":"Customer Success","jobFamily":"Customer Success","level":"IC1","employmentType":"인턴","gender":"미응답","plannedHireDate":"2026-09-26","priorExperienceMonths":"12","unresolvedFlags":""},{"joinerId":"J026","name":"우소빈","deptCode":"D10","department":"Finance","jobFamily":"Finance","level":"Senior","employmentType":"계약직","gender":"미응답","plannedHireDate":"2026-09-28","priorExperienceMonths":"75","unresolvedFlags":""},{"joinerId":"J027","name":"유희윤","deptCode":"D02","department":"Product","jobFamily":"Product","level":"Senior","employmentType":"정규직","gender":"여성","plannedHireDate":"2026-09-28","priorExperienceMonths":"111","unresolvedFlags":""}],"hrDirectorySubset":[{"empId":"E0018","name":"백규연","deptCode":"D02","department":"Product","level":"Senior"},{"empId":"E0019","name":"전예재","deptCode":"D02","department":"Product","level":"Lead"},{"empId":"E0020","name":"김원재","deptCode":"D02","department":"Product","level":"Manager"},{"empId":"E0026","name":"최나호","deptCode":"D02","department":"Product","level":"Manager"},{"empId":"E0033","name":"심수도","deptCode":"D02","department":"Product","level":"Manager"},{"empId":"E0045","name":"구희연","deptCode":"D02","department":"Product","level":"Lead"},{"empId":"E0065","name":"하리미","deptCode":"D02","department":"Product","level":"Director"},{"empId":"E0076","name":"김재우","deptCode":"D02","department":"Product","level":"VP"},{"empId":"E0081","name":"현빈찬","deptCode":"D02","department":"Product","level":"Senior"},{"empId":"E0085","name":"정호현","deptCode":"D02","department":"Product","level":"IC2"},{"empId":"E0086","name":"정선건","deptCode":"D02","department":"Product","level":"Lead"},{"empId":"E0093","name":"한다연","deptCode":"D02","department":"Product","level":"Director"},{"empId":"E0098","name":"조나소","deptCode":"D02","department":"Product","level":"Manager"},{"empId":"E0100","name":"채건주","deptCode":"D02","department":"Product","level":"Manager"},{"empId":"E0110","name":"공인도","deptCode":"D02","department":"Product","level":"Director"},{"empId":"E0116","name":"배건찬","deptCode":"D02","department":"Product","level":"Lead"},{"empId":"E0129","name":"송수미","deptCode":"D02","department":"Product","level":"Director"},{"empId":"E0130","name":"성영영","deptCode":"D02","department":"Product","level":"Director"},{"empId":"E0149","name":"이성채","deptCode":"D02","department":"Product","level":"Senior"},{"empId":"E0166","name":"서라나","deptCode":"D02","department":"Product","level":"IC3"},{"empId":"E0171","name":"성빈연","deptCode":"D02","department":"Product","level":"Senior"},{"empId":"E0175","name":"성상연","deptCode":"D02","department":"Product","level":"Senior"},{"empId":"E0185","name":"허주우","deptCode":"D02","department":"Product","level":"IC3"},{"empId":"E0189","name":"성빈율","deptCode":"D02","department":"Product","level":"Manager"},{"empId":"E0192","name":"차민태","deptCode":"D02","department":"Product","level":"IC3"},{"empId":"E0211","name":"배나시","deptCode":"D02","department":"Product","level":"Lead"},{"empId":"E0222","name":"양건준","deptCode":"D02","department":"Product","level":"IC2"},{"empId":"E0224","name":"엄유건","deptCode":"D02","department":"Product","level":"Lead"},{"empId":"E0229","name":"백영성","deptCode":"D02","department":"Product","level":"IC3"},{"empId":"E0241","name":"권환도","deptCode":"D02","department":"Product","level":"Senior"},{"empId":"E0258","name":"이다혜","deptCode":"D02","department":"Product","level":"IC3"},{"empId":"E0262","name":"진유원","deptCode":"D02","department":"Product","level":"Senior"},{"empId":"E0275","name":"주경나","deptCode":"D02","department":"Product","level":"IC2"},{"empId":"E0277","name":"민지예","deptCode":"D02","department":"Product","level":"Lead"},{"empId":"E0282","name":"현윤환","deptCode":"D02","department":"Product","level":"Senior"},{"empId":"E0287","name":"차수상","deptCode":"D02","department":"Product","level":"IC3"},{"empId":"E0311","name":"배혜지","deptCode":"D02","department":"Product","level":"IC2"},{"empId":"E0312","name":"양인은","deptCode":"D02","department":"Product","level":"IC1"},{"empId":"E0320","name":"곽민윤","deptCode":"D02","department":"Product","level":"Senior"},{"empId":"E0321","name":"강철라","deptCode":"D02","department":"Product","level":"IC3"},{"empId":"E0327","name":"홍주아","deptCode":"D02","department":"Product","level":"IC2"},{"empId":"E0362","name":"전민소","deptCode":"D02","department":"Product","level":"IC2"},{"empId":"E0366","name":"남지미","deptCode":"D02","department":"Product","level":"Manager"},{"empId":"E0368","name":"우하은","deptCode":"D02","department":"Product","level":"IC3"},{"empId":"E0382","name":"류건채","deptCode":"D02","department":"Product","level":"IC3"},{"empId":"E0389","name":"양승태","deptCode":"D02","department":"Product","level":"IC1"},{"empId":"E0393","name":"박재은","deptCode":"D02","department":"Product","level":"IC3"},{"empId":"E0396","name":"천호리","deptCode":"D02","department":"Product","level":"IC3"},{"empId":"E0402","name":"정정라","deptCode":"D02","department":"Product","level":"Lead"},{"empId":"E0413","name":"차빈율","deptCode":"D02","department":"Product","level":"Senior"},{"empId":"E0419","name":"방경리","deptCode":"D02","department":"Product","level":"IC1"},{"empId":"E0423","name":"서건유","deptCode":"D02","department":"Product","level":"IC2"},{"empId":"E0425","name":"오찬찬","deptCode":"D02","department":"Product","level":"IC1"},{"empId":"E0426","name":"류정태","deptCode":"D02","department":"Product","level":"IC3"},{"empId":"E0004","name":"엄환서","deptCode":"D03","department":"Engineering","level":"Director"},{"empId":"E0005","name":"정진시","deptCode":"D03","department":"Engineering","level":"Lead"},{"empId":"E0009","name":"박은태","deptCode":"D03","department":"Engineering","level":"Manager"},{"empId":"E0011","name":"심하선","deptCode":"D03","department":"Engineering","level":"Manager"},{"empId":"E0012","name":"김아예","deptCode":"D03","department":"Engineering","level":"Lead"},{"empId":"E0013","name":"원아리","deptCode":"D03","department":"Engineering","level":"Manager"},{"empId":"E0014","name":"손민하","deptCode":"D03","department":"Engineering","level":"Lead"},{"empId":"E0025","name":"심준재","deptCode":"D03","department":"Engineering","level":"Director"},{"empId":"E0029","name":"천유준","deptCode":"D03","department":"Engineering","level":"Director"},{"empId":"E0038","name":"손재규","deptCode":"D03","department":"Engineering","level":"Senior"},{"empId":"E0039","name":"강아상","deptCode":"D03","department":"Engineering","level":"Lead"},{"empId":"E0041","name":"정영원","deptCode":"D03","department":"Engineering","level":"Director"},{"empId":"E0043","name":"홍서철","deptCode":"D03","department":"Engineering","level":"IC2"},{"empId":"E0044","name":"나원현","deptCode":"D03","department":"Engineering","level":"Lead"},{"empId":"E0046","name":"류석주","deptCode":"D03","department":"Engineering","level":"Senior"},{"empId":"E0047","name":"허서동","deptCode":"D03","department":"Engineering","level":"Senior"},{"empId":"E0059","name":"고건나","deptCode":"D03","department":"Engineering","level":"Senior"},{"empId":"E0069","name":"황유영","deptCode":"D03","department":"Engineering","level":"Manager"},{"empId":"E0071","name":"윤상찬","deptCode":"D03","department":"Engineering","level":"Manager"},{"empId":"E0073","name":"공승환","deptCode":"D03","department":"Engineering","level":"Manager"},{"empId":"E0078","name":"천동하","deptCode":"D03","department":"Engineering","level":"Senior"},{"empId":"E0090","name":"허경석","deptCode":"D03","department":"Engineering","level":"Lead"},{"empId":"E0091","name":"홍훈승","deptCode":"D03","department":"Engineering","level":"Manager"},{"empId":"E0094","name":"양동희","deptCode":"D03","department":"Engineering","level":"Lead"},{"empId":"E0097","name":"주호지","deptCode":"D03","department":"Engineering","level":"Lead"},{"empId":"E0104","name":"우주윤","deptCode":"D03","department":"Engineering","level":"Manager"},{"empId":"E0112","name":"현규빈","deptCode":"D03","department":"Engineering","level":"Director"},{"empId":"E0113","name":"배훈기","deptCode":"D03","department":"Engineering","level":"Lead"},{"empId":"E0115","name":"남현환","deptCode":"D03","department":"Engineering","level":"Senior"},{"empId":"E0117","name":"유호영","deptCode":"D03","department":"Engineering","level":"Director"},{"empId":"E0119","name":"강기호","deptCode":"D03","department":"Engineering","level":"Manager"},{"empId":"E0120","name":"백유율","deptCode":"D03","department":"Engineering","level":"Director"},{"empId":"E0122","name":"한석진","deptCode":"D03","department":"Engineering","level":"Senior"},{"empId":"E0128","name":"손수아","deptCode":"D03","department":"Engineering","level":"IC3"},{"empId":"E0132","name":"노수다","deptCode":"D03","department":"Engineering","level":"Manager"},{"empId":"E0134","name":"배미은","deptCode":"D03","department":"Engineering","level":"Senior"},{"empId":"E0140","name":"이라진","deptCode":"D03","department":"Engineering","level":"Director"},{"empId":"E0145","name":"이민현","deptCode":"D03","department":"Engineering","level":"Senior"},{"empId":"E0146","name":"권건예","deptCode":"D03","department":"Engineering","level":"VP"},{"empId":"E0147","name":"임빈주","deptCode":"D03","department":"Engineering","level":"Manager"},{"empId":"E0156","name":"엄은민","deptCode":"D03","department":"Engineering","level":"Senior"},{"empId":"E0160","name":"문경라","deptCode":"D03","department":"Engineering","level":"Senior"},{"empId":"E0161","name":"남동소","deptCode":"D03","department":"Engineering","level":"Manager"},{"empId":"E0165","name":"한미나","deptCode":"D03","department":"Engineering","level":"IC3"},{"empId":"E0168","name":"이빈리","deptCode":"D03","department":"Engineering","level":"IC3"},{"empId":"E0174","name":"홍라리","deptCode":"D03","department":"Engineering","level":"Manager"},{"empId":"E0176","name":"임윤윤","deptCode":"D03","department":"Engineering","level":"IC3"},{"empId":"E0178","name":"장수미","deptCode":"D03","department":"Engineering","level":"Lead"},{"empId":"E0181","name":"하철성","deptCode":"D03","department":"Engineering","level":"Senior"},{"empId":"E0197","name":"송준아","deptCode":"D03","department":"Engineering","level":"Senior"},{"empId":"E0202","name":"최연철","deptCode":"D03","department":"Engineering","level":"IC2"},{"empId":"E0203","name":"문승소","deptCode":"D03","department":"Engineering","level":"Senior"},{"empId":"E0212","name":"심라영","deptCode":"D03","department":"Engineering","level":"Lead"},{"empId":"E0214","name":"황태유","deptCode":"D03","department":"Engineering","level":"Manager"},{"empId":"E0216","name":"지소동","deptCode":"D03","department":"Engineering","level":"IC3"},{"empId":"E0218","name":"박현빈","deptCode":"D03","department":"Engineering","level":"Senior"},{"empId":"E0227","name":"서경빈","deptCode":"D03","department":"Engineering","level":"IC3"},{"empId":"E0231","name":"지라서","deptCode":"D03","department":"Engineering","level":"Director"},{"empId":"E0232","name":"민기나","deptCode":"D03","department":"Engineering","level":"IC2"},{"empId":"E0234","name":"전연빈","deptCode":"D03","department":"Engineering","level":"Senior"},{"empId":"E0248","name":"오원도","deptCode":"D03","department":"Engineering","level":"IC2"},{"empId":"E0249","name":"황빈기","deptCode":"D03","department":"Engineering","level":"IC3"},{"empId":"E0250","name":"고선환","deptCode":"D03","department":"Engineering","level":"Lead"},{"empId":"E0252","name":"천아인","deptCode":"D03","department":"Engineering","level":"Lead"},{"empId":"E0256","name":"안서다","deptCode":"D03","department":"Engineering","level":"Director"},{"empId":"E0260","name":"안연기","deptCode":"D03","department":"Engineering","level":"IC1"},{"empId":"E0264","name":"구건라","deptCode":"D03","department":"Engineering","level":"IC2"},{"empId":"E0270","name":"안라예","deptCode":"D03","department":"Engineering","level":"Senior"},{"empId":"E0274","name":"노규윤","deptCode":"D03","department":"Engineering","level":"Senior"},{"empId":"E0278","name":"홍지정","deptCode":"D03","department":"Engineering","level":"IC2"},{"empId":"E0280","name":"허민연","deptCode":"D03","department":"Engineering","level":"IC3"},{"empId":"E0281","name":"장소현","deptCode":"D03","department":"Engineering","level":"IC2"},{"empId":"E0284","name":"박재수","deptCode":"D03","department":"Engineering","level":"IC2"},{"empId":"E0286","name":"공재미","deptCode":"D03","department":"Engineering","level":"IC2"},{"empId":"E0295","name":"최철혜","deptCode":"D03","department":"Engineering","level":"IC2"},{"empId":"E0304","name":"남규서","deptCode":"D03","department":"Engineering","level":"Senior"},{"empId":"E0309","name":"남상도","deptCode":"D03","department":"Engineering","level":"Lead"},{"empId":"E0313","name":"지훈예","deptCode":"D03","department":"Engineering","level":"IC2"},{"empId":"E0316","name":"백상미","deptCode":"D03","department":"Engineering","level":"Senior"},{"empId":"E0318","name":"공도훈","deptCode":"D03","department":"Engineering","level":"IC1"},{"empId":"E0324","name":"강경시","deptCode":"D03","department":"Engineering","level":"IC2"},{"empId":"E0329","name":"임진석","deptCode":"D03","department":"Engineering","level":"IC1"},{"empId":"E0330","name":"조소율","deptCode":"D03","department":"Engineering","level":"IC1"},{"empId":"E0331","name":"심규동","deptCode":"D03","department":"Engineering","level":"Lead"},{"empId":"E0332","name":"박찬환","deptCode":"D03","department":"Engineering","level":"Director"},{"empId":"E0333","name":"전서상","deptCode":"D03","department":"Engineering","level":"IC1"},{"empId":"E0334","name":"고상정","deptCode":"D03","department":"Engineering","level":"IC2"},{"empId":"E0336","name":"현윤경","deptCode":"D03","department":"Engineering","level":"IC3"},{"empId":"E0337","name":"김하수","deptCode":"D03","department":"Engineering","level":"IC3"},{"empId":"E0346","name":"송연찬","deptCode":"D03","department":"Engineering","level":"IC2"},{"empId":"E0352","name":"안찬아","deptCode":"D03","department":"Engineering","level":"IC2"},{"empId":"E0354","name":"배영혜","deptCode":"D03","department":"Engineering","level":"IC1"},{"empId":"E0359","name":"한리혜","deptCode":"D03","department":"Engineering","level":"Manager"},{"empId":"E0360","name":"허지예","deptCode":"D03","department":"Engineering","level":"IC3"},{"empId":"E0361","name":"민상다","deptCode":"D03","department":"Engineering","level":"IC2"},{"empId":"E0365","name":"권유수","deptCode":"D03","department":"Engineering","level":"IC2"},{"empId":"E0367","name":"민연예","deptCode":"D03","department":"Engineering","level":"IC2"},{"empId":"E0369","name":"우태율","deptCode":"D03","department":"Engineering","level":"IC3"},{"empId":"E0373","name":"허희정","deptCode":"D03","department":"Engineering","level":"IC2"},{"empId":"E0380","name":"박소아","deptCode":"D03","department":"Engineering","level":"IC3"},{"empId":"E0383","name":"전소진","deptCode":"D03","department":"Engineering","level":"IC1"},{"empId":"E0392","name":"차라준","deptCode":"D03","department":"Engineering","level":"Senior"},{"empId":"E0407","name":"현도아","deptCode":"D03","department":"Engineering","level":"IC1"},{"empId":"E0410","name":"황아원","deptCode":"D03","department":"Engineering","level":"Senior"},{"empId":"E0412","name":"정진철","deptCode":"D03","department":"Engineering","level":"IC3"},{"empId":"E0415","name":"박찬연","deptCode":"D03","department":"Engineering","level":"IC1"},{"empId":"E0416","name":"백규현","deptCode":"D03","department":"Engineering","level":"IC3"},{"empId":"E0417","name":"구준주","deptCode":"D03","department":"Engineering","level":"IC2"},{"empId":"E0418","name":"차지선","deptCode":"D03","department":"Engineering","level":"IC3"},{"empId":"E0427","name":"우규훈","deptCode":"D03","department":"Engineering","level":"IC3"},{"empId":"E0001","name":"한석기","deptCode":"D04","department":"Design","level":"Director"},{"empId":"E0010","name":"심희율","deptCode":"D04","department":"Design","level":"VP"},{"empId":"E0036","name":"윤채영","deptCode":"D04","department":"Design","level":"Manager"},{"empId":"E0040","name":"안환선","deptCode":"D04","department":"Design","level":"Lead"},{"empId":"E0053","name":"임승민","deptCode":"D04","department":"Design","level":"Senior"},{"empId":"E0080","name":"우기주","deptCode":"D04","department":"Design","level":"Senior"},{"empId":"E0118","name":"원준재","deptCode":"D04","department":"Design","level":"Lead"},{"empId":"E0125","name":"구정리","deptCode":"D04","department":"Design","level":"Senior"},{"empId":"E0143","name":"주혜상","deptCode":"D04","department":"Design","level":"Lead"},{"empId":"E0162","name":"강채정","deptCode":"D04","department":"Design","level":"Senior"},{"empId":"E0170","name":"하철진","deptCode":"D04","department":"Design","level":"IC3"},{"empId":"E0183","name":"양수수","deptCode":"D04","department":"Design","level":"IC3"},{"empId":"E0186","name":"백호준","deptCode":"D04","department":"Design","level":"Senior"},{"empId":"E0191","name":"공인서","deptCode":"D04","department":"Design","level":"Senior"},{"empId":"E0194","name":"양호시","deptCode":"D04","department":"Design","level":"IC3"},{"empId":"E0210","name":"손다희","deptCode":"D04","department":"Design","level":"IC3"},{"empId":"E0219","name":"남인원","deptCode":"D04","department":"Design","level":"IC3"},{"empId":"E0220","name":"성미경","deptCode":"D04","department":"Design","level":"Senior"},{"empId":"E0228","name":"전민민","deptCode":"D04","department":"Design","level":"Lead"},{"empId":"E0254","name":"김찬예","deptCode":"D04","department":"Design","level":"IC2"},{"empId":"E0269","name":"강승다","deptCode":"D04","department":"Design","level":"IC2"},{"empId":"E0305","name":"우영라","deptCode":"D04","department":"Design","level":"Senior"},{"empId":"E0344","name":"차석아","deptCode":"D04","department":"Design","level":"IC2"},{"empId":"E0385","name":"구미영","deptCode":"D04","department":"Design","level":"IC3"},{"empId":"E0391","name":"나경채","deptCode":"D04","department":"Design","level":"IC3"},{"empId":"E0399","name":"송혜은","deptCode":"D04","department":"Design","level":"IC1"},{"empId":"E0015","name":"류훈원","deptCode":"D05","department":"Data & AI","level":"Lead"},{"empId":"E0017","name":"심환라","deptCode":"D05","department":"Data & AI","level":"Lead"},{"empId":"E0021","name":"장성영","deptCode":"D05","department":"Data & AI","level":"Lead"},{"empId":"E0042","name":"조영서","deptCode":"D05","department":"Data & AI","level":"Lead"},{"empId":"E0054","name":"신라인","deptCode":"D05","department":"Data & AI","level":"Lead"},{"empId":"E0055","name":"황철빈","deptCode":"D05","department":"Data & AI","level":"Senior"},{"empId":"E0056","name":"나하민","deptCode":"D05","department":"Data & AI","level":"Manager"},{"empId":"E0062","name":"곽상승","deptCode":"D05","department":"Data & AI","level":"Manager"},{"empId":"E0063","name":"하석소","deptCode":"D05","department":"Data & AI","level":"Director"},{"empId":"E0068","name":"조유은","deptCode":"D05","department":"Data & AI","level":"Manager"},{"empId":"E0109","name":"우인희","deptCode":"D05","department":"Data & AI","level":"Director"},{"empId":"E0111","name":"차철연","deptCode":"D05","department":"Data & AI","level":"Lead"},{"empId":"E0114","name":"윤나서","deptCode":"D05","department":"Data & AI","level":"IC3"},{"empId":"E0123","name":"장채라","deptCode":"D05","department":"Data & AI","level":"Senior"},{"empId":"E0127","name":"채주채","deptCode":"D05","department":"Data & AI","level":"Lead"},{"empId":"E0133","name":"현경서","deptCode":"D05","department":"Data & AI","level":"IC3"},{"empId":"E0155","name":"곽지라","deptCode":"D05","department":"Data & AI","level":"Lead"},{"empId":"E0163","name":"고경다","deptCode":"D05","department":"Data & AI","level":"Manager"},{"empId":"E0167","name":"손아준","deptCode":"D05","department":"Data & AI","level":"Lead"},{"empId":"E0172","name":"장수지","deptCode":"D05","department":"Data & AI","level":"Lead"},{"empId":"E0184","name":"김유훈","deptCode":"D05","department":"Data & AI","level":"IC3"},{"empId":"E0188","name":"원환찬","deptCode":"D05","department":"Data & AI","level":"Manager"},{"empId":"E0204","name":"천아나","deptCode":"D05","department":"Data & AI","level":"VP"},{"empId":"E0213","name":"천다소","deptCode":"D05","department":"Data & AI","level":"Manager"},{"empId":"E0217","name":"최환우","deptCode":"D05","department":"Data & AI","level":"IC2"},{"empId":"E0242","name":"강나시","deptCode":"D05","department":"Data & AI","level":"Senior"},{"empId":"E0247","name":"전승연","deptCode":"D05","department":"Data & AI","level":"IC3"},{"empId":"E0253","name":"양영재","deptCode":"D05","department":"Data & AI","level":"Manager"},{"empId":"E0283","name":"주지희","deptCode":"D05","department":"Data & AI","level":"Lead"},{"empId":"E0288","name":"성유인","deptCode":"D05","department":"Data & AI","level":"IC2"},{"empId":"E0307","name":"우혜다","deptCode":"D05","department":"Data & AI","level":"Lead"},{"empId":"E0308","name":"유기지","deptCode":"D05","department":"Data & AI","level":"IC1"},{"empId":"E0339","name":"강철철","deptCode":"D05","department":"Data & AI","level":"IC2"},{"empId":"E0341","name":"남유하","deptCode":"D05","department":"Data & AI","level":"IC1"},{"empId":"E0342","name":"노태성","deptCode":"D05","department":"Data & AI","level":"IC1"},{"empId":"E0355","name":"전지훈","deptCode":"D05","department":"Data & AI","level":"IC2"},{"empId":"E0357","name":"고인예","deptCode":"D05","department":"Data & AI","level":"IC3"},{"empId":"E0386","name":"권훈율","deptCode":"D05","department":"Data & AI","level":"IC3"},{"empId":"E0387","name":"허미기","deptCode":"D05","department":"Data & AI","level":"IC3"},{"empId":"E0400","name":"성주기","deptCode":"D05","department":"Data & AI","level":"IC1"},{"empId":"E0404","name":"황예윤","deptCode":"D05","department":"Data & AI","level":"IC3"},{"empId":"E0420","name":"백재영","deptCode":"D05","department":"Data & AI","level":"Senior"},{"empId":"E0006","name":"서지훈","deptCode":"D06","department":"Sales","level":"Manager"},{"empId":"E0030","name":"주주다","deptCode":"D06","department":"Sales","level":"Manager"},{"empId":"E0031","name":"문민석","deptCode":"D06","department":"Sales","level":"IC2"},{"empId":"E0032","name":"심동서","deptCode":"D06","department":"Sales","level":"Lead"},{"empId":"E0034","name":"양승지","deptCode":"D06","department":"Sales","level":"Lead"},{"empId":"E0035","name":"김호태","deptCode":"D06","department":"Sales","level":"Senior"},{"empId":"E0050","name":"문현희","deptCode":"D06","department":"Sales","level":"Manager"},{"empId":"E0052","name":"채하인","deptCode":"D06","department":"Sales","level":"Lead"},{"empId":"E0058","name":"노채태","deptCode":"D06","department":"Sales","level":"Lead"},{"empId":"E0061","name":"채예라","deptCode":"D06","department":"Sales","level":"Lead"},{"empId":"E0077","name":"성훈희","deptCode":"D06","department":"Sales","level":"Senior"},{"empId":"E0095","name":"천승율","deptCode":"D06","department":"Sales","level":"Lead"},{"empId":"E0096","name":"남동유","deptCode":"D06","department":"Sales","level":"Manager"},{"empId":"E0099","name":"정경지","deptCode":"D06","department":"Sales","level":"Senior"},{"empId":"E0105","name":"심유영","deptCode":"D06","department":"Sales","level":"Director"},{"empId":"E0121","name":"류민리","deptCode":"D06","department":"Sales","level":"Manager"},{"empId":"E0126","name":"민다진","deptCode":"D06","department":"Sales","level":"Lead"},{"empId":"E0135","name":"손석아","deptCode":"D06","department":"Sales","level":"Manager"},{"empId":"E0136","name":"원석서","deptCode":"D06","department":"Sales","level":"IC3"},{"empId":"E0139","name":"구경원","deptCode":"D06","department":"Sales","level":"IC3"},{"empId":"E0142","name":"백윤상","deptCode":"D06","department":"Sales","level":"Senior"},{"empId":"E0148","name":"송상재","deptCode":"D06","department":"Sales","level":"Manager"},{"empId":"E0158","name":"한시철","deptCode":"D06","department":"Sales","level":"IC3"},{"empId":"E0187","name":"우윤호","deptCode":"D06","department":"Sales","level":"Senior"},{"empId":"E0193","name":"안수우","deptCode":"D06","department":"Sales","level":"Manager"},{"empId":"E0196","name":"성규선","deptCode":"D06","department":"Sales","level":"Senior"},{"empId":"E0198","name":"공리미","deptCode":"D06","department":"Sales","level":"Manager"},{"empId":"E0199","name":"최동동","deptCode":"D06","department":"Sales","level":"Senior"},{"empId":"E0200","name":"윤유다","deptCode":"D06","department":"Sales","level":"IC3"},{"empId":"E0201","name":"민원빈","deptCode":"D06","department":"Sales","level":"VP"},{"empId":"E0207","name":"채재경","deptCode":"D06","department":"Sales","level":"IC2"},{"empId":"E0225","name":"나원나","deptCode":"D06","department":"Sales","level":"IC3"},{"empId":"E0230","name":"구훈재","deptCode":"D06","department":"Sales","level":"Manager"},{"empId":"E0236","name":"오정진","deptCode":"D06","department":"Sales","level":"IC2"},{"empId":"E0237","name":"주수석","deptCode":"D06","department":"Sales","level":"Senior"},{"empId":"E0240","name":"하성희","deptCode":"D06","department":"Sales","level":"IC2"},{"empId":"E0243","name":"유석승","deptCode":"D06","department":"Sales","level":"IC3"},{"empId":"E0246","name":"양아윤","deptCode":"D06","department":"Sales","level":"IC1"},{"empId":"E0255","name":"백훈원","deptCode":"D06","department":"Sales","level":"Manager"},{"empId":"E0263","name":"구혜성","deptCode":"D06","department":"Sales","level":"Senior"},{"empId":"E0268","name":"방진윤","deptCode":"D06","department":"Sales","level":"Lead"},{"empId":"E0271","name":"양서경","deptCode":"D06","department":"Sales","level":"IC3"},{"empId":"E0298","name":"한서시","deptCode":"D06","department":"Sales","level":"IC3"},{"empId":"E0301","name":"방희수","deptCode":"D06","department":"Sales","level":"IC3"},{"empId":"E0303","name":"천재기","deptCode":"D06","department":"Sales","level":"IC2"},{"empId":"E0343","name":"공도환","deptCode":"D06","department":"Sales","level":"IC3"},{"empId":"E0345","name":"민석태","deptCode":"D06","department":"Sales","level":"IC2"},{"empId":"E0348","name":"심상인","deptCode":"D06","department":"Sales","level":"IC2"},{"empId":"E0349","name":"서주나","deptCode":"D06","department":"Sales","level":"IC3"},{"empId":"E0351","name":"정석미","deptCode":"D06","department":"Sales","level":"IC2"},{"empId":"E0353","name":"강시나","deptCode":"D06","department":"Sales","level":"IC2"},{"empId":"E0363","name":"서예채","deptCode":"D06","department":"Sales","level":"IC2"},{"empId":"E0375","name":"남태인","deptCode":"D06","department":"Sales","level":"IC2"},{"empId":"E0379","name":"성진서","deptCode":"D06","department":"Sales","level":"IC3"},{"empId":"E0388","name":"백상예","deptCode":"D06","department":"Sales","level":"IC3"},{"empId":"E0390","name":"홍태윤","deptCode":"D06","department":"Sales","level":"IC1"},{"empId":"E0395","name":"황윤상","deptCode":"D06","department":"Sales","level":"IC2"},{"empId":"E0397","name":"한율서","deptCode":"D06","department":"Sales","level":"IC2"},{"empId":"E0406","name":"허인현","deptCode":"D06","department":"Sales","level":"IC3"},{"empId":"E0421","name":"주석아","deptCode":"D06","department":"Sales","level":"IC2"},{"empId":"E0424","name":"신영미","deptCode":"D06","department":"Sales","level":"IC1"},{"empId":"E0003","name":"윤라건","deptCode":"D07","department":"Marketing","level":"Manager"},{"empId":"E0066","name":"남연우","deptCode":"D07","department":"Marketing","level":"Lead"},{"empId":"E0092","name":"지성혜","deptCode":"D07","department":"Marketing","level":"Senior"},{"empId":"E0107","name":"지호혜","deptCode":"D07","department":"Marketing","level":"Director"},{"empId":"E0131","name":"박도석","deptCode":"D07","department":"Marketing","level":"Lead"},{"empId":"E0137","name":"양재연","deptCode":"D07","department":"Marketing","level":"Senior"},{"empId":"E0150","name":"진규라","deptCode":"D07","department":"Marketing","level":"VP"},{"empId":"E0154","name":"원서호","deptCode":"D07","department":"Marketing","level":"IC3"},{"empId":"E0159","name":"심찬지","deptCode":"D07","department":"Marketing","level":"Senior"},{"empId":"E0209","name":"안규율","deptCode":"D07","department":"Marketing","level":"Senior"},{"empId":"E0215","name":"나민재","deptCode":"D07","department":"Marketing","level":"Manager"},{"empId":"E0221","name":"허미규","deptCode":"D07","department":"Marketing","level":"IC2"},{"empId":"E0238","name":"서영시","deptCode":"D07","department":"Marketing","level":"Manager"},{"empId":"E0257","name":"지유지","deptCode":"D07","department":"Marketing","level":"IC3"},{"empId":"E0259","name":"한동재","deptCode":"D07","department":"Marketing","level":"Senior"},{"empId":"E0261","name":"주경민","deptCode":"D07","department":"Marketing","level":"Senior"},{"empId":"E0267","name":"문인수","deptCode":"D07","department":"Marketing","level":"IC3"},{"empId":"E0273","name":"차준석","deptCode":"D07","department":"Marketing","level":"Senior"},{"empId":"E0285","name":"차미시","deptCode":"D07","department":"Marketing","level":"IC2"},{"empId":"E0294","name":"윤재철","deptCode":"D07","department":"Marketing","level":"IC3"},{"empId":"E0296","name":"류미주","deptCode":"D07","department":"Marketing","level":"IC2"},{"empId":"E0300","name":"최규소","deptCode":"D07","department":"Marketing","level":"Lead"},{"empId":"E0306","name":"권라진","deptCode":"D07","department":"Marketing","level":"IC3"},{"empId":"E0314","name":"황지윤","deptCode":"D07","department":"Marketing","level":"Senior"},{"empId":"E0325","name":"주석경","deptCode":"D07","department":"Marketing","level":"IC3"},{"empId":"E0335","name":"문인채","deptCode":"D07","department":"Marketing","level":"IC3"},{"empId":"E0350","name":"현민예","deptCode":"D07","department":"Marketing","level":"IC1"},{"empId":"E0356","name":"주도빈","deptCode":"D07","department":"Marketing","level":"Senior"},{"empId":"E0364","name":"최동시","deptCode":"D07","department":"Marketing","level":"IC3"},{"empId":"E0374","name":"강훈다","deptCode":"D07","department":"Marketing","level":"IC1"},{"empId":"E0422","name":"심준호","deptCode":"D07","department":"Marketing","level":"Senior"},{"empId":"E0008","name":"나상호","deptCode":"D08","department":"Customer Success","level":"VP"},{"empId":"E0027","name":"손라은","deptCode":"D08","department":"Customer Success","level":"Senior"},{"empId":"E0028","name":"구석선","deptCode":"D08","department":"Customer Success","level":"Manager"},{"empId":"E0049","name":"서태건","deptCode":"D08","department":"Customer Success","level":"Senior"},{"empId":"E0057","name":"진미하","deptCode":"D08","department":"Customer Success","level":"Director"},{"empId":"E0067","name":"류나수","deptCode":"D08","department":"Customer Success","level":"Senior"},{"empId":"E0070","name":"정철라","deptCode":"D08","department":"Customer Success","level":"Manager"},{"empId":"E0074","name":"윤아라","deptCode":"D08","department":"Customer Success","level":"Manager"},{"empId":"E0075","name":"정정성","deptCode":"D08","department":"Customer Success","level":"Senior"},{"empId":"E0079","name":"류아예","deptCode":"D08","department":"Customer Success","level":"Lead"},{"empId":"E0101","name":"심채유","deptCode":"D08","department":"Customer Success","level":"Lead"},{"empId":"E0102","name":"손기유","deptCode":"D08","department":"Customer Success","level":"Lead"},{"empId":"E0106","name":"허원석","deptCode":"D08","department":"Customer Success","level":"IC3"},{"empId":"E0138","name":"유민철","deptCode":"D08","department":"Customer Success","level":"IC3"},{"empId":"E0151","name":"문예빈","deptCode":"D08","department":"Customer Success","level":"Senior"},{"empId":"E0152","name":"방서태","deptCode":"D08","department":"Customer Success","level":"IC3"},{"empId":"E0164","name":"윤동채","deptCode":"D08","department":"Customer Success","level":"Senior"},{"empId":"E0177","name":"심동원","deptCode":"D08","department":"Customer Success","level":"IC3"},{"empId":"E0179","name":"현선은","deptCode":"D08","department":"Customer Success","level":"Senior"},{"empId":"E0180","name":"유다영","deptCode":"D08","department":"Customer Success","level":"Senior"},{"empId":"E0205","name":"성승리","deptCode":"D08","department":"Customer Success","level":"Senior"},{"empId":"E0223","name":"허환혜","deptCode":"D08","department":"Customer Success","level":"Senior"},{"empId":"E0226","name":"방미재","deptCode":"D08","department":"Customer Success","level":"Senior"},{"empId":"E0235","name":"전혜주","deptCode":"D08","department":"Customer Success","level":"Senior"},{"empId":"E0239","name":"방하철","deptCode":"D08","department":"Customer Success","level":"Senior"},{"empId":"E0245","name":"차예서","deptCode":"D08","department":"Customer Success","level":"IC2"},{"empId":"E0289","name":"오성미","deptCode":"D08","department":"Customer Success","level":"IC2"},{"empId":"E0299","name":"민선민","deptCode":"D08","department":"Customer Success","level":"Senior"},{"empId":"E0302","name":"장율우","deptCode":"D08","department":"Customer Success","level":"IC2"},{"empId":"E0310","name":"주우동","deptCode":"D08","department":"Customer Success","level":"IC2"},{"empId":"E0315","name":"홍미선","deptCode":"D08","department":"Customer Success","level":"Senior"},{"empId":"E0317","name":"현경하","deptCode":"D08","department":"Customer Success","level":"Senior"},{"empId":"E0319","name":"엄민아","deptCode":"D08","department":"Customer Success","level":"IC2"},{"empId":"E0326","name":"천예아","deptCode":"D08","department":"Customer Success","level":"IC3"},{"empId":"E0347","name":"홍찬영","deptCode":"D08","department":"Customer Success","level":"IC1"},{"empId":"E0358","name":"임도주","deptCode":"D08","department":"Customer Success","level":"IC2"},{"empId":"E0376","name":"허은윤","deptCode":"D08","department":"Customer Success","level":"IC1"},{"empId":"E0377","name":"서현다","deptCode":"D08","department":"Customer Success","level":"IC2"},{"empId":"E0398","name":"천채석","deptCode":"D08","department":"Customer Success","level":"IC2"},{"empId":"E0401","name":"채석아","deptCode":"D08","department":"Customer Success","level":"IC1"},{"empId":"E0409","name":"나빈건","deptCode":"D08","department":"Customer Success","level":"IC1"},{"empId":"E0411","name":"우상지","deptCode":"D08","department":"Customer Success","level":"IC3"},{"empId":"E0414","name":"구건철","deptCode":"D08","department":"Customer Success","level":"IC1"},{"empId":"E0023","name":"엄환도","deptCode":"D09","department":"People","level":"VP"},{"empId":"E0082","name":"정우시","deptCode":"D09","department":"People","level":"Senior"},{"empId":"E0089","name":"손지민","deptCode":"D09","department":"People","level":"Director"},{"empId":"E0108","name":"송철환","deptCode":"D09","department":"People","level":"IC3"},{"empId":"E0124","name":"한아성","deptCode":"D09","department":"People","level":"Senior"},{"empId":"E0141","name":"배수환","deptCode":"D09","department":"People","level":"Lead"},{"empId":"E0169","name":"류예준","deptCode":"D09","department":"People","level":"Manager"},{"empId":"E0190","name":"유빈민","deptCode":"D09","department":"People","level":"Senior"},{"empId":"E0206","name":"양주상","deptCode":"D09","department":"People","level":"IC3"},{"empId":"E0266","name":"주동선","deptCode":"D09","department":"People","level":"IC2"},{"empId":"E0276","name":"홍진다","deptCode":"D09","department":"People","level":"IC3"},{"empId":"E0290","name":"남나혜","deptCode":"D09","department":"People","level":"IC3"},{"empId":"E0293","name":"성혜준","deptCode":"D09","department":"People","level":"IC3"},{"empId":"E0322","name":"송정정","deptCode":"D09","department":"People","level":"IC2"},{"empId":"E0328","name":"황시아","deptCode":"D09","department":"People","level":"IC3"},{"empId":"E0338","name":"고태정","deptCode":"D09","department":"People","level":"IC3"},{"empId":"E0340","name":"장현소","deptCode":"D09","department":"People","level":"IC1"},{"empId":"E0381","name":"곽철석","deptCode":"D09","department":"People","level":"IC2"},{"empId":"E0384","name":"문도영","deptCode":"D09","department":"People","level":"IC2"},{"empId":"E0002","name":"하훈희","deptCode":"D10","department":"Finance","level":"Director"},{"empId":"E0007","name":"백동희","deptCode":"D10","department":"Finance","level":"Director"},{"empId":"E0022","name":"민태시","deptCode":"D10","department":"Finance","level":"Senior"},{"empId":"E0051","name":"우동철","deptCode":"D10","department":"Finance","level":"Senior"},{"empId":"E0064","name":"허은선","deptCode":"D10","department":"Finance","level":"VP"},{"empId":"E0072","name":"서연경","deptCode":"D10","department":"Finance","level":"Senior"},{"empId":"E0084","name":"유재규","deptCode":"D10","department":"Finance","level":"Manager"},{"empId":"E0088","name":"주서우","deptCode":"D10","department":"Finance","level":"Senior"},{"empId":"E0103","name":"주정혜","deptCode":"D10","department":"Finance","level":"IC2"},{"empId":"E0144","name":"조윤기","deptCode":"D10","department":"Finance","level":"Lead"},{"empId":"E0153","name":"권찬빈","deptCode":"D10","department":"Finance","level":"Lead"},{"empId":"E0173","name":"원하하","deptCode":"D10","department":"Finance","level":"Senior"},{"empId":"E0182","name":"원수시","deptCode":"D10","department":"Finance","level":"Senior"},{"empId":"E0208","name":"공기윤","deptCode":"D10","department":"Finance","level":"Lead"},{"empId":"E0265","name":"장인나","deptCode":"D10","department":"Finance","level":"Senior"},{"empId":"E0372","name":"심라현","deptCode":"D10","department":"Finance","level":"IC2"},{"empId":"E0378","name":"차원채","deptCode":"D10","department":"Finance","level":"IC2"},{"empId":"E0403","name":"권상주","deptCode":"D10","department":"Finance","level":"IC1"},{"empId":"E0405","name":"강진라","deptCode":"D10","department":"Finance","level":"IC2"},{"empId":"E0408","name":"곽찬율","deptCode":"D10","department":"Finance","level":"Senior"}]}
+</script>
+<script src="../config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.js" crossorigin="anonymous"></script>
+<script>
+(function () {
+  var PRODUCT = 'onboard';
+  var DATA = null;
+  var CHARTS = {};
+  var CHECKLIST_FILTER = '';
+
+  /* ---------- 유틸 ---------- */
+  function $(id) { return document.getElementById(id); }
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function fmt(n) { return (n == null || isNaN(n)) ? '—' : Number(n).toLocaleString('ko-KR'); }
+  function pct(r) { return (r == null || isNaN(r)) ? '—' : (Number(r) * 100).toFixed(1) + '%'; }
+  function token(name) { return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
+  function parseDate(s) { if (!s) return null; var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(s); return m ? Date.UTC(+m[1], +m[2] - 1, +m[3]) : null; }
+  function daysBetween(a, b) { var x = parseDate(a), y = parseDate(b); if (x == null || y == null) return null; return Math.round((y - x) / 86400000); }
+  function addDays(s, n) { var t = parseDate(s); if (t == null) return null; var d = new Date(t + n * 86400000); return d.toISOString().slice(0, 10); }
+  function ddayLabel(n) { if (n == null) return '—'; if (n === 0) return 'D-0'; return n > 0 ? 'D-' + n : 'D+' + (-n); }
+  function ddayClass(n) { if (n == null) return ''; if (n <= 0) return 'd0'; if (n <= 3) return 'd3'; if (n <= 7) return 'd7'; return ''; }
+  function bandClass(b) { return b === '높음' ? 'band-high' : b === '중간' ? 'band-mid' : b === '낮음' ? 'band-low' : ''; }
+  function bandHtml(b) { return b ? '<span class="band ' + bandClass(b) + '">' + esc(b) + '</span>' : '<span class="muted">—</span>'; }
+  function flagsHtml(f) {
+    if (!f) return '<span class="badge badge-ok">플래그 없음</span>';
+    return String(f).split(/[;,|\s]+/).filter(Boolean).map(function (x) { return '<span class="badge badge-flag">' + esc(x) + '</span>'; }).join(' ');
+  }
+  function empty(path) { return '<p class="empty">데이터 없음 — ' + esc(path) + ' 미생성</p>'; }
+  function tile(label, value, sub, hl) {
+    return '<div class="tile' + (hl ? ' hl' : '') + '"><span class="tile-label">' + esc(label) + '</span><strong class="tile-value num">' + value + '</strong>' + (sub ? '<span class="tile-sub muted">' + sub + '</span>' : '') + '</div>';
+  }
+  function table(caption, heads, rows, cls) {
+    var h = '<table class="' + (cls || '') + '"><caption>' + esc(caption) + '</caption><thead><tr>';
+    heads.forEach(function (x) { h += '<th scope="col"' + (x.num ? ' class="num"' : '') + '>' + esc(x.label) + '</th>'; });
+    h += '</tr></thead><tbody>';
+    if (!rows.length) h += '<tr><td colspan="' + heads.length + '" class="muted">행 없음</td></tr>';
+    rows.forEach(function (r) { h += '<tr' + (r.cls ? ' class="' + r.cls + '"' : '') + '>' + r.cells.map(function (c, i) { return '<td' + (heads[i].num ? ' class="num"' : '') + (heads[i].cls ? ' class="' + heads[i].cls + '"' : '') + '>' + c + '</td>'; }).join('') + '</tr>'; });
+    return h + '</tbody></table>';
+  }
+
+  /* ---------- 조인 맵(표시 전용) ---------- */
+  function buildMaps(d) {
+    var op = d.onboardingPlan || {};
+    var dir = {}, deptName = {}, deptSize = {}, pj = {};
+    (d.hrDirectorySubset || []).forEach(function (r) { dir[r.empId] = r; deptName[r.deptCode] = r.department; deptSize[r.deptCode] = (deptSize[r.deptCode] || 0) + 1; });
+    (op.byDepartment || []).forEach(function (b) { deptName[b.deptCode] = b.department; });
+    var ea = op.earlyAttrition && op.earlyAttrition.byDepartment || {};
+    Object.keys(ea).forEach(function (k) { if (ea[k] && ea[k].department) deptName[k] = ea[k].department; });
+    (d.plannedJoiners || []).forEach(function (r) { pj[r.joinerId] = r; deptName[r.deptCode] = deptName[r.deptCode] || r.department; });
+    return { dir: dir, deptName: deptName, deptSize: deptSize, pj: pj };
+  }
+  function allJoiners(op) {
+    var out = [];
+    (op.timeline || []).forEach(function (w) { (w.joiners || []).forEach(function (j) { out.push(Object.assign({ week: w.week, weekStart: w.weekStart }, j)); }); });
+    return out;
+  }
+  function weekOf(op, asOf) {
+    var tl = op.timeline || [], thisStart = null, nextStart = null;
+    tl.forEach(function (w) { var n = daysBetween(w.weekStart, asOf); if (n != null && n >= 0 && n < 7) thisStart = w.weekStart; });
+    if (thisStart == null) { /* 타임라인에 이번 주가 없으면 ISO 월요일을 계산해 다음 주만 표시 */
+      var t = parseDate(asOf); if (t != null) { var dow = (new Date(t).getUTCDay() + 6) % 7; thisStart = addDays(asOf, -dow); }
+    }
+    nextStart = thisStart ? addDays(thisStart, 7) : null;
+    return { thisStart: thisStart, nextStart: nextStart };
+  }
+
+  /* ---------- 차트 ---------- */
+  function barChart(id, labels, datasets, opts) {
+    var wrap = $(id + '-wrap');
+    if (!window.Chart) { if (wrap) wrap.hidden = true; return; }
+    if (wrap) wrap.hidden = false;
+    if (CHARTS[id]) { CHARTS[id].destroy(); }
+    var ctx = $(id); if (!ctx) return;
+    CHARTS[id] = new Chart(ctx, {
+      type: 'bar',
+      data: { labels: labels, datasets: datasets.map(function (ds) { return Object.assign({ borderRadius: 0, maxBarThickness: 22 }, ds); }) },
+      options: { indexAxis: opts.horizontal ? 'y' : 'x', animation: false, responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: datasets.length > 1, labels: { color: token('--ink') } }, tooltip: { enabled: true } },
+        scales: { x: { stacked: !!opts.stacked, grid: { color: token('--line') }, ticks: { color: token('--ink-muted'), precision: 0 } },
+                  y: { stacked: !!opts.stacked, grid: { color: token('--line') }, ticks: { color: token('--ink-muted'), precision: 0 } } } }
+    });
+  }
+
+  /* ---------- 섹션 렌더 ---------- */
+  function renderHeader(d) {
+    var op = d.onboardingPlan || {};
+    $('meta-as-of').textContent = op.asOfDate || '—';
+    $('meta-horizon').textContent = (op.asOfDate || '—') + ' ~ ' + (op.horizonEnd || '—');
+    $('claims-as-of').textContent = op.asOfDate || '—';
+  }
+
+  function renderKpi(d, M) {
+    var op = d.onboardingPlan;
+    if (!op) { $('kpi-tiles').innerHTML = empty('data/stats/onboarding-plan.json'); return; }
+    var rec = op.provenance && op.provenance.reconciliation || {};
+    var wk = weekOf(op, op.asOfDate);
+    var thisW = (op.timeline || []).filter(function (w) { return w.weekStart === wk.thisStart; })[0];
+    var nextW = (op.timeline || []).filter(function (w) { return w.weekStart === wk.nextStart; })[0];
+    var coh = op.earlyTenureCohort || {}, ea = op.earlyAttrition || {};
+    var monthEnd = rec.monthEndJoiners;
+    var html = '';
+    html += tile('입사 예정 총원 (~' + (op.horizonEnd || 'horizon') + ')', fmt(rec.timelineJoiners), '타임라인 합계 = 정제 입사 예정 ' + fmt(rec.plannedJoinersValidRows) + '행 · ' + (rec.match ? '일치' : '불일치'));
+    html += tile('월말까지 입사 예정', fmt(monthEnd), '월말 예측 plannedIn ' + fmt(rec.forecastPlannedIn) + ' · ' + (rec.monthEndMatch ? '일치' : '불일치'));
+    html += tile('이번 주 입사', fmt(thisW ? thisW.joiners.length : 0), thisW ? esc(thisW.week) + ' · ' + esc(thisW.weekStart) + '~' : '타임라인에 이번 주 없음', true);
+    html += tile('다음 주 입사', fmt(nextW ? nextW.joiners.length : 0), nextW ? esc(nextW.week) + ' · ' + esc(nextW.weekStart) + '~' : '입사 예정 없음', true);
+    html += tile('입사 90일 코호트', fmt(coh.count), esc(coh.definition || ''));
+    html += tile('코호트 리스크 높음', fmt(coh.highRiskCount), '등급만 표시(점수 없음)');
+    html += tile('1년 미만 조기 이탈률', pct(ea.rate), '퇴사 예정 ' + fmt(ea.totalLeavers) + '명 중 ' + fmt(ea.under1YearLeavers) + '명');
+    $('kpi-tiles').innerHTML = html;
+    $('kpi-foot').innerHTML = '총원 ' + fmt(rec.timelineJoiners) + '은 horizonEnd(' + esc(op.horizonEnd) + ')까지의 타임라인 합계, ' + fmt(monthEnd) + '은 월말(9/30) 이전 입사분이다 — 인사 총괄(Insight)·급여(Payroll Close)의 월말 예측은 후자(19)만 센다. 두 값 모두 <code>onboardingPlan.provenance.reconciliation</code>에서 그대로 읽었다. 이번 주·다음 주 인원은 타임라인 주차별 카드 수(표시용 그룹, 대사 대상 아님).';
+  }
+
+  function renderTimeline(d, M) {
+    var op = d.onboardingPlan;
+    var box = $('timeline-weeks'), tbl = $('timeline-table');
+    if (!op || !op.timeline) { box.innerHTML = empty('data/stats/onboarding-plan.json timeline'); tbl.innerHTML = ''; return; }
+    var asOf = op.asOfDate, wk = weekOf(op, asOf);
+    var html = '';
+    op.timeline.forEach(function (w) {
+      var cls = w.weekStart === wk.thisStart ? ' this-week' : w.weekStart === wk.nextStart ? ' next-week' : '';
+      var tag = w.weekStart === wk.thisStart ? '<span class="badge badge-fill">이번 주</span>' : w.weekStart === wk.nextStart ? '<span class="badge badge-accent">다음 주</span>' : '';
+      html += '<article class="week' + cls + '" ' + (cls ? 'aria-current="true"' : '') + '><div class="week-head"><strong>' + esc(w.week) + '</strong><span class="muted num">' + esc(w.weekStart) + ' ~ ' + esc(addDays(w.weekStart, 6)) + '</span>' + tag + '<span class="badge">' + fmt((w.joiners || []).length) + '명</span></div>';
+      (w.joiners || []).forEach(function (j) {
+        var n = daysBetween(asOf, j.plannedHireDate);
+        var pj = M.pj[j.joinerId] || {};
+        var afterHorizon = op.horizonEnd && j.plannedHireDate > op.horizonEnd;
+        html += '<div class="joiner"><span class="who">' + esc(j.name) + ' <span class="muted">' + esc(j.joinerId) + '</span></span>' +
+          '<span class="dday ' + ddayClass(n) + '" title="기준일 ' + esc(asOf) + ' 기준">' + ddayLabel(n) + '</span>' +
+          '<span class="dept">' + esc(j.department) + ' <span class="muted">(' + esc(j.deptCode) + ')</span></span><span class="num muted">' + esc(j.plannedHireDate) + '</span>' +
+          '<span class="meta"><span>' + esc(j.employmentType) + '</span><span>' + esc(j.level) + '</span>' + (pj.jobFamily ? '<span>' + esc(pj.jobFamily) + '</span>' : '') + (afterHorizon ? '<span class="badge">horizon 이후</span>' : '') + flagsHtml(pj.unresolvedFlags) + '</span></div>';
+      });
+      if (!(w.joiners || []).length) html += '<p class="empty">입사 예정 없음</p>';
+      html += '</article>';
+    });
+    box.innerHTML = html;
+    var rows = allJoiners(op).map(function (j) {
+      var n = daysBetween(asOf, j.plannedHireDate), pj = M.pj[j.joinerId] || {};
+      return { cells: [esc(j.week), esc(j.plannedHireDate), '<span class="dday ' + ddayClass(n) + '">' + ddayLabel(n) + '</span>', esc(j.joinerId), esc(j.name), esc(j.department) + ' (' + esc(j.deptCode) + ')', esc(j.employmentType), esc(j.level), esc(pj.jobFamily || '—'), flagsHtml(pj.unresolvedFlags)] };
+    });
+    tbl.innerHTML = table('입사 예정자 ' + rows.length + '명 — 주차·입사일 순(onboardingPlan.timeline, plannedJoiners 조인)', [{ label: '주차' }, { label: '입사 예정일' }, { label: 'D-day' }, { label: 'joinerId' }, { label: '성명' }, { label: '조직' }, { label: '고용유형' }, { label: '레벨' }, { label: '직군' }, { label: '미해결 플래그' }], rows);
+    var flagged = (d.plannedJoiners || []).filter(function (r) { return r.unresolvedFlags; }).length;
+    $('timeline-foot').innerHTML = 'D-day는 기준일 ' + esc(asOf) + ' 기준 표시용 계산. 미해결 플래그는 <code>plannedJoiners[].unresolvedFlags</code>를 joinerId로 조인해 클린저 어휘 그대로 표시 — 현재 ' + fmt(flagged) + '건. 주차는 ISO 주(월요일 시작), 입사 예정이 없는 주는 타임라인에 없다.';
+  }
+
+  function renderDepartments(d, M) {
+    var op = d.onboardingPlan;
+    if (!op || !op.byDepartment) { $('dept-cards').innerHTML = empty('data/stats/onboarding-plan.json byDepartment'); $('dept-table').innerHTML = ''; $('dept-chart-wrap').hidden = true; return; }
+    var rows = op.byDepartment.slice().sort(function (a, b) { return (b.joiners - a.joiners) || (b.joinersByMonthEnd - a.joinersByMonthEnd) || String(a.deptCode).localeCompare(b.deptCode); });
+    var labels = rows.map(function (b) { return b.department; });
+    barChart('dept-chart', labels, [
+      { label: '월말까지', data: rows.map(function (b) { return b.joinersByMonthEnd; }), backgroundColor: token('--series-1') },
+      { label: '월말 이후(~horizonEnd)', data: rows.map(function (b) { return b.joiners - b.joinersByMonthEnd; }), backgroundColor: token('--series-3') }
+    ], { horizontal: true, stacked: true });
+    var joinersByDept = {};
+    allJoiners(op).forEach(function (j) { (joinersByDept[j.deptCode] = joinersByDept[j.deptCode] || []).push(j); });
+    var trows = rows.map(function (b) {
+      var lead = M.dir[b.deptLeadEmpId];
+      return { cls: b.joinersByMonthEnd >= 3 ? 'cluster' : '', cells: [esc(b.department) + ' <span class="muted">(' + esc(b.deptCode) + ')</span>', fmt(b.joiners), fmt(b.joinersByMonthEnd), fmt(b.joiners - b.joinersByMonthEnd), lead ? esc(lead.name) + ' <span class="muted">' + esc(b.deptLeadEmpId) + ' · ' + esc(lead.level) + '</span>' : (b.deptLeadEmpId ? esc(b.deptLeadEmpId) + ' <span class="muted">(명부 미조인)</span>' : '<span class="badge badge-flag">조직장 미정</span>'), fmt(M.deptSize[b.deptCode]), fmt((b.buddyCandidates || []).length), b.joinersByMonthEnd >= 3 ? '<span class="badge badge-accent">일괄 온보딩 대상</span>' : ''] };
+    });
+    $('dept-table').innerHTML = table('조직별 입사 예정 인원과 조직장(onboardingPlan.byDepartment · hrDirectorySubset 조인) — 입사 많은 순', [{ label: '조직' }, { label: '입사 예정(~horizon)', num: true }, { label: '월말까지', num: true }, { label: '월말 이후', num: true }, { label: '조직장(deptLeadEmpId)' }, { label: '현 조직 인원(명부)', num: true }, { label: '버디 후보', num: true }, { label: '' }], trows);
+    var html = '';
+    rows.forEach(function (b) {
+      var lead = M.dir[b.deptLeadEmpId];
+      var cluster = b.joinersByMonthEnd >= 3;
+      html += '<article class="card' + (cluster ? ' cluster' : '') + '"><div class="card-head"><strong>' + esc(b.department) + '</strong><span class="muted">' + esc(b.deptCode) + '</span><span class="badge">입사 ' + fmt(b.joiners) + '명 · 월말까지 ' + fmt(b.joinersByMonthEnd) + '</span>' + (cluster ? '<span class="badge badge-accent">3명 이상 — 일괄 온보딩</span>' : '') + '</div>';
+      html += '<dl><dt>조직장</dt><dd>' + (lead ? esc(lead.name) + ' <span class="muted">(' + esc(b.deptLeadEmpId) + ' · ' + esc(lead.level) + ')</span>' : (b.deptLeadEmpId ? esc(b.deptLeadEmpId) : '<span class="badge badge-flag">조직장 미정 — 임시 리더 요청(승인 gate)</span>')) + '</dd>' +
+        '<dt>현 조직 인원</dt><dd>' + fmt(M.deptSize[b.deptCode]) + '명 <span class="muted">(명부 부분집합 수, 표시용)</span></dd>' +
+        '<dt>입사 예정자</dt><dd>' + (joinersByDept[b.deptCode] || []).map(function (j) { return esc(j.name) + ' <span class="muted num">' + esc(j.plannedHireDate) + '</span>'; }).join('<br>') + '</dd></dl>';
+      var bc = b.buddyCandidates || [];
+      html += '<div class="table-wrap">' + table('버디 후보 (최대 3명 · 재직 2~6년 · 리스크 낮음)', [{ label: '성명' }, { label: '사번' }, { label: '재직(년)', num: true }, { label: '레벨' }, { label: '리스크 등급' }], bc.map(function (c) { return { cells: [esc(c.name), esc(c.empId), fmt(c.tenureYears), esc(c.level), bandHtml(c.riskBand)] }; })) + '</div>';
+      if (!bc.length) html += '<p class="empty">버디 후보 없음 — 인접 조직 후보 검토</p>';
+      html += '</article>';
+    });
+    $('dept-cards').innerHTML = html;
+    var clusters = rows.filter(function (b) { return b.joinersByMonthEnd >= 3; }).length;
+    var withBuddy = rows.filter(function (b) { return (b.buddyCandidates || []).length; }).length;
+    $('dept-foot').innerHTML = '일괄 온보딩 대상(월말 입사 3명 이상) ' + fmt(clusters) + '개 조직 · 버디 후보 ≥1인 조직 ' + fmt(withBuddy) + '/' + fmt(rows.length) + '. "월말 이후" 열과 현 조직 인원은 표시용 계산(대사 대상 아님). 조직장 규칙: ' + esc(op.provenance && op.provenance.deptLeadRule || '') + ' · 버디 규칙: ' + esc(op.provenance && op.provenance.buddyRule || '') + '.';
+  }
+
+  function renderChecklist(d, M) {
+    var op = d.onboardingPlan;
+    var ck = op && op.checklist;
+    if (!ck || !ck.items || !ck.status) { $('checklist-table').innerHTML = empty('data/stats/onboarding-plan.json checklist'); $('checklist-tiles').innerHTML = ''; return; }
+    var items = ck.items, joiners = {}, order = [];
+    allJoiners(op).forEach(function (j) { joiners[j.joinerId] = j; order.push(j.joinerId); });
+    var status = ck.status.slice().sort(function (a, b) { return order.indexOf(a.joinerId) - order.indexOf(b.joinerId); });
+    var total = status.length * items.length, done = 0, perItem = {};
+    items.forEach(function (it) { perItem[it] = 0; });
+    status.forEach(function (s) { items.forEach(function (it) { if (s[it] === 'done') { done++; perItem[it]++; } }); });
+    var q = CHECKLIST_FILTER.trim().toLowerCase();
+    var rows = status.filter(function (s) {
+      var j = joiners[s.joinerId] || {};
+      return !q || (String(j.name || '') + ' ' + String(j.department || '') + ' ' + s.joinerId).toLowerCase().indexOf(q) >= 0;
+    }).map(function (s) {
+      var j = joiners[s.joinerId] || {};
+      var n = daysBetween(op.asOfDate, j.plannedHireDate);
+      var dn = items.filter(function (it) { return s[it] === 'done'; }).length;
+      var cells = [esc(j.name || s.joinerId) + ' <span class="muted">' + esc(s.joinerId) + '</span>', esc(j.department || '—'), esc(j.plannedHireDate || '—') + ' <span class="dday ' + ddayClass(n) + '">' + ddayLabel(n) + '</span>'];
+      items.forEach(function (it) { var v = s[it]; cells.push(v === 'done' ? '<span class="badge st-done" title="done">완료</span>' : '<span class="badge st-pending" title="pending">대기</span>'); });
+      cells.push('<span class="bar-track"><span class="bar" style="width:' + Math.round(dn / items.length * 100) + '%"></span></span>' + dn + '/' + items.length);
+      return { cells: cells };
+    });
+    var heads = [{ label: '입사자' }, { label: '조직' }, { label: '입사일 · D-day' }];
+    items.forEach(function (it) { heads.push({ label: it, cls: 'st' }); });
+    heads.push({ label: '진행률' });
+    $('checklist-table').innerHTML = table('입사자 ' + status.length + '명 × ' + items.length + '항목 (onboardingPlan.checklist) — 완료 = done · 대기 = pending', heads, rows, 'matrix');
+    var tiles = tile('전체 완료율 (표시용)', total ? (done / total * 100).toFixed(1) + '%' : '—', fmt(done) + ' / ' + fmt(total) + ' 항목');
+    items.forEach(function (it) { tiles += tile(it, status.length ? Math.round(perItem[it] / status.length * 100) + '%' : '—', fmt(perItem[it]) + ' / ' + fmt(status.length) + '명 완료'); });
+    $('checklist-tiles').innerHTML = tiles;
+    $('checklist-foot').innerHTML = '<strong>목업</strong> — ' + esc(op.provenance && op.provenance.checklistNote || '체크리스트 상태는 가상 생성(seed 고정)이며 실제 진행 상태가 아니다') + ' (seed ' + esc(op.provenance && op.provenance.seed) + '). 완료율·진행률은 표시용 집계(대사 대상 아님).';
+  }
+
+  function renderNextMonth(d, M) {
+    var op = d.onboardingPlan;
+    if (!op || !op.byDepartment) { $('next-month-table').innerHTML = empty('data/stats/onboarding-plan.json byDepartment'); return; }
+    var monthEnd = (op.asOfDate || '').slice(0, 7) ? lastDayOfMonth(op.asOfDate) : null;
+    var byDept = {};
+    allJoiners(op).forEach(function (j) { if (monthEnd && j.plannedHireDate > monthEnd) (byDept[j.deptCode] = byDept[j.deptCode] || []).push(j); });
+    var rows = op.byDepartment.filter(function (b) { return b.joiners - b.joinersByMonthEnd > 0; }).sort(function (a, b) { return (b.joiners - b.joinersByMonthEnd) - (a.joiners - a.joinersByMonthEnd); }).map(function (b) {
+      var js = byDept[b.deptCode] || [];
+      return { cells: [esc(b.department) + ' <span class="muted">(' + esc(b.deptCode) + ')</span>', fmt(b.joiners - b.joinersByMonthEnd), js.map(function (j) { return esc(j.name) + ' <span class="muted num">' + esc(j.plannedHireDate) + ' · ' + esc(j.employmentType) + ' · ' + esc(j.level) + '</span>'; }).join('<br>') || '—'] };
+    });
+    var totalNext = op.byDepartment.reduce(function (s, b) { return s + (b.joiners - b.joinersByMonthEnd); }, 0);
+    $('next-month-table').innerHTML = table('월말(' + esc(monthEnd) + ') 이후 ~ ' + esc(op.horizonEnd) + ' 입사 예정 — 조직별 ' + fmt(totalNext) + '명', [{ label: '조직' }, { label: '입사 예정', num: true }, { label: '입사자 · 일자 · 고용유형 · 레벨' }], rows);
+    $('next-month-foot').innerHTML = '조직별 값은 <code>byDepartment[].joiners − joinersByMonthEnd</code>(표시용 뺄셈, 대사 대상 아님). 합계 ' + fmt(totalNext) + ' = 타임라인 총원 ' + fmt(op.provenance && op.provenance.reconciliation && op.provenance.reconciliation.timelineJoiners) + ' − 월말까지 ' + fmt(op.provenance && op.provenance.reconciliation && op.provenance.reconciliation.monthEndJoiners) + '. 월말 예측의 <code>nextMonth.plannedIn</code>은 이 스냅샷에 없어 대조하지 않았다(Insight에서 확인).';
+  }
+  function lastDayOfMonth(s) { var t = parseDate(s); if (t == null) return null; var d = new Date(t); var e = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, 0)); return e.toISOString().slice(0, 10); }
+
+  function renderCohort(d, M) {
+    var op = d.onboardingPlan;
+    var coh = op && op.earlyTenureCohort;
+    if (!coh || !coh.members) { $('cohort-table').innerHTML = empty('data/stats/onboarding-plan.json earlyTenureCohort'); $('cohort-tiles').innerHTML = ''; return; }
+    var rank = { '높음': 0, '중간': 1, '낮음': 2 };
+    var rows = coh.members.slice().sort(function (a, b) { return (rank[a.riskBand] == null ? 9 : rank[a.riskBand]) - (rank[b.riskBand] == null ? 9 : rank[b.riskBand]) || (b.daysSinceHire - a.daysSinceHire) || String(a.empId).localeCompare(b.empId); }).map(function (m) {
+      var stage = m.daysSinceHire >= 90 ? '90일 면담' : m.daysSinceHire >= 60 ? '60일 면담 구간' : m.daysSinceHire >= 30 ? '30일 면담 구간' : '입사 30일 이내';
+      return { cls: m.riskBand === '높음' ? 'risk-high' : '', cells: [esc(m.empId), esc(M.deptName[m.deptCode] || m.deptCode) + ' <span class="muted">(' + esc(m.deptCode) + ')</span>', esc(m.hireDate), fmt(m.daysSinceHire), bandHtml(m.riskBand), esc(stage)] };
+    });
+    $('cohort-tiles').innerHTML = tile('코호트 인원', fmt(coh.count), esc(coh.definition || '')) + tile('리스크 높음', fmt(coh.highRiskCount), '조직장 우선 전달 대상') + tile('사번만 표시', '—', '성명 없음 · 점수 없음(등급만)');
+    $('cohort-table').innerHTML = table('입사 90일 코호트 ' + rows.length + '명 (onboardingPlan.earlyTenureCohort.members) — 리스크 높음 먼저', [{ label: '사번' }, { label: '조직' }, { label: '입사일' }, { label: '경과일', num: true }, { label: '리스크 등급' }, { label: '면담 구간(표시용)' }], rows);
+    $('cohort-foot').innerHTML = '코호트는 사번·조직·입사일·경과일·등급만(pii-minimization-policy). 조직명은 조직 코드로 명부·조직표에서 조인한 표시용 라벨. 면담 구간은 경과일 30/60/90 기준 표시용 분류.';
+  }
+
+  function renderAttrition(d, M) {
+    var op = d.onboardingPlan;
+    var ea = op && op.earlyAttrition;
+    if (!ea) { $('attrition-table').innerHTML = empty('data/stats/onboarding-plan.json earlyAttrition'); $('attrition-tiles').innerHTML = ''; $('attrition-chart-wrap').hidden = true; return; }
+    $('attrition-tiles').innerHTML = tile('조기 이탈률', pct(ea.rate), esc(ea.definition || '')) + tile('1년 미만 퇴사 예정', fmt(ea.under1YearLeavers), '명') + tile('퇴사 예정 전체', fmt(ea.totalLeavers), '명 · 벤치마크 <10%는 참고치');
+    var by = ea.byDepartment || {};
+    var codes = Object.keys(by).sort(function (a, b) { return (by[b].under1YearLeavers - by[a].under1YearLeavers) || (by[b].totalLeavers - by[a].totalLeavers) || a.localeCompare(b); });
+    barChart('attrition-chart', codes.map(function (c) { return by[c].department || c; }), [
+      { label: '1년 미만', data: codes.map(function (c) { return by[c].under1YearLeavers; }), backgroundColor: token('--series-1') },
+      { label: '1년 이상', data: codes.map(function (c) { return by[c].totalLeavers - by[c].under1YearLeavers; }), backgroundColor: token('--series-4') }
+    ], { horizontal: true, stacked: true });
+    $('attrition-table').innerHTML = table('조직별 퇴사 예정자와 1년 미만 비율 (onboardingPlan.earlyAttrition.byDepartment)', [{ label: '조직' }, { label: '퇴사 예정', num: true }, { label: '1년 미만', num: true }, { label: '비율', num: true }], codes.map(function (c) { return { cls: by[c].under1YearLeavers > 0 ? 'risk-high' : '', cells: [esc(by[c].department || c) + ' <span class="muted">(' + esc(c) + ')</span>', fmt(by[c].totalLeavers), fmt(by[c].under1YearLeavers), pct(by[c].rate)] }; }));
+    $('attrition-foot').innerHTML = '차트의 "1년 이상" 막대는 totalLeavers − under1YearLeavers 표시용 뺄셈. 퇴사 예정 개인은 표시하지 않는다(집계만).';
+  }
+
+  function renderRecon(d) {
+    var op = d.onboardingPlan;
+    var rec = op && op.provenance && op.provenance.reconciliation;
+    if (!rec) { $('recon-table').innerHTML = empty('onboardingPlan.provenance.reconciliation'); return; }
+    var mark = function (ok) { return ok === true ? '<span class="badge badge-ok">일치</span>' : ok === false ? '<span class="badge badge-flag">불일치</span>' : '<span class="badge badge-neutral">미검사</span>'; };
+    $('recon-table').innerHTML = table('상류 스크립트의 대사 결과(onboardingPlan.provenance.reconciliation) — 페이지는 값을 맞추지 않는다', [{ label: '검사' }, { label: '왼쪽', num: true }, { label: '오른쪽', num: true }, { label: '결과' }], [
+      { cells: ['타임라인 입사자 합 = 정제 입사 예정 유효 행', fmt(rec.timelineJoiners), fmt(rec.plannedJoinersValidRows), mark(rec.match)] },
+      { cells: ['월말 이전 입사 예정 = 월말 예측 plannedIn', fmt(rec.monthEndJoiners), fmt(rec.forecastPlannedIn), mark(rec.monthEndMatch)] },
+      { cells: ['체크리스트 행 = 타임라인 입사자', fmt(op.checklist && op.checklist.status ? op.checklist.status.length : null), fmt(rec.timelineJoiners), mark(op.checklist && op.checklist.status ? op.checklist.status.length === rec.timelineJoiners : null)] }
+    ]);
+    var src = op.provenance.sources || [];
+    $('recon-foot').innerHTML = '생성 스크립트 <code>' + esc(op.provenance.script || '') + '</code> · 원천 ' + src.map(function (s) { return '<code>' + esc(s) + '</code>'; }).join(', ') + '. 이 검사는 상류의 자기 검사이며 독립 대사는 people-data-auditor(<code>tests/test_reconciliation.py</code>)가 한다.';
+  }
+
+  /* ---------- 전체 렌더(멱등) ---------- */
+  function render(d) {
+    DATA = d;
+    var M = buildMaps(d);
+    renderHeader(d);
+    renderKpi(d, M);
+    renderTimeline(d, M);
+    renderDepartments(d, M);
+    renderChecklist(d, M);
+    renderNextMonth(d, M);
+    renderCohort(d, M);
+    renderAttrition(d, M);
+    renderRecon(d);
+  }
+
+  /* ---------- 로딩 ---------- */
+  function readEmbedded() {
+    var el = $('report-data');
+    try { var t = el.textContent.trim(); if (!t || t === '{}') return null; return JSON.parse(t); } catch (e) { console.error('embedded JSON parse failed', e); return null; }
+  }
+  function setSource(kind, label) { var b = $('source-badge'); if (!b) return; b.dataset.source = kind; b.textContent = label; }
+  async function overlayFromSupabase() {
+    var cfg = window.ZEROHR_CONFIG;
+    if (!cfg || !cfg.supabaseUrl || !cfg.supabaseAnonKey) return;
+    var url = cfg.supabaseUrl.replace(/\/+$/, '') + '/rest/v1/report_snapshots?product=eq.' + encodeURIComponent(PRODUCT) + '&select=as_of_date,created_at,payload&order=created_at.desc&limit=1';
+    try {
+      var res = await fetch(url, { headers: { apikey: cfg.supabaseAnonKey, Authorization: 'Bearer ' + cfg.supabaseAnonKey, Accept: 'application/json' } });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      var rows = await res.json();
+      if (!rows.length || !rows[0].payload) throw new Error('no snapshot row');
+      render(rows[0].payload);
+      setSource('live', 'Supabase · ' + (rows[0].as_of_date || (rows[0].payload.onboardingPlan && rows[0].payload.onboardingPlan.asOfDate) || ''));
+    } catch (e) {
+      console.warn('report_snapshots fetch failed; keeping embedded data', e);
+      setSource('embedded', '내장 (실시간 조회 실패)');
+    }
+  }
+
+  /* ---------- 테마 토글 ---------- */
+  var THEMES = ['auto', 'light', 'dark'], THEME_LABEL = { auto: '자동', light: '라이트', dark: '다크' };
+  function applyTheme(t) {
+    if (t === 'auto') document.documentElement.removeAttribute('data-theme'); else document.documentElement.setAttribute('data-theme', t);
+    $('theme-toggle').textContent = '테마: ' + THEME_LABEL[t];
+    try { localStorage.setItem('zerohr-theme', t); } catch (e) {}
+    if (DATA) render(DATA);
+  }
+  var saved = 'auto'; try { saved = localStorage.getItem('zerohr-theme') || 'auto'; } catch (e) {}
+  if (THEMES.indexOf(saved) < 0) saved = 'auto';
+  $('theme-toggle').addEventListener('click', function () { var cur = document.documentElement.getAttribute('data-theme') || 'auto'; applyTheme(THEMES[(THEMES.indexOf(cur) + 1) % THEMES.length]); });
+  if (saved !== 'auto') { document.documentElement.setAttribute('data-theme', saved); $('theme-toggle').textContent = '테마: ' + THEME_LABEL[saved]; }
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function () { if (DATA) render(DATA); });
+
+  $('checklist-search').addEventListener('input', function (e) { CHECKLIST_FILTER = e.target.value || ''; if (DATA) renderChecklist(DATA, buildMaps(DATA)); });
+
+  var embedded = readEmbedded();
+  if (embedded) { render(embedded); setSource('embedded', '내장'); }
+  else {
+    setSource('embedded', '내장 데이터 없음');
+    ['kpi-tiles', 'timeline-weeks', 'dept-cards', 'checklist-table', 'next-month-table', 'cohort-table', 'attrition-table', 'recon-table'].forEach(function (id) { $(id).innerHTML = empty('site/data/onboard.json (build_snapshots.py --product onboard --embed)'); });
+  }
+  overlayFromSupabase();
+})();
+</script>
+</body>
+</html>

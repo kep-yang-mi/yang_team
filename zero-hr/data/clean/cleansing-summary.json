@@ -1,0 +1,238 @@
+{
+ "asOfDate": "2026-09-23",
+ "rowsIn": {
+  "headcount-master": 435,
+  "to-plan": 11,
+  "planned-joiners": 27,
+  "planned-leavers": 19
+ },
+ "rowsOut": {
+  "headcount-master": 427,
+  "to-plan": 11,
+  "planned-joiners": 27,
+  "planned-leavers": 19
+ },
+ "duplicatesRemoved": 8,
+ "correctionsByRule": {
+  "duplicate": 8,
+  "org-old-name": 6,
+  "code-variant": 33,
+  "hire-date-format": 31,
+  "status-inconsistency": 3,
+  "missing-required": 3,
+  "org-typo": 3,
+  "org-whitespace": 4,
+  "org-variant": 9,
+  "date-format": 15,
+  "org-unknown": 2,
+  "date-logic": 2,
+  "reason-freetext": 6,
+  "stale-planned-leaver": 1,
+  "unknown-emp": 1
+ },
+ "correctionsBySource": {
+  "headcount-master": {
+   "duplicate": 8,
+   "org-old-name": 6,
+   "code-variant": 32,
+   "hire-date-format": 31,
+   "status-inconsistency": 3,
+   "missing-required": 3,
+   "org-typo": 3,
+   "org-whitespace": 4,
+   "org-variant": 4,
+   "date-format": 6,
+   "org-unknown": 2,
+   "date-logic": 2
+  },
+  "to-plan": {
+   "date-format": 4,
+   "org-variant": 3
+  },
+  "planned-joiners": {
+   "org-variant": 2,
+   "date-format": 3,
+   "code-variant": 1
+  },
+  "planned-leavers": {
+   "reason-freetext": 6,
+   "stale-planned-leaver": 1,
+   "date-format": 2,
+   "unknown-emp": 1
+  }
+ },
+ "orgNameCorrections": 17,
+ "orgUnknown": 2,
+ "hireDateCorrections": 31,
+ "orgGroupMapping": {
+  "D01": "Executive",
+  "D02": "Build",
+  "D03": "Build",
+  "D04": "Build",
+  "D05": "Build",
+  "D06": "Go-To-Market",
+  "D07": "Go-To-Market",
+  "D08": "Go-To-Market",
+  "D09": "Operations",
+  "D10": "Operations",
+  "D11": "Operations"
+ },
+ "derivedFields": [
+  "ageBand",
+  "tenureYears",
+  "tenureYear",
+  "tenureBand",
+  "totalExperienceYears",
+  "totalExperienceBand",
+  "stage",
+  "orgGroupCode",
+  "orgGroup"
+ ],
+ "unresolvedCount": 12,
+ "unresolvedItems": [
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0031",
+    "rowIndex": 30
+   },
+   "field": "휴직유형",
+   "rawValue": "",
+   "flag": "status-inconsistency",
+   "question": "휴직 상태인데 휴직유형이 없습니다. 유형을 확인해 주세요 (기타로 임시 배정)"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0046",
+    "rowIndex": 45
+   },
+   "field": "계약종료일",
+   "rawValue": "",
+   "flag": "missing-required",
+   "question": "계약직인데 계약종료일이 없습니다. 계약종료일을 확인해 주세요"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0049",
+    "rowIndex": 48
+   },
+   "field": "휴직유형",
+   "rawValue": "",
+   "flag": "status-inconsistency",
+   "question": "휴직 상태인데 휴직유형이 없습니다. 유형을 확인해 주세요 (기타로 임시 배정)"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0273",
+    "rowIndex": 278
+   },
+   "field": "휴직유형",
+   "rawValue": "",
+   "flag": "status-inconsistency",
+   "question": "휴직 상태인데 휴직유형이 없습니다. 유형을 확인해 주세요 (기타로 임시 배정)"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0281",
+    "rowIndex": 286
+   },
+   "field": "소속",
+   "rawValue": "Platform",
+   "flag": "org-unknown",
+   "question": "어느 조직 소속입니까? (직군 Engineering 기준 Engineering으로 임시 배정)"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0306",
+    "rowIndex": 311
+   },
+   "field": "소속",
+   "rawValue": "Growth Lab",
+   "flag": "org-unknown",
+   "question": "어느 조직 소속입니까? (직군 Marketing 기준 Marketing으로 임시 배정)"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0350",
+    "rowIndex": 357
+   },
+   "field": "계약종료일",
+   "rawValue": "",
+   "flag": "missing-required",
+   "question": "인턴인데 계약종료일이 없습니다. 계약종료일을 확인해 주세요"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0370",
+    "rowIndex": 377
+   },
+   "field": "계약종료일",
+   "rawValue": "",
+   "flag": "missing-required",
+   "question": "인턴인데 계약종료일이 없습니다. 계약종료일을 확인해 주세요"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0426",
+    "rowIndex": 433
+   },
+   "field": "입사일",
+   "rawValue": "2026-10-10",
+   "flag": "date-logic",
+   "question": "재직 상태인데 입사일(2026-10-10)이 기준일 이후입니다. 입사일을 확인해 주세요 (재직기간 0으로 집계)"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0427",
+    "rowIndex": 434
+   },
+   "field": "입사일",
+   "rawValue": "2026-10-21",
+   "flag": "date-logic",
+   "question": "재직 상태인데 입사일(2026-10-21)이 기준일 이후입니다. 입사일을 확인해 주세요 (재직기간 0으로 집계)"
+  },
+  {
+   "source": "planned-leavers",
+   "rowRef": {
+    "사번": "E0251",
+    "rowIndex": 11
+   },
+   "field": "퇴사예정일",
+   "rawValue": "2026-09-15",
+   "flag": "stale-planned-leaver",
+   "question": "퇴사 예정일(2026-09-15)이 기준일 이전인데 마스터에는 재직 상태입니다. 실제 퇴사 여부를 확인해 주세요"
+  },
+  {
+   "source": "planned-leavers",
+   "rowRef": {
+    "사번": "E9999",
+    "rowIndex": 17
+   },
+   "field": "사번",
+   "rawValue": "E9999",
+   "flag": "unknown-emp",
+   "question": "마스터에 없는 사번입니다. 사번을 확인해 주세요 (예측에서 제외)"
+  }
+ ],
+ "warnings": [],
+ "provenance": {
+  "rawSources": {
+   "headcount-master": "data/raw/headcount-master.csv",
+   "to-plan": "data/raw/to-plan.csv",
+   "planned-joiners": "data/raw/planned-joiners.csv",
+   "planned-leavers": "data/raw/planned-leavers.csv"
+  },
+  "orgChart": "data/reference/org-chart.csv",
+  "stages": "data/reference/company-stages.json",
+  "script": ".claude/skills/people-data-cleansing/scripts/cleanse.py"
+ }
+}

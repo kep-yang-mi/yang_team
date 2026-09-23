@@ -1,0 +1,1532 @@
+{
+  "payrollClose": {
+    "asOfDate": "2026-09-23",
+    "payPeriod": "2026-09",
+    "periodStart": "2026-09-01",
+    "periodEnd": "2026-09-30",
+    "payrollHeadcount": {
+      "asOfActive": 406,
+      "asOfOnLeave": 21,
+      "asOfTotal": 427,
+      "monthEndActive": 411,
+      "monthEndTotal": 432,
+      "byEmploymentType": {
+        "정규직": {
+          "asOfTotal": 354,
+          "monthEndTotal": 361
+        },
+        "계약직": {
+          "asOfTotal": 31,
+          "monthEndTotal": 29
+        },
+        "인턴": {
+          "asOfTotal": 19,
+          "monthEndTotal": 19
+        },
+        "파견": {
+          "asOfTotal": 23,
+          "monthEndTotal": 23
+        }
+      },
+      "byDepartment": [
+        {
+          "deptCode": "D01",
+          "department": "CEO Office",
+          "asOfActive": 10,
+          "asOfOnLeave": 0,
+          "asOfTotal": 10,
+          "plannedIn": 0,
+          "plannedOut": 0,
+          "monthEndActive": 10,
+          "monthEndTotal": 10
+        },
+        {
+          "deptCode": "D02",
+          "department": "Product",
+          "asOfActive": 51,
+          "asOfOnLeave": 3,
+          "asOfTotal": 54,
+          "plannedIn": 3,
+          "plannedOut": 1,
+          "monthEndActive": 53,
+          "monthEndTotal": 56
+        },
+        {
+          "deptCode": "D03",
+          "department": "Engineering",
+          "asOfActive": 104,
+          "asOfOnLeave": 6,
+          "asOfTotal": 110,
+          "plannedIn": 5,
+          "plannedOut": 4,
+          "monthEndActive": 105,
+          "monthEndTotal": 111
+        },
+        {
+          "deptCode": "D04",
+          "department": "Design",
+          "asOfActive": 25,
+          "asOfOnLeave": 1,
+          "asOfTotal": 26,
+          "plannedIn": 1,
+          "plannedOut": 1,
+          "monthEndActive": 25,
+          "monthEndTotal": 26
+        },
+        {
+          "deptCode": "D05",
+          "department": "Data & AI",
+          "asOfActive": 40,
+          "asOfOnLeave": 2,
+          "asOfTotal": 42,
+          "plannedIn": 2,
+          "plannedOut": 1,
+          "monthEndActive": 41,
+          "monthEndTotal": 43
+        },
+        {
+          "deptCode": "D06",
+          "department": "Sales",
+          "asOfActive": 58,
+          "asOfOnLeave": 3,
+          "asOfTotal": 61,
+          "plannedIn": 3,
+          "plannedOut": 3,
+          "monthEndActive": 58,
+          "monthEndTotal": 61
+        },
+        {
+          "deptCode": "D07",
+          "department": "Marketing",
+          "asOfActive": 30,
+          "asOfOnLeave": 1,
+          "asOfTotal": 31,
+          "plannedIn": 1,
+          "plannedOut": 1,
+          "monthEndActive": 30,
+          "monthEndTotal": 31
+        },
+        {
+          "deptCode": "D08",
+          "department": "Customer Success",
+          "asOfActive": 40,
+          "asOfOnLeave": 3,
+          "asOfTotal": 43,
+          "plannedIn": 2,
+          "plannedOut": 1,
+          "monthEndActive": 41,
+          "monthEndTotal": 44
+        },
+        {
+          "deptCode": "D09",
+          "department": "People",
+          "asOfActive": 18,
+          "asOfOnLeave": 1,
+          "asOfTotal": 19,
+          "plannedIn": 1,
+          "plannedOut": 0,
+          "monthEndActive": 19,
+          "monthEndTotal": 20
+        },
+        {
+          "deptCode": "D10",
+          "department": "Finance",
+          "asOfActive": 19,
+          "asOfOnLeave": 1,
+          "asOfTotal": 20,
+          "plannedIn": 1,
+          "plannedOut": 1,
+          "monthEndActive": 19,
+          "monthEndTotal": 20
+        },
+        {
+          "deptCode": "D11",
+          "department": "Legal & Compliance",
+          "asOfActive": 11,
+          "asOfOnLeave": 0,
+          "asOfTotal": 11,
+          "plannedIn": 0,
+          "plannedOut": 1,
+          "monthEndActive": 10,
+          "monthEndTotal": 10
+        }
+      ]
+    },
+    "prorations": {
+      "joinersInPeriod": [
+        {
+          "empId": "E0419",
+          "name": "방경리",
+          "deptCode": "D02",
+          "hireDate": "2026-09-05",
+          "employmentType": "정규직",
+          "workedDays": 26,
+          "proratedRatio": 0.867
+        },
+        {
+          "empId": "E0420",
+          "name": "백재영",
+          "deptCode": "D05",
+          "hireDate": "2026-09-08",
+          "employmentType": "정규직",
+          "workedDays": 23,
+          "proratedRatio": 0.767
+        },
+        {
+          "empId": "E0422",
+          "name": "심준호",
+          "deptCode": "D07",
+          "hireDate": "2026-09-10",
+          "employmentType": "정규직",
+          "workedDays": 21,
+          "proratedRatio": 0.7
+        },
+        {
+          "empId": "E0424",
+          "name": "신영미",
+          "deptCode": "D06",
+          "hireDate": "2026-09-10",
+          "employmentType": "정규직",
+          "workedDays": 21,
+          "proratedRatio": 0.7
+        },
+        {
+          "empId": "E0425",
+          "name": "오찬찬",
+          "deptCode": "D02",
+          "hireDate": "2026-09-20",
+          "employmentType": "정규직",
+          "workedDays": 11,
+          "proratedRatio": 0.367
+        }
+      ],
+      "plannedJoinersByMonthEnd": [
+        {
+          "joinerId": "J014",
+          "name": "한아석",
+          "deptCode": "D05",
+          "plannedHireDate": "2026-09-24",
+          "workedDays": 7,
+          "proratedRatio": 0.233
+        },
+        {
+          "joinerId": "J020",
+          "name": "장건라",
+          "deptCode": "D03",
+          "plannedHireDate": "2026-09-24",
+          "workedDays": 7,
+          "proratedRatio": 0.233
+        },
+        {
+          "joinerId": "J021",
+          "name": "신원경",
+          "deptCode": "D08",
+          "plannedHireDate": "2026-09-24",
+          "workedDays": 7,
+          "proratedRatio": 0.233
+        },
+        {
+          "joinerId": "J003",
+          "name": "권재호",
+          "deptCode": "D09",
+          "plannedHireDate": "2026-09-25",
+          "workedDays": 6,
+          "proratedRatio": 0.2
+        },
+        {
+          "joinerId": "J015",
+          "name": "송유도",
+          "deptCode": "D02",
+          "plannedHireDate": "2026-09-25",
+          "workedDays": 6,
+          "proratedRatio": 0.2
+        },
+        {
+          "joinerId": "J016",
+          "name": "장민기",
+          "deptCode": "D06",
+          "plannedHireDate": "2026-09-25",
+          "workedDays": 6,
+          "proratedRatio": 0.2
+        },
+        {
+          "joinerId": "J022",
+          "name": "노우소",
+          "deptCode": "D07",
+          "plannedHireDate": "2026-09-25",
+          "workedDays": 6,
+          "proratedRatio": 0.2
+        },
+        {
+          "joinerId": "J023",
+          "name": "오주도",
+          "deptCode": "D06",
+          "plannedHireDate": "2026-09-25",
+          "workedDays": 6,
+          "proratedRatio": 0.2
+        },
+        {
+          "joinerId": "J007",
+          "name": "장소미",
+          "deptCode": "D03",
+          "plannedHireDate": "2026-09-26",
+          "workedDays": 5,
+          "proratedRatio": 0.167
+        },
+        {
+          "joinerId": "J013",
+          "name": "류라정",
+          "deptCode": "D06",
+          "plannedHireDate": "2026-09-26",
+          "workedDays": 5,
+          "proratedRatio": 0.167
+        },
+        {
+          "joinerId": "J025",
+          "name": "임희수",
+          "deptCode": "D08",
+          "plannedHireDate": "2026-09-26",
+          "workedDays": 5,
+          "proratedRatio": 0.167
+        },
+        {
+          "joinerId": "J002",
+          "name": "곽아주",
+          "deptCode": "D02",
+          "plannedHireDate": "2026-09-27",
+          "workedDays": 4,
+          "proratedRatio": 0.133
+        },
+        {
+          "joinerId": "J012",
+          "name": "심서찬",
+          "deptCode": "D03",
+          "plannedHireDate": "2026-09-27",
+          "workedDays": 4,
+          "proratedRatio": 0.133
+        },
+        {
+          "joinerId": "J024",
+          "name": "주은도",
+          "deptCode": "D03",
+          "plannedHireDate": "2026-09-28",
+          "workedDays": 3,
+          "proratedRatio": 0.1
+        },
+        {
+          "joinerId": "J026",
+          "name": "우소빈",
+          "deptCode": "D10",
+          "plannedHireDate": "2026-09-28",
+          "workedDays": 3,
+          "proratedRatio": 0.1
+        },
+        {
+          "joinerId": "J027",
+          "name": "유희윤",
+          "deptCode": "D02",
+          "plannedHireDate": "2026-09-28",
+          "workedDays": 3,
+          "proratedRatio": 0.1
+        },
+        {
+          "joinerId": "J008",
+          "name": "곽철연",
+          "deptCode": "D05",
+          "plannedHireDate": "2026-09-29",
+          "workedDays": 2,
+          "proratedRatio": 0.067
+        },
+        {
+          "joinerId": "J005",
+          "name": "공채건",
+          "deptCode": "D03",
+          "plannedHireDate": "2026-09-30",
+          "workedDays": 1,
+          "proratedRatio": 0.033
+        },
+        {
+          "joinerId": "J011",
+          "name": "최동주",
+          "deptCode": "D04",
+          "plannedHireDate": "2026-09-30",
+          "workedDays": 1,
+          "proratedRatio": 0.033
+        }
+      ],
+      "plannedLeaversByMonthEnd": [
+        {
+          "empId": "E0251",
+          "name": "이우율",
+          "deptCode": "D11",
+          "plannedTerminationDate": "2026-09-15",
+          "separationType": "비자발적",
+          "workedDays": 15,
+          "proratedRatio": 0.5
+        },
+        {
+          "empId": "E0361",
+          "name": "민상다",
+          "deptCode": "D03",
+          "plannedTerminationDate": "2026-09-25",
+          "separationType": "비자발적",
+          "workedDays": 25,
+          "proratedRatio": 0.833
+        },
+        {
+          "empId": "E0028",
+          "name": "구석선",
+          "deptCode": "D08",
+          "plannedTerminationDate": "2026-09-27",
+          "separationType": "자발적",
+          "workedDays": 27,
+          "proratedRatio": 0.9
+        },
+        {
+          "empId": "E0107",
+          "name": "지호혜",
+          "deptCode": "D07",
+          "plannedTerminationDate": "2026-09-28",
+          "separationType": "자발적",
+          "workedDays": 28,
+          "proratedRatio": 0.933
+        },
+        {
+          "empId": "E0112",
+          "name": "현규빈",
+          "deptCode": "D03",
+          "plannedTerminationDate": "2026-09-28",
+          "separationType": "비자발적",
+          "workedDays": 28,
+          "proratedRatio": 0.933
+        },
+        {
+          "empId": "E0015",
+          "name": "류훈원",
+          "deptCode": "D05",
+          "plannedTerminationDate": "2026-09-30",
+          "separationType": "비자발적",
+          "workedDays": 30,
+          "proratedRatio": 1.0
+        },
+        {
+          "empId": "E0064",
+          "name": "허은선",
+          "deptCode": "D10",
+          "plannedTerminationDate": "2026-09-30",
+          "separationType": "자발적",
+          "workedDays": 30,
+          "proratedRatio": 1.0
+        },
+        {
+          "empId": "E0077",
+          "name": "성훈희",
+          "deptCode": "D06",
+          "plannedTerminationDate": "2026-09-30",
+          "separationType": "자발적",
+          "workedDays": 30,
+          "proratedRatio": 1.0
+        },
+        {
+          "empId": "E0118",
+          "name": "원준재",
+          "deptCode": "D04",
+          "plannedTerminationDate": "2026-09-30",
+          "separationType": "자발적",
+          "workedDays": 30,
+          "proratedRatio": 1.0
+        },
+        {
+          "empId": "E0128",
+          "name": "손수아",
+          "deptCode": "D03",
+          "plannedTerminationDate": "2026-09-30",
+          "separationType": "자발적",
+          "workedDays": 30,
+          "proratedRatio": 1.0
+        },
+        {
+          "empId": "E0352",
+          "name": "안찬아",
+          "deptCode": "D03",
+          "plannedTerminationDate": "2026-09-30",
+          "separationType": "비자발적",
+          "workedDays": 30,
+          "proratedRatio": 1.0
+        },
+        {
+          "empId": "E0363",
+          "name": "서예채",
+          "deptCode": "D06",
+          "plannedTerminationDate": "2026-09-30",
+          "separationType": "자발적",
+          "workedDays": 30,
+          "proratedRatio": 1.0
+        },
+        {
+          "empId": "E0366",
+          "name": "남지미",
+          "deptCode": "D02",
+          "plannedTerminationDate": "2026-09-30",
+          "separationType": "비자발적",
+          "workedDays": 30,
+          "proratedRatio": 1.0
+        },
+        {
+          "empId": "E0395",
+          "name": "황윤상",
+          "deptCode": "D06",
+          "plannedTerminationDate": "2026-09-30",
+          "separationType": "비자발적",
+          "workedDays": 30,
+          "proratedRatio": 1.0
+        }
+      ]
+    },
+    "leaves": {
+      "onLeave": [
+        {
+          "empId": "E0169",
+          "name": "류예준",
+          "deptCode": "D09",
+          "leaveType": "질병휴직",
+          "leaveStart": "2025-09-27",
+          "payrollTreatment": "유급"
+        },
+        {
+          "empId": "E0216",
+          "name": "지소동",
+          "deptCode": "D03",
+          "leaveType": "육아휴직",
+          "leaveStart": "2025-09-29",
+          "payrollTreatment": "무급(정부 급여)"
+        },
+        {
+          "empId": "E0273",
+          "name": "차준석",
+          "deptCode": "D07",
+          "leaveType": "기타",
+          "leaveStart": "2025-10-24",
+          "payrollTreatment": "무급"
+        },
+        {
+          "empId": "E0321",
+          "name": "강철라",
+          "deptCode": "D02",
+          "leaveType": "육아휴직",
+          "leaveStart": "2025-11-28",
+          "payrollTreatment": "무급(정부 급여)"
+        },
+        {
+          "empId": "E0091",
+          "name": "홍훈승",
+          "deptCode": "D03",
+          "leaveType": "질병휴직",
+          "leaveStart": "2025-12-08",
+          "payrollTreatment": "유급"
+        },
+        {
+          "empId": "E0199",
+          "name": "최동동",
+          "deptCode": "D06",
+          "leaveType": "질병휴직",
+          "leaveStart": "2025-12-09",
+          "payrollTreatment": "유급"
+        },
+        {
+          "empId": "E0103",
+          "name": "주정혜",
+          "deptCode": "D10",
+          "leaveType": "질병휴직",
+          "leaveStart": "2025-12-14",
+          "payrollTreatment": "유급"
+        },
+        {
+          "empId": "E0302",
+          "name": "장율우",
+          "deptCode": "D08",
+          "leaveType": "육아휴직",
+          "leaveStart": "2026-01-12",
+          "payrollTreatment": "무급(정부 급여)"
+        },
+        {
+          "empId": "E0202",
+          "name": "최연철",
+          "deptCode": "D03",
+          "leaveType": "육아휴직",
+          "leaveStart": "2026-01-27",
+          "payrollTreatment": "무급(정부 급여)"
+        },
+        {
+          "empId": "E0111",
+          "name": "차철연",
+          "deptCode": "D05",
+          "leaveType": "육아휴직",
+          "leaveStart": "2026-02-04",
+          "payrollTreatment": "무급(정부 급여)"
+        },
+        {
+          "empId": "E0121",
+          "name": "류민리",
+          "deptCode": "D06",
+          "leaveType": "육아휴직",
+          "leaveStart": "2026-03-19",
+          "payrollTreatment": "무급(정부 급여)"
+        },
+        {
+          "empId": "E0307",
+          "name": "우혜다",
+          "deptCode": "D05",
+          "leaveType": "육아휴직",
+          "leaveStart": "2026-04-25",
+          "payrollTreatment": "무급(정부 급여)"
+        },
+        {
+          "empId": "E0359",
+          "name": "한리혜",
+          "deptCode": "D03",
+          "leaveType": "육아휴직",
+          "leaveStart": "2026-05-19",
+          "payrollTreatment": "무급(정부 급여)"
+        },
+        {
+          "empId": "E0299",
+          "name": "민선민",
+          "deptCode": "D08",
+          "leaveType": "육아휴직",
+          "leaveStart": "2026-05-21",
+          "payrollTreatment": "무급(정부 급여)"
+        },
+        {
+          "empId": "E0189",
+          "name": "성빈율",
+          "deptCode": "D02",
+          "leaveType": "육아휴직",
+          "leaveStart": "2026-05-25",
+          "payrollTreatment": "무급(정부 급여)"
+        },
+        {
+          "empId": "E0085",
+          "name": "정호현",
+          "deptCode": "D02",
+          "leaveType": "기타",
+          "leaveStart": "2026-07-02",
+          "payrollTreatment": "무급"
+        },
+        {
+          "empId": "E0161",
+          "name": "남동소",
+          "deptCode": "D03",
+          "leaveType": "육아휴직",
+          "leaveStart": "2026-07-23",
+          "payrollTreatment": "무급(정부 급여)"
+        },
+        {
+          "empId": "E0305",
+          "name": "우영라",
+          "deptCode": "D04",
+          "leaveType": "육아휴직",
+          "leaveStart": "2026-07-27",
+          "payrollTreatment": "무급(정부 급여)"
+        },
+        {
+          "empId": "E0031",
+          "name": "문민석",
+          "deptCode": "D06",
+          "leaveType": "기타",
+          "leaveStart": "2026-08-05",
+          "payrollTreatment": "무급"
+        },
+        {
+          "empId": "E0043",
+          "name": "홍서철",
+          "deptCode": "D03",
+          "leaveType": "질병휴직",
+          "leaveStart": "2026-08-06",
+          "payrollTreatment": "유급"
+        },
+        {
+          "empId": "E0049",
+          "name": "서태건",
+          "deptCode": "D08",
+          "leaveType": "기타",
+          "leaveStart": "2026-08-28",
+          "payrollTreatment": "무급"
+        }
+      ],
+      "byTreatment": {
+        "무급(정부 급여)": 12,
+        "유급": 5,
+        "무급": 4
+      }
+    },
+    "contracts": {
+      "expiringWithin90Days": [
+        {
+          "empId": "E0015",
+          "name": "류훈원",
+          "deptCode": "D05",
+          "employmentType": "계약직",
+          "contractEndDate": "2026-09-30"
+        },
+        {
+          "empId": "E0352",
+          "name": "안찬아",
+          "deptCode": "D03",
+          "employmentType": "인턴",
+          "contractEndDate": "2026-09-30"
+        },
+        {
+          "empId": "E0395",
+          "name": "황윤상",
+          "deptCode": "D06",
+          "employmentType": "인턴",
+          "contractEndDate": "2026-09-30"
+        },
+        {
+          "empId": "E0417",
+          "name": "구준주",
+          "deptCode": "D03",
+          "employmentType": "인턴",
+          "contractEndDate": "2026-10-03"
+        },
+        {
+          "empId": "E0327",
+          "name": "홍주아",
+          "deptCode": "D02",
+          "employmentType": "계약직",
+          "contractEndDate": "2026-10-05"
+        },
+        {
+          "empId": "E0227",
+          "name": "서경빈",
+          "deptCode": "D03",
+          "employmentType": "파견",
+          "contractEndDate": "2026-10-06"
+        },
+        {
+          "empId": "E0333",
+          "name": "전서상",
+          "deptCode": "D03",
+          "employmentType": "인턴",
+          "contractEndDate": "2026-10-10"
+        },
+        {
+          "empId": "E0372",
+          "name": "심라현",
+          "deptCode": "D10",
+          "employmentType": "인턴",
+          "contractEndDate": "2026-10-11"
+        },
+        {
+          "empId": "E0407",
+          "name": "현도아",
+          "deptCode": "D03",
+          "employmentType": "인턴",
+          "contractEndDate": "2026-10-22"
+        },
+        {
+          "empId": "E0236",
+          "name": "오정진",
+          "deptCode": "D06",
+          "employmentType": "인턴",
+          "contractEndDate": "2026-11-01"
+        },
+        {
+          "empId": "E0269",
+          "name": "강승다",
+          "deptCode": "D04",
+          "employmentType": "계약직",
+          "contractEndDate": "2026-11-06"
+        },
+        {
+          "empId": "E0143",
+          "name": "주혜상",
+          "deptCode": "D04",
+          "employmentType": "파견",
+          "contractEndDate": "2026-11-07"
+        },
+        {
+          "empId": "E0346",
+          "name": "송연찬",
+          "deptCode": "D03",
+          "employmentType": "인턴",
+          "contractEndDate": "2026-11-07"
+        },
+        {
+          "empId": "E0390",
+          "name": "홍태윤",
+          "deptCode": "D06",
+          "employmentType": "인턴",
+          "contractEndDate": "2026-11-07"
+        },
+        {
+          "empId": "E0079",
+          "name": "류아예",
+          "deptCode": "D08",
+          "employmentType": "파견",
+          "contractEndDate": "2026-11-09"
+        },
+        {
+          "empId": "E0090",
+          "name": "허경석",
+          "deptCode": "D03",
+          "employmentType": "계약직",
+          "contractEndDate": "2026-11-14"
+        },
+        {
+          "empId": "E0156",
+          "name": "엄은민",
+          "deptCode": "D03",
+          "employmentType": "파견",
+          "contractEndDate": "2026-11-14"
+        },
+        {
+          "empId": "E0392",
+          "name": "차라준",
+          "deptCode": "D03",
+          "employmentType": "계약직",
+          "contractEndDate": "2026-11-17"
+        },
+        {
+          "empId": "E0313",
+          "name": "지훈예",
+          "deptCode": "D03",
+          "employmentType": "인턴",
+          "contractEndDate": "2026-12-05"
+        },
+        {
+          "empId": "E0127",
+          "name": "채주채",
+          "deptCode": "D05",
+          "employmentType": "파견",
+          "contractEndDate": "2026-12-10"
+        },
+        {
+          "empId": "E0374",
+          "name": "강훈다",
+          "deptCode": "D07",
+          "employmentType": "인턴",
+          "contractEndDate": "2026-12-11"
+        },
+        {
+          "empId": "E0217",
+          "name": "최환우",
+          "deptCode": "D05",
+          "employmentType": "인턴",
+          "contractEndDate": "2026-12-13"
+        },
+        {
+          "empId": "E0388",
+          "name": "백상예",
+          "deptCode": "D06",
+          "employmentType": "계약직",
+          "contractEndDate": "2026-12-14"
+        },
+        {
+          "empId": "E0345",
+          "name": "민석태",
+          "deptCode": "D06",
+          "employmentType": "인턴",
+          "contractEndDate": "2026-12-19"
+        }
+      ],
+      "byMonth": {
+        "2026-09": 3,
+        "2026-10": 6,
+        "2026-11": 9,
+        "2026-12": 6
+      }
+    },
+    "risks": [
+      {
+        "empId": "E0251",
+        "issue": "퇴사 예정일이 이미 지남 → 월말 예측에서는 퇴사로 반영",
+        "impact": "퇴직 처리 누락 시 급여 과지급 위험",
+        "unresolvedFlag": "stale-planned-leaver"
+      },
+      {
+        "empId": "E9999",
+        "issue": "퇴사 예정자 사번이 마스터에 없음 → 예측 제외",
+        "impact": "퇴직 정산 대상 오류 위험",
+        "unresolvedFlag": "unknown-emp"
+      },
+      {
+        "empId": "E0426",
+        "issue": "입사일이 기준일 이후인데 재직/휴직",
+        "impact": "입사 전 급여 발생 위험",
+        "unresolvedFlag": "hire-after-as-of"
+      },
+      {
+        "empId": "E0427",
+        "issue": "입사일이 기준일 이후인데 재직/휴직",
+        "impact": "입사 전 급여 발생 위험",
+        "unresolvedFlag": "hire-after-as-of"
+      },
+      {
+        "empId": "E0046",
+        "issue": "계약직/인턴/파견인데 계약종료일 없음",
+        "impact": "계약 만료 급여 종료 시점 미확정 위험",
+        "unresolvedFlag": "missing-required"
+      },
+      {
+        "empId": "E0281",
+        "issue": "소속이 조직 체계에 없어 직군 기준 임시 배정",
+        "impact": "조직별 급여 대상 집계·비용 배부 오류 위험",
+        "unresolvedFlag": "org-unknown"
+      },
+      {
+        "empId": "E0306",
+        "issue": "소속이 조직 체계에 없어 직군 기준 임시 배정",
+        "impact": "조직별 급여 대상 집계·비용 배부 오류 위험",
+        "unresolvedFlag": "org-unknown"
+      },
+      {
+        "empId": "E0350",
+        "issue": "계약직/인턴/파견인데 계약종료일 없음",
+        "impact": "계약 만료 급여 종료 시점 미확정 위험",
+        "unresolvedFlag": "missing-required"
+      },
+      {
+        "empId": "E0370",
+        "issue": "계약직/인턴/파견인데 계약종료일 없음",
+        "impact": "계약 만료 급여 종료 시점 미확정 위험",
+        "unresolvedFlag": "missing-required"
+      },
+      {
+        "empId": "E0426",
+        "issue": "재직인데 입사일이 기준일 이후(플래그, 재직기간 0)",
+        "impact": "입사 전 급여 발생·일할 계산 오류 위험",
+        "unresolvedFlag": "date-logic"
+      },
+      {
+        "empId": "E0427",
+        "issue": "재직인데 입사일이 기준일 이후(플래그, 재직기간 0)",
+        "impact": "입사 전 급여 발생·일할 계산 오류 위험",
+        "unresolvedFlag": "date-logic"
+      },
+      {
+        "empId": "E0031",
+        "issue": "휴직인데 휴직유형 없음 → 기타로 보정(미확인)",
+        "impact": "휴직 급여 처리 구분 오류 위험",
+        "unresolvedFlag": "status-inconsistency"
+      },
+      {
+        "empId": "E0049",
+        "issue": "휴직인데 휴직유형 없음 → 기타로 보정(미확인)",
+        "impact": "휴직 급여 처리 구분 오류 위험",
+        "unresolvedFlag": "status-inconsistency"
+      },
+      {
+        "empId": "E0273",
+        "issue": "휴직인데 휴직유형 없음 → 기타로 보정(미확인)",
+        "impact": "휴직 급여 처리 구분 오류 위험",
+        "unresolvedFlag": "status-inconsistency"
+      }
+    ],
+    "checklist": [
+      {
+        "item": "당월 입사자 일할 계산 확인",
+        "count": 5,
+        "status": "pending"
+      },
+      {
+        "item": "월말까지 입사 예정자 급여 등록 준비",
+        "count": 19,
+        "status": "pending"
+      },
+      {
+        "item": "월말까지 퇴사 예정자 최종 정산 준비",
+        "count": 14,
+        "status": "pending"
+      },
+      {
+        "item": "휴직자 급여 처리 구분 확인",
+        "count": 21,
+        "status": "pending"
+      },
+      {
+        "item": "90일 내 계약 만료자 갱신·종료 확인",
+        "count": 24,
+        "status": "pending"
+      },
+      {
+        "item": "급여 오류 위험(미해결 항목) 확인",
+        "count": 14,
+        "status": "pending"
+      },
+      {
+        "item": "급여 대상 인원 월말 예측 대사(forecastMonthEnd == monthEndActive)",
+        "count": 0,
+        "status": "done"
+      }
+    ],
+    "provenance": {
+      "sources": [
+        "data/clean/headcount-master.clean.csv",
+        "data/clean/planned-joiners.clean.csv",
+        "data/clean/planned-leavers.clean.csv",
+        "data/stats/month-end-forecast.json",
+        "data/reference/org-chart.csv",
+        "personas/persona-needs.json"
+      ],
+      "script": ".claude/skills/payroll-close/scripts/payroll_close.py",
+      "asOfDate": "2026-09-23",
+      "rules": {
+        "payrollHeadcount": "급여 대상 = 재직 + 휴직(총원). monthEndActive = 재직 + plannedIn − plannedOut(재직자만), monthEndTotal = 총원 + plannedIn − plannedOut(휴직자 포함)",
+        "plannedIn": "정제 입사 예정자 중 예정일 ≤ 월말",
+        "plannedOut": "정제 퇴사 예정자 중 예정일 ≤ 월말, 마스터에 없는 사번(unknown-emp) 제외, stale 포함",
+        "proratedRatio": "당월 근무일수 / 30, 소수 3자리",
+        "leaveTreatment": {
+          "육아휴직": "무급(정부 급여)",
+          "질병휴직": "유급",
+          "기타": "무급"
+        },
+        "contractWindowDays": 90,
+        "derivedFlags": [
+          "contract-expired-active",
+          "hire-after-as-of",
+          "leaver-not-active"
+        ],
+        "pii": "성명 포함(급여 업무), 생년월일·연령대·급여액 없음"
+      },
+      "reconciliation": {
+        "recomputedMonthEndActive": 411,
+        "forecastMonthEnd": 411,
+        "matched": true,
+        "byDepartmentMismatches": [],
+        "statsActiveHeadcount": 406,
+        "statsOnLeave": 21,
+        "statsMatched": true,
+        "internal": {
+          "byDepartmentAsOfTotal": true,
+          "byDepartmentMonthEndActive": true,
+          "byDepartmentMonthEndTotal": true,
+          "byEmploymentTypeAsOfTotal": true,
+          "byEmploymentTypeMonthEndTotal": true,
+          "byTreatmentSum": true,
+          "contractsByMonthSum": true
+        }
+      },
+      "personaNeeds": {
+        "applied": true,
+        "missingFields": [],
+        "missingCriteria": [],
+        "unverifiable": []
+      },
+      "warnings": []
+    }
+  },
+  "statsSubset": {
+    "asOfDate": "2026-09-23",
+    "client": "㈜온다테크",
+    "totals": {
+      "headcount": 427,
+      "activeHeadcount": 406,
+      "onLeave": 21,
+      "toHeadcount": 422,
+      "toGapAsOf": -16,
+      "plannedIn": 19,
+      "plannedOut": 14,
+      "unresolvedCount": 10
+    },
+    "byOrgGroup": [
+      {
+        "orgGroupCode": "G0",
+        "orgGroup": "Executive",
+        "activeHeadcount": 10,
+        "onLeave": 0,
+        "headcount": 10,
+        "toHeadcount": 10,
+        "toGapAsOf": 0
+      },
+      {
+        "orgGroupCode": "G1",
+        "orgGroup": "Build",
+        "activeHeadcount": 220,
+        "onLeave": 12,
+        "headcount": 232,
+        "toHeadcount": 226,
+        "toGapAsOf": -6
+      },
+      {
+        "orgGroupCode": "G2",
+        "orgGroup": "Go-To-Market",
+        "activeHeadcount": 128,
+        "onLeave": 7,
+        "headcount": 135,
+        "toHeadcount": 136,
+        "toGapAsOf": -8
+      },
+      {
+        "orgGroupCode": "G3",
+        "orgGroup": "Operations",
+        "activeHeadcount": 48,
+        "onLeave": 2,
+        "headcount": 50,
+        "toHeadcount": 50,
+        "toGapAsOf": -2
+      }
+    ],
+    "byDepartment": [
+      {
+        "deptCode": "D01",
+        "department": "CEO Office",
+        "orgGroupCode": "G0",
+        "orgGroup": "Executive",
+        "activeHeadcount": 10,
+        "onLeave": 0,
+        "headcount": 10,
+        "toHeadcount": 10,
+        "toGapAsOf": 0
+      },
+      {
+        "deptCode": "D02",
+        "department": "Product",
+        "orgGroupCode": "G1",
+        "orgGroup": "Build",
+        "activeHeadcount": 51,
+        "onLeave": 3,
+        "headcount": 54,
+        "toHeadcount": 54,
+        "toGapAsOf": -3
+      },
+      {
+        "deptCode": "D03",
+        "department": "Engineering",
+        "orgGroupCode": "G1",
+        "orgGroup": "Build",
+        "activeHeadcount": 104,
+        "onLeave": 6,
+        "headcount": 110,
+        "toHeadcount": 112,
+        "toGapAsOf": -8
+      },
+      {
+        "deptCode": "D04",
+        "department": "Design",
+        "orgGroupCode": "G1",
+        "orgGroup": "Build",
+        "activeHeadcount": 25,
+        "onLeave": 1,
+        "headcount": 26,
+        "toHeadcount": 26,
+        "toGapAsOf": -1
+      },
+      {
+        "deptCode": "D05",
+        "department": "Data & AI",
+        "orgGroupCode": "G1",
+        "orgGroup": "Build",
+        "activeHeadcount": 40,
+        "onLeave": 2,
+        "headcount": 42,
+        "toHeadcount": 34,
+        "toGapAsOf": 6
+      },
+      {
+        "deptCode": "D06",
+        "department": "Sales",
+        "orgGroupCode": "G2",
+        "orgGroup": "Go-To-Market",
+        "activeHeadcount": 58,
+        "onLeave": 3,
+        "headcount": 61,
+        "toHeadcount": 62,
+        "toGapAsOf": -4
+      },
+      {
+        "deptCode": "D07",
+        "department": "Marketing",
+        "orgGroupCode": "G2",
+        "orgGroup": "Go-To-Market",
+        "activeHeadcount": 30,
+        "onLeave": 1,
+        "headcount": 31,
+        "toHeadcount": 32,
+        "toGapAsOf": -2
+      },
+      {
+        "deptCode": "D08",
+        "department": "Customer Success",
+        "orgGroupCode": "G2",
+        "orgGroup": "Go-To-Market",
+        "activeHeadcount": 40,
+        "onLeave": 3,
+        "headcount": 43,
+        "toHeadcount": 42,
+        "toGapAsOf": -2
+      },
+      {
+        "deptCode": "D09",
+        "department": "People",
+        "orgGroupCode": "G3",
+        "orgGroup": "Operations",
+        "activeHeadcount": 18,
+        "onLeave": 1,
+        "headcount": 19,
+        "toHeadcount": 18,
+        "toGapAsOf": 0
+      },
+      {
+        "deptCode": "D10",
+        "department": "Finance",
+        "orgGroupCode": "G3",
+        "orgGroup": "Operations",
+        "activeHeadcount": 19,
+        "onLeave": 1,
+        "headcount": 20,
+        "toHeadcount": 20,
+        "toGapAsOf": -1
+      },
+      {
+        "deptCode": "D11",
+        "department": "Legal & Compliance",
+        "orgGroupCode": "G3",
+        "orgGroup": "Operations",
+        "activeHeadcount": 11,
+        "onLeave": 0,
+        "headcount": 11,
+        "toHeadcount": 12,
+        "toGapAsOf": -1
+      }
+    ],
+    "byAttributeAll": {
+      "employmentType": {
+        "정규직": 354,
+        "계약직": 31,
+        "인턴": 19,
+        "파견": 23
+      },
+      "status": {
+        "재직": 406,
+        "휴직": 21
+      },
+      "leaveType": {
+        "육아휴직": 12,
+        "질병휴직": 5,
+        "기타": 4
+      }
+    },
+    "byAttribute": {
+      "employmentType": {
+        "정규직": 335,
+        "계약직": 29,
+        "인턴": 19,
+        "파견": 23
+      }
+    },
+    "crossTabs": {
+      "departmentByEmploymentType": {
+        "CEO Office": {
+          "정규직": 10,
+          "계약직": 0,
+          "인턴": 0,
+          "파견": 0
+        },
+        "Product": {
+          "정규직": 45,
+          "계약직": 2,
+          "인턴": 1,
+          "파견": 3
+        },
+        "Engineering": {
+          "정규직": 83,
+          "계약직": 8,
+          "인턴": 7,
+          "파견": 6
+        },
+        "Design": {
+          "정규직": 23,
+          "계약직": 1,
+          "인턴": 0,
+          "파견": 1
+        },
+        "Data & AI": {
+          "정규직": 33,
+          "계약직": 4,
+          "인턴": 1,
+          "파견": 2
+        },
+        "Sales": {
+          "정규직": 42,
+          "계약직": 7,
+          "인턴": 4,
+          "파견": 5
+        },
+        "Marketing": {
+          "정규직": 27,
+          "계약직": 0,
+          "인턴": 2,
+          "파견": 1
+        },
+        "Customer Success": {
+          "정규직": 34,
+          "계약직": 3,
+          "인턴": 0,
+          "파견": 3
+        },
+        "People": {
+          "정규직": 17,
+          "계약직": 1,
+          "인턴": 0,
+          "파견": 0
+        },
+        "Finance": {
+          "정규직": 14,
+          "계약직": 2,
+          "인턴": 1,
+          "파견": 2
+        },
+        "Legal & Compliance": {
+          "정규직": 7,
+          "계약직": 1,
+          "인턴": 3,
+          "파견": 0
+        }
+      }
+    },
+    "provenance": {
+      "source": "data/clean/headcount-master.clean.csv",
+      "script": ".claude/skills/headcount-stats/scripts/compute_stats.py"
+    }
+  },
+  "cleansingSummary": {
+    "asOfDate": "2026-09-23",
+    "rowsIn": {
+      "headcount-master": 435,
+      "to-plan": 11,
+      "planned-joiners": 27,
+      "planned-leavers": 19
+    },
+    "rowsOut": {
+      "headcount-master": 427,
+      "to-plan": 11,
+      "planned-joiners": 27,
+      "planned-leavers": 19
+    },
+    "duplicatesRemoved": 8,
+    "correctionsByRule": {
+      "duplicate": 8,
+      "org-old-name": 6,
+      "code-variant": 33,
+      "hire-date-format": 31,
+      "status-inconsistency": 3,
+      "missing-required": 3,
+      "org-typo": 3,
+      "org-whitespace": 4,
+      "org-variant": 9,
+      "date-format": 15,
+      "org-unknown": 2,
+      "date-logic": 2,
+      "reason-freetext": 6,
+      "stale-planned-leaver": 1,
+      "unknown-emp": 1
+    },
+    "correctionsBySource": {
+      "headcount-master": {
+        "duplicate": 8,
+        "org-old-name": 6,
+        "code-variant": 32,
+        "hire-date-format": 31,
+        "status-inconsistency": 3,
+        "missing-required": 3,
+        "org-typo": 3,
+        "org-whitespace": 4,
+        "org-variant": 4,
+        "date-format": 6,
+        "org-unknown": 2,
+        "date-logic": 2
+      },
+      "to-plan": {
+        "date-format": 4,
+        "org-variant": 3
+      },
+      "planned-joiners": {
+        "org-variant": 2,
+        "date-format": 3,
+        "code-variant": 1
+      },
+      "planned-leavers": {
+        "reason-freetext": 6,
+        "stale-planned-leaver": 1,
+        "date-format": 2,
+        "unknown-emp": 1
+      }
+    },
+    "orgNameCorrections": 17,
+    "orgUnknown": 2,
+    "hireDateCorrections": 31,
+    "orgGroupMapping": {
+      "D01": "Executive",
+      "D02": "Build",
+      "D03": "Build",
+      "D04": "Build",
+      "D05": "Build",
+      "D06": "Go-To-Market",
+      "D07": "Go-To-Market",
+      "D08": "Go-To-Market",
+      "D09": "Operations",
+      "D10": "Operations",
+      "D11": "Operations"
+    },
+    "derivedFields": [
+      "ageBand",
+      "tenureYears",
+      "tenureYear",
+      "tenureBand",
+      "totalExperienceYears",
+      "totalExperienceBand",
+      "stage",
+      "orgGroupCode",
+      "orgGroup"
+    ],
+    "unresolvedCount": 12,
+    "unresolvedItems": [
+      {
+        "source": "headcount-master",
+        "rowRef": {
+          "사번": "E0031",
+          "rowIndex": 30
+        },
+        "field": "휴직유형",
+        "rawValue": "",
+        "flag": "status-inconsistency",
+        "question": "휴직 상태인데 휴직유형이 없습니다. 유형을 확인해 주세요 (기타로 임시 배정)"
+      },
+      {
+        "source": "headcount-master",
+        "rowRef": {
+          "사번": "E0046",
+          "rowIndex": 45
+        },
+        "field": "계약종료일",
+        "rawValue": "",
+        "flag": "missing-required",
+        "question": "계약직인데 계약종료일이 없습니다. 계약종료일을 확인해 주세요"
+      },
+      {
+        "source": "headcount-master",
+        "rowRef": {
+          "사번": "E0049",
+          "rowIndex": 48
+        },
+        "field": "휴직유형",
+        "rawValue": "",
+        "flag": "status-inconsistency",
+        "question": "휴직 상태인데 휴직유형이 없습니다. 유형을 확인해 주세요 (기타로 임시 배정)"
+      },
+      {
+        "source": "headcount-master",
+        "rowRef": {
+          "사번": "E0273",
+          "rowIndex": 278
+        },
+        "field": "휴직유형",
+        "rawValue": "",
+        "flag": "status-inconsistency",
+        "question": "휴직 상태인데 휴직유형이 없습니다. 유형을 확인해 주세요 (기타로 임시 배정)"
+      },
+      {
+        "source": "headcount-master",
+        "rowRef": {
+          "사번": "E0281",
+          "rowIndex": 286
+        },
+        "field": "소속",
+        "rawValue": "Platform",
+        "flag": "org-unknown",
+        "question": "어느 조직 소속입니까? (직군 Engineering 기준 Engineering으로 임시 배정)"
+      },
+      {
+        "source": "headcount-master",
+        "rowRef": {
+          "사번": "E0306",
+          "rowIndex": 311
+        },
+        "field": "소속",
+        "rawValue": "Growth Lab",
+        "flag": "org-unknown",
+        "question": "어느 조직 소속입니까? (직군 Marketing 기준 Marketing으로 임시 배정)"
+      },
+      {
+        "source": "headcount-master",
+        "rowRef": {
+          "사번": "E0350",
+          "rowIndex": 357
+        },
+        "field": "계약종료일",
+        "rawValue": "",
+        "flag": "missing-required",
+        "question": "인턴인데 계약종료일이 없습니다. 계약종료일을 확인해 주세요"
+      },
+      {
+        "source": "headcount-master",
+        "rowRef": {
+          "사번": "E0370",
+          "rowIndex": 377
+        },
+        "field": "계약종료일",
+        "rawValue": "",
+        "flag": "missing-required",
+        "question": "인턴인데 계약종료일이 없습니다. 계약종료일을 확인해 주세요"
+      },
+      {
+        "source": "headcount-master",
+        "rowRef": {
+          "사번": "E0426",
+          "rowIndex": 433
+        },
+        "field": "입사일",
+        "rawValue": "2026-10-10",
+        "flag": "date-logic",
+        "question": "재직 상태인데 입사일(2026-10-10)이 기준일 이후입니다. 입사일을 확인해 주세요 (재직기간 0으로 집계)"
+      },
+      {
+        "source": "headcount-master",
+        "rowRef": {
+          "사번": "E0427",
+          "rowIndex": 434
+        },
+        "field": "입사일",
+        "rawValue": "2026-10-21",
+        "flag": "date-logic",
+        "question": "재직 상태인데 입사일(2026-10-21)이 기준일 이후입니다. 입사일을 확인해 주세요 (재직기간 0으로 집계)"
+      },
+      {
+        "source": "planned-leavers",
+        "rowRef": {
+          "사번": "E0251",
+          "rowIndex": 11
+        },
+        "field": "퇴사예정일",
+        "rawValue": "2026-09-15",
+        "flag": "stale-planned-leaver",
+        "question": "퇴사 예정일(2026-09-15)이 기준일 이전인데 마스터에는 재직 상태입니다. 실제 퇴사 여부를 확인해 주세요"
+      },
+      {
+        "source": "planned-leavers",
+        "rowRef": {
+          "사번": "E9999",
+          "rowIndex": 17
+        },
+        "field": "사번",
+        "rawValue": "E9999",
+        "flag": "unknown-emp",
+        "question": "마스터에 없는 사번입니다. 사번을 확인해 주세요 (예측에서 제외)"
+      }
+    ],
+    "warnings": [],
+    "provenance": {
+      "rawSources": {
+        "headcount-master": "data/raw/headcount-master.csv",
+        "to-plan": "data/raw/to-plan.csv",
+        "planned-joiners": "data/raw/planned-joiners.csv",
+        "planned-leavers": "data/raw/planned-leavers.csv"
+      },
+      "orgChart": "data/reference/org-chart.csv",
+      "stages": "data/reference/company-stages.json",
+      "script": ".claude/skills/people-data-cleansing/scripts/cleanse.py"
+    }
+  }
+}

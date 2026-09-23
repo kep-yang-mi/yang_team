@@ -1,0 +1,17 @@
+# secrets
+.env.local
+.env*
+!.env.example
+# tooling
+.vercel/
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+# workspace noise (keep handoff logs and run_meta)
+_workspace/*.log
+_workspace/npm-install.log
+supabase/.temp/
+site/config.js
+_workspace/jev-cache/
+supabase/migrations/

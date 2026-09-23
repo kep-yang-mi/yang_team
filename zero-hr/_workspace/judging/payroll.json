@@ -1,0 +1,127 @@
+{
+  "status": "ok",
+  "judge": "persona-advocate:payroll",
+  "persona": "payroll",
+  "asOfDate": "2026-09-23",
+  "rubric": ".claude/skills/product-judge/references/rubric-payroll.md",
+  "scores": {
+    "insight": 2.7,
+    "payroll": 9.0,
+    "onboard": 1.0
+  },
+  "criteriaMet": {
+    "insight": [
+      {"id": "H-F1", "weight": 5, "met": true, "evidence": "site/insight/index.html data-section=kpi data-fit=H-F1 · insight.json forecast.byDepartment[].toGapAsOf[11] | forecast.byDepartment[].toGapMonthEnd[11] | forecast.byOrgGroup[].toGapMonthEnd[4]"},
+      {"id": "H-F2", "weight": 5, "met": true, "evidence": "섹션 views,kpi · insight.json forecast.totals / stats.totals"},
+      {"id": "H-F3", "weight": 5, "met": true, "evidence": "PII 부정 검사 3건 전부 통과 | 섹션 views,planned-moves"},
+      {"id": "H-F4", "weight": 4, "met": true, "evidence": "site/insight/index.html data-section=department-gap data-fit=H-F4 · insight.json forecast.byDepartment[].recommendation[11] / forecast.insights[]"},
+      {"id": "H-F5", "weight": 4, "met": true, "evidence": "site/insight/index.html data-section=risk-summary data-fit=H-F5 · insight.json attrition.summary / attrition.byDepartment[11]"},
+      {"id": "H-F6", "weight": 4, "met": true, "evidence": "site/insight/index.html data-section=risk-people data-fit=H-F6 · insight.json attrition.byEmployee[406] / hrDirectory[427]"},
+      {"id": "H-F7", "weight": 3, "met": true, "evidence": "site/insight/index.html data-section=data-quality data-fit=H-F7 · insight.json cleansingSummary.unresolvedItems[12]"},
+      {"id": "H-F8", "weight": 3, "met": true, "evidence": "reports/monthly-report-dispatch.json + 페이지 링크"},
+      {"id": "H-F9", "weight": 2, "met": true, "evidence": "site/insight/index.html data-section=automation-effect data-fit=H-F9 · insight.json automationEffect.savingRate"},
+      {"id": "H-F10", "weight": 3, "met": true, "evidence": "site/insight/index.html data-section=attributes data-fit=H-F10 · insight.json stats.byAttribute.level/tenureBand/stage"},
+      {"id": "H-F11", "weight": 3, "met": true, "evidence": "site/insight/index.html data-section=separations data-fit=H-F11 · insight.json stats.plannedSeparations.bySeparationReason[5]"},
+      {"id": "H-F12", "weight": 3, "met": true, "evidence": "site/insight/index.html data-section=next-month data-fit=H-F12 · insight.json forecast.byDepartment[].nextMonth[11]"},
+      {"id": "H-F13", "weight": 4, "met": true, "evidence": "섹션 org-lead · insight.json forecast.byDepartment[11] · PII 부정 검사 통과"},
+      {"id": "H-F14", "weight": 2, "met": true, "evidence": "섹션 header · insight.json stats.asOfDate"},
+      {"id": "H-F15", "weight": 5, "met": true, "evidence": "api/tools.json: insight.get_executive_snapshot, insight.get_department_forecast, insight.get_insights, insight.get_attribute_stats"}
+    ],
+    "payroll": [
+      {"id": "P-F1", "weight": 5, "met": true, "evidence": "payroll-close.payrollHeadcount.monthEndActive=411 vs month-end-forecast.totals.forecastMonthEnd=411 · site/payroll/index.html data-section=kpi data-fit=P-F1"},
+      {"id": "P-F2", "weight": 5, "met": true, "evidence": "site/payroll/index.html data-section=prorations-actual data-fit=P-F2 · payroll.json payrollClose.prorations.joinersInPeriod[5]"},
+      {"id": "P-F3", "weight": 4, "met": true, "evidence": "site/payroll/index.html data-section=prorations-planned data-fit=P-F3 · payroll.json payrollClose.prorations.plannedJoinersByMonthEnd[19]/plannedLeaversByMonthEnd[14]"},
+      {"id": "P-F4", "weight": 4, "met": true, "evidence": "site/payroll/index.html data-section=leaves data-fit=P-F4 · payroll.json payrollClose.leaves.onLeave[21]/byTreatment[3]"},
+      {"id": "P-F5", "weight": 4, "met": true, "evidence": "site/payroll/index.html data-section=contracts data-fit=P-F5 · payroll.json payrollClose.contracts.expiringWithin90Days[24]"},
+      {"id": "P-F6", "weight": 5, "met": true, "evidence": "site/payroll/index.html data-section=risks data-fit=P-F6 · payroll.json payrollClose.risks[14] (unresolvedFlag/impact)"},
+      {"id": "P-F7", "weight": 3, "met": true, "evidence": "site/payroll/index.html data-section=headcount data-fit=P-F7 · payroll.json payrollClose.payrollHeadcount.byEmploymentType/byDepartment[11]"},
+      {"id": "P-F8", "weight": 3, "met": true, "evidence": "site/payroll/index.html data-section=checklist data-fit=P-F8 · payroll.json payrollClose.checklist[7]"},
+      {"id": "P-F9", "weight": 4, "met": true, "evidence": "PII 부정 검사 3건 전부 통과 · site/payroll/index.html data-section=claims data-fit=P-F9"},
+      {"id": "P-F10", "weight": 2, "met": true, "evidence": "site/payroll/index.html data-section=header data-fit=P-F10 · payroll.json payrollClose.payPeriod/periodStart/periodEnd"},
+      {"id": "P-F11", "weight": 2, "met": true, "evidence": "site/data/payroll.json cleansingSummary.unresolvedCount=12 vs cleansing-summary.unresolvedCount=12"},
+      {"id": "P-F12", "weight": 3, "met": true, "evidence": "site/payroll/index.html data-section=prorations-planned data-fit=P-F12 · payroll.json plannedLeaversByMonthEnd[].separationType[14]"},
+      {"id": "P-F13", "weight": 3, "met": true, "evidence": "payroll-close.payrollHeadcount.asOfTotal=427 vs headcount-stats.totals.headcount=427"},
+      {"id": "P-F14", "weight": 5, "met": true, "evidence": "api/tools.json: payroll.get_close_summary, payroll.list_prorations, payroll.list_leave_treatments, payroll.list_contract_expirations, payroll.list_risks"}
+    ],
+    "onboard": [
+      {"id": "O-F1", "weight": 5, "met": true, "evidence": "site/onboard/index.html data-section=timeline data-fit=O-F1 · onboard.json onboardingPlan.timeline[].weekStart[5]/joiners[27]"},
+      {"id": "O-F2", "weight": 5, "met": true, "evidence": "site/onboard/index.html data-section=departments data-fit=O-F2 · onboard.json onboardingPlan.byDepartment[9]"},
+      {"id": "O-F3", "weight": 5, "met": true, "evidence": "site/onboard/index.html data-section=checklist data-fit=O-F3 · onboard.json onboardingPlan.checklist.items[6]/status[27]"},
+      {"id": "O-F4", "weight": 4, "met": true, "evidence": "site/onboard/index.html data-section=departments data-fit=O-F4 · onboard.json onboardingPlan.byDepartment[].buddyCandidates[27]"},
+      {"id": "O-F5", "weight": 4, "met": true, "evidence": "site/onboard/index.html data-section=cohort data-fit=O-F5 · onboard.json onboardingPlan.earlyTenureCohort.members[12]"},
+      {"id": "O-F6", "weight": 3, "met": true, "evidence": "site/onboard/index.html data-section=early-attrition data-fit=O-F6 · onboard.json onboardingPlan.earlyAttrition.rate"},
+      {"id": "O-F7", "weight": 3, "met": true, "evidence": "site/onboard/index.html data-section=timeline data-fit=O-F7 · onboard.json plannedJoiners[27]"},
+      {"id": "O-F8", "weight": 3, "met": true, "evidence": "onboarding-plan.timeline[].joiners=27 vs planned-joiners.clean=27 · byDepartment.joinersByMonthEnd=19 vs forecast.totals.plannedIn=19"},
+      {"id": "O-F9", "weight": 4, "met": true, "evidence": "PII 부정 검사 3건 전부 통과 · site/onboard/index.html data-section=cohort data-fit=O-F9 (riskBand만)"},
+      {"id": "O-F10", "weight": 2, "met": true, "evidence": "site/onboard/index.html data-section=timeline data-fit=O-F10 · onboard.json onboardingPlan.timeline[].joiners[].plannedHireDate[27]"},
+      {"id": "O-F11", "weight": 3, "met": true, "evidence": "site/onboard/index.html data-section=next-month data-fit=O-F11 · onboard.json onboardingPlan.byDepartment[].joiners[9]"},
+      {"id": "O-F12", "weight": 2, "met": true, "evidence": "섹션 header · onboard.json onboardingPlan.horizonEnd"},
+      {"id": "O-F13", "weight": 5, "met": true, "evidence": "api/tools.json: onboarding.get_timeline, onboarding.get_department_plan, onboarding.get_checklist, onboarding.get_early_tenure_cohort"}
+    ]
+  },
+  "coverage": {
+    "insight": {"coverage": 1.0, "weightedCoverage": 1.0, "total": 15, "met": 15, "unverifiable": 0},
+    "payroll": {"coverage": 1.0, "weightedCoverage": 1.0, "total": 14, "met": 14, "unverifiable": 0},
+    "onboard": {"coverage": 1.0, "weightedCoverage": 1.0, "total": 13, "met": 13, "unverifiable": 0}
+  },
+  "advocateCoverage": {
+    "insight": {"coverage": 0.8571, "weightedCoverage": 0.8077, "verifiable": 7, "met": ["P-F1", "P-F9", "P-F10", "P-F11", "P-F13", "P-F14"], "unmet": [{"id": "P-F6", "reason": "data-fit 에 P-F6 를 단 섹션 없음"}]},
+    "payroll": {"coverage": 1.0, "weightedCoverage": 1.0, "verifiable": 14, "met": ["P-F1","P-F2","P-F3","P-F4","P-F5","P-F6","P-F7","P-F8","P-F9","P-F10","P-F11","P-F12","P-F13","P-F14"], "unmet": []},
+    "onboard": {"coverage": 0.8571, "weightedCoverage": 0.8077, "verifiable": 7, "met": ["P-F1", "P-F9", "P-F10", "P-F11", "P-F13", "P-F14"], "unmet": [{"id": "P-F6", "reason": "data-fit 에 P-F6 를 단 섹션 없음"}]}
+  },
+  "rubricItems": {
+    "insight": [
+      {"item": "R1", "title": "월말 급여 대상 확정 즉시성", "score": 5, "note": "kpi(전사 요약)에 재직/휴직/월말예측 총계가 있으나 급여 대상(재직+휴직) 구분·예측 일치 배지가 없다 — 참조용 5점 상한(루브릭 '홈이 아닌 제품' 규정)"},
+      {"item": "R2", "title": "일할 계산 대상 완전성", "score": 5, "note": "planned-moves에 입사·퇴사 예정 목록(성명·일자)은 있으나 workedDays·proratedRatio가 없다 — 참조용 5점 상한"},
+      {"item": "R3", "title": "휴직 처리 구분 명확성", "score": 3, "note": "attributes 섹션에 휴직유형(질병/육아/기타) 집계 카운트만 있고 급여 처리 구분(유급/무급/무급(정부급여))도 개인 목록도 없다 — 마감에 쓸 수 없는 핵심 필드 빠짐"},
+      {"item": "R4", "title": "계약 만료 선제성", "score": 0, "note": "insight에 계약 만료 관련 data-section·evidence가 전혀 없다"},
+      {"item": "R5", "title": "오류 위험의 실행 가능성", "score": 3, "note": "data-quality에 unresolvedItems(source·field·flag·question)는 있으나 impact 필드가 없고, 급여 마감 파생 플래그(stale-planned-leaver 등)와 클린저 플래그의 어휘 구분이 없다"},
+      {"item": "R6", "title": "마감 순서 가독성", "score": 0, "note": "급여 마감 순서의 체크리스트가 없다(insight의 흐름은 경영 보고 순서)"}
+    ],
+    "payroll": [
+      {"item": "R1", "title": "월말 급여 대상 확정 즉시성", "score": 10, "note": "kpi 히어로 타일에 기준일 재직/휴직/총원과 월말 재직/총원이 모두 있고 '예측과 일치 ✓(월말 예측 411)' 배지(rec.matched)가 표시된다. headcount 섹션에서 고용유형·조직별로 추가 펼쳐진다 — 다음 행동까지 화면이 말해 줌"},
+      {"item": "R2", "title": "일할 계산 대상 완전성", "score": 8, "note": "prorations-actual(당월 확정 5명)과 prorations-planned(예정 입사 19·퇴사 14)가 별도 섹션으로 구분되고 workedDays·proratedRatio(소수 3자리)가 모두 있다. 다만 예정 퇴사자 중 stale-planned-leaver(E0251, 09-15 이미 경과)가 이 표 안에서는 그냥 '예정' 배지로만 보이고 risks 섹션의 플래그와 화면상 연결되지 않아 10점은 아니다"},
+      {"item": "R3", "title": "휴직 처리 구분 명확성", "score": 8, "note": "leaves 섹션에 유급/무급(정부 급여)/무급 3구분 집계 타일 + 개인 목록(사번·성명·조직·유형·시작일·처리구분 배지)이 있다. 다만 '기타'(status-inconsistency로 임시 보정된 미확인 유형)가 색상만 warning이고 '미확인'이라는 명시적 라벨은 없어 10점은 아니다"},
+      {"item": "R4", "title": "계약 만료 선제성", "score": 10, "note": "contracts 섹션에 90일 내 만료 목록(월별 건수 0 포함 차트+표)과 개인별 D-day 배지(dday 함수, 7/30/60일 단계별 severity)가 있다. 만료 경과 시 D+ 표기 로직도 존재해 만료 경과 재직자 경고 요건까지 충족"},
+      {"item": "R5", "title": "오류 위험의 실행 가능성", "score": 10, "note": "risks 섹션 표의 각 행에 사번·issue·impact·unresolvedFlag가 있고, 파생 플래그(derivedFlags: hire-after-as-of 등)는 '급여 담당 즉시 확인 !'(badge-serious), 클린저 원본 플래그(status-inconsistency 등)는 '고객사 HR 확인 대기 ·'(badge-warning)로 시각적으로 갈린다 — 어휘 구분 요건 정확히 충족"},
+      {"item": "R6", "title": "마감 순서 가독성", "score": 8, "note": "checklist 섹션이 header 다음 최상단에 있고 pending 항목이 먼저 정렬되며 각 항목에 건수가 있다. 다만 체크리스트 항목이 해당 섹션(prorations-actual 등)으로 링크되지 않아(href 없음) 10점은 아니다"}
+    ],
+    "onboard": [
+      {"item": "R1", "title": "월말 급여 대상 확정 즉시성", "score": 0, "note": "kpi(한눈에)는 입사 예정·초기 재직 코호트 중심이라 재직/휴직 구분이나 급여 대상 개념이 전혀 없다"},
+      {"item": "R2", "title": "일할 계산 대상 완전성", "score": 5, "note": "timeline에 입사 예정자(성명·plannedHireDate·D-day 스타일 범례)가 있어 예정 입사자 근거로 재사용 가능하지만 퇴사자·workedDays·proratedRatio가 없다 — 참조용 5점 상한"},
+      {"item": "R3", "title": "휴직 처리 구분 명확성", "score": 0, "note": "onboard에 휴직 관련 data-section이 없다"},
+      {"item": "R4", "title": "계약 만료 선제성", "score": 0, "note": "onboard에 계약 만료 관련 data-section이 없다"},
+      {"item": "R5", "title": "오류 위험의 실행 가능성", "score": 1, "note": "timeline 범례에 '플래그 = 미해결 항목(클린저 어휘 그대로)' 배지가 있으나 급여 오류 위험과 무관한 온보딩 클린징 플래그이고 impact·어휘 구분이 없다"},
+      {"item": "R6", "title": "마감 순서 가독성", "score": 0, "note": "checklist 섹션은 입사자×6항목 준비 체크리스트로 급여 마감 순서와 무관하다"}
+    ]
+  },
+  "piiChecks": {
+    "insight": [
+      {"check": "스냅샷에 birthDate 없음", "passed": true, "detail": "site/data/insight.json"},
+      {"check": "HTML에 riskScore 표시 없음", "passed": true, "detail": "site/insight/index.html (내장 JSON 제외)"},
+      {"check": "경영진·경영기획·조직장 섹션에 성명 조인 없음", "passed": true, "detail": "0건"}
+    ],
+    "payroll": [
+      {"check": "스냅샷에 birthDate 없음", "passed": true, "detail": "site/data/payroll.json"},
+      {"check": "HTML에 riskScore 표시 없음", "passed": true, "detail": "site/payroll/index.html (내장 JSON 제외)"},
+      {"check": "금액·계좌 필드 없음", "passed": true, "detail": "grep 급여액|salary|amount|계좌|account|세금|tax 0건(설명 텍스트의 부재 서술 제외)"}
+    ],
+    "onboard": [
+      {"check": "스냅샷에 birthDate 없음", "passed": true, "detail": "site/data/onboard.json"},
+      {"check": "HTML에 riskScore 표시 없음", "passed": true, "detail": "site/onboard/index.html (내장 JSON 제외)"},
+      {"check": "90일 코호트에 성명 없음", "passed": true, "detail": "data-section=cohort"}
+    ]
+  },
+  "notes": "급여 담당 옹호자 렌즈: Payroll Close(홈)는 마감 작업 순서(kpi→checklist→headcount→prorations-actual→prorations-planned→leaves→contracts→risks→data-quality→claims)대로 읽히고, must 항목 3개(R1 대상 확정, R2 일할 대상, R5 위험 어휘 구분)가 모두 8점 이상이라 실격도 mustFix도 없다. 실격 조건(급여액·계좌·세금 필드, birthDate, riskScore, 월말 대사 불일치) 전부 미해당 — grep 0건, 대사 411=411/427=427 일치 확인. Insight·Onboarding은 각각 R2(예정 입사자 참조)에서만 5점 상한을 받고 나머지 항목(계약 만료·휴직 처리·마감 순서)은 대부분 0~3점이다 — 이는 결함이 아니라 통합 제품이 payroll 탭에 무엇을 그대로 가져와야 하는지를 보여준다. 이전 라운드 없음(첫 채점, _workspace/judging/payroll.json 신규 생성).",
+  "mustFix": [
+    {"product": "payroll", "section": "prorations-planned", "criteria": ["P-F3", "P-F6"], "issue": "월말까지 퇴사 예정 표의 E0251(퇴사예정일 2026-09-15, 이미 기준일 09-23 이전에 경과)이 '예정' 배지로만 표시되고, risks 섹션의 stale-planned-leaver 플래그와 화면상 연결되지 않는다. 급여 담당이 risks 탭을 따로 확인하지 않으면 이미 퇴사 처리해야 할 사람을 여전히 '예정'으로 보고 이중 처리(급여 과지급)할 위험이 있다 — prorations-planned 표 안에 인라인 경고(stale 배지)가 필요하다."}
+  ],
+  "niceToHave": [
+    {"product": "payroll", "section": "checklist", "criteria": ["P-F8"], "issue": "체크리스트 항목이 해당 섹션(prorations-actual, leaves 등)으로 링크되지 않아 pending 항목을 클릭해 바로 이동할 수 없다"},
+    {"product": "payroll", "section": "leaves", "criteria": ["P-F4"], "issue": "휴직유형 '기타'(클린저가 status-inconsistency로 임시 보정한 미확인 유형)가 경고 색상만 있고 '미확인'이라는 명시적 라벨이 없어, 실제 기타휴직과 구별되지 않는다"},
+    {"product": "insight", "section": "kpi", "criteria": ["P-F1"], "issue": "월말 인원·입퇴사 예정 건수는 있으나 급여 대상(재직+휴직) 구분과 예측 일치 배지가 없어 급여 마감에는 참조용이다 — 통합 제품은 payroll의 kpi 히어로 타일 구조를 그대로 흡수해야 한다"},
+    {"product": "onboard", "section": "timeline", "criteria": ["P-F2"], "issue": "입사 예정자 목록(성명·plannedHireDate·D-day 범례)은 있으나 근무일수·일할비율이 없어 급여 마감의 일할 대상 근거로는 재사용만 가능하다 — 통합 제품은 payroll의 prorations-planned 열 구조를 흡수해야 한다"}
+  ],
+  "artifact": "_workspace/judging/payroll.json",
+  "handoffLog": "_workspace/handoff/09-products-judge-payroll.md"
+}

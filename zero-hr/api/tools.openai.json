@@ -1,0 +1,579 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "payroll.get_close_summary",
+      "description": "급여 마감 요약(DATA_CONTRACT §10). 급여 기간(payPeriod)의 급여 대상 인원 — 기준일 재직/휴직/총원(406/21/427)과 월말 재직/총원(411/432), 고용유형별·조직별 — 과 마감 체크리스트(pending|done), 월말 인원 예측과의 대사 결과(reconciliation), 산출 규칙(rules)을 돌려준다. '이번 달 급여 대상이 몇 명인가', '마감 체크리스트 진행은', '예측과 맞는가' 질문에 먼저 호출한다. 개인 행은 없다(집계만). 급여액·계좌는 범위 밖. 체크리스트 status 는 스크립트가 만든 초기값이며 실제 마감 진행 상태가 아니다(목업). role 은 pii-minimization-policy 를 적용한다: executive|planning|orgLead 는 성명(name)이 제거되고 사번(empId/joinerId)만 남는다(orgLead 는 deptCode 인자로 지정한 자기 조직 행만 받는다). hr|payroll|onboarding 은 성명 허용. 생년월일(birthDate)과 리스크 점수(riskScore)는 어느 role 에도 없다(등급 riskBand 만).",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "payPeriod": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}$",
+            "description": "급여 기간 YYYY-MM. 생략 시 데이터의 기간(2026-09). 데이터에 없는 기간은 404."
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "executive",
+              "planning",
+              "orgLead",
+              "hr",
+              "payroll",
+              "onboarding"
+            ],
+            "default": "executive",
+            "description": "호출 시스템의 사용자 역할. 기본 executive(성명 없음). 급여 시스템은 payroll, 온보딩 시스템은 onboarding, 인사 총괄(HR) 시스템은 hr, 조직장은 orgLead(+deptCode 필수). role 은 pii-minimization-policy 를 적용한다: executive|planning|orgLead 는 성명(name)이 제거되고 사번(empId/joinerId)만 남는다(orgLead 는 deptCode 인자로 지정한 자기 조직 행만 받는다). hr|payroll|onboarding 은 성명 허용. 생년월일(birthDate)과 리스크 점수(riskScore)는 어느 role 에도 없다(등급 riskBand 만)."
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "payroll.list_prorations",
+      "description": "일할 계산 대상 명단(§10 prorations). kind=actual → 당월 실제 입사자(joinersInPeriod: empId·hireDate·workedDays·proratedRatio), kind=planned → 월말까지 입사 예정자(plannedJoinersByMonthEnd, joinerId)와 퇴사 예정자(plannedLeaversByMonthEnd, empId·separationType), kind=all → 셋 다. proratedRatio = 당월 근무일수/30(3자리). '일할 대상은 누구인가', '월말까지 입·퇴사 예정자 정산 준비' 질문에 호출. role=payroll|hr 이면 성명 포함, executive|planning|orgLead 는 사번만. role 은 pii-minimization-policy 를 적용한다: executive|planning|orgLead 는 성명(name)이 제거되고 사번(empId/joinerId)만 남는다(orgLead 는 deptCode 인자로 지정한 자기 조직 행만 받는다). hr|payroll|onboarding 은 성명 허용. 생년월일(birthDate)과 리스크 점수(riskScore)는 어느 role 에도 없다(등급 riskBand 만).",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": [
+              "actual",
+              "planned",
+              "all"
+            ],
+            "description": "actual=당월 실제 입사자 / planned=월말까지 입·퇴사 예정자 / all=전부"
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "executive",
+              "planning",
+              "orgLead",
+              "hr",
+              "payroll",
+              "onboarding"
+            ],
+            "default": "executive",
+            "description": "호출 시스템의 사용자 역할. 기본 executive(성명 없음). 급여 시스템은 payroll, 온보딩 시스템은 onboarding, 인사 총괄(HR) 시스템은 hr, 조직장은 orgLead(+deptCode 필수). role 은 pii-minimization-policy 를 적용한다: executive|planning|orgLead 는 성명(name)이 제거되고 사번(empId/joinerId)만 남는다(orgLead 는 deptCode 인자로 지정한 자기 조직 행만 받는다). hr|payroll|onboarding 은 성명 허용. 생년월일(birthDate)과 리스크 점수(riskScore)는 어느 role 에도 없다(등급 riskBand 만)."
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "kind"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "payroll.list_leave_treatments",
+      "description": "휴직자 급여 처리 구분(§10 leaves). 휴직자 21명 각자의 leaveType·leaveStart·payrollTreatment(육아휴직→무급(정부 급여) / 질병휴직→유급 / 기타→무급)와 처리 구분별 인원(byTreatment). '휴직자 급여 어떻게 처리하나', '무급 처리 대상 몇 명' 질문에 호출. role=payroll|hr 성명 포함, 그 외 사번만. role 은 pii-minimization-policy 를 적용한다: executive|planning|orgLead 는 성명(name)이 제거되고 사번(empId/joinerId)만 남는다(orgLead 는 deptCode 인자로 지정한 자기 조직 행만 받는다). hr|payroll|onboarding 은 성명 허용. 생년월일(birthDate)과 리스크 점수(riskScore)는 어느 role 에도 없다(등급 riskBand 만).",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string",
+            "enum": [
+              "executive",
+              "planning",
+              "orgLead",
+              "hr",
+              "payroll",
+              "onboarding"
+            ],
+            "default": "executive",
+            "description": "호출 시스템의 사용자 역할. 기본 executive(성명 없음). 급여 시스템은 payroll, 온보딩 시스템은 onboarding, 인사 총괄(HR) 시스템은 hr, 조직장은 orgLead(+deptCode 필수). role 은 pii-minimization-policy 를 적용한다: executive|planning|orgLead 는 성명(name)이 제거되고 사번(empId/joinerId)만 남는다(orgLead 는 deptCode 인자로 지정한 자기 조직 행만 받는다). hr|payroll|onboarding 은 성명 허용. 생년월일(birthDate)과 리스크 점수(riskScore)는 어느 role 에도 없다(등급 riskBand 만)."
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "payroll.list_contract_expirations",
+      "description": "계약 만료 예정자(§10 contracts). 기준일부터 withinDays 일 이내 계약종료일이 도래하는 계약직·인턴·파견 명단(empId·employmentType·contractEndDate)과 월별 건수(byMonth). 데이터는 90일 창까지만 있으므로 withinDays 는 1~90. '갱신·종료 확인할 계약 몇 건', '다음 달 계약 만료' 질문에 호출. role=payroll|hr 성명 포함. role 은 pii-minimization-policy 를 적용한다: executive|planning|orgLead 는 성명(name)이 제거되고 사번(empId/joinerId)만 남는다(orgLead 는 deptCode 인자로 지정한 자기 조직 행만 받는다). hr|payroll|onboarding 은 성명 허용. 생년월일(birthDate)과 리스크 점수(riskScore)는 어느 role 에도 없다(등급 riskBand 만).",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "withinDays": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 90,
+            "default": 90,
+            "description": "기준일(2026-09-23)부터의 일수 창. 기본 90."
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "executive",
+              "planning",
+              "orgLead",
+              "hr",
+              "payroll",
+              "onboarding"
+            ],
+            "default": "executive",
+            "description": "호출 시스템의 사용자 역할. 기본 executive(성명 없음). 급여 시스템은 payroll, 온보딩 시스템은 onboarding, 인사 총괄(HR) 시스템은 hr, 조직장은 orgLead(+deptCode 필수). role 은 pii-minimization-policy 를 적용한다: executive|planning|orgLead 는 성명(name)이 제거되고 사번(empId/joinerId)만 남는다(orgLead 는 deptCode 인자로 지정한 자기 조직 행만 받는다). hr|payroll|onboarding 은 성명 허용. 생년월일(birthDate)과 리스크 점수(riskScore)는 어느 role 에도 없다(등급 riskBand 만)."
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "payroll.list_risks",
+      "description": "급여 오류 위험 항목(§10 risks) — 클린징 미해결 플래그(status-inconsistency, missing-required, date-logic, org-unknown, stale-planned-leaver, unknown-emp, hire-after-as-of 등)가 급여 처리에 미치는 영향(issue·impact·unresolvedFlag). 사번만 있고 성명은 어느 role 에도 없다(원본에 없음). '급여 처리 전에 확인할 미해결 항목' 질문에 호출. role 은 pii-minimization-policy 를 적용한다: executive|planning|orgLead 는 성명(name)이 제거되고 사번(empId/joinerId)만 남는다(orgLead 는 deptCode 인자로 지정한 자기 조직 행만 받는다). hr|payroll|onboarding 은 성명 허용. 생년월일(birthDate)과 리스크 점수(riskScore)는 어느 role 에도 없다(등급 riskBand 만).",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string",
+            "enum": [
+              "executive",
+              "planning",
+              "orgLead",
+              "hr",
+              "payroll",
+              "onboarding"
+            ],
+            "default": "executive",
+            "description": "호출 시스템의 사용자 역할. 기본 executive(성명 없음). 급여 시스템은 payroll, 온보딩 시스템은 onboarding, 인사 총괄(HR) 시스템은 hr, 조직장은 orgLead(+deptCode 필수). role 은 pii-minimization-policy 를 적용한다: executive|planning|orgLead 는 성명(name)이 제거되고 사번(empId/joinerId)만 남는다(orgLead 는 deptCode 인자로 지정한 자기 조직 행만 받는다). hr|payroll|onboarding 은 성명 허용. 생년월일(birthDate)과 리스크 점수(riskScore)는 어느 role 에도 없다(등급 riskBand 만)."
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "onboarding.get_timeline",
+      "description": "입사 예정자 주간 타임라인(§11 timeline, 기준일~2026-10-31, 27명). 주(week, ISO 예 2026-W39)별 입사 예정자(joinerId·deptCode·department·plannedHireDate·employmentType·level)에 정제 입사 예정자 파일의 unresolvedFlags 를 조인해 돌려준다. week 를 주면 그 주만. '이번 주/다음 주 입사자 누구', '10월 입사 예정 몇 명' 질문에 호출. role=onboarding|hr 성명 포함, 그 외 joinerId 만. role 은 pii-minimization-policy 를 적용한다: executive|planning|orgLead 는 성명(name)이 제거되고 사번(empId/joinerId)만 남는다(orgLead 는 deptCode 인자로 지정한 자기 조직 행만 받는다). hr|payroll|onboarding 은 성명 허용. 생년월일(birthDate)과 리스크 점수(riskScore)는 어느 role 에도 없다(등급 riskBand 만).",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "week": {
+            "type": "string",
+            "pattern": "^\\d{4}-W\\d{2}$",
+            "description": "ISO 주 (예 2026-W39). 생략 시 전체 타임라인."
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "executive",
+              "planning",
+              "orgLead",
+              "hr",
+              "payroll",
+              "onboarding"
+            ],
+            "default": "executive",
+            "description": "호출 시스템의 사용자 역할. 기본 executive(성명 없음). 급여 시스템은 payroll, 온보딩 시스템은 onboarding, 인사 총괄(HR) 시스템은 hr, 조직장은 orgLead(+deptCode 필수). role 은 pii-minimization-policy 를 적용한다: executive|planning|orgLead 는 성명(name)이 제거되고 사번(empId/joinerId)만 남는다(orgLead 는 deptCode 인자로 지정한 자기 조직 행만 받는다). hr|payroll|onboarding 은 성명 허용. 생년월일(birthDate)과 리스크 점수(riskScore)는 어느 role 에도 없다(등급 riskBand 만)."
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "onboarding.get_department_plan",
+      "description": "조직별 온보딩 계획(§11 byDepartment[deptCode]) — 입사 예정 인원(joiners·joinersByMonthEnd), 버디 후보 최대 3명(empId·level·tenureYears·riskBand; 같은 조직 재직 2~6년·리스크 낮음·IC3~Lead), 조직장 사번(deptLeadEmpId) + 그 조직의 재직 명부 subset(empId·level·jobFamily·employmentType·status) + 그 조직의 입사 예정자 목록. 'D03 온보딩 준비 뭐가 필요한가', '버디 누구 붙일까' 질문에 호출. 입사 예정자가 없는 조직은 plan=null 과 명부만. role=onboarding|hr 성명 포함. role 은 pii-minimization-policy 를 적용한다: executive|planning|orgLead 는 성명(name)이 제거되고 사번(empId/joinerId)만 남는다(orgLead 는 deptCode 인자로 지정한 자기 조직 행만 받는다). hr|payroll|onboarding 은 성명 허용. 생년월일(birthDate)과 리스크 점수(riskScore)는 어느 role 에도 없다(등급 riskBand 만).",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "deptCode": {
+            "type": "string",
+            "pattern": "^D(0[1-9]|1[01])$",
+            "description": "조직 코드 D01~D11 (D01 CEO Office · D02 Product · D03 Engineering · D04 Design · D05 Data & AI · D06 Sales · D07 Marketing · D08 Customer Success · D09 People · D10 Finance · D11 Legal & Compliance)."
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "executive",
+              "planning",
+              "orgLead",
+              "hr",
+              "payroll",
+              "onboarding"
+            ],
+            "default": "executive",
+            "description": "호출 시스템의 사용자 역할. 기본 executive(성명 없음). 급여 시스템은 payroll, 온보딩 시스템은 onboarding, 인사 총괄(HR) 시스템은 hr, 조직장은 orgLead(+deptCode 필수). role 은 pii-minimization-policy 를 적용한다: executive|planning|orgLead 는 성명(name)이 제거되고 사번(empId/joinerId)만 남는다(orgLead 는 deptCode 인자로 지정한 자기 조직 행만 받는다). hr|payroll|onboarding 은 성명 허용. 생년월일(birthDate)과 리스크 점수(riskScore)는 어느 role 에도 없다(등급 riskBand 만)."
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "deptCode"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "onboarding.get_checklist",
+      "description": "온보딩 체크리스트(§11 checklist) — 항목 6종(계정 발급·장비 지급·보안 교육·조직 소개·버디 배정·30일 면담)과 입사 예정자별 상태(done|pending). joinerId 를 주면 그 사람만. 주의: 상태값은 seed 고정 가상 생성(실제 진행 상태 아님, 목업) — 응답 claims.mockup 에 표기된다. '체크리스트 미완료 항목' 질문에 호출. role 은 pii-minimization-policy 를 적용한다: executive|planning|orgLead 는 성명(name)이 제거되고 사번(empId/joinerId)만 남는다(orgLead 는 deptCode 인자로 지정한 자기 조직 행만 받는다). hr|payroll|onboarding 은 성명 허용. 생년월일(birthDate)과 리스크 점수(riskScore)는 어느 role 에도 없다(등급 riskBand 만).",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "joinerId": {
+            "type": "string",
+            "pattern": "^J\\d{3}$",
+            "description": "입사 예정자 ID (J001~J027). 생략 시 전원."
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "executive",
+              "planning",
+              "orgLead",
+              "hr",
+              "payroll",
+              "onboarding"
+            ],
+            "default": "executive",
+            "description": "호출 시스템의 사용자 역할. 기본 executive(성명 없음). 급여 시스템은 payroll, 온보딩 시스템은 onboarding, 인사 총괄(HR) 시스템은 hr, 조직장은 orgLead(+deptCode 필수). role 은 pii-minimization-policy 를 적용한다: executive|planning|orgLead 는 성명(name)이 제거되고 사번(empId/joinerId)만 남는다(orgLead 는 deptCode 인자로 지정한 자기 조직 행만 받는다). hr|payroll|onboarding 은 성명 허용. 생년월일(birthDate)과 리스크 점수(riskScore)는 어느 role 에도 없다(등급 riskBand 만)."
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "onboarding.get_early_tenure_cohort",
+      "description": "입사 초기 코호트(§11 earlyTenureCohort: 기준일 기준 입사 90일 이내 재직자, empId·hireDate·daysSinceHire·riskBand)와 조기 이탈 지표(earlyAttrition: 퇴사 예정자 중 1년 미만 비율, 조직별). 성명은 어느 role 에도 없다(사번·집계만). '최근 입사자 중 리스크 높은 사람 몇 명', '조기 퇴사율' 질문에 호출. role 은 pii-minimization-policy 를 적용한다: executive|planning|orgLead 는 성명(name)이 제거되고 사번(empId/joinerId)만 남는다(orgLead 는 deptCode 인자로 지정한 자기 조직 행만 받는다). hr|payroll|onboarding 은 성명 허용. 생년월일(birthDate)과 리스크 점수(riskScore)는 어느 role 에도 없다(등급 riskBand 만).",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string",
+            "enum": [
+              "executive",
+              "planning",
+              "orgLead",
+              "hr",
+              "payroll",
+              "onboarding"
+            ],
+            "default": "executive",
+            "description": "호출 시스템의 사용자 역할. 기본 executive(성명 없음). 급여 시스템은 payroll, 온보딩 시스템은 onboarding, 인사 총괄(HR) 시스템은 hr, 조직장은 orgLead(+deptCode 필수). role 은 pii-minimization-policy 를 적용한다: executive|planning|orgLead 는 성명(name)이 제거되고 사번(empId/joinerId)만 남는다(orgLead 는 deptCode 인자로 지정한 자기 조직 행만 받는다). hr|payroll|onboarding 은 성명 허용. 생년월일(birthDate)과 리스크 점수(riskScore)는 어느 role 에도 없다(등급 riskBand 만)."
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "insight.get_executive_snapshot",
+      "description": "Executive Snapshot 8지표(§4-1 totals + §4-2 totals): 재직 activeHeadcount 406 · 휴직 onLeave 21 · 총원 headcount 427 · TO toHeadcount 422 · toGapAsOf −16 · 입사 예정 plannedIn 19 · 퇴사 예정 plannedOut 14 · 월말 예측 forecastMonthEnd 411 · toGapMonthEnd −11 · toFillRate, 다음 달 예측(nextMonth), 미해결 건수. 개인 정보 없음 — 모든 role 동일. '현재 인원과 월말 예측', '경영 회의용 한 줄 요약' 질문에 가장 먼저 호출한다. 화면(Insight)과 같은 파일을 읽으므로 숫자가 같다. role 은 pii-minimization-policy 를 적용한다: executive|planning|orgLead 는 성명(name)이 제거되고 사번(empId/joinerId)만 남는다(orgLead 는 deptCode 인자로 지정한 자기 조직 행만 받는다). hr|payroll|onboarding 은 성명 허용. 생년월일(birthDate)과 리스크 점수(riskScore)는 어느 role 에도 없다(등급 riskBand 만).",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string",
+            "enum": [
+              "executive",
+              "planning",
+              "orgLead",
+              "hr",
+              "payroll",
+              "onboarding"
+            ],
+            "default": "executive",
+            "description": "호출 시스템의 사용자 역할. 기본 executive(성명 없음). 급여 시스템은 payroll, 온보딩 시스템은 onboarding, 인사 총괄(HR) 시스템은 hr, 조직장은 orgLead(+deptCode 필수). role 은 pii-minimization-policy 를 적용한다: executive|planning|orgLead 는 성명(name)이 제거되고 사번(empId/joinerId)만 남는다(orgLead 는 deptCode 인자로 지정한 자기 조직 행만 받는다). hr|payroll|onboarding 은 성명 허용. 생년월일(birthDate)과 리스크 점수(riskScore)는 어느 role 에도 없다(등급 riskBand 만)."
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "insight.get_department_forecast",
+      "description": "조직별 월말 인원 예측(§4-2 byDepartment/byOrgGroup): TO·재직·입사/퇴사 예정·forecastMonthEnd·toGapAsOf·toGapMonthEnd·recommendation(채용 가속 | TO 재검토/이동배치 | 정상 관리)·다음 달·리스크 반영 시나리오. deptCode 를 주면 그 조직 한 행(+그 조직 그룹), 없으면 11개 조직 전부. 권고 규칙(gapME ≤ −4 → 채용 가속 / ≥ +5 → TO 재검토)과 가정(assumptions)을 함께 돌려준다. 권고는 제안이며 채택은 사람의 승인 gate. orgLead 는 deptCode 필수. role 은 pii-minimization-policy 를 적용한다: executive|planning|orgLead 는 성명(name)이 제거되고 사번(empId/joinerId)만 남는다(orgLead 는 deptCode 인자로 지정한 자기 조직 행만 받는다). hr|payroll|onboarding 은 성명 허용. 생년월일(birthDate)과 리스크 점수(riskScore)는 어느 role 에도 없다(등급 riskBand 만).",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "deptCode": {
+            "type": "string",
+            "pattern": "^D(0[1-9]|1[01])$",
+            "description": "조직 코드 D01~D11 (D01 CEO Office · D02 Product · D03 Engineering · D04 Design · D05 Data & AI · D06 Sales · D07 Marketing · D08 Customer Success · D09 People · D10 Finance · D11 Legal & Compliance)."
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "executive",
+              "planning",
+              "orgLead",
+              "hr",
+              "payroll",
+              "onboarding"
+            ],
+            "default": "executive",
+            "description": "호출 시스템의 사용자 역할. 기본 executive(성명 없음). 급여 시스템은 payroll, 온보딩 시스템은 onboarding, 인사 총괄(HR) 시스템은 hr, 조직장은 orgLead(+deptCode 필수). role 은 pii-minimization-policy 를 적용한다: executive|planning|orgLead 는 성명(name)이 제거되고 사번(empId/joinerId)만 남는다(orgLead 는 deptCode 인자로 지정한 자기 조직 행만 받는다). hr|payroll|onboarding 은 성명 허용. 생년월일(birthDate)과 리스크 점수(riskScore)는 어느 role 에도 없다(등급 riskBand 만)."
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "insight.get_insights",
+      "description": "예측 인사이트(§4-2 insights: 채용 가속 필요 / TO 재검토 필요 / 퇴사 영향 점검 — type·codes·label·detail·action)와 즉시 액션 3건(immediateActions), 가정, 승인 gate 문구. '이번 달 무엇을 결정해야 하나', '즉시 액션은' 질문에 호출. 인사이트는 권고이며 실행이 아니다(claims.approvalPending). role 은 pii-minimization-policy 를 적용한다: executive|planning|orgLead 는 성명(name)이 제거되고 사번(empId/joinerId)만 남는다(orgLead 는 deptCode 인자로 지정한 자기 조직 행만 받는다). hr|payroll|onboarding 은 성명 허용. 생년월일(birthDate)과 리스크 점수(riskScore)는 어느 role 에도 없다(등급 riskBand 만).",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string",
+            "enum": [
+              "executive",
+              "planning",
+              "orgLead",
+              "hr",
+              "payroll",
+              "onboarding"
+            ],
+            "default": "executive",
+            "description": "호출 시스템의 사용자 역할. 기본 executive(성명 없음). 급여 시스템은 payroll, 온보딩 시스템은 onboarding, 인사 총괄(HR) 시스템은 hr, 조직장은 orgLead(+deptCode 필수). role 은 pii-minimization-policy 를 적용한다: executive|planning|orgLead 는 성명(name)이 제거되고 사번(empId/joinerId)만 남는다(orgLead 는 deptCode 인자로 지정한 자기 조직 행만 받는다). hr|payroll|onboarding 은 성명 허용. 생년월일(birthDate)과 리스크 점수(riskScore)는 어느 role 에도 없다(등급 riskBand 만)."
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "insight.get_attribute_stats",
+      "description": "재직자 406명 기준 속성 분포(§4-1 byAttribute[attribute]) — employmentType·gender·ageBand·jobFamily·level·tenureBand·totalExperienceBand·stage 중 하나. employmentType 은 총원 427 기준(byAttributeAll)도 함께. '레벨 분포', '연령대 구성', '정규직 비율' 질문에 호출. 집계만이라 role 무관. role 은 pii-minimization-policy 를 적용한다: executive|planning|orgLead 는 성명(name)이 제거되고 사번(empId/joinerId)만 남는다(orgLead 는 deptCode 인자로 지정한 자기 조직 행만 받는다). hr|payroll|onboarding 은 성명 허용. 생년월일(birthDate)과 리스크 점수(riskScore)는 어느 role 에도 없다(등급 riskBand 만).",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "attribute": {
+            "type": "string",
+            "enum": [
+              "employmentType",
+              "gender",
+              "ageBand",
+              "jobFamily",
+              "level",
+              "tenureBand",
+              "totalExperienceBand",
+              "stage"
+            ],
+            "description": "분포를 볼 속성 하나."
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "executive",
+              "planning",
+              "orgLead",
+              "hr",
+              "payroll",
+              "onboarding"
+            ],
+            "default": "executive",
+            "description": "호출 시스템의 사용자 역할. 기본 executive(성명 없음). 급여 시스템은 payroll, 온보딩 시스템은 onboarding, 인사 총괄(HR) 시스템은 hr, 조직장은 orgLead(+deptCode 필수). role 은 pii-minimization-policy 를 적용한다: executive|planning|orgLead 는 성명(name)이 제거되고 사번(empId/joinerId)만 남는다(orgLead 는 deptCode 인자로 지정한 자기 조직 행만 받는다). hr|payroll|onboarding 은 성명 허용. 생년월일(birthDate)과 리스크 점수(riskScore)는 어느 role 에도 없다(등급 riskBand 만)."
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "attribute"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "insight.get_attrition_summary",
+      "description": "이직 리스크 요약(§4-3, rule-based-v1 추정): 등급별 인원(summary 높음/중간/낮음), 3개월 기대 이탈(expectedAttritionNext3Months, 시나리오), 조직별·조직 그룹별 등급 분포, 모델 요인·가정. role=hr 일 때만 byEmployee(사번·deptCode·riskBand·topFactors) 포함 — 점수(riskScore)는 어느 role 에도 없다. deptCode 를 주면 그 조직만. '리스크 높은 인원 몇 명', '어느 조직이 위험한가' 질문에 호출. 면담 우선순위 참고용이며 평가 점수가 아니다. role 은 pii-minimization-policy 를 적용한다: executive|planning|orgLead 는 성명(name)이 제거되고 사번(empId/joinerId)만 남는다(orgLead 는 deptCode 인자로 지정한 자기 조직 행만 받는다). hr|payroll|onboarding 은 성명 허용. 생년월일(birthDate)과 리스크 점수(riskScore)는 어느 role 에도 없다(등급 riskBand 만).",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "deptCode": {
+            "type": "string",
+            "pattern": "^D(0[1-9]|1[01])$",
+            "description": "조직 코드 D01~D11 (D01 CEO Office · D02 Product · D03 Engineering · D04 Design · D05 Data & AI · D06 Sales · D07 Marketing · D08 Customer Success · D09 People · D10 Finance · D11 Legal & Compliance)."
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "executive",
+              "planning",
+              "orgLead",
+              "hr",
+              "payroll",
+              "onboarding"
+            ],
+            "default": "executive",
+            "description": "호출 시스템의 사용자 역할. 기본 executive(성명 없음). 급여 시스템은 payroll, 온보딩 시스템은 onboarding, 인사 총괄(HR) 시스템은 hr, 조직장은 orgLead(+deptCode 필수). role 은 pii-minimization-policy 를 적용한다: executive|planning|orgLead 는 성명(name)이 제거되고 사번(empId/joinerId)만 남는다(orgLead 는 deptCode 인자로 지정한 자기 조직 행만 받는다). hr|payroll|onboarding 은 성명 허용. 생년월일(birthDate)과 리스크 점수(riskScore)는 어느 role 에도 없다(등급 riskBand 만)."
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "insight.get_data_quality",
+      "description": "데이터 품질(§3-6 cleansing-summary 요약 + §4-1 dataQuality): 원천→정제 행 수(435→427), 중복 제거 8, 규칙별 보정 건수, 조직명 보정 17·입사일 형식 보정 31, 미해결 항목(사번·필드·질문), 브리프 불일치 기록(215/119/62 vs 220/128/48). '이 숫자 믿을 수 있나', 'HR 에 확인할 것' 질문에 호출. 개인 성명 없음. role 은 pii-minimization-policy 를 적용한다: executive|planning|orgLead 는 성명(name)이 제거되고 사번(empId/joinerId)만 남는다(orgLead 는 deptCode 인자로 지정한 자기 조직 행만 받는다). hr|payroll|onboarding 은 성명 허용. 생년월일(birthDate)과 리스크 점수(riskScore)는 어느 role 에도 없다(등급 riskBand 만).",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string",
+            "enum": [
+              "executive",
+              "planning",
+              "orgLead",
+              "hr",
+              "payroll",
+              "onboarding"
+            ],
+            "default": "executive",
+            "description": "호출 시스템의 사용자 역할. 기본 executive(성명 없음). 급여 시스템은 payroll, 온보딩 시스템은 onboarding, 인사 총괄(HR) 시스템은 hr, 조직장은 orgLead(+deptCode 필수). role 은 pii-minimization-policy 를 적용한다: executive|planning|orgLead 는 성명(name)이 제거되고 사번(empId/joinerId)만 남는다(orgLead 는 deptCode 인자로 지정한 자기 조직 행만 받는다). hr|payroll|onboarding 은 성명 허용. 생년월일(birthDate)과 리스크 점수(riskScore)는 어느 role 에도 없다(등급 riskBand 만)."
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "insight.run_scenario",
+      "description": "월말 인원 시나리오(§4-2 scenario 공식 'forecast = active + round(plannedIn × rate) − plannedOut − extraAttrition' 재계산, 가정). hiringAchievementRate(채용 달성률 0~1.5)와 extraAttrition(추가 이탈 인원)을 넣으면 전사 월말 예측·gap·toFillRate·권고를 다시 계산하고, deptCode 를 주면 그 조직에 대해 계산한다(없으면 조직별은 rate 만 적용, extraAttrition 은 전사에만). 결과는 '시나리오(가정)'이며 대사 대상이 아니다 — 기본 예측(rate 1.0, extra 0)은 baseline 에 함께 돌려준다. 유일한 계산 도구. role 은 pii-minimization-policy 를 적용한다: executive|planning|orgLead 는 성명(name)이 제거되고 사번(empId/joinerId)만 남는다(orgLead 는 deptCode 인자로 지정한 자기 조직 행만 받는다). hr|payroll|onboarding 은 성명 허용. 생년월일(birthDate)과 리스크 점수(riskScore)는 어느 role 에도 없다(등급 riskBand 만).",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "hiringAchievementRate": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1.5,
+            "description": "채용 달성률. 1.0 = 입사 예정자 전원 입사(기본 예측), 0.8 = 80%만 입사."
+          },
+          "extraAttrition": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100,
+            "description": "예정 외 추가 퇴사 인원(정수)."
+          },
+          "deptCode": {
+            "type": "string",
+            "pattern": "^D(0[1-9]|1[01])$",
+            "description": "조직 코드 D01~D11 (D01 CEO Office · D02 Product · D03 Engineering · D04 Design · D05 Data & AI · D06 Sales · D07 Marketing · D08 Customer Success · D09 People · D10 Finance · D11 Legal & Compliance)."
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "executive",
+              "planning",
+              "orgLead",
+              "hr",
+              "payroll",
+              "onboarding"
+            ],
+            "default": "executive",
+            "description": "호출 시스템의 사용자 역할. 기본 executive(성명 없음). 급여 시스템은 payroll, 온보딩 시스템은 onboarding, 인사 총괄(HR) 시스템은 hr, 조직장은 orgLead(+deptCode 필수). role 은 pii-minimization-policy 를 적용한다: executive|planning|orgLead 는 성명(name)이 제거되고 사번(empId/joinerId)만 남는다(orgLead 는 deptCode 인자로 지정한 자기 조직 행만 받는다). hr|payroll|onboarding 은 성명 허용. 생년월일(birthDate)과 리스크 점수(riskScore)는 어느 role 에도 없다(등급 riskBand 만)."
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "hiringAchievementRate",
+          "extraAttrition"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "report.get_monthly_dispatch",
+      "description": "월초 리포트 발송 준비 상태(§6 dispatch): 제목 '[Zero Company] 2026-09 HR Headcount Forecast', 발송 예정 시각·스케줄(0 9 1 * *), 역할별 수신자(@ondatech.example), 첨부, status=ready-to-send, gate. 발송은 하지 않는다 — 실제 발송은 approval.request(action='send-monthly-report') 로 승인 대기를 남기고 사람이 승인한다. '리포트 언제 누구에게 나가나' 질문에 호출. role 은 pii-minimization-policy 를 적용한다: executive|planning|orgLead 는 성명(name)이 제거되고 사번(empId/joinerId)만 남는다(orgLead 는 deptCode 인자로 지정한 자기 조직 행만 받는다). hr|payroll|onboarding 은 성명 허용. 생년월일(birthDate)과 리스크 점수(riskScore)는 어느 role 에도 없다(등급 riskBand 만).",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string",
+            "enum": [
+              "executive",
+              "planning",
+              "orgLead",
+              "hr",
+              "payroll",
+              "onboarding"
+            ],
+            "default": "executive",
+            "description": "호출 시스템의 사용자 역할. 기본 executive(성명 없음). 급여 시스템은 payroll, 온보딩 시스템은 onboarding, 인사 총괄(HR) 시스템은 hr, 조직장은 orgLead(+deptCode 필수). role 은 pii-minimization-policy 를 적용한다: executive|planning|orgLead 는 성명(name)이 제거되고 사번(empId/joinerId)만 남는다(orgLead 는 deptCode 인자로 지정한 자기 조직 행만 받는다). hr|payroll|onboarding 은 성명 허용. 생년월일(birthDate)과 리스크 점수(riskScore)는 어느 role 에도 없다(등급 riskBand 만)."
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "approval.request",
+      "description": "승인 요청(approval-gate-policy). 외부 발송·채용/TO 결정 채택·미해결 항목 확정·배포처럼 사람이 승인해야 하는 행위를 실행하지 않고 _workspace/approvals/{id}.json 에 status=pending 으로 기록하고 그 id 를 돌려준다. 외부 효과 0. 호출 agent 는 이 id 를 사용자에게 보여 주고 승인 문구를 받는다. 승인 뒤의 실행은 이 도구가 아니라 사람의 환경에서 한다. action 예: send-monthly-report · adopt-recommendation · confirm-unresolved · register-schedule · deploy. role 은 pii-minimization-policy 를 적용한다: executive|planning|orgLead 는 성명(name)이 제거되고 사번(empId/joinerId)만 남는다(orgLead 는 deptCode 인자로 지정한 자기 조직 행만 받는다). hr|payroll|onboarding 은 성명 허용. 생년월일(birthDate)과 리스크 점수(riskScore)는 어느 role 에도 없다(등급 riskBand 만).",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64,
+            "description": "승인받을 행위 식별자(kebab-case). 예 send-monthly-report, adopt-recommendation, confirm-unresolved, register-schedule, deploy"
+          },
+          "payload": {
+            "type": "object",
+            "description": "승인자가 볼 내용(무엇을·누구에게·언제·근거 경로). 자격증명·개인 성명은 넣지 않는다.",
+            "additionalProperties": true
+          },
+          "requestedBy": {
+            "type": "string",
+            "description": "요청 시스템/agent 식별자(예 payroll-system-agent). 선택."
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "executive",
+              "planning",
+              "orgLead",
+              "hr",
+              "payroll",
+              "onboarding"
+            ],
+            "default": "executive",
+            "description": "호출 시스템의 사용자 역할. 기본 executive(성명 없음). 급여 시스템은 payroll, 온보딩 시스템은 onboarding, 인사 총괄(HR) 시스템은 hr, 조직장은 orgLead(+deptCode 필수). role 은 pii-minimization-policy 를 적용한다: executive|planning|orgLead 는 성명(name)이 제거되고 사번(empId/joinerId)만 남는다(orgLead 는 deptCode 인자로 지정한 자기 조직 행만 받는다). hr|payroll|onboarding 은 성명 허용. 생년월일(birthDate)과 리스크 점수(riskScore)는 어느 role 에도 없다(등급 riskBand 만)."
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "action",
+          "payload"
+        ]
+      }
+    }
+  }
+]

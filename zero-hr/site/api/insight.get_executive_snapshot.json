@@ -1,0 +1,44 @@
+{
+  "status": "ok",
+  "asOfDate": "2026-09-23",
+  "role": "executive",
+  "tool": "insight.get_executive_snapshot",
+  "data": {
+    "asOfDate": "2026-09-23",
+    "monthEnd": "2026-09-30",
+    "client": "㈜온다테크",
+    "activeHeadcount": 406,
+    "onLeave": 21,
+    "headcount": 427,
+    "toHeadcount": 422,
+    "toGapAsOf": -16,
+    "plannedIn": 19,
+    "plannedOut": 14,
+    "forecastMonthEnd": 411,
+    "toGapMonthEnd": -11,
+    "toFillRate": 0.9739,
+    "nextMonth": {
+      "plannedIn": 8,
+      "plannedOut": 4,
+      "forecastNextMonthEnd": 415,
+      "toGapNextMonthEnd": -7
+    },
+    "unresolvedCount": 10,
+    "reconciliation": {
+      "statsActiveHeadcount": 406,
+      "forecastActiveHeadcount": 406,
+      "match": true
+    }
+  },
+  "provenance": {
+    "source": "data/stats/headcount-stats.json, data/stats/month-end-forecast.json",
+    "script": ".claude/skills/headcount-stats/scripts/compute_stats.py, .claude/skills/month-end-forecast/scripts/forecast.py"
+  },
+  "claims": {
+    "implemented": [
+      "totals 는 headcount-stats.json(재직·휴직·총원) + month-end-forecast.json(TO·예정·월말) 값 그대로"
+    ],
+    "mockup": [],
+    "approvalPending": []
+  }
+}

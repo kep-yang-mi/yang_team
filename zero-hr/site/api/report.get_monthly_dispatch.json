@@ -1,0 +1,65 @@
+{
+  "status": "ok",
+  "asOfDate": "2026-09-23",
+  "role": "executive",
+  "tool": "report.get_monthly_dispatch",
+  "data": {
+    "sendAt": "2026-10-01T09:00:00+09:00",
+    "schedule": "0 9 1 * *",
+    "recipients": {
+      "executive": [
+        "ceo@ondatech.example",
+        "cfo@ondatech.example",
+        "coo@ondatech.example"
+      ],
+      "hr": [
+        "hr-head@ondatech.example",
+        "people-ops@ondatech.example"
+      ],
+      "planning": [
+        "planning-lead@ondatech.example",
+        "corp-planning@ondatech.example"
+      ],
+      "orgLead": [
+        "lead-product@ondatech.example",
+        "lead-engineering@ondatech.example",
+        "lead-design@ondatech.example",
+        "lead-data-ai@ondatech.example",
+        "lead-sales@ondatech.example",
+        "lead-marketing@ondatech.example",
+        "lead-cs@ondatech.example",
+        "lead-people@ondatech.example",
+        "lead-finance@ondatech.example",
+        "lead-legal@ondatech.example"
+      ]
+    },
+    "subject": "[Zero Company] 2026-09 HR Headcount Forecast",
+    "attachments": [
+      "site/insight/index.html",
+      "reports/org-forecast-2026-09.csv"
+    ],
+    "status": "ready-to-send",
+    "gate": "approval-gate: 외부 발송",
+    "body": {
+      "markdown": "reports/monthly-report-2026-10.md",
+      "html": "reports/monthly-report-2026-10.html"
+    },
+    "recipientCount": 17,
+    "sent": false
+  },
+  "provenance": {
+    "source": "reports/monthly-report-dispatch.json",
+    "script": ".claude/skills/monthly-report/scripts"
+  },
+  "claims": {
+    "implemented": [
+      "dispatch 자산(reports/monthly-report-dispatch.json)을 그대로 읽는다. 리포트 본문은 같은 data/stats 에서 렌더"
+    ],
+    "mockup": [
+      "status=ready-to-send — 발송되지 않았다. 수신자는 @ondatech.example 예시 주소"
+    ],
+    "approvalPending": [
+      "외부 발송(approval-gate: 외부 발송) — approval.request(action='send-monthly-report') 로 승인 대기 기록"
+    ]
+  }
+}

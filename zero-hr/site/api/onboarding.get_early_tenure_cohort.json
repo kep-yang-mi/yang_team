@@ -1,0 +1,175 @@
+{
+  "status": "ok",
+  "asOfDate": "2026-09-23",
+  "role": "executive",
+  "tool": "onboarding.get_early_tenure_cohort",
+  "data": {
+    "asOfDate": "2026-09-23",
+    "earlyTenureCohort": {
+      "definition": "기준일 기준 입사 90일 이내 재직자",
+      "members": [
+        {
+          "empId": "E0416",
+          "deptCode": "D03",
+          "hireDate": "2026-07-04",
+          "daysSinceHire": 81,
+          "riskBand": "낮음"
+        },
+        {
+          "empId": "E0414",
+          "deptCode": "D08",
+          "hireDate": "2026-07-05",
+          "daysSinceHire": 80,
+          "riskBand": "낮음"
+        },
+        {
+          "empId": "E0412",
+          "deptCode": "D03",
+          "hireDate": "2026-07-06",
+          "daysSinceHire": 79,
+          "riskBand": "낮음"
+        },
+        {
+          "empId": "E0421",
+          "deptCode": "D06",
+          "hireDate": "2026-07-14",
+          "daysSinceHire": 71,
+          "riskBand": "낮음"
+        },
+        {
+          "empId": "E0423",
+          "deptCode": "D02",
+          "hireDate": "2026-08-07",
+          "daysSinceHire": 47,
+          "riskBand": "낮음"
+        },
+        {
+          "empId": "E0417",
+          "deptCode": "D03",
+          "hireDate": "2026-08-13",
+          "daysSinceHire": 41,
+          "riskBand": "높음"
+        },
+        {
+          "empId": "E0415",
+          "deptCode": "D03",
+          "hireDate": "2026-08-30",
+          "daysSinceHire": 24,
+          "riskBand": "낮음"
+        },
+        {
+          "empId": "E0419",
+          "deptCode": "D02",
+          "hireDate": "2026-09-05",
+          "daysSinceHire": 18,
+          "riskBand": "낮음"
+        },
+        {
+          "empId": "E0420",
+          "deptCode": "D05",
+          "hireDate": "2026-09-08",
+          "daysSinceHire": 15,
+          "riskBand": "낮음"
+        },
+        {
+          "empId": "E0422",
+          "deptCode": "D07",
+          "hireDate": "2026-09-10",
+          "daysSinceHire": 13,
+          "riskBand": "낮음"
+        },
+        {
+          "empId": "E0424",
+          "deptCode": "D06",
+          "hireDate": "2026-09-10",
+          "daysSinceHire": 13,
+          "riskBand": "낮음"
+        },
+        {
+          "empId": "E0425",
+          "deptCode": "D02",
+          "hireDate": "2026-09-20",
+          "daysSinceHire": 3,
+          "riskBand": "낮음"
+        }
+      ],
+      "count": 12,
+      "highRiskCount": 1
+    },
+    "earlyAttrition": {
+      "definition": "퇴사 예정자(14) 중 재직기간 1년 미만 비율",
+      "under1YearLeavers": 1,
+      "totalLeavers": 14,
+      "rate": 0.0714,
+      "byDepartment": {
+        "D02": {
+          "department": "Product",
+          "under1YearLeavers": 0,
+          "totalLeavers": 1,
+          "rate": 0.0
+        },
+        "D03": {
+          "department": "Engineering",
+          "under1YearLeavers": 0,
+          "totalLeavers": 4,
+          "rate": 0.0
+        },
+        "D04": {
+          "department": "Design",
+          "under1YearLeavers": 0,
+          "totalLeavers": 1,
+          "rate": 0.0
+        },
+        "D05": {
+          "department": "Data & AI",
+          "under1YearLeavers": 0,
+          "totalLeavers": 1,
+          "rate": 0.0
+        },
+        "D06": {
+          "department": "Sales",
+          "under1YearLeavers": 1,
+          "totalLeavers": 3,
+          "rate": 0.3333
+        },
+        "D07": {
+          "department": "Marketing",
+          "under1YearLeavers": 0,
+          "totalLeavers": 1,
+          "rate": 0.0
+        },
+        "D08": {
+          "department": "Customer Success",
+          "under1YearLeavers": 0,
+          "totalLeavers": 1,
+          "rate": 0.0
+        },
+        "D10": {
+          "department": "Finance",
+          "under1YearLeavers": 0,
+          "totalLeavers": 1,
+          "rate": 0.0
+        },
+        "D11": {
+          "department": "Legal & Compliance",
+          "under1YearLeavers": 0,
+          "totalLeavers": 1,
+          "rate": 0.0
+        }
+      }
+    }
+  },
+  "provenance": {
+    "source": "data/stats/onboarding-plan.json",
+    "script": ".claude/skills/onboarding-plan/scripts/onboarding_plan.py"
+  },
+  "claims": {
+    "implemented": [
+      "earlyTenureCohort·earlyAttrition 을 onboarding-plan.json 에서 읽는다. 사번·집계만"
+    ],
+    "mockup": [],
+    "approvalPending": [
+      "riskBand 는 rule-based-v1 추정 등급 — 면담 우선순위 참고, 인사 조치 근거 아님"
+    ]
+  }
+}

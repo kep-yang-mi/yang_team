@@ -1,0 +1,1465 @@
+{
+ "seed": 20260923,
+ "generatedAt": "2026-09-23",
+ "client": "㈜온다테크",
+ "summary": {
+  "duplicate": 8,
+  "org-old-name": 6,
+  "org-variant": 9,
+  "org-typo": 3,
+  "org-whitespace": 4,
+  "org-unknown": 2,
+  "hire-date-format": 31,
+  "date-logic": 2,
+  "date-format": 15,
+  "status-inconsistency": 3,
+  "missing-required": 3,
+  "code-variant": 33,
+  "stale-planned-leaver": 1,
+  "unknown-emp": 1,
+  "reason-freetext": 6
+ },
+ "bySource": {
+  "headcount-master": {
+   "duplicate": 8,
+   "org-old-name": 6,
+   "org-variant": 4,
+   "org-typo": 3,
+   "org-whitespace": 4,
+   "org-unknown": 2,
+   "hire-date-format": 31,
+   "date-logic": 2,
+   "date-format": 6,
+   "status-inconsistency": 3,
+   "missing-required": 3,
+   "code-variant": 32
+  },
+  "to-plan": {
+   "date-format": 4,
+   "org-variant": 3
+  },
+  "planned-joiners": {
+   "org-variant": 2,
+   "date-format": 3,
+   "code-variant": 1
+  },
+  "planned-leavers": {
+   "stale-planned-leaver": 1,
+   "unknown-emp": 1,
+   "date-format": 2,
+   "reason-freetext": 6
+  }
+ },
+ "total": 127,
+ "defects": [
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0073",
+    "rowIndex": 62
+   },
+   "field": "사번",
+   "defectType": "duplicate",
+   "rawValue": "2025-06-04",
+   "trueValue": 74
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0131",
+    "rowIndex": 69
+   },
+   "field": "사번",
+   "defectType": "duplicate",
+   "rawValue": "2025-05-29",
+   "trueValue": 135
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0074",
+    "rowIndex": 75
+   },
+   "field": "사번",
+   "defectType": "duplicate",
+   "rawValue": "2024-06-30",
+   "trueValue": 76
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0134",
+    "rowIndex": 106
+   },
+   "field": "사번",
+   "defectType": "duplicate",
+   "rawValue": "2025-03-29",
+   "trueValue": 138
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0127",
+    "rowIndex": 130
+   },
+   "field": "사번",
+   "defectType": "duplicate",
+   "rawValue": "2025-06-15",
+   "trueValue": 131
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0143",
+    "rowIndex": 147
+   },
+   "field": "사번",
+   "defectType": "duplicate",
+   "rawValue": "2025-06-15",
+   "trueValue": 148
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0318",
+    "rowIndex": 323
+   },
+   "field": "사번",
+   "defectType": "duplicate",
+   "rawValue": "2024-12-10",
+   "trueValue": 324
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0325",
+    "rowIndex": 331
+   },
+   "field": "사번",
+   "defectType": "duplicate",
+   "rawValue": "2025-07-05",
+   "trueValue": 332
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0206",
+    "rowIndex": 211
+   },
+   "field": "소속",
+   "defectType": "org-old-name",
+   "rawValue": "HR",
+   "trueValue": "D09"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0174",
+    "rowIndex": 179
+   },
+   "field": "소속",
+   "defectType": "org-old-name",
+   "rawValue": "R&D",
+   "trueValue": "D03"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0414",
+    "rowIndex": 421
+   },
+   "field": "소속",
+   "defectType": "org-old-name",
+   "rawValue": "Customer Support",
+   "trueValue": "D08"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0001",
+    "rowIndex": 0
+   },
+   "field": "소속",
+   "defectType": "org-old-name",
+   "rawValue": "UX",
+   "trueValue": "D04"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0111",
+    "rowIndex": 114
+   },
+   "field": "소속",
+   "defectType": "org-old-name",
+   "rawValue": "AI Lab",
+   "trueValue": "D05"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0187",
+    "rowIndex": 192
+   },
+   "field": "소속",
+   "defectType": "org-old-name",
+   "rawValue": "BizDev",
+   "trueValue": "D06"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0370",
+    "rowIndex": 377
+   },
+   "field": "소속",
+   "defectType": "org-variant",
+   "rawValue": "Legal and Compliance",
+   "trueValue": "D11"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0083",
+    "rowIndex": 85
+   },
+   "field": "소속",
+   "defectType": "org-variant",
+   "rawValue": "Legal&Compliance",
+   "trueValue": "D11"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0307",
+    "rowIndex": 312
+   },
+   "field": "소속",
+   "defectType": "org-variant",
+   "rawValue": "Data and AI",
+   "trueValue": "D05"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0310",
+    "rowIndex": 315
+   },
+   "field": "소속",
+   "defectType": "org-variant",
+   "rawValue": "Customer success",
+   "trueValue": "D08"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0250",
+    "rowIndex": 255
+   },
+   "field": "소속",
+   "defectType": "org-typo",
+   "rawValue": "Enginering",
+   "trueValue": "D03"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0314",
+    "rowIndex": 319
+   },
+   "field": "소속",
+   "defectType": "org-typo",
+   "rawValue": "Marketting",
+   "trueValue": "D07"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0051",
+    "rowIndex": 50
+   },
+   "field": "소속",
+   "defectType": "org-typo",
+   "rawValue": "Finanace",
+   "trueValue": "D10"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0373",
+    "rowIndex": 380
+   },
+   "field": "소속",
+   "defectType": "org-whitespace",
+   "rawValue": " Engineering",
+   "trueValue": "D03"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0139",
+    "rowIndex": 143
+   },
+   "field": "소속",
+   "defectType": "org-whitespace",
+   "rawValue": "Sales ",
+   "trueValue": "D06"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0152",
+    "rowIndex": 157
+   },
+   "field": "소속",
+   "defectType": "org-whitespace",
+   "rawValue": "Customer  Success",
+   "trueValue": "D08"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0054",
+    "rowIndex": 53
+   },
+   "field": "소속",
+   "defectType": "org-whitespace",
+   "rawValue": "Data　&　AI",
+   "trueValue": "D05"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0306",
+    "rowIndex": 311
+   },
+   "field": "소속",
+   "defectType": "org-unknown",
+   "rawValue": "Growth Lab",
+   "trueValue": "(unresolved)",
+   "assignedValue": "D07"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0281",
+    "rowIndex": 286
+   },
+   "field": "소속",
+   "defectType": "org-unknown",
+   "rawValue": "Platform",
+   "trueValue": "(unresolved)",
+   "assignedValue": "D03"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0332",
+    "rowIndex": 339
+   },
+   "field": "입사일",
+   "defectType": "hire-date-format",
+   "rawValue": "2025/02/05",
+   "trueValue": "2025-02-05"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0137",
+    "rowIndex": 141
+   },
+   "field": "입사일",
+   "defectType": "hire-date-format",
+   "rawValue": "2022/03/12",
+   "trueValue": "2022-03-12"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0104",
+    "rowIndex": 107
+   },
+   "field": "입사일",
+   "defectType": "hire-date-format",
+   "rawValue": "2021/09/02",
+   "trueValue": "2021-09-02"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0373",
+    "rowIndex": 380
+   },
+   "field": "입사일",
+   "defectType": "hire-date-format",
+   "rawValue": "2025/10/24",
+   "trueValue": "2025-10-24"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0351",
+    "rowIndex": 358
+   },
+   "field": "입사일",
+   "defectType": "hire-date-format",
+   "rawValue": "2025/08/03",
+   "trueValue": "2025-08-03"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0386",
+    "rowIndex": 393
+   },
+   "field": "입사일",
+   "defectType": "hire-date-format",
+   "rawValue": "2025/10/11",
+   "trueValue": "2025-10-11"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0280",
+    "rowIndex": 285
+   },
+   "field": "입사일",
+   "defectType": "hire-date-format",
+   "rawValue": "2024/08/23",
+   "trueValue": "2024-08-23"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0231",
+    "rowIndex": 236
+   },
+   "field": "입사일",
+   "defectType": "hire-date-format",
+   "rawValue": "2023/11/03",
+   "trueValue": "2023-11-03"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0317",
+    "rowIndex": 322
+   },
+   "field": "입사일",
+   "defectType": "hire-date-format",
+   "rawValue": "2025/01/11",
+   "trueValue": "2025-01-11"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0135",
+    "rowIndex": 139
+   },
+   "field": "입사일",
+   "defectType": "hire-date-format",
+   "rawValue": "2022/04/15",
+   "trueValue": "2022-04-15"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0031",
+    "rowIndex": 30
+   },
+   "field": "입사일",
+   "defectType": "hire-date-format",
+   "rawValue": "2019/11/12",
+   "trueValue": "2019-11-12"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0279",
+    "rowIndex": 284
+   },
+   "field": "입사일",
+   "defectType": "hire-date-format",
+   "rawValue": "2024/07/30",
+   "trueValue": "2024-07-30"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0255",
+    "rowIndex": 260
+   },
+   "field": "입사일",
+   "defectType": "hire-date-format",
+   "rawValue": "2024/03/28",
+   "trueValue": "2024-03-28"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0055",
+    "rowIndex": 54
+   },
+   "field": "입사일",
+   "defectType": "hire-date-format",
+   "rawValue": "2020/03/31",
+   "trueValue": "2020-03-31"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0226",
+    "rowIndex": 231
+   },
+   "field": "입사일",
+   "defectType": "hire-date-format",
+   "rawValue": "2023/10/31",
+   "trueValue": "2023-10-31"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0369",
+    "rowIndex": 376
+   },
+   "field": "입사일",
+   "defectType": "hire-date-format",
+   "rawValue": "2025/07/28",
+   "trueValue": "2025-07-28"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0299",
+    "rowIndex": 304
+   },
+   "field": "입사일",
+   "defectType": "hire-date-format",
+   "rawValue": "2024/11/02",
+   "trueValue": "2024-11-02"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0328",
+    "rowIndex": 335
+   },
+   "field": "입사일",
+   "defectType": "hire-date-format",
+   "rawValue": "2025/03/20",
+   "trueValue": "2025-03-20"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0032",
+    "rowIndex": 31
+   },
+   "field": "입사일",
+   "defectType": "hire-date-format",
+   "rawValue": "2019/10/15",
+   "trueValue": "2019-10-15"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0182",
+    "rowIndex": 187
+   },
+   "field": "입사일",
+   "defectType": "hire-date-format",
+   "rawValue": "2023/01/25",
+   "trueValue": "2023-01-25"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0118",
+    "rowIndex": 121
+   },
+   "field": "입사일",
+   "defectType": "hire-date-format",
+   "rawValue": "2022.01.21",
+   "trueValue": "2022-01-21"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0078",
+    "rowIndex": 80
+   },
+   "field": "입사일",
+   "defectType": "hire-date-format",
+   "rawValue": "2020.12.09",
+   "trueValue": "2020-12-09"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0268",
+    "rowIndex": 273
+   },
+   "field": "입사일",
+   "defectType": "hire-date-format",
+   "rawValue": "2024.06.11",
+   "trueValue": "2024-06-11"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0079",
+    "rowIndex": 81
+   },
+   "field": "입사일",
+   "defectType": "hire-date-format",
+   "rawValue": "2020.11.13",
+   "trueValue": "2020-11-13"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0298",
+    "rowIndex": 303
+   },
+   "field": "입사일",
+   "defectType": "hire-date-format",
+   "rawValue": "2024.10.05",
+   "trueValue": "2024-10-05"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0081",
+    "rowIndex": 83
+   },
+   "field": "입사일",
+   "defectType": "hire-date-format",
+   "rawValue": "2021.01.09",
+   "trueValue": "2021-01-09"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0216",
+    "rowIndex": 221
+   },
+   "field": "입사일",
+   "defectType": "hire-date-format",
+   "rawValue": "20230923",
+   "trueValue": "2023-09-23"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0296",
+    "rowIndex": 301
+   },
+   "field": "입사일",
+   "defectType": "hire-date-format",
+   "rawValue": "20241011",
+   "trueValue": "2024-10-11"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0301",
+    "rowIndex": 306
+   },
+   "field": "입사일",
+   "defectType": "hire-date-format",
+   "rawValue": "20241020",
+   "trueValue": "2024-10-20"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0355",
+    "rowIndex": 362
+   },
+   "field": "입사일",
+   "defectType": "hire-date-format",
+   "rawValue": "45810",
+   "trueValue": "2025-06-02"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0129",
+    "rowIndex": 133
+   },
+   "field": "입사일",
+   "defectType": "hire-date-format",
+   "rawValue": "44635",
+   "trueValue": "2022-03-15"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0426",
+    "rowIndex": 433
+   },
+   "field": "입사일",
+   "defectType": "date-logic",
+   "rawValue": "2026-10-10",
+   "trueValue": "(unresolved)",
+   "assignedValue": "2026-10-10"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0427",
+    "rowIndex": 434
+   },
+   "field": "입사일",
+   "defectType": "date-logic",
+   "rawValue": "2026-10-21",
+   "trueValue": "(unresolved)",
+   "assignedValue": "2026-10-21"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0103",
+    "rowIndex": 105
+   },
+   "field": "휴직시작일",
+   "defectType": "date-format",
+   "rawValue": "2025/12/14",
+   "trueValue": "2025-12-14"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0161",
+    "rowIndex": 166
+   },
+   "field": "휴직시작일",
+   "defectType": "date-format",
+   "rawValue": "2026.07.23",
+   "trueValue": "2026-07-23"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0359",
+    "rowIndex": 366
+   },
+   "field": "휴직시작일",
+   "defectType": "date-format",
+   "rawValue": "26.05.19",
+   "trueValue": "2026-05-19"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0390",
+    "rowIndex": 397
+   },
+   "field": "계약종료일",
+   "defectType": "date-format",
+   "rawValue": "2026/11/07",
+   "trueValue": "2026-11-07"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0197",
+    "rowIndex": 202
+   },
+   "field": "계약종료일",
+   "defectType": "date-format",
+   "rawValue": "20270925",
+   "trueValue": "2027-09-25"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0365",
+    "rowIndex": 372
+   },
+   "field": "계약종료일",
+   "defectType": "date-format",
+   "rawValue": "2027년 10월 23일",
+   "trueValue": "2027-10-23"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0031",
+    "rowIndex": 30
+   },
+   "field": "휴직유형",
+   "defectType": "status-inconsistency",
+   "rawValue": "",
+   "trueValue": "(unresolved)",
+   "assignedValue": "기타"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0273",
+    "rowIndex": 278
+   },
+   "field": "휴직유형",
+   "defectType": "status-inconsistency",
+   "rawValue": "",
+   "trueValue": "(unresolved)",
+   "assignedValue": "기타"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0049",
+    "rowIndex": 48
+   },
+   "field": "휴직유형",
+   "defectType": "status-inconsistency",
+   "rawValue": "",
+   "trueValue": "(unresolved)",
+   "assignedValue": "기타"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0046",
+    "rowIndex": 45
+   },
+   "field": "계약종료일",
+   "defectType": "missing-required",
+   "rawValue": "",
+   "trueValue": "(unresolved)",
+   "assignedValue": ""
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0350",
+    "rowIndex": 357
+   },
+   "field": "계약종료일",
+   "defectType": "missing-required",
+   "rawValue": "",
+   "trueValue": "(unresolved)",
+   "assignedValue": ""
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0370",
+    "rowIndex": 377
+   },
+   "field": "계약종료일",
+   "defectType": "missing-required",
+   "rawValue": "",
+   "trueValue": "(unresolved)",
+   "assignedValue": ""
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0303",
+    "rowIndex": 308
+   },
+   "field": "성별",
+   "defectType": "code-variant",
+   "rawValue": "F",
+   "trueValue": "여성"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0320",
+    "rowIndex": 326
+   },
+   "field": "성별",
+   "defectType": "code-variant",
+   "rawValue": "M",
+   "trueValue": "남성"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0243",
+    "rowIndex": 248
+   },
+   "field": "성별",
+   "defectType": "code-variant",
+   "rawValue": "female",
+   "trueValue": "여성"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0193",
+    "rowIndex": 198
+   },
+   "field": "성별",
+   "defectType": "code-variant",
+   "rawValue": "male",
+   "trueValue": "남성"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0133",
+    "rowIndex": 137
+   },
+   "field": "성별",
+   "defectType": "code-variant",
+   "rawValue": "여",
+   "trueValue": "여성"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0093",
+    "rowIndex": 95
+   },
+   "field": "성별",
+   "defectType": "code-variant",
+   "rawValue": "남",
+   "trueValue": "남성"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0393",
+    "rowIndex": 400
+   },
+   "field": "성별",
+   "defectType": "code-variant",
+   "rawValue": "",
+   "trueValue": "미응답"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0097",
+    "rowIndex": 99
+   },
+   "field": "성별",
+   "defectType": "code-variant",
+   "rawValue": "",
+   "trueValue": "미응답"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0341",
+    "rowIndex": 348
+   },
+   "field": "고용유형",
+   "defectType": "code-variant",
+   "rawValue": "정규",
+   "trueValue": "정규직"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0360",
+    "rowIndex": 367
+   },
+   "field": "고용유형",
+   "defectType": "code-variant",
+   "rawValue": "Regular",
+   "trueValue": "정규직"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0220",
+    "rowIndex": 225
+   },
+   "field": "고용유형",
+   "defectType": "code-variant",
+   "rawValue": "FT",
+   "trueValue": "정규직"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0197",
+    "rowIndex": 202
+   },
+   "field": "고용유형",
+   "defectType": "code-variant",
+   "rawValue": "계약",
+   "trueValue": "계약직"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0405",
+    "rowIndex": 412
+   },
+   "field": "고용유형",
+   "defectType": "code-variant",
+   "rawValue": "Contract",
+   "trueValue": "계약직"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0417",
+    "rowIndex": 424
+   },
+   "field": "고용유형",
+   "defectType": "code-variant",
+   "rawValue": "Intern",
+   "trueValue": "인턴"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0208",
+    "rowIndex": 213
+   },
+   "field": "고용유형",
+   "defectType": "code-variant",
+   "rawValue": "Dispatch",
+   "trueValue": "파견"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0265",
+    "rowIndex": 270
+   },
+   "field": "고용유형",
+   "defectType": "code-variant",
+   "rawValue": "정규",
+   "trueValue": "정규직"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0357",
+    "rowIndex": 364
+   },
+   "field": "고용유형",
+   "defectType": "code-variant",
+   "rawValue": "계약",
+   "trueValue": "계약직"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0396",
+    "rowIndex": 403
+   },
+   "field": "재직상태",
+   "defectType": "code-variant",
+   "rawValue": "재직중",
+   "trueValue": "재직"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0193",
+    "rowIndex": 198
+   },
+   "field": "재직상태",
+   "defectType": "code-variant",
+   "rawValue": "Active",
+   "trueValue": "재직"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0049",
+    "rowIndex": 48
+   },
+   "field": "재직상태",
+   "defectType": "code-variant",
+   "rawValue": "휴직중",
+   "trueValue": "휴직"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0321",
+    "rowIndex": 327
+   },
+   "field": "재직상태",
+   "defectType": "code-variant",
+   "rawValue": "Leave",
+   "trueValue": "휴직"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0135",
+    "rowIndex": 139
+   },
+   "field": "재직상태",
+   "defectType": "code-variant",
+   "rawValue": "재직중",
+   "trueValue": "재직"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0426",
+    "rowIndex": 433
+   },
+   "field": "재직상태",
+   "defectType": "code-variant",
+   "rawValue": "Active",
+   "trueValue": "재직"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0307",
+    "rowIndex": 312
+   },
+   "field": "재직상태",
+   "defectType": "code-variant",
+   "rawValue": "Leave",
+   "trueValue": "휴직"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0051",
+    "rowIndex": 50
+   },
+   "field": "재직상태",
+   "defectType": "code-variant",
+   "rawValue": "재직중",
+   "trueValue": "재직"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0415",
+    "rowIndex": 422
+   },
+   "field": "레벨",
+   "defectType": "code-variant",
+   "rawValue": "ic1",
+   "trueValue": "IC1"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0248",
+    "rowIndex": 253
+   },
+   "field": "레벨",
+   "defectType": "code-variant",
+   "rawValue": "IC-2",
+   "trueValue": "IC2"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0149",
+    "rowIndex": 154
+   },
+   "field": "레벨",
+   "defectType": "code-variant",
+   "rawValue": "Sr",
+   "trueValue": "Senior"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0026",
+    "rowIndex": 25
+   },
+   "field": "레벨",
+   "defectType": "code-variant",
+   "rawValue": "Mgr",
+   "trueValue": "Manager"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0029",
+    "rowIndex": 28
+   },
+   "field": "레벨",
+   "defectType": "code-variant",
+   "rawValue": "Dir",
+   "trueValue": "Director"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0251",
+    "rowIndex": 256
+   },
+   "field": "레벨",
+   "defectType": "code-variant",
+   "rawValue": "ic1",
+   "trueValue": "IC1"
+  },
+  {
+   "source": "headcount-master",
+   "rowRef": {
+    "사번": "E0190",
+    "rowIndex": 195
+   },
+   "field": "레벨",
+   "defectType": "code-variant",
+   "rawValue": "Sr",
+   "trueValue": "Senior"
+  },
+  {
+   "source": "to-plan",
+   "rowRef": {
+    "사번": "",
+    "rowIndex": 1
+   },
+   "field": "기준월",
+   "defectType": "date-format",
+   "rawValue": "2026.09",
+   "trueValue": "2026-09"
+  },
+  {
+   "source": "to-plan",
+   "rowRef": {
+    "사번": "",
+    "rowIndex": 3
+   },
+   "field": "기준월",
+   "defectType": "date-format",
+   "rawValue": "2026.09",
+   "trueValue": "2026-09"
+  },
+  {
+   "source": "to-plan",
+   "rowRef": {
+    "사번": "",
+    "rowIndex": 4
+   },
+   "field": "조직",
+   "defectType": "org-variant",
+   "rawValue": "Data and AI",
+   "trueValue": "D05"
+  },
+  {
+   "source": "to-plan",
+   "rowRef": {
+    "사번": "",
+    "rowIndex": 4
+   },
+   "field": "기준월",
+   "defectType": "date-format",
+   "rawValue": "2026년 9월",
+   "trueValue": "2026-09"
+  },
+  {
+   "source": "to-plan",
+   "rowRef": {
+    "사번": "",
+    "rowIndex": 7
+   },
+   "field": "조직",
+   "defectType": "org-variant",
+   "rawValue": "Customer success",
+   "trueValue": "D08"
+  },
+  {
+   "source": "to-plan",
+   "rowRef": {
+    "사번": "",
+    "rowIndex": 8
+   },
+   "field": "기준월",
+   "defectType": "date-format",
+   "rawValue": "202609",
+   "trueValue": "2026-09"
+  },
+  {
+   "source": "to-plan",
+   "rowRef": {
+    "사번": "",
+    "rowIndex": 10
+   },
+   "field": "조직",
+   "defectType": "org-variant",
+   "rawValue": "Legal and Compliance",
+   "trueValue": "D11"
+  },
+  {
+   "source": "planned-joiners",
+   "rowRef": {
+    "사번": "",
+    "rowIndex": 0
+   },
+   "field": "소속",
+   "defectType": "org-variant",
+   "rawValue": "Data and AI",
+   "trueValue": "D05"
+  },
+  {
+   "source": "planned-joiners",
+   "rowRef": {
+    "사번": "",
+    "rowIndex": 24
+   },
+   "field": "소속",
+   "defectType": "org-variant",
+   "rawValue": "Customer success",
+   "trueValue": "D08"
+  },
+  {
+   "source": "planned-joiners",
+   "rowRef": {
+    "사번": "",
+    "rowIndex": 23
+   },
+   "field": "입사예정일",
+   "defectType": "date-format",
+   "rawValue": "2026/09/28",
+   "trueValue": "2026-09-28"
+  },
+  {
+   "source": "planned-joiners",
+   "rowRef": {
+    "사번": "",
+    "rowIndex": 25
+   },
+   "field": "입사예정일",
+   "defectType": "date-format",
+   "rawValue": "2026.09.28",
+   "trueValue": "2026-09-28"
+  },
+  {
+   "source": "planned-joiners",
+   "rowRef": {
+    "사번": "",
+    "rowIndex": 4
+   },
+   "field": "입사예정일",
+   "defectType": "date-format",
+   "rawValue": "20260930",
+   "trueValue": "2026-09-30"
+  },
+  {
+   "source": "planned-joiners",
+   "rowRef": {
+    "사번": "",
+    "rowIndex": 23
+   },
+   "field": "성별",
+   "defectType": "code-variant",
+   "rawValue": "F",
+   "trueValue": "여성"
+  },
+  {
+   "source": "planned-leavers",
+   "rowRef": {
+    "사번": "E0251",
+    "rowIndex": 11
+   },
+   "field": "퇴사예정일",
+   "defectType": "stale-planned-leaver",
+   "rawValue": "2026-09-15",
+   "trueValue": "(unresolved)",
+   "assignedValue": "2026-09-15"
+  },
+  {
+   "source": "planned-leavers",
+   "rowRef": {
+    "사번": "E9999",
+    "rowIndex": 17
+   },
+   "field": "사번",
+   "defectType": "unknown-emp",
+   "rawValue": "E9999",
+   "trueValue": "(unresolved)",
+   "assignedValue": ""
+  },
+  {
+   "source": "planned-leavers",
+   "rowRef": {
+    "사번": "E0352",
+    "rowIndex": 13
+   },
+   "field": "퇴사예정일",
+   "defectType": "date-format",
+   "rawValue": "2026/09/30",
+   "trueValue": "2026-09-30"
+  },
+  {
+   "source": "planned-leavers",
+   "rowRef": {
+    "사번": "E0366",
+    "rowIndex": 16
+   },
+   "field": "퇴사예정일",
+   "defectType": "date-format",
+   "rawValue": "2026.09.30",
+   "trueValue": "2026-09-30"
+  },
+  {
+   "source": "planned-leavers",
+   "rowRef": {
+    "사번": "E0356",
+    "rowIndex": 3
+   },
+   "field": "퇴직사유",
+   "defectType": "reason-freetext",
+   "rawValue": "자발적 퇴사",
+   "trueValue": "자발퇴사"
+  },
+  {
+   "source": "planned-leavers",
+   "rowRef": {
+    "사번": "E0064",
+    "rowIndex": 18
+   },
+   "field": "퇴직사유",
+   "defectType": "reason-freetext",
+   "rawValue": "자발적 이직",
+   "trueValue": "자발퇴사"
+  },
+  {
+   "source": "planned-leavers",
+   "rowRef": {
+    "사번": "E0015",
+    "rowIndex": 14
+   },
+   "field": "퇴직사유",
+   "defectType": "reason-freetext",
+   "rawValue": "계약 기간 만료",
+   "trueValue": "계약만료"
+  },
+  {
+   "source": "planned-leavers",
+   "rowRef": {
+    "사번": "E0251",
+    "rowIndex": 11
+   },
+   "field": "퇴직사유",
+   "defectType": "reason-freetext",
+   "rawValue": "조직 개편에 따른",
+   "trueValue": "조직개편"
+  },
+  {
+   "source": "planned-leavers",
+   "rowRef": {
+    "사번": "E0366",
+    "rowIndex": 16
+   },
+   "field": "퇴직사유",
+   "defectType": "reason-freetext",
+   "rawValue": "성과 부진",
+   "trueValue": "성과/적합도"
+  },
+  {
+   "source": "planned-leavers",
+   "rowRef": {
+    "사번": "E0128",
+    "rowIndex": 8
+   },
+   "field": "퇴직사유",
+   "defectType": "reason-freetext",
+   "rawValue": "개인 사정",
+   "trueValue": "개인사유"
+  }
+ ]
+}
