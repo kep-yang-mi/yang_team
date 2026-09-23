@@ -468,7 +468,7 @@ class OrgResolver(object):
         # 2. 대소문자·&/and·구두점 변형 → 3. 별칭
         code, rule = self._exact_or_alias(key)
         if code:
-            return OrgMatch(code, rule, 0.98 if rule == "org-variant" else 0.97)
+            return OrgMatch(code, rule, 0.98 if rule == "org-variant" else 0.95)
         # 4. 접미어 제거 후 재시도 ('Sales Team', 'Design 팀')
         stripped = self._strip_suffix(ws)
         if stripped:
@@ -481,7 +481,7 @@ class OrgResolver(object):
             code, ambiguous = fz
             if ambiguous:
                 return OrgMatch(None, note="ambiguous")
-            return OrgMatch(code, "org-typo", 0.95)
+            return OrgMatch(code, "org-typo", 0.9)
         return OrgMatch(None, note="unmatched")
 
 
@@ -564,7 +564,7 @@ class Cleanser(object):
         if unresolved:
             self.unresolved_items.append({
                 "source": source, "rowRef": dict(row_ref), "field": field, "rawValue": raw,
-                "question": question or "확인이 필요합니다.",
+                "flag": rule, "question": question or "확인이 필요합니다.",
             })
 
     # ---- 공통 정규화 -----------------------------------------------------
@@ -656,8 +656,8 @@ class Cleanser(object):
         fallback = JOB_FAMILY_DEFAULT_DEPT.get(job_family or "")
         dept = self.resolver.by_code.get(fallback, {}) if fallback else {}
         if dept:
-            q = "소속 '%s'은(는) 조직 체계(%d개 조직)에 없습니다. 어느 조직 소속입니까? (직군 %s 기준 %s으로 임시 배정)" % (
-                shown or "(빈값)", len(self.resolver.depts), job_family, dept["department"])
+            q = "어느 조직 소속입니까? (직군 %s 기준 %s으로 임시 배정)" % (
+                job_family, dept["department"])
         elif job_family:
             q = "소속 '%s'은(는) 조직 체계에 없고 직군 '%s'의 기본 조직도 없어 임시 배정하지 못했습니다. 어느 조직 소속입니까?" % (
                 shown or "(빈값)", job_family)
@@ -696,7 +696,7 @@ class Cleanser(object):
             ranked = sorted(members, key=sort_key)
             keep = ranked[-1]
             for m in ranked[:-1]:
-                self.log(source, {"사번": m[3], "rowIndex": m[0]}, "사번", m[2], keep[0], "duplicate", 1.0, False)
+                self.log(source, {"사번": m[3], "rowIndex": m[0]}, "사번", m[1].get("최종수정일", ""), keep[0], "duplicate", 1.0, False)
                 self.duplicates_removed += 1
             survivors.append(keep)
         survivors.sort(key=lambda m: m[0])
@@ -724,6 +724,9 @@ class Cleanser(object):
         if status not in ("재직", "휴직"):
             self.counters["statusOutOfDomain"] += 1
 
+        # org-normalization (직군은 org-unknown 임시 배정에 쓴다)
+        dept = self.resolve_org(ctx, "소속", row.get("소속", ""), job_family)
+
         birth = self.norm_date(ctx, "생년월일", row.get("생년월일", ""), birth=True)
         leave_start = self.norm_date(ctx, "휴직시작일", row.get("휴직시작일", ""))
         hire = self.norm_date(ctx, "입사일", row.get("입사일", ""), rule="hire-date-format")
@@ -739,12 +742,12 @@ class Cleanser(object):
         if hire and status in ("재직", "휴직") and hire > self.as_of_iso:
             hire_after_as_of = True
             ctx.log("입사일", row.get("입사일", ""), hire, "date-logic", None, True,
-                    "재직 상태인데 입사일 %s이(가) 기준일 %s 이후입니다. 입사일 또는 재직상태를 확인해 주세요. (통계 포함, 재직기간 0으로 처리)" % (hire, self.as_of_iso))
+                    "재직 상태인데 입사일(%s)이 기준일 이후입니다. 입사일을 확인해 주세요 (재직기간 0으로 집계)" % hire)
 
         # status-inconsistency: 휴직인데 휴직유형 없음 → 기타 (0.6, 미해결)
         if status == "휴직" and not leave_type:
             ctx.log("휴직유형", row.get("휴직유형", ""), "기타", "status-inconsistency", 0.6, True,
-                    "휴직 상태이나 휴직유형이 비어 있어 '기타'로 임시 보정했습니다. 육아휴직/질병휴직/기타 중 무엇입니까?")
+                    "휴직 상태인데 휴직유형이 없습니다. 유형을 확인해 주세요 (기타로 임시 배정)")
             leave_type = "기타"
         if status == "재직" and leave_type:
             self.counters["leaveTypeOnActive"] += 1
@@ -752,12 +755,9 @@ class Cleanser(object):
         # missing-required: 계약직/인턴/파견인데 계약종료일 없음 → 빈값 유지, 플래그
         if employment_type in CONTRACT_TYPES and not contract_end:
             ctx.log("계약종료일", row.get("계약종료일", ""), "", "missing-required", None, True,
-                    "%s인데 계약종료일이 비어 있습니다. 계약종료일은 언제입니까?" % employment_type)
+                    "%s인데 계약종료일이 없습니다. 계약종료일을 확인해 주세요" % employment_type)
         if employment_type == "정규직" and contract_end:
             self.counters["contractEndOnRegular"] += 1
-
-        # org-normalization (직군은 org-unknown 임시 배정에 쓴다)
-        dept = self.resolve_org(ctx, "소속", row.get("소속", ""), job_family)
 
         # 파생 필드 (§2-8 파생 행)
         prior = parse_int(row.get("입사전경력(개월)", ""))
@@ -883,14 +883,13 @@ class Cleanser(object):
             if not planned and not ws_norm(row.get("퇴사예정일", "")):
                 ctx.log("퇴사예정일", row.get("퇴사예정일", ""), "", "date-format", None, True,
                         "퇴사예정일이 비어 있습니다. 월말 예측에 넣을 수 없습니다. 퇴사예정일은?")
-            sep_reason, sep_type = self.norm_reason(ctx, row.get("퇴직사유", ""))
             if master is None:
                 ctx.log("사번", raw_id, "", "unknown-emp", None, True,
-                        "퇴사 예정자 사번 '%s'이(가) 인원현황 마스터에 없습니다. 올바른 사번은? (예측에서 제외)" % ws_norm(raw_id))
+                        "마스터에 없는 사번입니다. 사번을 확인해 주세요 (예측에서 제외)")
             elif planned and planned < self.as_of_iso:
                 ctx.log("퇴사예정일", row.get("퇴사예정일", ""), planned, "stale-planned-leaver", None, True,
-                        "퇴사 예정일 %s이(가) 기준일 %s 이전인데 마스터에서는 '%s'입니다. 실제 퇴사 처리되었습니까? (월말 예측에는 퇴사로 반영)" % (
-                            planned, self.as_of_iso, master["status"]))
+                        "퇴사 예정일(%s)이 기준일 이전인데 마스터에는 재직 상태입니다. 실제 퇴사 여부를 확인해 주세요" % planned)
+            sep_reason, sep_type = self.norm_reason(ctx, row.get("퇴직사유", ""))
             if master is not None and master["status"] == "휴직":
                 self.warnings.append("planned-leavers rowIndex %d (%s): 휴직자의 퇴사 예정 — 재직 기준 예측에서는 제외, 급여 마감 총원에는 반영(§4-5)" % (idx, emp))
             if emp in seen:
@@ -908,7 +907,15 @@ class Cleanser(object):
         counts = {}
         for e in self.log_entries:
             counts[e["rule"]] = counts.get(e["rule"], 0) + 1
-        return dict((r, counts[r]) for r in DEFECT_TYPES if r in counts)
+        return counts
+
+    def corrections_by_source(self):
+        counts = {source: {} for source in SOURCES}
+        for entry in self.log_entries:
+            by_rule = counts[entry["source"]]
+            rule = entry["rule"]
+            by_rule[rule] = by_rule.get(rule, 0) + 1
+        return counts
 
     def unresolved_by_flag(self):
         counts = {}
@@ -995,12 +1002,22 @@ class Cleanser(object):
             "rowsOut": dict((k, self.rows_out.get(k, 0)) for k in SOURCES),
             "duplicatesRemoved": self.duplicates_removed,
             "correctionsByRule": self.corrections_by_rule(),
+            "correctionsBySource": self.corrections_by_source(),
             "orgNameCorrections": self.org_name_corrections(),
+            "orgUnknown": sum(1 for e in self.log_entries
+                              if e["source"] == "headcount-master" and e["rule"] == "org-unknown"),
             "hireDateCorrections": self.hire_date_corrections(),
             "orgGroupMapping": self.org_group_mapping(),
             "derivedFields": list(DERIVED_FIELDS),
             "unresolvedCount": len(self.unresolved_items),
             "unresolvedItems": self.unresolved_items,
+            "warnings": list(self.warnings),
+            "provenance": {
+                "rawSources": dict(RAW_PATHS),
+                "orgChart": ORG_CHART_PATH,
+                "stages": STAGES_PATH,
+                "script": SCRIPT_REL,
+            },
         }
 
     # ---- 산출물 ----------------------------------------------------------
@@ -1017,7 +1034,7 @@ class Cleanser(object):
             for e in self.log_entries:
                 f.write(json.dumps(e, ensure_ascii=False) + "\n")
         with open(os.path.join(self.root, SUMMARY_PATH), "w", encoding="utf-8") as f:
-            json.dump(self.summary(), f, ensure_ascii=False, indent=2)
+            json.dump(self.summary(), f, ensure_ascii=False, indent=1)
             f.write("\n")
 
     def result(self, started, status):
