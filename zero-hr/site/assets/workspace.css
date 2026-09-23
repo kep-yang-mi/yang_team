@@ -1,0 +1,55 @@
+/* Shared workspace frame for every Zero HR screen. */
+:root { --workspace-width:232px; }
+body { padding-left:var(--workspace-width)!important; max-width:none!important; margin:0!important; padding-right:0!important; }
+.workspace-sidebar { position:fixed; inset:0 auto 0 0; width:var(--workspace-width); box-sizing:border-box; padding:30px 18px 22px; background:#faf9f5; color:#292923; border-right:1px solid #deddd5; display:flex; flex-direction:column; z-index:30; font-family:Inter,"Noto Sans KR",sans-serif; }
+.workspace-brand { display:flex; align-items:center; gap:11px; text-decoration:none; font-size:19px; font-weight:700; color:inherit; }
+.workspace-mark { display:grid; place-items:center; width:34px; height:34px; background:#292923; color:#faf9f5; border-radius:10px; font-size:21px; }
+.workspace-brand small { display:block; font-size:10px; font-weight:400; color:#77776e; letter-spacing:.04em; margin-top:3px; }
+.workspace-company { margin:30px 0 25px; padding:12px; border:1px solid #deddd5; border-radius:10px; font-size:12px; }
+.workspace-company small { display:block; color:#76766e; margin-top:3px; font-size:10px; }
+.workspace-group { margin:19px 12px 8px; font-size:10px; letter-spacing:.1em; color:#76766e; }
+.workspace-nav { display:flex; flex-direction:column; gap:5px; }
+.workspace-nav a { display:flex; gap:12px; align-items:center; padding:11px 12px; border-radius:9px; font-size:13px; text-decoration:none; color:#55554d; }
+.workspace-nav a:hover { background:#eeece5; color:#292923; }
+.workspace-nav a[aria-current="page"] { background:#efe0d3; color:#8c452f; font-weight:700; }
+.workspace-icon { width:19px; text-align:center; font-size:17px; }
+.workspace-footer { margin-top:auto; padding:28px 12px 0; font-size:10px; color:#73736c; line-height:1.8; }
+.workspace-topbar { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:18px 32px; border-bottom:1px solid var(--line,#deddd5); font:12px Inter,"Noto Sans KR",sans-serif; color:var(--ink-2,#55554d); }
+.workspace-topbar strong { color:var(--ink,#292923); font-weight:600; }
+.workspace-topbar span { color:var(--ink-muted,#76766e); }
+.workspace-mobile { display:none; }
+body>.app-header { margin:0 auto; padding:26px 32px 12px; box-sizing:border-box; border-bottom:0; }
+body>.app-header nav a { display:none; }
+body>main { padding:0 32px 56px; box-sizing:border-box; }
+body>footer { padding:20px 32px; }
+.roles { padding:8px 0; }
+.roles label:has(input:focus-visible) { outline:2px solid var(--accent,#c6613f); outline-offset:3px; }
+body[data-workspace-page="report"] { background:#f0eee6; color:#292923; }
+.workspace-report { max-width:1160px; margin:28px auto; background:#faf9f5; border:1px solid #deddd5; border-radius:18px; padding:28px!important; overflow-x:auto; }
+.workspace-report table { min-width:650px; }
+.workspace-extra,#dashboard,#insight,#payroll,#onboarding { scroll-margin-top:24px; }
+.workspace-report-content { max-height:850px; overflow:auto; background:var(--surface,#faf9f5); padding:18px; border:1px solid var(--line,#deddd5); border-radius:12px; }
+.workspace-report-content table { min-width:780px; }
+.integration-tools { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr)); gap:16px; }
+.integration-tools article { background:#faf9f5; border:1px solid #deddd5; border-radius:16px; padding:22px; overflow-wrap:anywhere; }
+.integration-tools h2 { font-size:16px; }
+.integration-tools p { font-size:13px; line-height:1.8; }
+.integration-tools details { margin-top:16px; }
+.integration-tools pre { overflow:auto; font-size:11px; }
+@media(max-width:850px) {
+  body { padding-left:0!important; }
+  .workspace-sidebar { position:static; width:auto; padding:18px 20px 12px; border-right:0; border-bottom:1px solid #deddd5; }
+  .workspace-brand { font-size:17px; }
+  .workspace-company,.workspace-footer,.workspace-group { display:none; }
+  .workspace-nav { flex-direction:row; overflow-x:auto; margin-top:15px; padding-bottom:4px; }
+  .workspace-nav a { flex-shrink:0; padding:9px 11px; font-size:12px; }
+  .workspace-topbar { padding:14px 20px; }
+  body>.app-header { padding:22px 20px 8px; }
+  body>main { padding:0 20px 40px; }
+  .workspace-report { margin:18px 12px; padding:18px!important; }
+}
+@media print {
+  body { padding-left:0!important; }
+  .workspace-sidebar,.workspace-topbar { display:none!important; }
+  .workspace-report { border:0; margin:0; padding:0!important; }
+}

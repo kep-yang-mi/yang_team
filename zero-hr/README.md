@@ -12,7 +12,7 @@
 |---|---|---|
 | 원천 → 정제 | `data/raw/` → `data/clean/` | 결함 127건을 주입한 원천 4종과 정답지, 그리고 §2-8 규칙으로 정제한 데이터 + 클린징 로그 |
 | 통계·예측 | `data/stats/` | 인원 통계, 월말 인원 예측·TO 과부족·권고, 이직 리스크, 급여 마감, 온보딩 계획, 자동화 효과 |
-| 제품 | `site/` | 허브 · Insight(인사 총괄) · Payroll Close(급여 담당) · Onboarding(온보딩 담당) · 통합 제품 · 채택 근거 |
+| 제품 | `site/` | 단일 화면 워크스페이스(`/`) · 역할 탭 6종 · 월초 리포트 · 채택 근거 · Function Call 카탈로그 · Before 사이트 링크. 기존 개별 주소도 유지 |
 | 리포트 | `reports/` | 월초 리포트 md/html, 조직별 forecast CSV, 발송 명세(ready-to-send) |
 | Function Call | `api/` · `site/api/` | 도구 18개 카탈로그, HTTP 서버, MCP stdio 서버, 정적 스냅샷 |
 | 근거 | `_workspace/handoff/` · `products/` | 단계별 핸드오프 로그, 심판 채점, 제품 비교, 변경 이력 |
@@ -21,6 +21,8 @@ Executive Snapshot(정본): 재직 406 · 휴직 21 · 총 TO 422 · 기준일 T
 `411 = 406 + 19 − 14`, `−11 = 411 − 422`. 이 숫자는 화면·리포트·Function Call 응답 어디서나 같다.
 
 ## 빠른 실행
+
+사이트 페이지를 다시 생성한 뒤에는 `python3 scripts/build_workspace.py`로 공통 메뉴와 단일 화면을 재구성한다. Vercel의 정적 배포 루트는 `site/`이다.
 
 Python 3.9 표준 라이브러리만 쓴다(설치 불필요).
 

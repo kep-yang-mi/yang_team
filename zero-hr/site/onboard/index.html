@@ -150,8 +150,19 @@ input[type="search"] { font: inherit; font-size: 14px; padding: 8px 12px; border
 .app-footer p { margin: 12px 0 0; color: var(--ink-muted); font-size: 12px; }
 canvas { max-width: 100%; }
 </style>
+<link rel="stylesheet" href="/assets/workspace.css">
 </head>
-<body>
+<body data-workspace-page="onboard">
+<!-- workspace:start -->
+<aside class="workspace-sidebar" aria-label="Zero HR 워크스페이스">
+  <a class="workspace-brand" href="/"><span class="workspace-mark" aria-hidden="true">z</span><span>Zero HR<small>Everyday People Agent</small></span></a>
+  <div class="workspace-company">㈜온다테크<small>People Operations Workspace</small></div>
+  <div class="workspace-group">PEOPLE OPERATIONS</div>
+  <nav class="workspace-nav" aria-label="전체 메뉴"><a href="/#dashboard"><span class="workspace-icon" aria-hidden="true">◫</span>통합 대시보드</a><a href="/#insight"><span class="workspace-icon" aria-hidden="true">↗</span>인원 분석</a><a href="/#payroll"><span class="workspace-icon" aria-hidden="true">▤</span>급여 마감</a><a href="/#onboarding" aria-current="page"><span class="workspace-icon" aria-hidden="true">⊕</span>온보딩</a><a href="/#report"><span class="workspace-icon" aria-hidden="true">▧</span>월초 리포트</a><div class="workspace-group">WORKSPACE</div><a href="/#decision"><span class="workspace-icon" aria-hidden="true">◇</span>채택 근거</a><a href="/#integrations"><span class="workspace-icon" aria-hidden="true">⌘</span>시스템 연동</a><a href="https://claude.ai/code/artifact/7e13938a-4161-4a07-b4be-d010dc6f33cb" target="_blank" rel="noopener noreferrer"><span class="workspace-icon" aria-hidden="true">↗</span>Before 사이트</a></nav>
+  <div class="workspace-footer">하나의 데이터, 연결된 HR 업무<br>가상 데이터 기반 데모</div>
+</aside>
+<div class="workspace-topbar"><strong>워크스페이스 &nbsp; / &nbsp; 온보딩</strong><span>Zero Company HR</span></div>
+<!-- workspace:end -->
 <a class="skip" href="#main">본문으로</a>
 <header class="app-header" data-section="header" data-fit="O-F12 O-F13" data-evidence="onboardingPlan.asOfDate onboardingPlan.horizonEnd api/tools.json">
   <div class="brand">
@@ -167,7 +178,7 @@ canvas { max-width: 100%; }
   <nav aria-label="제품 이동">
     <button type="button" class="theme-btn" id="theme-toggle" aria-label="테마 전환">테마: 자동</button>
     <a href="../api/tools.json" title="Function Call 도구 카탈로그 (onboarding.get_timeline · get_department_plan · get_checklist · get_early_tenure_cohort)">이 데이터를 도구로 호출</a>
-    <a href="../">← 허브</a>
+    <a href="../">대시보드</a>
   </nav>
 </header>
 
